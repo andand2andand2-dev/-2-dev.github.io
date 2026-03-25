@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MOOD Archiving | Encapsulating Moments</title>
     <style>
-        /* [Typography] Playball(Logo), Cinzel(Header/Button), Nanum Myeongjo(Body) */
+        /* 고급스러운 분위기를 위한 폰트 설정 (영문 필기체, 클래식 세리프, 서정적 명조) */
         @import url('https://fonts.googleapis.com/css2?family=Playball&family=Cinzel:wght@400;700&family=Nanum+Myeongjo:wght@400;700&display=swap');
 
         :root {
-            --bg-color: #F8F6F1; 
-            --point-green: #1D4D3F; 
-            --accent-gold: #c2956a; 
+            --bg-color: #F8F6F1; /* 가이드 크림톤 */
+            --point-green: #1D4D3F; /* 가이드 초록색 */
+            --accent-gold: #c2956a; /* 가이드 골드톤 */
             --white: #ffffff;
             --line-color: rgba(29, 77, 63, 0.1);
         }
@@ -20,69 +20,84 @@
             background-color: var(--bg-color); 
             color: var(--point-green); 
             font-family: 'Nanum Myeongjo', serif; 
-            margin: 0; line-height: 2.2; word-break: keep-all; 
+            margin: 0; 
+            line-height: 2.2; 
+            word-break: keep-all; 
+            overflow-x: hidden;
         }
 
-        /* Header */
+        /* 헤더 섹션 */
         header { 
-            padding: 80px 20px; text-align: center; background: rgba(248, 246, 241, 0.98);
-            backdrop-filter: blur(15px); position: sticky; top: 0; z-index: 1000;
+            padding: 80px 20px 60px; 
+            text-align: center; 
+            background: rgba(248, 246, 241, 0.98);
+            backdrop-filter: blur(15px);
+            position: sticky; top: 0; z-index: 1000;
             border-bottom: 1px solid var(--line-color);
         }
-        .logo { font-family: 'Playball', cursive; font-size: 68px; color: var(--point-green); text-decoration: none; margin: 0; }
+
+        .logo { font-family: 'Playball', cursive; font-size: 72px; color: var(--point-green); text-decoration: none; margin: 0; }
         .logo-sub { font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 7px; color: var(--accent-gold); display: block; margin-top: -5px; font-weight: 700; }
 
-        /* [English Only] Navigation Buttons */
-        .btn-group { margin-top: 40px; display: flex; justify-content: center; gap: 20px; }
+        /* 버튼 그룹 DESIGN */
+        .btn-group { margin-top: 35px; display: flex; justify-content: center; gap: 15px; }
         .btn { 
-            font-family: 'Cinzel', serif; padding: 16px 42px; border-radius: 2px; text-decoration: none; 
-            font-size: 11px; font-weight: 700; transition: 0.5s ease; letter-spacing: 4px; 
-            border: 1px solid var(--point-green); text-transform: uppercase;
+            font-family: 'Cinzel', serif; 
+            padding: 16px 42px; border-radius: 2px; text-decoration: none; font-size: 11px; 
+            font-weight: 700; transition: 0.5s ease; letter-spacing: 4px; border: 1px solid var(--point-green);
+            text-transform: uppercase;
         }
         .btn-insta { background: transparent; color: var(--point-green); }
         .btn-shop { background: var(--point-green); color: var(--white); }
-        .btn:hover { transform: translateY(-3px); letter-spacing: 5px; box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
+        .btn:hover { transform: translateY(-3px); letter-spacing: 5.5px; box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
 
-        /* General Sections */
-        .section { padding: 140px 20px; max-width: 1100px; margin: 0 auto; }
-        .section-title { text-align: center; font-family: 'Cinzel', serif; font-size: 32px; margin-bottom: 20px; letter-spacing: 6px; }
+        /* 메인 콘텐츠 레이아웃 */
+        .section { padding: 140px 20px; max-width: 1050px; margin: 0 auto; }
+        .section-title { text-align: center; font-family: 'Cinzel', serif; font-size: 30px; margin-bottom: 20px; letter-spacing: 6px; }
         .section-desc { text-align: center; font-size: 18px; opacity: 0.8; margin-bottom: 100px; color: var(--accent-gold); }
 
-        /* [Artistic Info] Resin Art Details */
-        .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 150px; }
-        .info-card { background: var(--white); padding: 50px 30px; text-align: center; border: 1px solid var(--line-color); }
-        .info-card h4 { font-family: 'Cinzel', serif; font-size: 16px; color: var(--point-green); margin-bottom: 20px; letter-spacing: 2px; }
-        .info-card p { font-size: 14px; color: #666; line-height: 2.1; margin: 0; }
+        /* 이미지 + 텍스트 콘텐츠 블록 */
+        .content-block { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; margin-bottom: 160px; }
+        .content-block.reverse { direction: rtl; }
+        .content-block.reverse .workbook-card { direction: ltr; }
+        
+        .img-side { border-radius: 2px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.12); background: #eee; }
+        
+        /* [요청반영] 고화질 자동 연동 이미지 스타일 */
+        .img-side img { width: 100%; height: 550px; object-fit: cover; display: block; transition: 1s; filter: contrast(105%) sepia(5%); }
+        .img-side:hover img { transform: scale(1.06); }
 
-        /* [Class Curriculum] 3-Step Journey */
-        .class-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 60px; }
-        .class-card { background: var(--white); border: 1px solid var(--line-color); padding: 40px; text-align: center; }
-        .class-img { width: 100%; height: 220px; object-fit: cover; margin-bottom: 30px; filter: contrast(105%); }
-        .class-step { font-family: 'Playball', cursive; font-size: 36px; color: var(--accent-gold); display: block; margin-bottom: 10px; }
-        .class-name { font-family: 'Cinzel', serif; font-size: 17px; font-weight: 700; margin-bottom: 20px; display: block; color: var(--point-green); }
-        .class-text { font-size: 14px; line-height: 1.8; color: #777; }
-
-        /* Auto-linked Content Images */
-        .content-block { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-bottom: 160px; }
-        .img-side { border-radius: 0; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.12); }
-        .img-side img { width: 100%; height: 550px; object-fit: cover; display: block; transition: 1.2s; }
-        .img-side:hover img { transform: scale(1.08); }
-
+        /* 워크북 카드 디자인 */
         .workbook-card { background: var(--white); padding: 70px 60px; border: 1px solid var(--line-color); }
-        .input-line { display: inline-block; min-width: 150px; border-bottom: 1px solid var(--accent-gold); margin: 0 10px; height: 24px; }
+        .step-label { font-family: 'Playball', cursive; font-size: 44px; color: var(--accent-gold); display: block; margin-bottom: 10px; }
+        .step-title { font-family: 'Cinzel', serif; font-size: 19px; font-weight: 700; margin-bottom: 35px; display: block; border-bottom: 1px solid var(--line-color); padding-bottom: 15px; }
+        .input-underline { display: inline-block; min-width: 150px; border-bottom: 1px solid var(--accent-gold); margin: 0 10px; height: 24px; vertical-align: middle; }
 
-        /* Inner Landscape Questions */
-        .landscape-bg { background: #fdfcf9; border-top: 1px solid var(--line-color); padding: 140px 0; }
+        /* 내면 풍경 8문항 디자인 */
+        .landscape-bg { background: #fdfcf9; border-top: 1px solid var(--line-color); padding: 140px 0; border-bottom: 1px solid var(--line-color); }
         .landscape-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 60px; }
-        .q-card { background: var(--white); padding: 50px; border-top: 4px solid var(--accent-gold); }
+        .q-card { background: var(--white); padding: 50px; border-top: 4px solid var(--accent-gold); box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
         .q-num { font-family: 'Cinzel', serif; font-size: 12px; color: var(--accent-gold); font-weight: 700; letter-spacing: 3px; display: block; margin-bottom: 20px; }
-        .q-text { font-size: 16px; line-height: 1.9; color: var(--point-green); }
+        .q-text { font-size: 16px; line-height: 2; color: var(--point-green); }
+
+        /* [추가] 클래스 정보 섹션 DESIGN */
+        .class-section { padding: 140px 20px; max-width: 100%; background: #fff; border-top: 1px solid var(--line-color); border-bottom: 1px solid var(--line-color); }
+        .class-container { max-width: 1050px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .class-card { background: var(--white); border: 1px solid var(--line-color); padding: 50px; text-align: center; }
+        .class-img { width: 100%; height: 200px; object-fit: cover; margin-bottom: 30px; border-radius: 2px; }
+        .class-label { font-family: 'Playball', cursive; font-size: 36px; color: var(--accent-gold); display: block; margin-bottom: 10px; }
+        .class-title { font-family: 'Cinzel', serif; font-size: 18px; font-weight: 700; color: var(--point-green); margin-bottom: 20px; letter-spacing: 1px; }
+        .class-desc { font-size: 15px; line-height: 1.8; color: #666; }
 
         footer { background: #1a1a1a; color: #fff; padding: 120px 20px; text-align: center; }
-        .footer-logo { font-family: 'Playball', cursive; font-size: 38px; color: var(--accent-gold); margin-bottom: 15px; display: block; }
+        .footer-logo { font-family: 'Playball', cursive; font-size: 36px; color: var(--accent-gold); margin-bottom: 15px; display: block; }
         .footer-sub { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 5px; opacity: 0.4; text-transform: uppercase; }
 
-        @media (max-width: 768px) { .content-block, .landscape-grid, .info-grid, .class-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) {
+            .content-block, .landscape-grid, .class-container { grid-template-columns: 1fr; }
+            .img-side img, .class-img { height: 350px; }
+            .logo { font-size: 52px; }
+        }
     </style>
 </head>
 <body>
@@ -97,87 +112,90 @@
 </header>
 
 <section class="section">
-    <h2 class="section-title">The Art of Resin</h2>
+    <h2 class="section-title">The Essence of Resin Art</h2>
     <p class="section-desc">무구한 진실성과 찰나의 파동을 기록하는 법</p>
     
-    <div class="info-grid">
-        <div class="info-card">
-            <h4>Purity</h4>
-            <p>High-grade 레진을 사용하여 유리에 필적하는 투명도를 구현합니다. 이는 담긴 피사체의 본질을 가장 진실되게 투영합니다.</p>
-        </div>
-        <div class="info-card">
-            <h4>Capture</h4>
-            <p>액체가 고체로 변화하는 과정에서 찰나의 감정을 박제합니다. 시간이 흘러도 변하지 않는 기록물로서의 가치를 부여합니다.</p>
-        </div>
-        <div class="info-card">
-            <h4>Vibration</h4>
-            <p>잉크의 유동적 특성을 조절하여 감정의 확산을 시각화합니다. 모든 작품은 단 하나뿐인 고유한 무드를 가집니다.</p>
-        </div>
-    </div>
-
-    <h2 class="section-title">The Masterclass</h2>
-    <p class="section-desc">나만의 내면 풍경을 완성하는 3단계 여정</p>
-    
-    <div class="class-grid">
-        <div class="class-card">
-            <img src="https://images.unsplash.com/photo-1517142089942-ba376ce32a2e?q=80&w=600" alt="Step 01 Image" class="class-img">
-            <span class="class-step">Step 01</span>
-            <span class="class-name">Value & Design</span>
-            <p class="class-text">내면의 키워드를 추출하여 가치관을 정의하고, 레진 속 내면 풍경을 구체적으로 설계합니다.</p>
-        </div>
-        <div class="class-card">
-            <img src="https://images.unsplash.com/photo-1618556450991-2f1af64e8191?q=80&w=600" alt="Step 02 Image" class="class-img">
-            <span class="class-step">Step 02</span>
-            <span class="class-name">Resin Craft</span>
-            <p class="class-text">실제 레진 공예 기법을 익히며, 설계한 가치관 파츠를 투명한 수지 속에 조화롭게 배치합니다.</p>
-        </div>
-        <div class="class-card">
-            <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=600" alt="Step 03 Image" class="class-img">
-            <span class="class-step">Step 03</span>
-            <span class="class-name">Adding Emotion</span>
-            <p class="class-text">알코올 잉크 드롭 기법을 통해 통제할 수 없는 감정의 파동을 작품에 더해 영원한 무드를 완성합니다.</p>
-        </div>
-    </div>
-</section>
-
-<section class="section" style="padding-top: 0;">
     <div class="content-block">
         <div class="img-side">
-            <img src="https://images.unsplash.com/photo-1515549832467-d3b6942180f4?q=80&w=1000" alt="Process Image">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000" alt="Resin Transparency Mood">
         </div>
         <div class="workbook-card">
-            <span class="class-step" style="font-size: 40px;">Archiving</span>
-            <span class="class-name" style="border-bottom: 1px solid var(--line-color); padding-bottom: 15px; margin-bottom: 30px;">Inner Keyword Extraction</span>
-            <p>나를 설명하는 키워드 3가지 : <br><span class="input-line"></span> , <span class="input-line"></span> , <span class="input-line"></span></p>
-            <p>공간에서 느끼고 싶은 무드의 온도 : <br><span class="input-line" style="width: 100%;"></span></p>
+            <span class="step-label">Step 01</span>
+            <span class="step-title">Inner Keyword Extraction</span>
+            <p>나를 설명하는 키워드 3가지 : <br><span class="input-underline"></span> , <span class="input-underline"></span> , <span class="input-underline"></span></p>
+            <p>공간에서 느끼고 싶은 감정 : <br><span class="input-underline" style="width: 100%;"></span></p>
+        </div>
+    </div>
+
+    <div class="content-block reverse">
+        <div class="img-side">
+            <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1000" alt="Flower Parts Mood">
+        </div>
+        <div class="workbook-card">
+            <span class="step-label">Step 02</span>
+            <span class="step-title">Visual Language</span>
+            <p>Main Flower (가치관) : <br><span class="input-underline"></span><br><small style="opacity: 0.5;">* 예: 변치 않는 신뢰 - 리시안셔스</small></p>
+            <p>Sub Color (감정) : <br><span class="input-underline"></span><br><small style="opacity: 0.5;">* 예: 깊은 안정 - 딥 블루</small></p>
         </div>
     </div>
 </section>
+
+<div class="class-section">
+    <div style="max-width: 1050px; margin: 0 auto; padding: 0 20px;">
+        <h2 class="section-title">Mood Archiving Class</h2>
+        <p class="section-desc">나만의 내면 풍경을 레진 속에 박제하는 3단계 여정</p>
+        
+        <div class="class-container">
+            <div class="class-card">
+                <img src="https://images.unsplash.com/photo-1517142089942-ba376ce32a2e?q=80&w=600" alt="Finding Value Mood" class="class-img">
+                <span class="class-label">Step 01</span>
+                <p class="class-title">Value & Design</p>
+                <p class="class-desc">내면의 키워드를 추출하여 가치관을 정의하고, 레진 속 내면 풍경을 설계하는 첫 번째 시간입니다.</p>
+            </div>
+            
+            <div class="class-card">
+                <img src="https://images.unsplash.com/photo-1618556450991-2f1af64e8191?q=80&w=600" alt="Resin Craft Mood" class="class-img">
+                <span class="class-label">Step 02</span>
+                <p class="class-title">Resin Craft</p>
+                <p class="class-desc">실제 레진 공예 기법을 배우며, 설계한 가치관 파츠를 무구한 레진 속에 입체적으로 배치하는 과정입니다.</p>
+            </div>
+            
+            <div class="class-card">
+                <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=600" alt="Adding Emotion Mood" class="class-img">
+                <span class="class-label">Step 03</span>
+                <p class="class-title">Adding Emotion</p>
+                <p class="class-desc">알코올 잉크 드롭 기법을 통해 통제할 수 없는 감정의 파동을 작품에 더해, 영원한 무드를 완성합니다.</p>
+            </div>
+        </div>
+        
+        <div class="btn-group" style="margin-top: 100px;">
+            <a href="#" class="btn btn-shop">Book Your Class</a>
+        </div>
+    </div>
+</div>
 
 <div class="landscape-bg">
     <section class="section" style="padding: 0 20px;">
         <h2 class="section-title">Inner Landscape</h2>
         <p class="section-desc">찰나의 감정을 박제하는 시간</p>
+        
         <div class="landscape-grid">
-            <div class="q-card"><span class="q-num">QUESTION 01</span><p class="q-text">타인에게 기억되고 싶은 당신의 '첫인상'은 어떤 느낌인가요?</p></div>
-            <div class="q-card"><span class="q-num">QUESTION 02</span><p class="q-text">현재 당신의 에너지를 색깔로 표현한다면 어떤 색에 가까운가요?</p></div>
-            <div class="q-card"><span class="q-num">QUESTION 03</span><p class="q-text">지친 하루 끝에 당신에게 가장 필요한 위로의 형태는 무엇인가요?</p></div>
-            <div class="q-card"><span class="q-num">QUESTION 04</span><p class="q-text">당신의 삶에서 가장 중요하게 생각하는 키워드는 무엇인가요?</p></div>
-            <div class="q-card"><span class="q-num">QUESTION 05</span><p class="q-text">오늘 당신의 마음속에 머물러 있는 '물건'에 어떤 의미를 담고 싶나요?</p></div>
-            <div class="q-card"><span class="q-num">QUESTION 06</span><p class="q-text">레진 속에 퍼뜨릴 잉크 색채는 당신의 어떤 감정을 상징하나요?</p></div>
-            <div class="q-card"><span class="q-num">QUESTION 07</span><p class="q-text">이것을 사용할 때, 어떤 마음가짐을 기억하고 싶나요?</p></div>
-            <div class="q-card"><span class="q-num">QUESTION 08</span><p class="q-text">파츠를 배치할 때 당신의 가치관은 '중심'에 있나요, '조화' 속에 있나요?</p></div>
-        </div>
-        <div class="btn-group" style="margin-top: 100px;">
-            <a href="#" class="btn btn-shop">Start Archiving</a>
+            <div class="q-card"><span class="q-num">Q 01</span><p class="q-text">타인에게 기억되고 싶은 당신의 '첫인상'은 어떤 느낌인가요?</p></div>
+            <div class="q-card"><span class="q-num">Q 02</span><p class="q-text">현재 당신의 에너지를 색깔로 표현한다면 어떤 색에 가까운가요?</p></div>
+            <div class="q-card"><span class="q-num">Q 03</span><p class="q-text">지친 하루 끝에 당신에게 가장 필요한 위로의 형태는 무엇인가요?</p></div>
+            <div class="q-card"><span class="q-num">Q 04</span><p class="q-text">당신의 삶에서 가장 중요하게 생각하는 키워드는 무엇인가요?</p></div>
+            <div class="q-card"><span class="q-num">Q 05</span><p class="q-text">오늘 당신의 마음속에 머물러 있는 '물건'에 어떤 의미를 담고 싶나요?</p></div>
+            <div class="q-card"><span class="q-num">Q 06</span><p class="q-text">레진 속에 퍼뜨릴 잉크 색채는 당신의 어떤 감정을 상징하나요?</p></div>
+            <div class="q-card"><span class="q-num">Q 07</span><p class="q-text">이것을 사용할 때, 어떤 마음가짐을 기억하고 싶나요?</p></div>
+            <div class="q-card"><span class="q-num">Q 08</span><p class="q-text">파츠를 배치할 때 당신의 가치관은 '중심'에 있나요, '조화' 속에 있나요?</p></div>
         </div>
     </section>
 </div>
 
 <footer>
     <span class="footer-logo">Mood Archiving</span>
-    <span class="footer-sub">Encapsulating your timeless moments</span>
-    <p style="opacity: 0.2; font-size: 11px; margin-top: 60px; letter-spacing: 3px;">© 2026 MOOD ARCHIVING. ALL RIGHTS RESERVED.</p>
+    <span class="footer-sub">ENCAPSULATING MOMENTS</span>
+    <p style="opacity: 0.3; font-size: 11px; margin-top: 60px; letter-spacing: 1px;">© 2026 MOOD ARCHIVING. ALL RIGHTS RESERVED.</p>
 </footer>
 
 </body>
