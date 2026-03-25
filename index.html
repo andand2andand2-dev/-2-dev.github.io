@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mood Archiving | Encapsulating Moments</title>
     <style>
+        /* 고급 브랜드 폰트 및 컬러 시스템 */
         @import url('https://fonts.googleapis.com/css2?family=Playball&family=Cinzel:wght@400;700&family=Nanum+Myeongjo:wght@400;700&display=swap');
 
         :root {
-            --bg-color: #F8F6F1;
-            --point-green: #1D4D3F;
-            --accent-gold: #c2956a;
+            --bg-color: #F8F6F1; /* 가이드 크림톤 */
+            --point-green: #1D4D3F; /* 시그니처 그린 */
+            --accent-gold: #c2956a; /* 포인트 골드 */
             --white: #ffffff;
             --line-color: rgba(29, 77, 63, 0.1);
         }
@@ -22,128 +23,160 @@
             margin: 0; line-height: 2.2; word-break: keep-all; 
         }
 
-        /* 헤더 고정 해제 - 모바일 최적화 */
+        /* 헤더: 고정 해제 (모바일 최적화) */
         header { 
             padding: 80px 20px; text-align: center; 
-            background: var(--bg-color);
-            position: relative; 
+            background: rgba(248, 246, 241, 0.96); backdrop-filter: blur(20px); 
+            position: sticky; top: 0; z-index: 1000;
             border-bottom: 1px solid var(--line-color);
         }
-        .logo { font-family: 'Playball', cursive; font-size: 68px; color: var(--point-green); text-decoration: none; display: block; }
+        .logo { font-family: 'Playball', cursive; font-size: 72px; color: var(--point-green); text-decoration: none; display: block; }
         .logo-sub { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 9px; color: var(--accent-gold); display: block; margin-top: -5px; font-weight: 700; }
 
-        .btn-group { margin-top: 35px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .btn-group { margin-top: 40px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
         .btn { 
-            font-family: 'Cinzel', serif; padding: 15px 40px; border-radius: 0; text-decoration: none; 
-            font-size: 11px; font-weight: 700; transition: 0.4s ease; letter-spacing: 3px; 
+            font-family: 'Cinzel', serif; padding: 16px 45px; border-radius: 0; text-decoration: none; 
+            font-size: 11px; font-weight: 700; transition: 0.5s ease; letter-spacing: 3px; 
             border: 1px solid var(--point-green); text-transform: uppercase;
         }
+        .btn-insta { background: transparent; color: var(--point-green); }
         .btn-shop { background: var(--point-green); color: var(--white); }
-        .btn:hover { background: var(--accent-gold); border-color: var(--accent-gold); color: white; }
+        .btn:hover { background: var(--accent-gold); border-color: var(--accent-gold); color: white; transform: translateY(-5px); }
 
-        .section { padding: 100px 20px; max-width: 1000px; margin: 0 auto; }
+        .section { padding: 140px 20px; max-width: 1000px; margin: 0 auto; position: relative; }
+        .section-title { text-align: center; font-family: 'Cinzel', serif; font-size: 36px; margin-bottom: 25px; letter-spacing: 6px; }
+        .section-desc { text-align: center; font-size: 19px; opacity: 0.8; margin-bottom: 110px; color: var(--accent-gold); font-style: italic; }
+
+        /* [추가] 고급스러운 텍스처 패턴 배경 */
+        .pattern-bg {
+            background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E<g fill="none" fill-rule="evenodd"%3E<g fill="%23c2956a" fill-opacity="0.05"%3E<path d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E</g></g></svg>');
+        }
+
+        /* [이미지 복구] 고화질 감성 사진 연동 */
+        .img-wrap { width: 100%; margin: 80px 0; overflow: hidden; border-radius: 2px; box-shadow: 0 25px 60px rgba(0,0,0,0.06); }
+        .img-wrap img { width: 100%; height: auto; max-height: 600px; object-fit: cover; display: block; }
+        .img-caption { text-align: right; font-size: 11px; color: var(--accent-gold); letter-spacing: 3px; margin-top: 10px; font-family: 'Cinzel', serif; }
+
+        /* [이미지 3 반영] 레진 전문 정보 섹션 */
+        .k-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-bottom: 100px; }
+        .k-card { padding: 50px 25px; background: #fff; border: 1px solid var(--line-color); text-align: center; }
+        .k-card h4 { font-family: 'Cinzel', serif; font-size: 15px; color: var(--accent-gold); margin-bottom: 20px; letter-spacing: 2px; }
+        .k-card p { font-size: 14px; color: #666; line-height: 2.1; margin: 0; }
         
-        /* 레진아트 전문 정보 섹션 */
-        .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin: 80px 0; }
-        .info-card { padding: 40px 25px; background: #fff; border: 1px solid var(--line-color); text-align: center; }
-        .info-card h4 { font-family: 'Cinzel', serif; font-size: 16px; color: var(--accent-gold); margin-bottom: 20px; letter-spacing: 2px; }
-        .info-card p { font-size: 14px; color: #666; line-height: 1.8; margin-bottom: 0; }
-        .info-sub-title { font-size: 12px; display: block; margin-top: 10px; opacity: 0.6; font-weight: bold; }
-
-        .img-wrap { width: 100%; margin: 60px 0; border-radius: 2px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
-        .img-wrap img { width: 100%; height: auto; max-height: 550px; object-fit: cover; display: block; }
-
-        /* 워크북 클래스 과정 상세화 */
-        .wb-container { background: var(--white); padding: 80px 50px; border: 1px solid var(--line-color); margin-bottom: 100px; }
-        .wb-header { text-align: center; margin-bottom: 60px; border-bottom: 1px solid var(--line-color); padding-bottom: 30px; }
-        .wb-header h3 { font-family: 'Cinzel', serif; letter-spacing: 5px; color: var(--accent-gold); font-size: 22px; }
+        /* 클래스 커리큘럼 및 워크북 디자인 */
+        .workbook-section { background: var(--white); padding: 100px 60px; position: relative; border: 1px solid var(--line-color); margin-bottom: 120px; overflow: hidden; }
+        .wb-label { font-family: 'Cinzel', serif; font-size: 18px; color: var(--accent-gold); font-weight: 700; text-align: center; margin-bottom: 80px; display: block; border-bottom: 1px solid var(--line-color); padding-bottom: 30px; }
         
-        .wb-step { margin-bottom: 70px; }
-        .wb-label { font-family: 'Cinzel', serif; font-size: 17px; color: var(--accent-gold); font-weight: 700; display: block; margin-bottom: 25px; border-left: 5px solid var(--accent-gold); padding-left: 20px; }
+        .class-step { margin-bottom: 80px; border-bottom: 1px solid var(--soft-gray); padding-bottom: 50px; }
+        .step-label { font-family: 'Cinzel', serif; font-size: 12px; color: var(--accent-gold); font-weight: 700; letter-spacing: 5px; margin-bottom: 15px; display: block; }
+        .step-title { font-family: 'Nanum Myeongjo', serif; font-size: 24px; color: var(--point-green); font-weight: 700; margin-bottom: 25px; display: block; }
+        .step-desc { font-size: 16px; color: #555; margin-bottom: 40px; }
+
+        .workbook-box { background: #fdfcf9; padding: 50px; border: 1px solid var(--soft-gray); }
+        .workbook-box p { font-size: 15px; color: var(--point-green); margin-bottom: 20px; }
         .input-line { display: inline-block; min-width: 160px; border-bottom: 1px solid var(--accent-gold); margin: 0 10px; height: 28px; }
 
-        /* 8문항 질문지 */
-        .q-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 60px; }
-        .q-card { background: #fff; padding: 45px; border: 1px solid var(--line-color); }
-        .q-num { font-family: 'Cinzel', serif; font-size: 12px; color: var(--accent-gold); font-weight: 700; letter-spacing: 4px; margin-bottom: 15px; display: block; }
-        .q-text { font-size: 16px; line-height: 1.8; color: var(--point-green); margin: 0; }
+        /* [이미지 4 반영] 나의 내면 풍경 8문항 디자인 */
+        .q-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 50px; margin-top: 80px; }
+        .q-card { padding: 60px; background: #fff; border: 1px solid var(--line-color); transition: 0.5s; position: relative; }
+        .q-card:hover { border-color: var(--accent-gold); transform: translateY(-5px); }
+        .q-num { font-family: 'Cinzel', serif; font-size: 12px; color: var(--accent-gold); font-weight: 700; letter-spacing: 5px; margin-bottom: 20px; display: block; }
+        .q-text { font-size: 17px; line-height: 2.1; color: var(--point-green); }
 
-        footer { background: #1a1a1a; color: #fff; padding: 100px 20px; text-align: center; }
-        .footer-logo { font-family: 'Playball', cursive; font-size: 40px; color: var(--accent-gold); }
+        footer { background: #1a1a1a; color: #fff; padding: 120px 20px; text-align: center; }
+        .footer-logo { font-family: 'Playball', cursive; font-size: 44px; color: var(--accent-gold); }
 
-        @media (max-width: 750px) {
-            .info-grid, .q-grid { grid-template-columns: 1fr; }
-            .wb-container { padding: 40px 20px; }
+        @media (max-width: 900px) {
+            .k-grid, .q-container { flex-direction: column; grid-template-columns: 1fr; gap: 30px; }
+            .workbook-section { padding: 60px 30px; }
+            .workbook-box { padding: 30px; }
+            .logo { font-size: 56px; }
         }
     </style>
 </head>
-<body>
+<body class="pattern-bg">
 
 <header>
     <a href="https://andand2andand2-dev.github.io/mood_archiving/" class="logo">Mood Archiving</a>
     <span class="logo-sub">ENCAPSULATING MOMENTS</span>
     <div class="btn-group">
+        <a href="https://www.instagram.com/mood_archiving/" target="_blank" class="btn btn-insta">Instagram</a>
         <a href="https://smartstore.naver.com/mood_archiving" target="_blank" class="btn btn-shop">Shop Archive</a>
     </div>
 </header>
 
 <section class="section">
-    <h2 style="text-align: center; font-family: 'Cinzel', serif; letter-spacing: 5px;">Philosophy of Resin</h2>
-    <div class="info-grid">
-        <div class="info-card">
-            <h4>BASE: TRANSPARENCY</h4>
-            <span class="info-sub-title">기술적: 고투명 에폭시 레진</span>
-            <p>황변 현상이 없는 최상급 레진을 통해 당신의 무구한 진실성을 투영합니다. 맑은 질감은 내면의 순수함을 상징합니다.</p>
+    <h2 class="section-title">Inner Essence</h2>
+    <p class="section-desc">무구한 진실성과 찰나의 파동을 기록하는 레진의 미학</p>
+
+    <div class="k-grid">
+        <div class="k-card">
+            <h4>Transparency</h4>
+            <p>투명도가 높은 레진을 통해 진실성을 투영합니다.</p>
         </div>
-        <div class="info-card">
-            <h4>VALUE: PARTS</h4>
-            <span class="info-sub-title">철학적: 가치관의 박제</span>
-            <p>엄선된 프리미엄 파츠와 꽃을 통해 삶의 지향점을 배치합니다. 당신이 선택한 조각들은 흔들리지 않는 가치를 의미합니다.</p>
+        <div class="k-card">
+            <h4>Value Parts</h4>
+            <p>당신의 가치관 키워드를 정교하게 배치합니다.</p>
         </div>
-        <div class="info-card">
-            <h4>INK: VIBRATION</h4>
-            <span class="info-sub-title">예술적: 감정의 파동</span>
-            <p>알코올 잉크 드롭 기법으로 통제할 수 없는 감정의 파동과 확산을 시각화합니다. 예측할 수 없는 무늬가 작품의 깊이를 더합니다.</p>
+        <div class="k-card">
+            <h4>Ink Vibration</h4>
+            <p>잉크 드롭으로 감정의 파동을 시각화합니다.</p>
+        </div>
+    </div>
+    
+    <div class="img-wrap">
+        <img src="https://images.unsplash.com/photo-1618556450991-2f1af64e8191?q=80&w=1200" alt="Resin Detail Texture">
+        <div class="img-caption">COLLECTION 01 : Ethereal Flow</div>
+    </div>
+
+    <div class="workbook-section">
+        <span class="wb-label">[ Inner Archiving Class : 2회차 ]</span>
+        
+        <div class="class-step">
+            <span class="step-label">1회차 CLASS</span>
+            <span class="step-title">가치관 찾기 & 레진 아트 디자인</span>
+            <p class="step-desc">나를 설명하는 키워드를 추출하고, 시각적 언어로 번역하는 첫 번째 여정입니다.</p>
+            
+            <div class="workbook-box">
+                <span style="font-family: 'Cinzel', serif; color: var(--accent-gold); font-size: 16px; margin-bottom: 20px; display: block;">STEP 1. 내면의 키워드 추출</span>
+                <p>나를 설명하는 단어 3가지 : <span class="input-line"></span>, <span class="input-line"></span>, <span class="input-line"></span></p>
+                <p>내가 공간에 머물 때 느끼고 싶은 감정 : <span class="input-line" style="width: 250px;"></span></p>
+                
+                <span style="font-family: 'Cinzel', serif; color: var(--accent-gold); font-size: 16px; margin: 30px 0 20px; display: block;">STEP 2. 시각적 언어로의 번역</span>
+                <p>Main Flower : <span class="input-line"></span> <small>(예: 리시안셔스)</small></p>
+                <p>Sub Color : <span class="input-line"></span> <small>(예: 딥 블루)</small></p>
+                <p>Density : <span style="margin-left:15px;">□ 여백(고요) □ 가득 참(에너지)</span></p>
+            </div>
+        </div>
+
+        <div class="img-wrap" style="margin: 60px 0;">
+            <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1200" alt="Botanical Ingredients">
+            <div class="img-caption">COLLECTION 02 : Nature Values</div>
+        </div>
+
+        <div class="class-step" style="border-bottom: none; padding-bottom: 0; margin-bottom: 0;">
+            <span class="step-label">2회차 CLASS</span>
+            <span class="step-title">레진아트 실습 & 감정 들여다보기</span>
+            <p class="step-desc">디자인을 레진으로 구현하며 통제할 수 없는 감정의 파동(잉크)을 박제하고, 작품에 이름을 짓습니다.</p>
+            
+            <div class="workbook-box">
+                <span style="font-family: 'Cinzel', serif; color: var(--accent-gold); font-size: 16px; margin-bottom: 20px; display: block;">STEP 3. 작품의 이름(Title) 짓기</span>
+                <p style="font-style: italic; color: var(--accent-gold);">" 이 작품을 바라볼 때 나에게 해주고 싶은 한 마디 "</p>
+                <p><span class="input-line" style="width: 100%;"></span></p>
+                <p>Title : 「 <span class="input-line" style="width: 200px;"></span> 」</p>
+            </div>
         </div>
     </div>
 
     <div class="img-wrap">
-        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200" alt="Resin Art Vibration">
+        <img src="https://images.unsplash.com/photo-1515549832467-d3b6942180f4?q=80&w=1200" alt="Ink vibration Mood">
+        <div class="img-caption">COLLECTION 03 : Emotional Ripple</div>
     </div>
 
-    <div class="wb-container">
-        <div class="wb-header">
-            <h3>INNER ARCHIVING WORKBOOK</h3>
-            <p style="font-size: 14px; opacity: 0.6;">내면을 기록하는 3단계 클래스 여정</p>
-        </div>
-
-        <div class="wb-step">
-            <span class="wb-label">STEP 1. 내면의 키워드 추출</span>
-            <p>지금 나를 가장 잘 설명하는 단어 3가지 : <span class="input-line"></span>, <span class="input-line"></span>, <span class="input-line"></span></p>
-            <p>내가 공간에 머물 때 느끼고 싶은 감정 : <span class="input-line" style="width: 250px;"></span></p>
-        </div>
-
-        <div class="img-wrap">
-            <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1200" alt="Botanical Ingredients">
-        </div>
-
-        <div class="wb-step">
-            <span class="wb-label">STEP 2. 시각적 언어로의 번역</span>
-            <p>Main Flower (가치관) : <span class="input-line"></span> <small>(예: 리시안셔스)</small></p>
-            <p>Sub Color (감정) : <span class="input-line"></span> <small>(예: 딥 블루)</small></p>
-            <p>Density (밀도) : <span style="margin-left:15px;">□ 여백의 고요함 / □ 가득 찬 에너지</span></p>
-        </div>
-
-        <div class="wb-step">
-            <span class="wb-label">STEP 3. 작품의 이름(Title) 짓기</span>
-            <p style="font-style: italic; color: var(--accent-gold); margin-bottom: 10px;">" 이 작품을 바라볼 때 나에게 해주고 싶은 한 마디 "</p>
-            <p><span class="input-line" style="width: 100%;"></span></p>
-            <p>작품명 : 「 <span class="input-line" style="width: 200px;"></span> 」</p>
-        </div>
-    </div>
-
-    <h2 style="text-align: center; font-family: 'Cinzel', serif; letter-spacing: 5px; margin-top: 100px;">Inner Landscape Questions</h2>
-    <div class="q-grid">
+    <h2 class="section-title" style="margin-top: 160px;">Inner Landscape</h2>
+    <p class="section-desc">나의 내면 풍경 들여다보기 : 8가지 기록</p>
+    
+    <div class="q-container">
         <div class="q-card"><span class="q-num">Q.01</span><p class="q-text">타인에게 기억되고 싶은 당신의 '첫인상'은 어떤 느낌인가요?</p></div>
         <div class="q-card"><span class="q-num">Q.02</span><p class="q-text">현재 당신의 에너지를 색깔로 표현한다면 어떤 색에 가까운가요?</p></div>
         <div class="q-card"><span class="q-num">Q.03</span><p class="q-text">지친 하루 끝에 당신에게 가장 필요한 위로의 형태는 무엇인가요?</p></div>
@@ -153,9 +186,9 @@
         <div class="q-card"><span class="q-num">Q.07</span><p class="q-text">이것을 사용할 때, 어떤 마음가짐을 기억하고 싶나요?</p></div>
         <div class="q-card"><span class="q-num">Q.08</span><p class="q-text">당신의 가치관은 '중심'에 있나요, 아니면 '조화'롭게 퍼져 있나요?</p></div>
     </div>
-
-    <div class="btn-group" style="margin: 100px 0;">
-        <a href="https://smartstore.naver.com/mood_archiving" target="_blank" class="btn btn-shop">Start Archiving Now</a>
+    
+    <div class="btn-group" style="margin-top: 100px;">
+        <a href="https://smartstore.naver.com/mood_archiving" target="_blank" class="btn btn-shop">Book Your Archive</a>
     </div>
 </section>
 
