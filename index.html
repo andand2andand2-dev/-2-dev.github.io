@@ -1,193 +1,240 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <meta name="naver-site-verification" content="030c2fe76b1c912d3e7c19233a90cb99abc55fb1" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mood Archiving | 무드아카이빙</title>
+    <title>MOOD Archiving : Encapsulating Moments</title>
     <style>
-        /* 가독성을 높이기 위해 본문은 Noto Sans, 제목은 서정적인 Nanum Myeongjo를 사용합니다. */
-        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Petit+Formal+Script&family=Noto+Sans+KR:wght@300;400;700&display=swap');
+        /* 필기체 Mrs Saint Delafield와 본문용 나눔명조 도입 */
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Mrs+Saint+Delafield&display=swap');
 
         :root {
-            --bg-color: #F8F6F1; 
-            --point-green: #1D4D3F; 
-            --accent-gold: #c2956a; 
-            --text-dark: #2c2c2c;
+            --bg-color: #F8F6F1; /* 가이드 크림톤 */
+            --point-green: #1D4D3F; /* 가이드 초록색 */
+            --accent-gold: #c2956a; /* 가이드 골드톤 */
             --white: #ffffff;
-            --line-color: rgba(29, 77, 63, 0.15);
+            --line-color: rgba(29, 77, 63, 0.1);
         }
 
         body { 
             background-color: var(--bg-color); 
-            color: var(--text-dark); 
-            font-family: 'Noto Sans KR', sans-serif; 
-            margin: 0; line-height: 2; word-break: keep-all; 
+            color: var(--point-green); 
+            font-family: 'Nanum Myeongjo', serif; 
+            margin: 0; 
+            line-height: 2.2; 
+            word-break: keep-all;
+            overflow-x: hidden;
         }
-
-        h1, h2, h3 { font-family: 'Nanum Myeongjo', serif; color: var(--point-green); }
-
+        
         header { 
-            padding: 40px 20px; text-align: center; background: rgba(248, 246, 241, 0.95);
-            backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000;
-            border-bottom: 1px solid var(--line-color);
+            padding: 90px 20px 60px; 
+            text-align: center; 
+            background: rgba(248, 246, 241, 0.95);
+            backdrop-filter: blur(15px);
+            position: sticky; top: 0; z-index: 1000;
         }
 
-        /* 메인 로고 */
-        .logo { font-size: 34px; font-weight: 800; letter-spacing: 5px; margin: 0; color: var(--point-green); text-decoration: none; display: block; }
-        .logo-sub { font-family: 'Petit Formal Script', cursive; font-size: 24px; color: var(--accent-gold); display: block; margin-top: 5px; }
+        .logo { 
+            font-family: 'Mrs Saint Delafield', cursive; 
+            font-size: 80px; 
+            font-weight: 400; 
+            margin: 0; 
+            line-height: 0.6;
+            color: var(--point-green);
+            letter-spacing: -1.5px;
+        }
 
-        /* 버튼 그룹 */
+        /* 버튼 그룹 디자인 (인스타/판매 연동) */
         .btn-group { margin-top: 30px; display: flex; justify-content: center; gap: 15px; }
         .btn { 
-            padding: 14px 35px; border-radius: 4px; text-decoration: none; font-size: 14px; 
-            font-weight: 700; transition: 0.3s; letter-spacing: 1px;
+            padding: 15px 35px; border-radius: 50px; text-decoration: none; font-size: 13px; 
+            font-weight: 700; transition: 0.3s; letter-spacing: 1px; border: 1px solid var(--point-green);
         }
-        .btn-insta { border: 1.5px solid var(--point-green); color: var(--point-green); }
+        .btn-insta { background: transparent; color: var(--point-green); }
         .btn-shop { background: var(--point-green); color: var(--white); }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
 
-        /* 섹션 공통 스타일 */
-        .section { padding: 120px 20px; max-width: 1100px; margin: 0 auto; }
-        .section-title { text-align: center; font-size: 38px; margin-bottom: 25px; font-weight: 800; }
-        .section-desc { text-align: center; font-size: 19px; opacity: 0.8; margin-bottom: 80px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .section { padding: 140px 20px; max-width: 1000px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 24px; margin-bottom: 10px; letter-spacing: 6px; font-weight: 700; }
+        .section-subtitle { text-align: center; font-size: 14px; opacity: 0.5; margin-bottom: 100px; letter-spacing: 3px; }
 
-        /* 레진아트 전문 정보 지식 */
-        .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px; margin-bottom: 100px; }
-        .info-card { background: var(--white); padding: 50px 35px; border-radius: 8px; border-bottom: 5px solid var(--accent-gold); box-shadow: 0 15px 35px rgba(0,0,0,0.03); }
-        .info-card h3 { font-size: 22px; margin-bottom: 20px; border-bottom: 1px solid var(--line-color); padding-bottom: 15px; }
-        .info-card p { font-size: 16px; color: #555; line-height: 1.8; }
+        /* 이미지 및 일러스트 레이아웃 */
+        .content-with-img { display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; align-items: center; margin-bottom: 150px; }
+        .img-frame { width: 100%; box-shadow: 0 20px 50px rgba(0,0,0,0.06); border-radius: 4px; overflow: hidden; background: #eee; }
+        .img-frame img { width: 100%; height: 500px; object-fit: cover; display: block; transition: 0.5s; }
+        .img-frame:hover img { transform: scale(1.05); }
 
-        /* 이미지 + 텍스트 콘텐츠 블록 */
-        .content-block { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 80px; align-items: center; margin-bottom: 180px; }
-        .content-block.reverse { direction: rtl; }
-        .content-block.reverse .text-side { direction: ltr; }
+        /* 워크북 카드 디자인 */
+        .workbook-card { background: var(--white); padding: 80px 60px; border: 1px solid var(--line-color); position: relative; }
+        .step-label { font-family: 'Mrs Saint Delafield'; font-size: 48px; color: var(--accent-gold); display: block; margin-bottom: 5px; opacity: 0.8; }
+        .step-title { font-size: 20px; font-weight: 700; border-bottom: 1px solid var(--line-color); padding-bottom: 15px; margin-bottom: 40px; display: block; }
+
+        .question-item { margin-bottom: 45px; }
+        .question-text { font-size: 16px; margin-bottom: 15px; font-weight: 400; }
+        .question-text b { color: var(--accent-gold); font-weight: 700; }
         
-        .img-side { position: relative; width: 100%; border-radius: 4px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.1); }
-        .img-side img { width: 100%; height: 550px; object-fit: cover; display: block; }
-        
-        .text-side h2 { font-size: 32px; margin-bottom: 30px; }
-        .text-side p { font-size: 18px; margin-bottom: 35px; color: #444; }
+        /* 입력 칸 느낌의 언더라인 */
+        .input-line { display: inline-block; min-width: 150px; border-bottom: 1px solid var(--accent-gold); margin: 0 8px; color: #bbb; font-style: italic; font-size: 14px; }
+        .example-box { font-size: 13.5px; color: #999; margin-top: 8px; display: block; padding-left: 5px; }
+        .density-options { display: flex; gap: 40px; margin-top: 15px; font-size: 14px; color: #666; }
 
-        /* 워크북 UI */
-        .workbook-ui { background: #fafafa; padding: 40px; border-left: 4px solid var(--accent-gold); font-size: 17px; }
-        .underline { border-bottom: 1px solid var(--accent-gold); display: inline-block; min-width: 160px; padding: 0 10px; color: #aaa; font-style: italic; }
+        /* 내면 풍경 섹션 디자인 */
+        .landscape-section { background: #fdfcf9; border-top: 1px solid var(--line-color); border-bottom: 1px solid var(--line-color); padding: 140px 0; }
+        .landscape-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 60px; padding: 0 20px; max-width: 1000px; margin-left: auto; margin-right: auto; }
+        .q-card { background: var(--white); padding: 40px; border-left: 3px solid var(--accent-gold); box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
+        .q-text { font-size: 16px; line-height: 1.8; }
 
-        /* 이미지 갤러리 */
-        .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
-        .gallery-grid img { width: 100%; height: 300px; object-fit: cover; border-radius: 2px; transition: 0.5s; }
-        .gallery-grid img:hover { transform: scale(1.05); }
+        /* 철학 섹션 */
+        .philosophy-text { font-family: 'Mrs Saint Delafield'; font-size: 48px; color: var(--accent-gold); margin-bottom: 15px; }
+        .philosophy-sub { font-size: 16px; opacity: 0.7; max-width: 700px; margin: 0 auto; line-height: 2.2; }
 
-        footer { background: #1a1a1a; color: #fff; padding: 100px 20px; text-align: center; }
-        .footer-logo { font-size: 24px; letter-spacing: 3px; margin-bottom: 20px; display: block; font-weight: 700; }
+        /* 하단 갤러리 */
+        .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 100px; padding: 0 15px; }
+        .gallery-item { border-radius: 4px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.03); }
+        .gallery-item img { width: 100%; height: 280px; object-fit: cover; display: block; }
+
+        footer { padding: 120px 20px; text-align: center; background: #eceae4; font-size: 13px; color: var(--point-green); }
+        .insta-tag { color: var(--point-green); text-decoration: none; font-weight: 700; border-bottom: 1px solid var(--point-green); }
 
         @media (max-width: 768px) {
-            .content-block, .info-grid { grid-template-columns: 1fr; }
-            .img-side img { height: 400px; }
+            .content-with-img, .landscape-grid { grid-template-columns: 1fr; }
+            .logo { font-size: 60px; }
+            .btn { padding: 12px 25px; font-size: 12px; }
+            .section { padding: 80px 20px; }
             .gallery-grid { grid-template-columns: 1fr 1fr; }
-            .section-title { font-size: 30px; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <a href="#" class="logo">무드아카이빙</a>
-    <span class="logo-sub">Mood Archiving</span>
+    <div class="logo">MOOD Archiving</div>
     <div class="btn-group">
-        <a href="https://www.instagram.com/mood_archiving/" target="_blank" class="btn btn-insta">Instagram</a>
-        <a href="#" class="btn btn-shop">Buy Archive (판매)</a>
+        <a href="https://www.instagram.com/mood_archiving" target="_blank" class="btn btn-insta">Instagram @mood_archiving</a>
+        <a href="https://smartstore.naver.com/mood_archiving" target="_blank" class="btn btn-shop">Buy Archive (판매)</a>
     </div>
 </header>
 
 <section class="section">
-    <h2 class="section-title">The Essence of Resin</h2>
-    <p class="section-desc">
-        레진(Resin)은 투명한 수지를 통해 찰나의 감정을 박제하는 예술입니다.<br>
-        무구한 진실성을 상징하는 맑은 층 속에 당신의 내면 풍경을 담아냅니다.
-    </p>
-    
-    <div class="info-grid">
-        <div class="info-card">
-            <h3>01. Base: Transparency</h3>
-            <p>투명도가 극대화된 에폭시 레진을 사용합니다. 이는 숨김없는 진실함을 뜻하며, 우리가 아카이빙하는 모든 기억의 바탕이 됩니다.</p>
+    <h2 class="section-title">Archiving Guide</h2>
+    <p class="section-subtitle">나의 무드를 기록하는 3단계 과정</p>
+
+    <div class="content-with-img">
+        <div class="img-frame">
+            <img src="https://images.unsplash.com/photo-1517142089942-ba376ce32a2e?q=80&w=1000" alt="Step 1: Inner Keyword">
         </div>
-        <div class="info-card">
-            <h3>02. Point: Value Parts</h3>
-            <p>압화, 원석, 금속 부품 등 당신의 가치관을 상징하는 파츠를 배치합니다. 굳어진 레진 속에 흐르듯 놓인 소재들은 고유한 서사를 가집니다.</p>
+        <div class="workbook-card">
+            <span class="step-label">Step 1</span>
+            <span class="step-title">내면의 키워드 추출</span>
+            <div class="question-item">
+                <div class="question-text">지금 나를 가장 잘 설명하는 <b>단어 3가지</b></div>
+                : ( <span class="input-line">키워드 1</span> ), ( <span class="input-line">키워드 2</span> ), ( <span class="input-line">키워드 3</span> )
+            </div>
+            <div class="question-item">
+                <div class="question-text">내가 <b>공간에 머물 때</b> 느끼고 싶은 감정</div>
+                : <span class="input-line" style="width: 70%;">나의 내면이 머물고 싶은 온도</span>
+            </div>
         </div>
-        <div class="info-card">
-            <h3>03. Color: Emotion Drop</h3>
-            <p>알코올 잉크가 번지는 찰나를 고정합니다. 이는 '통제할 수 없는 감정의 아름다움'을 뜻하며, 매 작품마다 유일한 패턴을 만들어냅니다.</p>
+    </div>
+
+    <div class="content-with-img" style="direction: rtl;">
+        <div class="img-frame" style="direction: ltr;">
+            <img src="https://images.unsplash.com/photo-1515549832467-d3b6942180f4?q=80&w=1000" alt="Step 2: Visual Language">
+        </div>
+        <div class="workbook-card" style="direction: ltr;">
+            <span class="step-label">Step 2</span>
+            <span class="step-title">시각적 언어로의 번역</span>
+            <div class="question-item">
+                <div class="question-text"><b>Main Flower</b> (가치관) [ <span class="input-line">나를 상징하는 꽃</span> ]</div>
+                <span class="example-box">(예: 변치 않는 신뢰 - 리시안셔스)</span>
+            </div>
+            <div class="question-item">
+                <div class="question-text"><b>Sub Color</b> (감정) [ <span class="input-line">오늘의 색채</span> ]</div>
+                <span class="example-box">(예: 깊은 안정 - 딥 블루)</span>
+            </div>
+            <div class="question-item">
+                <div class="question-text"><b>Density</b> (밀도)</div>
+                <div class="density-options">
+                    <span>□ 여백의 미 (고요)</span>
+                    <span>□ 가득 찬 배열 (에너지)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-with-img">
+        <div class="img-frame">
+            <img src="https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?q=80&w=1000" alt="Step 3: Title Naming">
+        </div>
+        <div class="workbook-card">
+            <span class="step-label">Step 3</span>
+            <span class="step-title">작품의 이름 (Title) 짓기</span>
+            <div class="question-item" style="text-align: center; padding: 50px 0;">
+                <div class="question-text" style="margin-bottom: 30px;">이 작품을 바라볼 때 나에게 해주고 싶은 한 마디</div>
+                <div style="font-size: 22px; font-style: italic; color: var(--accent-gold);">" <span style="border-bottom: 1px solid var(--accent-gold); padding: 0 40px;">진실한 나의 조각을 기록합니다</span> "</div>
+            </div>
+            <div style="text-align: center; margin-top: 40px; font-size: 19px; font-weight: 700;">
+                작품명: 「 <span class="input-line" style="width: 300px;">나만의 무드 아카이브</span> 」
+            </div>
         </div>
     </div>
 </section>
 
-<section class="section" style="background: #fff; max-width: 100%;">
-    <div style="max-width: 1100px; margin: 0 auto; padding: 0 20px;">
-        
-        <div class="content-block">
-            <div class="img-side">
-                <img src="https://images.unsplash.com/photo-1517142089942-ba376ce32a2e?q=80&w=1000" alt="Step 1">
-            </div>
-            <div class="text-side">
-                <span style="font-family:'Petit Formal Script'; font-size:24px; color:var(--accent-gold);">Step 01</span>
-                <h2>내면의 키워드 추출</h2>
-                <p>지금 이 순간의 나를 정의하는 세 가지 단어를 기록해 보세요. 무구한 기록은 가장 솔직한 단어로부터 시작됩니다.</p>
-                <div class="workbook-ui">
-                    나를 설명하는 키워드 : <span class="underline">word 01</span>, <span class="underline">word 02</span><br>
-                    머물고 싶은 온도 : <span class="underline">mood temperature</span>
-                </div>
-            </div>
-        </div>
+<section id="landscape" class="landscape-section">
+    <h2 class="section-title">Inner Landscape</h2>
+    <p class="section-subtitle">나의 내면 풍경 들여다보기 (8 Questions)</p>
 
-        <div class="content-block reverse">
-            <div class="img-side">
-                <img src="https://images.unsplash.com/photo-1515549832467-d3b6942180f4?q=80&w=1000" alt="Step 2">
-            </div>
-            <div class="text-side">
-                <span style="font-family:'Petit Formal Script'; font-size:24px; color:var(--accent-gold);">Step 02</span>
-                <h2>시각적 언어로의 번역</h2>
-                <p>추상적인 감정을 실체로 옮깁니다. 당신이 선택한 가치관을 대변하는 꽃과 감정의 색채가 조화롭게 어우러집니다.</p>
-                <div class="workbook-ui">
-                    Main Flower : <span class="underline">flower name</span><br>
-                    Sub Color : <span class="underline">emotional color</span>
-                </div>
-            </div>
+    <div class="landscape-grid">
+        <div class="q-card">
+            <div class="q-text"><b>01.</b> 당신의 삶에서 가장 중요하게 생각하는 <b>키워드</b>는 무엇인가요? (예: 평온, 열정, 자유, 신뢰 등)</div>
         </div>
-
-        <div class="content-block">
-            <div class="img-side">
-                <img src="https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?q=80&w=1000" alt="Step 3">
-            </div>
-            <div class="text-side">
-                <span style="font-family:'Petit Formal Script'; font-size:24px; color:var(--accent-gold);">Step 03</span>
-                <h2>작품의 이름 짓기</h2>
-                <p>완성된 아카이브에 당신만의 선언을 붙여주세요. 이름이 붙여진 순간, 그 기억은 비로소 영원히 당신 곁에 머뭅니다.</p>
-                <div style="text-align: center; padding: 30px; border: 2px dashed var(--accent-gold); margin-top: 20px;">
-                    작품명: 「 <span class="underline" style="width: 250px;">Title of Archive</span> 」
-                </div>
-            </div>
+        <div class="q-card">
+            <div class="q-text"><b>02.</b> 현재 당신의 <b>에너지</b>를 색깔로 표현한다면 어떤 색에 가까운가요?</div>
+        </div>
+        <div class="q-card">
+            <div class="q-text"><b>03.</b> 지친 하루 끝에 당신에게 가장 필요한 <b>위로의 형태</b>는 무엇인가요?</div>
+        </div>
+        <div class="q-card">
+            <div class="q-text"><b>04.</b> 타인에게 기억되고 싶은 당신의 <b>'첫인상'</b>은 어떤 느낌인가요?</div>
+        </div>
+        <div class="q-card">
+            <div class="q-text"><b>05.</b> 마음속 머무는 물건이 있다면 어떤 <b>의미</b>를 담고 싶나요? (예: 영원한 사랑, 순수한 열정 등)</div>
+        </div>
+        <div class="q-card">
+            <div class="q-text"><b>06.</b> 레진 속에 퍼뜨릴 <b>잉크 색채</b>는 당신의 어떤 감정을 상징하나요?</div>
+        </div>
+        <div class="q-card">
+            <div class="q-text"><b>07.</b> 이 작품을 사용할 때, 어떤 <b>마음가짐</b>을 기억하고 싶나요?</div>
+        </div>
+        <div class="q-card">
+            <div class="q-text"><b>08.</b> 파츠를 배치할 때 가치관은 <b>'중심'</b>에 있나요, 아니면 <b>'조화'</b>롭게 퍼져 있나요?</div>
         </div>
     </div>
 </section>
 
 <section class="section">
-    <h2 class="section-title">Mood Collection</h2>
-    <p class="section-desc">무구한 진실성과 찰나의 파동이 굳어진 예술적 결과물들</p>
+    <h2 class="section-title">Ready-made Collection</h2>
+    <p class="section-subtitle">박제된 감성의 조각들</p>
+    
     <div class="gallery-grid">
-        <img src="https://images.unsplash.com/photo-1525904097878-94fb15835963?q=80&w=600" alt="G1">
-        <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=600" alt="G2">
-        <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=600" alt="G3">
-        <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=600" alt="G4">
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?q=80&w=600" alt="Detail 1"></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1525904097878-94fb15835963?q=80&w=600" alt="Detail 2"></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=600" alt="Detail 3"></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=600" alt="Detail 4"></div>
     </div>
 </section>
 
+<section class="section" style="text-align: center;">
+    <p class="philosophy-text">Encapsulating Moments</p>
+    <p class="philosophy-sub">
+        "무구한 진실성을 상징하는 투명한 레진 속에<br> 통제할 수 없는 감정의 아름다움을 박제합니다."
+    </p>
+</section>
+
 <footer>
-    <span class="footer-logo">무드아카이빙</span>
-    <p style="font-size: 16px; opacity: 0.8; margin-bottom: 40px;">당신의 찰나를 영원히 간직하는 시간</p>
-    <div style="opacity: 0.3; font-size: 12px; letter-spacing: 1px;">
-        © 2026 MOOD Archiving. All rights reserved.
-    </div>
+    <p>Instagram <a href="https://www.instagram.com/mood_archiving" class="insta-tag" target="_blank">@mood_archiving</a></p>
+    <p style="opacity: 0.4; margin-top: 50px; letter-spacing: 1px;">© 2026 MOOD Archiving. Crafted for your precious moments.</p>
 </footer>
 
 </body>
