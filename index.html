@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MOOD Archiving : Encapsulating Moments</title>
     <style>
-        /* 단정한 필기체 Mrs Saint Delafield와 본문용 나눔명조 도입 */
+        /* 필기체 Mrs Saint Delafield와 서정적인 나눔명조 도입 */
         @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Mrs+Saint+Delafield&display=swap');
 
         :root {
@@ -14,159 +14,216 @@
             --point-green: #1D4D3F;
             --accent-gold: #d4a373;
             --white: #ffffff;
-            --soft-shadow: 0 15px 40px rgba(29, 77, 63, 0.06);
+            --line-color: rgba(29, 77, 63, 0.08);
+            --soft-shadow: 0 10px 30px rgba(0,0,0,0.03);
         }
 
         body { 
             background-color: var(--bg-color); 
-            background-image: radial-gradient(circle at 10% 20%, rgba(29,77,63,0.02) 0%, transparent 40%),
-                              radial-gradient(circle at 90% 80%, rgba(212,163,115,0.04) 0%, transparent 40%);
             color: var(--point-green); 
             font-family: 'Nanum Myeongjo', serif; 
             margin: 0; 
             line-height: 2.2; 
-            scroll-behavior: smooth;
             word-break: keep-all;
+            overflow-x: hidden;
         }
         
         header { 
-            padding: 90px 20px 60px; 
+            padding: 100px 20px 60px; 
             text-align: center; 
-            background: rgba(248, 246, 241, 0.95); 
+            background: rgba(248, 246, 241, 0.95);
             backdrop-filter: blur(15px);
             position: sticky; top: 0; z-index: 1000;
         }
 
-        /* 로고: 가독성이 개선된 단정한 필기체 적용 */
         .logo { 
             font-family: 'Mrs Saint Delafield', cursive; 
-            font-size: 82px; 
+            font-size: 88px; 
             font-weight: 400; 
             margin: 0; 
-            line-height: 0.7;
+            line-height: 0.6;
             color: var(--point-green);
-            letter-spacing: -1px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.02);
+            letter-spacing: -1.5px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.01);
         }
 
-        nav { margin-top: 40px; }
-        nav a { 
-            text-decoration: none; color: var(--point-green); margin: 0 20px; 
-            font-size: 12px; font-weight: 700; letter-spacing: 2.5px; opacity: 0.6; transition: 0.3s;
+        .section { padding: 140px 20px; max-width: 1100px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 24px; margin-bottom: 15px; letter-spacing: 7px; font-weight: 700; }
+        .section-subtitle { text-align: center; font-size: 14px; opacity: 0.5; margin-bottom: 100px; letter-spacing: 3px; }
+
+        /* 이미지 그리드 스타일 */
+        .image-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 100px; }
+        .gallery-item { background: var(--white); padding: 15px; box-shadow: var(--soft-shadow); border-radius: 2px; transition: transform 0.4s; }
+        .gallery-item:hover { transform: translateY(-10px); }
+        .gallery-img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 1px; }
+
+        /* 워크북 스타일 컨테이너 */
+        .workbook-container {
+            background: var(--white);
+            padding: 90px 70px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.04);
+            border: 1px solid var(--line-color);
+            margin-bottom: 120px;
         }
-        nav a:hover { opacity: 1; color: var(--accent-gold); }
 
-        .section { padding: 140px 30px; max-width: 1100px; margin: 0 auto; }
-        .section-title { text-align: center; font-size: 22px; margin-bottom: 15px; letter-spacing: 6px; font-weight: 700; }
-        .section-subtitle { text-align: center; font-size: 14px; opacity: 0.5; margin-bottom: 90px; letter-spacing: 3px; }
+        .step-label { font-family: 'Mrs Saint Delafield'; font-size: 48px; color: var(--accent-gold); display: block; margin-bottom: 5px; opacity: 0.8; }
+        .step-title { font-size: 20px; font-weight: 700; border-bottom: 1px solid var(--line-color); padding-bottom: 20px; margin-bottom: 50px; display: block; }
 
-        /* 워크숍 프로세스 디자인 (PDF 기반) */
-        .process-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; margin-bottom: 120px; }
-        .process-card { background: var(--white); padding: 60px 45px; box-shadow: var(--soft-shadow); border-radius: 4px; text-align: center; border: 1px solid rgba(212,163,115,0.1); }
-        .step-label { font-family: 'Mrs Saint Delafield'; font-size: 40px; color: var(--accent-gold); display: block; margin-bottom: 5px; }
-        .step-title { font-size: 18px; font-weight: 700; margin-bottom: 25px; color: var(--point-green); position: relative; display: inline-block; }
-        .step-title::after { content: ''; position: absolute; bottom: -8px; left: 0; width: 100%; height: 1px; background: var(--accent-gold); opacity: 0.3; }
-        .step-content { font-size: 14.5px; color: #555; line-height: 2.1; }
-
-        /* 내면 풍경 문항 그리드 (PDF 기반) */
-        .landscape-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; }
-        .q-box { 
-            padding: 55px 40px; background: rgba(255, 255, 255, 0.6); border: 1px solid rgba(29, 77, 63, 0.04);
-            text-align: left; font-size: 15px; border-radius: 4px; transition: 0.4s;
+        /* 질문 문항 디자인 */
+        .question-item { margin-bottom: 50px; }
+        .question-text { font-size: 16px; margin-bottom: 18px; font-weight: 400; line-height: 1.8; }
+        .question-text b { color: var(--accent-gold); font-weight: 700; }
+        
+        /* 입력 라인 효과 */
+        .writing-line {
+            display: inline-block;
+            min-width: 180px;
+            border-bottom: 1px solid var(--accent-gold);
+            margin: 0 10px;
+            color: #ccc;
+            font-style: italic;
+            font-size: 14px;
         }
-        .q-box:hover { background: var(--white); box-shadow: var(--soft-shadow); transform: translateY(-8px); }
-        .q-number { font-family: 'Mrs Saint Delafield'; font-size: 32px; color: var(--accent-gold); margin-bottom: 5px; display: block; }
-        .q-box b { color: var(--point-green); font-weight: 700; border-bottom: 1px solid rgba(212,163,115,0.4); }
 
-        footer { padding: 120px 20px; text-align: center; background: #eceae4; color: var(--point-green); }
-        .insta-link { color: var(--point-green); text-decoration: none; font-weight: bold; border-bottom: 1px solid var(--point-green); }
+        .example-box { font-size: 13.5px; color: #aaa; margin-top: 10px; display: block; padding-left: 5px; opacity: 0.8; }
+        
+        .density-options { display: flex; gap: 40px; margin-top: 20px; font-size: 14px; color: #777; }
+
+        /* 내면 풍경 8문항 전용 스타일 */
+        .landscape-section { background: #fdfcf9; border-top: 1px solid var(--line-color); border-bottom: 1px solid var(--line-color); padding: 140px 0; }
+        .landscape-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; max-width: 1100px; margin: 60px auto 0; padding: 0 20px; }
+        .q-card { padding: 40px; border-left: 3px solid var(--accent-gold); background: #fff; box-shadow: var(--soft-shadow); transition: 0.3s; }
+        .q-card:hover { border-left-width: 5px; background: #fefefe; }
+
+        /* 철학 섹션 */
+        .philosophy-text { font-family: 'Mrs Saint Delafield'; font-size: 42px; color: var(--accent-gold); margin-bottom: 15px; letter-spacing: 1px; }
+        .philosophy-sub { font-size: 16px; opacity: 0.7; max-width: 650px; margin: 0 auto; line-height: 2.1; }
+
+        footer { padding: 120px 20px; text-align: center; background: #eceae4; font-size: 13px; color: var(--point-green); }
+        .insta-tag { color: var(--point-green); text-decoration: none; font-weight: 700; border-bottom: 1px solid var(--point-green); }
     </style>
 </head>
 <body>
 
 <header>
     <div class="logo">MOOD Archiving</div>
-    <nav>
-        <a href="#process">PROCESS</a>
-        <a href="#landscape">LANDSCAPE</a>
-        <a href="#philosophy">PHILOSOPHY</a>
-    </nav>
 </header>
 
-<section id="process" class="section">
-    <h2 class="section-title">Archiving Process</h2>
-    <p class="section-subtitle">레진으로 만드는 무드 아카이빙 단계</p>
+<section class="section" style="padding-top: 80px;">
+    <h2 class="section-title">Archived Moments</h2>
+    <p class="section-subtitle">박제된 찰나의 순간들</p>
     
-    <div class="process-container">
-        <div class="process-card">
+    <div class="image-gallery">
+        <div class="gallery-item"><img src="image_1.png" alt="Resin Art 1" class="gallery-img"></div>
+        <div class="gallery-item"><img src="image_2.png" alt="Resin Art 2" class="gallery-img"></div>
+        <div class="gallery-item"><img src="image_3.png" alt="Resin Art 3" class="gallery-img"></div>
+        <div class="gallery-item"><img src="image_4.png" alt="Resin Art 4" class="gallery-img"></div>
+        <div class="gallery-item"><img src="image_5.png" alt="Resin Art 5" class="gallery-img"></div>
+        <div class="gallery-item"><img src="image_6.png" alt="Resin Art 6" class="gallery-img"></div>
+        <div class="gallery-item"><img src="image_7.png" alt="Resin Art 7" class="gallery-img"></div>
+        <div class="gallery-item"><img src="image_8.png" alt="Resin Art 8" class="gallery-img"></div>
+    </div>
+</section>
+
+<section id="guide" class="section">
+    <h2 class="section-title">Archiving Guide</h2>
+    <p class="section-subtitle">나의 무드를 기록하는 3가지 단계</p>
+
+    <div class="workbook-container">
+        <div class="step-item" style="margin-bottom: 110px;">
             <span class="step-label">Step 1</span>
-            <div class="step-title">내면의 키워드 추출</div>
-            <div class="step-content">
-                지금 나를 가장 잘 설명하는 <b>단어 3가지</b>와 공간에서 느끼고 싶은 <b>감정의 온도</b>를 기록합니다. [cite: 3, 4, 6]
+            <span class="step-title">내면의 키워드 추출</span>
+            <div class="question-item">
+                <div class="question-text">지금 나를 가장 잘 설명하는 <b>단어 3가지</b></div>
+                : ( <span class="writing-line">첫 번째 키워드</span> ), ( <span class="writing-line">두 번째 키워드</span> ), ( <span class="writing-line">세 번째 키워드</span> )
+            </div>
+            <div class="question-item">
+                <div class="question-text">내가 <b>공간에 머물 때</b> 느끼고 싶은 감정</div>
+                : <span class="writing-line" style="width: 75%;">나의 내면이 머물고 싶은 온도</span>
             </div>
         </div>
-        <div class="process-card">
+
+        <div class="step-item" style="margin-bottom: 110px;">
             <span class="step-label">Step 2</span>
-            <div class="step-title">시각적 언어로의 번역</div>
-            <div class="step-content">
-                가치관을 담은 <b>Main Flower</b>와 감정을 담은 <b>Sub Color</b>를 선택하여 나만의 농도로 배치합니다. [cite: 8, 10, 11]
+            <span class="step-title">시각적 언어로의 번역</span>
+            <div class="question-item">
+                <div class="question-text"><b>Main Flower</b> (가치관) [ <span class="writing-line">선택한 가치관 꽃</span> ]</div>
+                <span class="example-box">(예: 변치 않는 신뢰 - 리시안셔스)</span>
+            </div>
+            <div class="question-item">
+                <div class="question-text"><b>Sub Color</b> (감정) [ <span class="writing-line">오늘의 감정 색채</span> ]</div>
+                <span class="example-box">(예: 깊은 안정 - 딥 블루)</span>
+            </div>
+            <div class="question-item">
+                <div class="question-text"><b>Density</b> (밀도)</div>
+                <div class="density-options">
+                    <span>□ 여백의 미 (고요)</span>
+                    <span>□ 가득 찬 배열 (에너지)</span>
+                </div>
             </div>
         </div>
-        <div class="process-card">
+
+        <div class="step-item">
             <span class="step-label">Step 3</span>
-            <div class="step-title">작품의 이름 짓기</div>
-            <div class="step-content">
-                완성된 작품을 마주하며 <b>나에게 해주고 싶은 한 마디</b>를 담아 고유한 작품명을 결정합니다. [cite: 17, 18, 19]
+            <span class="step-title">작품의 이름 (Title) 짓기</span>
+            <div class="question-item" style="text-align: center; padding: 50px 0;">
+                <div class="question-text" style="margin-bottom: 35px;">이 작품을 바라볼 때 나에게 해주고 싶은 한 마디</div>
+                <div style="font-size: 22px; font-style: italic; color: var(--accent-gold); font-family: 'Nanum Myeongjo', serif;">" <span style="border-bottom: 1px solid var(--accent-gold); padding: 0 40px;">진실한 나의 조각을 기록합니다</span> "</div>
+            </div>
+            <div style="text-align: center; margin-top: 50px; font-size: 19px; font-weight: 700;">
+                작품명: 「 <span class="writing-line" style="width: 300px;">나만의 무드 아카이브</span> 」
             </div>
         </div>
     </div>
 </section>
 
-<section id="landscape" class="section" style="background: rgba(255,255,255,0.3); max-width: 100%;">
+<section id="landscape" class="section landscape-section">
     <div style="max-width: 1100px; margin: 0 auto;">
         <h2 class="section-title">Inner Landscape</h2>
-        <p class="section-subtitle">나의 내면 풍경 들여다보기</p>
+        <p class="section-subtitle">나의 내면 풍경 들여다보기 (8 Questions)</p>
 
         <div class="landscape-grid">
-            <div class="q-box">
-                <span class="q-number">Question 01</span>
-                당신의 삶에서 가장 중요하게 생각하는 <b>'삶의 키워드'</b>는 무엇인가요? [cite: 37, 39, 40]
+            <div class="q-card">
+                <div class="question-text"><b>01.</b> 당신의 삶에서 가장 중요하게 생각하는 <b>키워드</b>는 무엇인가요?</div>
+                <span class="example-box">(예: 평온, 열정, 자유, 신뢰 등)</span>
             </div>
-            <div class="q-box">
-                <span class="q-number">Question 02</span>
-                오늘 당신의 <b>'현재의 에너지'</b>를 색깔로 표현한다면 어떤 색에 가까운가요? [cite: 43, 45, 46]
+            <div class="q-card">
+                <div class="question-text"><b>02.</b> 현재 당신의 <b>에너지</b>를 색깔로 표현한다면 어떤 색에 가까운가요?</div>
             </div>
-            <div class="q-box">
-                <span class="q-number">Question 03</span>
-                지친 하루 끝에 당신에게 가장 필요한 <b>'위로의 형태'</b>는 무엇인가요? [cite: 50, 52, 53]
+            <div class="q-card">
+                <div class="question-text"><b>03.</b> 지친 하루 끝에 당신에게 가장 필요한 <b>위로의 형태</b>는 무엇인가요?</div>
             </div>
-            <div class="q-box">
-                <span class="q-number">Question 04</span>
-                타인에게 기억되고 싶은 당신의 <b>'첫인상'</b>은 어떤 느낌인가요? [cite: 59]
+            <div class="q-card">
+                <div class="question-text"><b>04.</b> 타인에게 기억되고 싶은 당신의 <b>'첫인상'</b>은 어떤 느낌인가요?</div>
             </div>
-            <div class="q-box">
-                <span class="q-number">Question 05</span>
-                당신의 가치관은 마음의 <b>'중심'</b>에 있나요, 아니면 조화롭게 퍼져 있나요? [cite: 60, 61, 70]
+            <div class="q-card">
+                <div class="question-text"><b>05.</b> 마음속에 머물러 있는 <b>'물건'</b>이 있다면 어떤 의미를 담고 싶나요?</div>
+                <span class="example-box">(예: 영원한 사랑, 변치 않는 신뢰, 순수한 열정 등)</span>
             </div>
-            <div class="q-box">
-                <span class="q-number">Question 06</span>
-                투명한 레진 속에 가두어 영원히 <b>'기억하고 싶은 조각'</b>은 무엇인가요? [cite: 57, 68]
+            <div class="q-card">
+                <div class="question-text"><b>06.</b> 레진 속에 퍼뜨릴 <b>잉크 색채</b>는 당신의 어떤 감정을 상징하나요?</div>
+            </div>
+            <div class="q-card">
+                <div class="question-text"><b>07.</b> 작품을 사용할 때 어떤 <b>마음가짐</b>을 기억하고 싶나요?</div>
+            </div>
+            <div class="q-card">
+                <div class="question-text"><b>08.</b> 파츠를 배치할 때 당신의 가치관은 <b>'중심'</b>에 있나요, 아니면 조화롭게 퍼져 있나요?</div>
             </div>
         </div>
     </div>
 </section>
 
-<section id="philosophy" class="section" style="text-align: center;">
-    <p style="font-size: 20px; letter-spacing: 4px; color: var(--accent-gold); font-family: 'Mrs Saint Delafield'; margin-bottom: 5px;">Encapsulating Moments</p>
-    <p style="max-width: 700px; margin: 0 auto; opacity: 0.8; font-size: 16px;">
-        "무구한 진실성을 상징하는 투명한 레진 속에 [cite: 24]<br>
-        통제할 수 없는 감정의 아름다움을 박제합니다." [cite: 27]
+<section class="section" style="text-align: center;">
+    <p class="philosophy-text">Encapsulating Moments</p>
+    <p class="philosophy-sub">
+        "무구한 진실성을 상징하는 투명한 레진 속에<br>
+        통제할 수 없는 감정의 아름다움을 박제합니다."
     </p>
 </section>
 
 <footer>
-    <p>Instagram <a href="https://www.instagram.com/mood_archiving" class="insta-link" target="_blank">@mood_archiving</a></p>
-    <p style="font-size: 11px; opacity: 0.4; margin-top: 60px; letter-spacing: 1.5px;">© 2026 MOOD Archiving. All rights reserved.</p>
+    <p>Instagram <a href="https://www.instagram.com/mood_archiving" class="insta-tag" target="_blank">@mood_archiving</a></p>
+    <p style="opacity: 0.4; margin-top: 50px; letter-spacing: 1.5px;">© 2026 MOOD Archiving. Crafted for your precious moments.</p>
 </footer>
 
 </body>
