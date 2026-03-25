@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mood Archiving | Encapsulating Moments</title>
     <style>
-        /* 고급 브랜드 폰트 및 컬러 시스템 */
+        /* 고급 브랜드 폰트 및 컬러 시스템 (cite: Cinzel, Playball, Nanum Myeongjo) */
         @import url('https://fonts.googleapis.com/css2?family=Playball&family=Cinzel:wght@400;700&family=Nanum+Myeongjo:wght@400;700&display=swap');
 
         :root {
@@ -22,12 +22,12 @@
             color: var(--point-green); 
             font-family: 'Nanum Myeongjo', serif; 
             margin: 0; line-height: 2.2; word-break: keep-all; 
-            /* [패턴 추가] 은은하고 고급스러운 기하학 텍스처 (cite: image_a45012.png) */
+            /* [패턴 1 추가] 고급스러운 기하학 텍스처 (cite: image_a45012.png) */
             background-image: url('data:image/svg+xml,%3Csvg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"%3E<g fill="%23c2956a" fill-opacity="0.04" fill-rule="evenodd"%3E<path d="M0 0h40v40H0V0zm40 40h40v40H40V40zm0-40h20v20H40V0zM0 40h20v20H0V40zm20 0h20v20H20V40zM60 0h20v20H60V0zM40 60h20v20H40V60zM60 20h20v20H60V20zM20 60h20v20H20V60z"/%3E</g></svg>');
             background-attachment: fixed;
         }
 
-        /* 헤더: 고정 해제 (모바일 최적화) 및 패턴 투명도 조정 */
+        /* 헤더: 고정 해제 (모바일 최적화) */
         header { 
             padding: 80px 20px; text-align: center; 
             background: rgba(248, 246, 241, 0.96); backdrop-filter: blur(20px); 
@@ -51,7 +51,7 @@
         .section-title { text-align: center; font-family: 'Cinzel', serif; font-size: 36px; margin-bottom: 25px; letter-spacing: 6px; }
         .section-desc { text-align: center; font-size: 19px; opacity: 0.8; margin-bottom: 110px; color: var(--accent-gold); font-style: italic; }
 
-        /* 고화질 감성 사진 */
+        /* [수정] 고화질 감성 사진 연동 (cite: Unsplash API) */
         .img-wrap { width: 100%; margin: 80px 0; overflow: hidden; border-radius: 2px; box-shadow: 0 25px 60px rgba(0,0,0,0.06); }
         .img-wrap img { width: 100%; height: auto; max-height: 600px; object-fit: cover; display: block; }
         .img-caption { text-align: right; font-size: 11px; color: var(--accent-gold); letter-spacing: 3px; margin-top: 10px; font-family: 'Cinzel', serif; }
