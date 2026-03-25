@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mood Archiving | Encapsulating Moments</title>
     <style>
-        /* 고급 브랜드 폰트 및 컬러 시스템 (cite: Cinzel, Playball, Nanum Myeongjo) */
+        /* 고급 브랜드 폰트 및 컬러 시스템 */
         @import url('https://fonts.googleapis.com/css2?family=Playball&family=Cinzel:wght@400;700&family=Nanum+Myeongjo:wght@400;700&display=swap');
 
         :root {
@@ -22,9 +22,12 @@
             color: var(--point-green); 
             font-family: 'Nanum Myeongjo', serif; 
             margin: 0; line-height: 2.2; word-break: keep-all; 
+            /* [패턴 추가] 은은하고 고급스러운 기하학 텍스처 (cite: image_a45012.png) */
+            background-image: url('data:image/svg+xml,%3Csvg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"%3E<g fill="%23c2956a" fill-opacity="0.04" fill-rule="evenodd"%3E<path d="M0 0h40v40H0V0zm40 40h40v40H40V40zm0-40h20v20H40V0zM0 40h20v20H0V40zm20 0h20v20H20V40zM60 0h20v20H60V0zM40 60h20v20H40V60zM60 20h20v20H60V20zM20 60h20v20H20V60z"/%3E</g></svg>');
+            background-attachment: fixed;
         }
 
-        /* 헤더: 고정 해제 (모바일 최적화) */
+        /* 헤더: 고정 해제 (모바일 최적화) 및 패턴 투명도 조정 */
         header { 
             padding: 80px 20px; text-align: center; 
             background: rgba(248, 246, 241, 0.96); backdrop-filter: blur(20px); 
@@ -48,19 +51,19 @@
         .section-title { text-align: center; font-family: 'Cinzel', serif; font-size: 36px; margin-bottom: 25px; letter-spacing: 6px; }
         .section-desc { text-align: center; font-size: 19px; opacity: 0.8; margin-bottom: 110px; color: var(--accent-gold); font-style: italic; }
 
-        /* [수정] 고화질 감성 사진 연동 (cite: Unsplash API) */
+        /* 고화질 감성 사진 */
         .img-wrap { width: 100%; margin: 80px 0; overflow: hidden; border-radius: 2px; box-shadow: 0 25px 60px rgba(0,0,0,0.06); }
         .img-wrap img { width: 100%; height: auto; max-height: 600px; object-fit: cover; display: block; }
         .img-caption { text-align: right; font-size: 11px; color: var(--accent-gold); letter-spacing: 3px; margin-top: 10px; font-family: 'Cinzel', serif; }
 
         /* 레진 전문 정보 섹션 */
-        .k-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-bottom: 100px; }
-        .k-card { padding: 50px 25px; background: #fff; border: 1px solid var(--line-color); text-align: center; }
+        .k-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-bottom: 100px; position: relative; z-index: 1; }
+        .k-card { padding: 50px 25px; background: rgba(255, 255, 255, 0.9); border: 1px solid var(--line-color); text-align: center; backdrop-filter: blur(10px); }
         .k-card h4 { font-family: 'Cinzel', serif; font-size: 15px; color: var(--accent-gold); margin-bottom: 20px; letter-spacing: 2px; }
         .k-card p { font-size: 14px; color: #666; line-height: 2.1; margin: 0; }
         
         /* 3회차 커리큘럼 및 워크북 디자인 */
-        .workbook-section { background: var(--white); padding: 100px 60px; position: relative; border: 1px solid var(--line-color); margin-bottom: 120px; overflow: hidden; }
+        .workbook-section { background: rgba(255, 255, 255, 0.95); padding: 100px 60px; position: relative; border: 1px solid var(--line-color); margin-bottom: 120px; overflow: hidden; backdrop-filter: blur(10px); }
         .wb-label { font-family: 'Cinzel', serif; font-size: 18px; color: var(--accent-gold); font-weight: 700; text-align: center; margin-bottom: 80px; display: block; border-bottom: 1px solid var(--line-color); padding-bottom: 30px; }
         
         .class-step { margin-bottom: 80px; border-bottom: 1px solid var(--soft-gray); padding-bottom: 50px; }
@@ -68,13 +71,13 @@
         .step-title { font-family: 'Nanum Myeongjo', serif; font-size: 24px; color: var(--point-green); font-weight: 700; margin-bottom: 20px; display: block; }
         .step-desc { font-size: 16px; color: #555; margin-bottom: 35px; line-height: 2; }
 
-        .workbook-box { background: #fdfcf9; padding: 50px; border: 1px solid var(--soft-gray); }
+        .workbook-box { background: rgba(253, 252, 249, 0.8); padding: 50px; border: 1px solid var(--soft-gray); }
         .workbook-box p { font-size: 15px; color: var(--point-green); margin-bottom: 20px; }
-        .input-line { display: inline-block; min-width: 160px; border-bottom: 1px solid var(--accent-gold); margin: 0 10px; height: 28px; }
+        .input-line { display: inline-block; min-width: 160px; border-bottom: 1px solid var(--accent-gold); margin: 0 10px; height: 28px; background: transparent; }
 
         /* 나의 내면 풍경 8문항 디자인 */
-        .q-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 50px; margin-top: 80px; }
-        .q-card { padding: 60px; background: #fff; border: 1px solid var(--line-color); transition: 0.5s; position: relative; }
+        .q-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 50px; margin-top: 80px; position: relative; z-index: 1; }
+        .q-card { padding: 60px; background: rgba(255, 255, 255, 0.9); border: 1px solid var(--line-color); transition: 0.5s; backdrop-filter: blur(10px); }
         .q-card:hover { border-color: var(--accent-gold); transform: translateY(-5px); }
         .q-num { font-family: 'Cinzel', serif; font-size: 12px; color: var(--accent-gold); font-weight: 700; letter-spacing: 5px; margin-bottom: 20px; display: block; }
         .q-text { font-size: 17px; line-height: 2.1; color: var(--point-green); }
