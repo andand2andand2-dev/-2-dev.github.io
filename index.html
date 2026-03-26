@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mood Archiving | 전문적인 감각의 기록</title>
+    <title>Mood Archiving | 전문 레진 아카이브</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playball&family=Cinzel:wght@400;700&family=Nanum+Myeongjo:wght@400;700&display=swap');
 
@@ -38,31 +38,34 @@
 
         .section { padding: 60px 20px 120px; max-width: 900px; margin: 0 auto; position: relative; }
         
-        /* 전문성 강조 섹션 스타일 */
-        .tech-info { 
-            background: rgba(255, 255, 255, 0.6); border: 1px solid var(--line-color); 
-            padding: 40px; margin: 60px 0; font-size: 14px; line-height: 1.8;
+        /* [전문 지식 섹션] */
+        .tech-card { 
+            background: rgba(255, 255, 255, 0.7); border: 1px solid var(--line-color); 
+            padding: 45px; margin: 60px 0; font-size: 14.5px; line-height: 2;
         }
-        .tech-title { font-family: 'Cinzel'; font-size: 13px; color: var(--accent-gold); letter-spacing: 3px; display: block; margin-bottom: 20px; border-bottom: 1px solid var(--line-color); padding-bottom: 10px; }
+        .tech-tag { font-family: 'Cinzel'; font-size: 11px; color: var(--accent-gold); letter-spacing: 3px; display: block; margin-bottom: 15px; text-transform: uppercase; }
+        .tech-title { font-size: 20px; font-weight: 700; margin-bottom: 20px; display: block; }
 
-        /* 시각 프레임 (이미지 대체) */
-        .visual-frame { 
+        /* [이미지 대체 그래픽] */
+        .visual-archive { 
             width: 100%; height: 450px; margin: 80px 0; border-radius: 2px;
             display: flex; align-items: center; justify-content: center; overflow: hidden;
             box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+            background: linear-gradient(135deg, #ffffff 0%, #e2d1c3 100%);
+            position: relative;
         }
-        .v-resin { background: linear-gradient(135deg, #ffffff 0%, #e2d1c3 100%); }
-        .v-ink { background: radial-gradient(circle at center, #ebedee 0%, #fdfbfb 100%); }
+        .visual-archive::after { content: "ENCODED MOOD"; font-family: 'Cinzel'; opacity: 0.2; letter-spacing: 10px; font-size: 12px; }
 
-        /* 커리큘럼 및 질문지 */
+        /* [워크북/질문지 복구] */
         .workbook-section { background: white; padding: 80px 50px; border: 1px solid var(--line-color); margin-bottom: 100px; }
-        .step-title { font-size: 24px; font-weight: 700; color: var(--point-green); display: block; margin-bottom: 10px; }
-        .workbook-box { background: #FDFCF9; padding: 40px; border-left: 4px solid var(--accent-gold); margin: 30px 0 60px; }
-        .input-line { display: inline-block; min-width: 140px; border-bottom: 1px solid var(--accent-gold); margin: 0 8px; height: 25px; }
+        .step-label { font-family: 'Cinzel'; color: var(--accent-gold); font-size: 12px; display: block; margin-bottom: 5px; }
+        .step-title { font-size: 26px; font-weight: 700; color: var(--point-green); display: block; margin-bottom: 15px; }
+        .workbook-box { background: #FDFCF9; padding: 40px; border-left: 5px solid var(--accent-gold); margin: 30px 0 60px; }
+        .input-line { display: inline-block; min-width: 150px; border-bottom: 1px solid var(--accent-gold); margin: 0 10px; height: 30px; }
 
-        .q-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 50px; }
-        .q-card { padding: 40px; background: rgba(255, 255, 255, 0.8); border: 1px solid var(--line-color); font-size: 14px; }
-        .q-num { font-family: 'Cinzel'; color: var(--accent-gold); display: block; margin-bottom: 10px; font-size: 11px; }
+        .q-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 60px; }
+        .q-card { padding: 45px; background: rgba(255, 255, 255, 0.85); border: 1px solid var(--line-color); font-size: 15px; }
+        .q-num { font-family: 'Cinzel'; color: var(--accent-gold); display: block; margin-bottom: 10px; font-size: 12px; }
 
         footer { background: #1a1a1a; color: #fff; padding: 100px 20px; text-align: center; }
 
@@ -73,7 +76,7 @@
 
 <header>
     <a href="#" class="logo">Mood Archiving</a>
-    <span class="logo-sub">TECHNICAL & EMOTIONAL ARCHIVE</span>
+    <span class="logo-sub">TECHNICAL & EMOTIONAL LAB</span>
     <div class="btn-group">
         <a href="#" class="btn btn-insta">Instagram</a>
         <a href="#" class="btn btn-store">Smart Store</a>
@@ -82,71 +85,71 @@
 </header>
 
 <section class="section">
-    <div class="tech-info">
-        <span class="tech-title">TECHNICAL DATA : RESIN PROPERTIES</span>
-        고투명 에폭시 레진(High-Clarity Epoxy)은 주제와 경화제의 화학적 결합을 통해 액체에서 고체로 전이됩니다. 
-        무드 아카이빙은 99.9%의 투명도를 자랑하는 UV 안정화 성분의 레진만을 채집하여, 시간이 흘러도 변하지 않는 찰나의 박제를 보장합니다.
+    <div class="tech-card">
+        <span class="tech-tag">Laboratory Note 01</span>
+        <span class="tech-title">레진의 화학적 전이와 투명도 제어</span>
+        무드 아카이빙은 고순도 에폭시 레진의 **주제와 경화제 배합 비율(2:1)**을 정밀하게 준수하여 물리적 강도와 황변 방지 성능을 극대화합니다. 특히 제작 과정에서의 **진공 탈포(Degassing)** 공정은 기포 없는 99.9%의 투명도를 구현하며, 이는 내면의 풍경을 가장 선명하게 박제하기 위한 필수적인 기술적 토대입니다.
     </div>
 
-    <div class="visual-frame v-resin" style="height:350px;">
-        <span style="font-family:'Cinzel'; opacity:0.3; letter-spacing:5px;">Molecular Bonding</span>
-    </div>
+    <div class="visual-archive"></div>
 
     <div class="workbook-section">
         <div class="class-step">
-            <span class="step-title">Step 01. 영혼의 빛깔을 조색하다</span>
-            <p style="opacity:0.7;">알코올 잉크의 확산 계수를 이용해 내면의 깊이를 시각화하는 과정입니다.</p>
+            <span class="step-label">PHASE 01</span>
+            <span class="step-title">영혼의 빛깔을 조색하다</span>
+            <p style="opacity:0.7;">알코올 잉크의 점도와 확산성을 활용해 감정의 층위를 조색하는 시간입니다.</p>
             <div class="workbook-box">
-                심연을 설명하는 세 단어 : <span class="input-line"></span>, <span class="input-line"></span>, <span class="input-line"></span>
+                당신의 심연을 정의하는 세 가지 키워드 : <span class="input-line"></span>, <span class="input-line"></span>, <span class="input-line"></span>
             </div>
         </div>
 
         <div class="class-step">
-            <span class="step-title">Step 02. 우연이 빚어낸 찰나의 박제</span>
-            <p style="opacity:0.7;">압화의 함수율을 고려한 정교한 배치로 계절의 한 조각을 레진 속에 가둡니다.</p>
+            <span class="step-label">PHASE 02</span>
+            <span class="step-title">우연이 빚어낸 찰나의 박제</span>
+            <p style="opacity:0.7;">함수율을 최적화한 압화와 몰드 디자인을 통해 계절의 한 조각을 물리적으로 고정합니다.</p>
             <div class="workbook-box">
-                채집된 꽃(Flower) : <span class="input-line"></span> 기록될 온도(Mood) : <span class="input-line"></span>
+                채집된 계절(Flower) : <span class="input-line"></span> 기록될 무드(Color) : <span class="input-line"></span>
             </div>
         </div>
 
         <div class="class-step">
-            <span class="step-title">Step 03. 비로소 이름이 된 나의 세계</span>
+            <span class="step-label">PHASE 03</span>
+            <span class="step-title">비로소 이름이 된 나의 세계</span>
+            <p style="opacity:0.7;">완전 경화 전, 작품의 서사를 완성하는 마지막 네이밍 작업입니다.</p>
             <div class="workbook-box">
-                작품에 부여할 사적인 제목 : 「 <span class="input-line" style="width:200px;"></span> 」
+                작품에 부여할 고유한 이름 : 「 <span class="input-line" style="width:220px;"></span> 」
             </div>
         </div>
     </div>
 
-    <div class="tech-info">
-        <span class="tech-title">PROCESS : MOOD DIRECTING</span>
-        기포 제거(Degassing) 공정과 수평 레벨링 작업은 투명한 아카이빙의 핵심입니다. 
-        우리는 단순한 공예를 넘어, 대기 중의 습도와 온도가 레진의 수축률에 미치는 영향까지 고려하여 최상의 결과물을 도출합니다.
+    <div class="tech-card">
+        <span class="tech-tag">Laboratory Note 02</span>
+        <span class="tech-title">큐어링 시스템과 재질의 조화</span>
+        레진 램프의 **UV 파장대(365~405nm)**와 몰드의 수축률을 고려한 제작 방식은 작품의 뒤틀림을 방지합니다. 우리는 단순한 제작을 넘어, 재료의 물성(Physicality)이 사용자의 심리적 무드와 결합되었을 때 발생하는 시각적 공명을 아카이빙합니다.
     </div>
 
-    <h2 style="text-align: center; font-family: 'Cinzel'; letter-spacing: 5px; margin: 100px 0 40px;">Landscape of Soul</h2>
+    <h2 style="text-align: center; font-family: 'Cinzel'; letter-spacing: 6px; margin: 100px 0 40px;">Landscape of Soul</h2>
     <div class="q-grid">
         <div class="q-card"><span class="q-num">Q.01</span>타인의 시선이 닿지 않는 곳에서 간직하고 싶은 '첫인상'은?</div>
         <div class="q-card"><span class="q-num">Q.02</span>오늘 당신의 마음속에 가장 짙게 머무는 감정의 색채는?</div>
         <div class="q-card"><span class="q-num">Q.03</span>지친 하루 끝, 당신의 영혼이 안락하게 숨 쉴 수 있는 위로의 형태는?</div>
         <div class="q-card"><span class="q-num">Q.04</span>삶의 파도 속에서도 견고하게 지키고 싶은 내면의 핵심은?</div>
         <div class="q-card"><span class="q-num">Q.05</span>당신을 둘러싼 사물들 중 가장 사적인 서사를 담고 있는 물건은?</div>
-        <div class="q-card"><span class="q-num">Q.06</span>잉크가 번져나갈 때, 당신은 어떤 심연을 투영하고 싶나요?</div>
+        <div class="q-card"><span class="q-num">Q.06</span>잉크가 투명한 액체 속에 번져나갈 때, 당신은 어떤 심연을 투영하고 싶나요?</div>
         <div class="q-card"><span class="q-num">Q.07</span>이 작품을 마주할 때마다 건네고 싶은 가장 따스한 약속은?</div>
         <div class="q-card"><span class="q-num">Q.08</span>당신이 지향하는 삶의 무드는 단단한 핵인가요, 유연한 조화인가요?</div>
     </div>
 
-    <div class="visual-frame v-ink">
-        <span style="font-family:'Cinzel'; opacity:0.3; letter-spacing:5px;">Eternal Archive</span>
-    </div>
+    <div class="visual-archive" style="background: radial-gradient(circle at 50% 50%, #ebedee 0%, #fdfbfb 100%);"></div>
 
     <div style="text-align: center; margin-top: 100px;">
-        <a href="#" class="btn btn-apply" style="padding: 20px 70px;">Begin Archiving</a>
+        <a href="#" class="btn btn-apply" style="padding: 22px 80px;">Begin My Archive</a>
     </div>
 </section>
 
 <footer>
-    <span style="font-family:'Playball'; font-size:28px; color:var(--accent-gold);">Mood Archiving</span>
-    <p style="opacity:0.3; font-size:10px; margin-top:30px;">© 2026 MOOD ARCHIVING. EXPERT CARE.</p>
+    <span style="font-family:'Playball'; font-size:32px; color:var(--accent-gold);">Mood Archiving</span>
+    <p style="opacity:0.3; font-size:10px; margin-top:40px;">© 2026 MOOD ARCHIVING. SCIENTIFIC EMOTIONALISM.</p>
 </footer>
 
 </body>
