@@ -42,13 +42,18 @@
         .essay-text { font-size: 16px; line-height: 2.2; color: #333; text-align: justify; text-align-last: center; }
         .highlight { color: var(--accent-gold); font-weight: 700; border-bottom: 1px solid rgba(194, 149, 106, 0.4); }
 
-        /* [추가] 클래스 진행 순서 스타일 */
-        .curriculum-box { background: rgba(29, 77, 63, 0.03); padding: 40px 20px; border-radius: 25px; margin-bottom: 50px; }
-        .curriculum-title { font-family: 'Cinzel'; font-size: 20px; text-align: center; letter-spacing: 3px; margin-bottom: 30px; color: var(--accent-gold); }
-        .step-item { display: flex; align-items: flex-start; margin-bottom: 25px; }
-        .step-num { font-family: 'Cinzel'; font-size: 18px; color: var(--accent-gold); margin-right: 15px; font-weight: 700; min-width: 60px; }
-        .step-content b { font-size: 17px; display: block; margin-bottom: 5px; }
-        .step-content p { font-size: 14px; margin: 0; color: #666; }
+        /* [추가 섹션] 클래스 가이드 및 순서 */
+        .guide-section { margin: 60px 0; }
+        .guide-header { text-align: center; margin-bottom: 40px; }
+        .guide-header h2 { font-family: 'Cinzel'; font-size: 26px; letter-spacing: 5px; margin-bottom: 10px; }
+        .guide-header p { font-size: 14px; color: var(--accent-gold); margin: 0; }
+
+        .curriculum-box { background: #fff; padding: 40px 25px; border-radius: 25px; border: 1px solid var(--line-color); box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
+        .step-item { display: flex; align-items: flex-start; margin-bottom: 30px; }
+        .step-item:last-child { margin-bottom: 0; }
+        .step-num { font-family: 'Cinzel'; font-size: 16px; color: var(--accent-gold); font-weight: 700; min-width: 70px; padding-top: 5px; }
+        .step-content b { font-size: 18px; display: block; margin-bottom: 8px; color: var(--point-green); }
+        .step-content p { font-size: 14px; margin: 0; color: #666; line-height: 1.6; }
 
         .content-card { background: #fff; padding: 40px 25px; border-radius: 25px; border: 1px solid var(--line-color); margin-bottom: 50px; }
         .card-num { font-family: 'Cinzel'; font-size: 28px; color: var(--accent-gold); opacity: 0.3; display: block; margin-bottom: 5px; }
@@ -114,34 +119,40 @@
         </div>
     </div>
 
-    <div class="curriculum-box">
-        <h3 class="curriculum-title">CLASS PROCESS</h3>
-        <div class="step-item">
-            <span class="step-num">STEP 01</span>
-            <div class="step-content">
-                <b>가치관 워크북 작성</b>
-                <p>현재의 나를 정의하는 3가지 키워드를 추출하고 시각적 언어로 변환합니다.</p>
-            </div>
+    <div class="guide-section">
+        <div class="guide-header">
+            <h2>CLASS GUIDE</h2>
+            <p>당신의 본질을 담아내는 4단계의 아카이빙 과정</p>
         </div>
-        <div class="step-item">
-            <span class="step-num">STEP 02</span>
-            <div class="step-content">
-                <b>조색 및 레이아웃 디자인</b>
-                <p>선택한 가치관을 닮은 컬러와 메인 플라워를 배치하여 구도를 잡습니다.</p>
+        
+        <div class="curriculum-box">
+            <div class="step-item">
+                <span class="step-num">STEP 01</span>
+                <div class="step-content">
+                    <b>가치관 추출 및 키워드 선정</b>
+                    <p>워크북을 통해 현재의 나를 가장 잘 설명하는 핵심 단어 3가지를 찾고, 이를 시각적으로 표현할 메인 꽃과 컬러를 결정합니다.</p>
+                </div>
             </div>
-        </div>
-        <div class="step-item">
-            <span class="step-num">STEP 03</span>
-            <div class="step-content">
-                <b>레진 아카이빙 (제작)</b>
-                <p>투명 레진과 잉크 드롭 기법을 활용하여 찰나의 가치관을 박제합니다.</p>
+            <div class="step-item">
+                <span class="step-num">STEP 02</span>
+                <div class="step-content">
+                    <b>디자인 레이아웃 구상</b>
+                    <p>추출된 가치관 키워드에 맞춰 레진 작품 안에 배치할 오브제와 소재들의 구도를 잡고 조색 과정을 준비합니다.</p>
+                </div>
             </div>
-        </div>
-        <div class="step-item">
-            <span class="step-num">STEP 04</span>
-            <div class="step-content">
-                <b>에필로그 & 아카이빙</b>
-                <p>작품에 이름을 붙이고, 스스로에게 전하는 다짐을 기록하며 마무리합니다.</p>
+            <div class="step-item">
+                <span class="step-num">STEP 03</span>
+                <div class="step-content">
+                    <b>레진 크래프트 제작</b>
+                    <p>투명 레진에 잉크 드롭 기법과 알코올 잉크를 활용하여, 통제되지 않는 감정의 파동을 예술적으로 박제하는 메인 작업입니다.</p>
+                </div>
+            </div>
+            <div class="step-item">
+                <span class="step-num">STEP 04</span>
+                <div class="step-content">
+                    <b>아카이빙 및 에필로그</b>
+                    <p>완성된 작품에 자신만의 서사를 담은 이름을 붙이고, 미래의 나에게 전하는 약속과 소회를 기록하며 클래스를 마무리합니다.</p>
+                </div>
             </div>
         </div>
     </div>
