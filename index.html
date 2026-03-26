@@ -24,18 +24,17 @@
         .logo { font-family: 'Playball', cursive; font-size: 72px; color: var(--point-green); text-decoration: none; display: block; }
         .logo-sub { font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 10px; color: var(--accent-gold); display: block; margin-top: -5px; }
 
-        /* [수정] 버튼 내 글씨 크기 조절 및 상단 배치 */
+        /* [수정] 버튼 내 글씨 크기 확대 */
         .btn-group { margin: 40px 0; display: flex; justify-content: center; gap: 15px; }
         .btn-small { 
-            font-family: 'Cinzel'; font-size: 14px; letter-spacing: 2px; text-decoration: none;
+            font-family: 'Cinzel'; font-size: 15px; letter-spacing: 2px; text-decoration: none;
             padding: 15px 35px; border: 1px solid var(--point-green); color: var(--point-green); transition: 0.3s;
             font-weight: 700;
         }
-        .btn-small:hover { background: var(--point-green); color: #fff; }
 
         .section { padding: 40px 20px 150px; max-width: 900px; margin: 0 auto; }
 
-        /* [이미지] 깨지지 않는 감성 이미지 연결 */
+        /* [추가] 이미지 스타일 정의 */
         .img-content { width: 100%; height: 500px; object-fit: cover; margin: 60px 0; border: 1px solid var(--line-color); display: block; }
 
         .value-core-section { padding: 120px 40px; text-align: center; background: #fff; border: 1px solid var(--line-color); margin: 80px 0; position: relative; }
@@ -44,30 +43,31 @@
         .value-text { font-size: 17px; line-height: 3.2; color: #333; }
         .value-text b { color: var(--accent-gold); }
 
+        /* [복구] 클래스 회차 설명 스타일 */
+        .class-step-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin: 60px 0; text-align: center; }
+        .step-tag { font-family: 'Cinzel'; font-size: 12px; color: var(--accent-gold); display: block; margin-bottom: 10px; }
+        .step-desc { font-size: 15px; line-height: 1.8; color: #666; }
+
         .workbook-box { background: #fff; padding: 80px 60px; border: 1.5px solid var(--point-green); border-radius: 40px; margin: 80px 0; }
         .wb-header { font-family: 'Playball'; font-size: 52px; text-align: center; margin-bottom: 50px; }
         .wb-step { font-family: 'Cinzel'; color: var(--accent-gold); font-size: 18px; text-align: center; display: block; margin-top: 40px; }
         .wb-sub { font-size: 22px; text-align: center; display: block; margin-bottom: 20px; font-weight: 700; }
         .wb-line { display: inline-block; border-bottom: 1px solid var(--point-green); min-width: 120px; height: 30px; margin: 0 8px; }
-        /* 추가된 감성 문구 스타일 */
-        .wb-desc { font-size: 14px; color: var(--accent-gold); text-align: center; display: block; margin-top: -10px; margin-bottom: 20px; opacity: 0.8; }
+        /* [추가] 워크북 하단 감성 문구 */
+        .wb-extra { font-size: 14px; color: var(--accent-gold); text-align: center; display: block; margin-top: -10px; margin-bottom: 20px; opacity: 0.8; }
 
+        /* [복구] 레진 정보 스타일 */
         .resin-box { padding: 80px 40px; background: #fff; border: 1px solid var(--line-color); text-align: center; margin-bottom: 80px; }
         .resin-title { font-size: 38px; margin-bottom: 50px; font-weight: 400; }
         .resin-point { font-size: 18px; margin-bottom: 15px; font-family: 'Cinzel'; color: var(--accent-gold); }
 
-        .class-step-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin: 60px 0; text-align: center; }
-        .step-tag { font-family: 'Cinzel'; font-size: 12px; color: var(--accent-gold); display: block; margin-bottom: 10px; }
-
-        /* [질문 카드 스타일] */
-        .q-card { padding: 40px; background: #fff; border: 1px solid var(--line-color); margin-bottom: 20px; }
-        .q-text { font-weight: 700; display: block; margin-bottom: 10px; }
-        .q-essay { font-size: 14px; color: var(--accent-gold); opacity: 0.8; }
+        /* [추가] 질문별 감성 문구 스타일 */
+        .q-sub { font-size: 14px; color: var(--accent-gold); display: block; margin-top: 10px; opacity: 0.7; font-weight: 400; }
 
         .btn-main { 
-            display: block; width: fit-content; margin: 50px auto; padding: 25px 80px; 
+            display: block; width: fit-content; margin: 100px auto; padding: 25px 80px; 
             background: var(--point-green); color: white; text-decoration: none; font-family: 'Cinzel';
-            letter-spacing: 5px; font-size: 16px; font-weight: 700; text-align: center;
+            letter-spacing: 5px; font-size: 18px; font-weight: 700;
         }
     </style>
 </head>
@@ -79,20 +79,20 @@
     <div class="btn-group">
         <a href="https://www.instagram.com/mood_archiving/" target="_blank" class="btn-small">Instagram</a>
         <a href="https://smartstore.naver.com/mood_archiving" target="_blank" class="btn-small">Smart Store</a>
-        <a href="https://naver.me/5bCIPlxw" target="_blank" class="btn-small" style="border-color:var(--accent-gold); color:var(--accent-gold);">Class Apply</a>
+        <a href="https://naver.me/5bCIPlxw" target="_blank" class="btn-small" style="color:var(--accent-gold); border-color:var(--accent-gold);">Class Apply</a>
     </div>
 </header>
 
 <section class="section">
 
-    <img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?q=80&w=2000&auto=format&fit=crop" class="img-content" alt="North Star Mood">
+    <img src="https://images.unsplash.com/photo-1516617442634-75371039bd3b?q=80&w=2000" class="img-content" alt="North Star Aesthetic">
 
     <div class="value-core-section">
         <span class="value-label">The North Star of Life</span>
         <h2 class="value-title">가치관: 흔들리지 않는 삶의 북극성</h2>
         <p class="value-text">
             무드 아카이빙은 당신의 영혼에 깊이 뿌리내린 **'핵심 가치관'**을 찾아가는 여정입니다.<br>
-            성향이 당신이 가진 고유한 결이라면, **가치관은 그 결을 따라 당신이 나아갈 단 하나의 방향, 즉 북극성**입니다.<br><br>
+            성향이 당신이 가진 고유한 결이라면, **가치관은 그 결을 따라 당신이 나아갈 단 하나의 방향인 '북극성'**입니다.<br><br>
             나만의 북극성을 명확히 정의하는 것은 세상의 소란 속에서 나를 온전히 지탱하는 가장 맑은 힘이 됩니다. 
             단순한 '성격'을 넘어, 당신이 무엇을 위해 움직이고 무엇을 소중히 여기는지 그 **가치관의 원석**을 발견해 보세요.
         </p>
@@ -110,33 +110,33 @@
         <span class="wb-step">STEP 1. 내면의 키워드 추출</span>
         <span class="wb-sub">지금 나를 가장 잘 설명하는 단어 3가지</span>
         <div style="text-align:center;">: ( <span class="wb-line"></span> ), ( <span class="wb-line"></span> ), ( <span class="wb-line"></span> )</div>
-        <span class="wb-desc">무수한 일상의 언어 중 당신의 본질을 깨우는 세 가지 조각</span>
+        <span class="wb-extra">무수한 단어들 사이에서 당신의 영혼이 가장 선명하게 반응하는 조각들</span>
 
         <span class="wb-sub" style="margin-top:30px;">내가 공간에 머물 때 느끼고 싶은 감정</span>
         <div style="text-align:center;">: ( <span class="wb-line" style="min-width:300px;"></span> )</div>
-        <span class="wb-desc">당신의 결이 가장 편안하게 숨 쉴 수 있는 온도는 어느 정도인가요</span>
+        <span class="wb-extra">당신의 무드가 가장 편안하게 숨 쉴 수 있는 찰나의 기류</span>
 
         <span class="wb-step">STEP 2. 시각적 언어로의 번역</span>
         <div style="text-align:center; font-size:18px;">Main Flower (가치관): [ <span class="wb-line"></span> ]</div>
         <p style="text-align:center; font-size:14px; opacity:0.6; margin-top:-20px;">(예: 변치 않는 신뢰 - 리시안셔스)</p>
-        <span class="wb-desc">당신이 정한 북극성이 지지 않는 꽃이 되어 피어납니다</span>
+        <span class="wb-extra">당신의 북극성이 사계절 내내 지지 않는 꽃이 되어 피어납니다</span>
 
         <div style="text-align:center; font-size:18px;">Sub Color (감정): [ <span class="wb-line"></span> ]</div>
         <p style="text-align:center; font-size:14px; opacity:0.6; margin-top:-20px;">(예: 깊은 안정 - 딥 블루)</p>
-        <span class="wb-desc">내면의 심연을 가장 아름답게 투영하는 고유한 빛깔</span>
+        <span class="wb-extra">내면의 심연을 가장 아름답게 투영하는 고유한 빛깔</span>
 
         <div style="text-align:center; font-size:18px;">Density (밀도): □ 여백의 미(고요) / □ 가득 찬 배열(에너지)</div>
-        <span class="wb-desc">비움으로써 얻는 평온과 채움으로써 얻는 생명력 사이의 선택</span>
+        <span class="wb-extra">비움으로써 얻는 평온과 채움으로써 얻는 생동 사이의 조화로운 선택</span>
 
         <span class="wb-step">STEP 3. 작품의 이름(Title) 짓기</span>
         <span class="wb-sub">이 작품을 바라볼 때 나에게 해주고 싶은 한 마디</span>
         <div style="text-align:center;">" <span class="wb-line" style="min-width:400px;"></span> "</div>
-        <span class="wb-desc">먼 훗날의 당신이 꺼내 읽게 될 가장 사적이고 단단한 약속</span>
+        <span class="wb-extra">먼 훗날의 당신이 꺼내 읽게 될 가장 사적이고 단단한 약속</span>
 
         <div style="text-align:center; margin-top:40px; font-size:18px;">작품명: 「 <span class="wb-line" style="min-width:300px;"></span> 」</div>
     </div>
 
-    <img src="https://images.unsplash.com/photo-1515890435782-59a5bb6ec191?q=80&w=2000&auto=format&fit=crop" class="img-content" alt="Resin Art Clarity">
+    <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=2000" class="img-content" alt="Resin Craft Mood">
 
     <div class="resin-box">
         <h2 class="resin-title">레진으로 만드는 무드 아카이빙</h2>
@@ -152,45 +152,41 @@
     </div>
 
     <div style="display:grid; grid-template-columns: 1fr 1fr; gap:30px;">
-        <div class="q-card">
-            <span class="q-text">Q.01 타인의 시선이 닿지 않는 곳에서 간직하고 싶은 '첫인상'은?</span>
-            <span class="q-essay">가면을 벗고 마주한 가장 순수한 당신의 첫 페이지를 떠올려 보세요.</span>
+        <div style="padding:40px; background:#fff; border:1px solid var(--line-color);">
+            <b>Q.01 타인의 시선이 닿지 않는 곳에서 간직하고 싶은 '첫인상'은?</b>
+            <span class="q-sub">가면을 벗고 마주한 가장 순수한 당신의 첫 페이지를 떠올려 보세요.</span>
         </div>
-        <div class="q-card">
-            <span class="q-text">Q.02 오늘 당신의 마음속에 머물고 있는 감정의 색채는?</span>
-            <span class="q-essay">이름 붙일 수 없는 감정들이 하나의 색으로 번진다면 어떤 빛깔일까요.</span>
+        <div style="padding:40px; background:#fff; border:1px solid var(--line-color);">
+            <b>Q.02 오늘 당신의 마음속에 머물고 있는 감정의 색채는?</b>
+            <span class="q-sub">이름 붙일 수 없는 감정들이 하나의 색으로 번진다면 어떤 빛깔일까요.</span>
         </div>
-        <div class="q-card">
-            <span class="q-text">Q.03 지친 하루 끝에 가장 필요한 위로의 형태는?</span>
-            <span class="q-essay">당신을 안아주는 것은 부드러운 여백인가요, 단단한 지지인가요.</span>
+        <div style="padding:40px; background:#fff; border:1px solid var(--line-color);">
+            <b>Q.03 지친 하루 끝에 가장 필요한 위로의 형태는?</b>
+            <span class="q-sub">당신을 안아주는 것은 부드러운 여백인가요, 단단한 지지인가요.</span>
         </div>
-        <div class="q-card">
-            <span class="q-text">Q.04 삶의 파도 속에서도 당신이 지켜내고 싶은 핵심은?</span>
-            <span class="q-essay">폭풍우 속에서도 결코 꺼지지 않는 당신만의 작은 촛불은 무엇입니까.</span>
+        <div style="padding:40px; background:#fff; border:1px solid var(--line-color);">
+            <b>Q.04 삶의 파도 속에서도 당신이 지켜내고 싶은 핵심은?</b>
+            <span class="q-sub">폭풍우 속에서도 결코 꺼지지 않는 당신만의 작은 촛불은 무엇입니까.</span>
         </div>
-        <div class="q-card">
-            <span class="q-text">Q.05 당신을 둘러싼 사물 중 가장 사적인 서사를 담은 물건은?</span>
-            <span class="q-essay">무생물의 사물 속에 당신의 어떤 기억이 숨을 쉬고 있나요.</span>
+        <div style="padding:40px; background:#fff; border:1px solid var(--line-color);">
+            <b>Q.05 당신을 둘러싼 사물 중 가장 사적인 서사를 담은 물건은?</b>
+            <span class="q-sub">무생물의 사물 속에 당신의 어떤 기억이 숨을 쉬고 있나요.</span>
         </div>
-        <div class="q-card">
-            <span class="q-text">Q.06 잉크가 번져나갈 때, 당신은 어떤 심연을 투영하고 싶나요?</span>
-            <span class="q-essay">통제할 수 없는 번짐 속에서 비로소 자유로워지는 진심을 마주합니다.</span>
+        <div style="padding:40px; background:#fff; border:1px solid var(--line-color);">
+            <b>Q.06 잉크가 번져나갈 때, 당신은 어떤 심연을 투영하고 싶나요?</b>
+            <span class="q-sub">통제할 수 없는 번짐 속에서 비로소 자유로워지는 진심을 마주합니다.</span>
         </div>
-        <div class="q-card">
-            <span class="q-text">Q.07 이 작품을 마주할 때마다 건네고 싶은 따스한 약속은?</span>
-            <span class="q-essay">먼 훗날의 당신에게 오늘 새긴 가치관이 어떤 위로가 되길 바라나요.</span>
+        <div style="padding:40px; background:#fff; border:1px solid var(--line-color);">
+            <b>Q.07 이 작품을 마주할 때마다 건네고 싶은 따스한 약속은?</b>
+            <span class="q-sub">먼 훗날의 당신에게 오늘 새긴 가치관이 어떤 위로가 되길 바라나요.</span>
         </div>
-        <div class="q-card">
-            <span class="q-text">Q.08 당신의 가치관은 단단한 핵인가요, 조화로움인가요?</span>
-            <span class="q-essay">당신을 정의하는 본질은 뚫고 나가는 힘인가요, 품어주는 온기인가요.</span>
+        <div style="padding:40px; background:#fff; border:1px solid var(--line-color);">
+            <b>Q.08 당신의 가치관은 단단한 핵인가요, 조화로움인가요?</b>
+            <span class="q-sub">당신을 정의하는 본질은 뚫고 나가는 힘인가요, 품어주는 온기인가요.</span>
         </div>
     </div>
 
-    <div class="btn-group" style="margin-top: 100px;">
-        <a href="https://www.instagram.com/mood_archiving/" class="btn-small">Instagram</a>
-        <a href="https://smartstore.naver.com/mood_archiving" class="btn-small">Smart Store</a>
-        <a href="https://naver.me/5bCIPlxw" class="btn-small btn-gold" style="background:var(--point-green); color:#fff; border:none; padding:15px 50px;">Apply Now</a>
-    </div>
+    <a href="https://naver.me/5bCIPlxw" target="_blank" class="btn-main">나만의 무드 아카이빙 신청</a>
 </section>
 
 </body>
