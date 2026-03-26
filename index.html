@@ -20,27 +20,23 @@
             font-family: 'Nanum Myeongjo', serif; margin: 0; line-height: 2.8; word-break: keep-all; 
         }
 
-        header { padding: 100px 20px 40px; text-align: center; }
+        header { padding: 120px 20px 40px; text-align: center; }
         .logo { font-family: 'Playball', cursive; font-size: 72px; color: var(--point-green); text-decoration: none; display: block; }
         .logo-sub { font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 10px; color: var(--accent-gold); display: block; margin-top: -5px; }
 
-        /* [복구] 버튼 3종 세트 유지 */
-        .btn-group { margin: 50px 0; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .btn-group { margin: 50px 0; display: flex; justify-content: center; gap: 20px; }
         .btn-small { 
             font-family: 'Cinzel'; font-size: 12px; letter-spacing: 3px; text-decoration: none;
             padding: 15px 35px; border: 1px solid var(--point-green); color: var(--point-green); transition: 0.4s;
-            background: rgba(255,255,255,0.6); font-weight: 700;
+            background: rgba(255,255,255,0.8);
         }
-        .btn-small:hover { background: var(--point-green); color: white; transform: translateY(-3px); }
-        .btn-gold { border-color: var(--accent-gold); color: var(--accent-gold); }
-        .btn-gold:hover { background: var(--accent-gold); color: white; }
 
         .section { padding: 40px 20px 150px; max-width: 1000px; margin: 0 auto; }
 
-        /* [개선] 이미지 시인성 (배경과 분리) */
+        /* [개선] 이미지 시인성 확보: 화이트 액자 프레임 */
         .content-img { 
             width: 100%; height: 600px; object-fit: cover; border-radius: 4px; 
-            margin: 80px 0; border: 15px solid var(--white); /* 액자 효과 */
+            margin: 80px 0; border: 15px solid var(--white);
             box-shadow: 0 30px 60px rgba(0,0,0,0.12); box-sizing: border-box;
         }
         
@@ -49,25 +45,25 @@
         .essay-title { font-size: 30px; font-weight: 700; margin-bottom: 40px; color: var(--point-green); }
         .essay-text { font-size: 17px; line-height: 3.2; color: #333; }
 
-        /* [추가] 3회차 클래스 설명 (기존 내용 유지하며 추가) */
-        .class-info-section { margin: 120px 0; padding: 80px 50px; background: rgba(255,255,255,0.5); border: 1px solid var(--line-color); }
-        .class-step-card { margin-bottom: 80px; }
-        .step-tag { font-family: 'Cinzel'; color: var(--accent-gold); font-weight: 700; letter-spacing: 4px; display: block; margin-bottom: 15px; }
-        .step-title { font-size: 24px; font-weight: 700; color: var(--point-green); margin-bottom: 20px; display: block; }
-        .step-body { font-size: 16px; color: #555; margin-bottom: 30px; }
+        /* 클래스 단계 스타일 */
+        .step-container { margin: 120px 0; }
+        .step-item { display: flex; gap: 50px; margin-bottom: 120px; align-items: flex-start; }
+        .step-num { font-family: 'Cinzel'; font-size: 60px; color: var(--accent-gold); opacity: 0.3; line-height: 0.7; }
+        .step-title { font-size: 26px; font-weight: 700; color: var(--point-green); margin-bottom: 15px; display: block; }
+        .step-desc { font-size: 16px; color: #555; margin-bottom: 30px; display: block; }
 
-        /* 기존 워크북 스타일 보존 */
+        /* 기존 워크북 입력 항목 유지 */
         .workbook-input { background: #fff; padding: 45px; border: 1px solid var(--line-color); border-left: 6px solid var(--accent-gold); }
         .input-line { display: inline-block; border-bottom: 1px solid var(--accent-gold); min-width: 180px; height: 30px; margin: 0 12px; }
 
-        /* [복구] 8가지 질문 그리드 (보존) */
+        /* [유지] 8가지 질문 그리드 */
         .q-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 100px; }
         .q-card { padding: 60px; background: #fff; border: 1px solid var(--line-color); font-size: 16px; box-shadow: 0 10px 20px rgba(0,0,0,0.02); }
 
         .btn-main { 
             display: block; width: fit-content; margin: 120px auto; padding: 30px 100px; 
             background: var(--point-green); color: white; text-decoration: none; font-family: 'Cinzel';
-            letter-spacing: 6px; font-size: 16px; transition: 0.5s; font-weight: 700;
+            letter-spacing: 6px; font-size: 16px; transition: 0.5s;
         }
     </style>
 </head>
@@ -75,11 +71,11 @@
 
 <header>
     <a href="#" class="logo">Mood Archiving</a>
-    <span class="logo-sub">ENCAPSULATING YOUR SOUL</span>
+    <span class="logo-sub">COLLECTING YOUR ESSENCE</span>
     <div class="btn-group">
         <a href="https://www.instagram.com/mood_archiving/" target="_blank" class="btn-small">Instagram</a>
         <a href="https://smartstore.naver.com/mood_archiving" target="_blank" class="btn-small">Smart Store</a>
-        <a href="https://naver.me/5bCIPlxw" target="_blank" class="btn-small btn-gold">Class Apply</a>
+        <a href="https://naver.me/5bCIPlxw" target="_blank" class="btn-small">Class Apply</a>
     </div>
 </header>
 
@@ -87,70 +83,77 @@
     <img src="https://images.unsplash.com/photo-1635443457112-9c986198642a?auto=format&fit=crop&q=80&w=1500" class="content-img">
     
     <div class="essay-box">
-        <span class="essay-label">The Essence of Archiving</span>
+        <span class="essay-label">The Art of Resin Record</span>
         <h3 class="essay-title">찰나를 가두어 영원을 만드는 기록</h3>
         <p class="essay-text">
             레진아트는 흐르는 액체가 단단하게 변하는 성질을 이용한 '기록의 예술'입니다. 
-            **단순히 형태를 만드는 공예를 넘어, 당신의 가장 사적인 '가치관'을 채집하는 여정**입니다. 
-            흐릿해지지 않도록 단단히 고정하는 **박제의 미학** 속에, 투명하게 번지는 당신만의 파동을 가두어 보세요. 
-            이 오브제는 당신의 내면을 가장 맑은 상태로 증명하는 영원한 기록이 될 것입니다.
+            **고분자 화합물의 견고한 결합**을 통해, 흔들리던 당신의 가치관을 투명한 조각 속에 정착시킵니다. 
+            다시는 돌아오지 않을 찰나를 99.9% 고투명 레진 속에 박제하여 당신의 일상 곁에 영원히 머물게 합니다. 
+            이것은 단순한 제작을 넘어, **시간을 물리적으로 정지시키는 '박제의 미학'**입니다.
         </p>
     </div>
 
     <img src="https://images.unsplash.com/photo-1508615070457-7baeba4003ab?auto=format&fit=crop&q=80&w=1500" class="content-img">
 
     <div class="essay-box" style="background: transparent; border: none; padding-top: 0;">
-        <span class="essay-label">Core Values & North Star</span>
-        <h3 class="essay-title">가치관: 당신의 인생을 지탱하는 북극성</h3>
+        <span class="essay-label">Core Values & Life Philosophy</span>
+        <h3 class="essay-title">가치관: 당신의 인생을 지탱하는 단단한 북극성</h3>
         <p class="essay-text">
             우리가 가진 **고유한 가치관**은 삶이라는 망망대해에서 길을 잃지 않게 돕는 북극성과 같습니다. 
-            내면의 목소리에 귀를 기울여 나만의 핵심 가치를 발견하는 것은, 
-            세상의 소란 속에서도 나를 온전히 지켜내는 가장 강력한 힘이 됩니다.<br><br>
+            자신이 어떤 가치를 소중히 여기는지 정의하는 과정은, 
+            세상의 소란 속에서도 나를 온전히 지켜내는 가장 강력한 내면의 힘이 됩니다.<br><br>
             성향이라는 밑그림 위에 '가치관'이라는 뚜렷한 색채를 입히는 시간. 
             그 영혼의 원석을 투명한 레진 속에 박제하여, 
-            매일 마주하는 일상 속에서 당신의 중심을 일깨워보세요.
+            매일 마주하는 일상 속에서 당신의 중심을 일깨워보세요. 
+            나만의 고유한 호흡으로 인생을 아카이빙하는 여정은 당신을 더 단단한 사람으로 만들어줄 것입니다.
         </p>
     </div>
 
-    <div class="class-info-section">
+    <div class="step-container">
         <div style="text-align: center; margin-bottom: 100px;">
             <span class="essay-label">3-Session Curriculum</span>
             <h2 style="font-size: 32px;">나의 무드를 기록하는 3단계 여정</h2>
         </div>
 
-        <div class="class-step-card">
-            <span class="step-tag">SESSION 01</span>
-            <span class="step-title">1회차: 가치관 찾기 & 레진 디자인</span>
-            <p class="step-body">자체 제작된 마인드 워크북을 통해 내면을 탐색합니다. 나를 상징하는 핵심 가치관을 도출하고, 이를 시각화하기 위한 조색 팔레트와 압화 소재를 정교하게 디자인합니다.</p>
-            <div class="workbook-input">
-                도출된 핵심 가치 : ( <span class="input-line"></span> ) / 설계된 무드 : ( <span class="input-line"></span> )
+        <div class="step-item">
+            <span class="step-num">01</span>
+            <div class="step-content">
+                <span class="step-title">1회차: 가치관 찾기 & 레진 디자인</span>
+                <span class="step-desc">자체 제작 마인드 워크북을 통해 내면을 탐색합니다. 나를 상징하는 핵심 가치관을 도출하고, 이를 시각화하기 위한 조색 팔레트와 소재(꽃, 잉크 등)를 정교하게 설계합니다.</span>
+                <div class="workbook-input">
+                    나를 설명하는 키워드 : <span class="input-line"></span>, <span class="input-line"></span>, <span class="input-line"></span>
+                </div>
             </div>
         </div>
 
-        <div class="class-step-card">
-            <span class="step-tag">SESSION 02</span>
-            <span class="step-title">2회차: 레진 클래스 (Main Craft)</span>
-            <p class="step-body">설계된 디자인을 바탕으로 전문적인 레진 크래프트를 진행합니다. 주제와 경화제의 정밀한 배합과 고도의 탈포 기술을 통해 기포 없이 맑은 '영원의 조각'을 직접 제작합니다.</p>
-            <div class="workbook-input">
-                배합된 소재 : <span class="input-line"></span> / 주요 기법 : <span class="input-line"></span>
+        <div class="step-item">
+            <span class="step-num">02</span>
+            <div class="step-content">
+                <span class="step-title">2회차: 레진 클래스 (Main Craft)</span>
+                <span class="step-desc">설계된 디자인을 바탕으로 실제 레진 크래프트를 진행합니다. 주제와 경화제의 황금 배합비와 고도의 진공 탈포 기술을 통해 기포 없이 맑고 투명한 '영원의 조각'을 직접 제작하는 메인 세션입니다.</span>
+                <div class="workbook-input">
+                    선택한 꽃 : <span class="input-line"></span> / 선택한 색상 : <span class="input-line"></span>
+                </div>
             </div>
         </div>
 
-        <div class="class-step-card" style="margin-bottom:0;">
-            <span class="step-tag">SESSION 03</span>
-            <span class="step-title">3회차: 감정 들여다보기 & 아카이빙</span>
-            <p class="step-body">완성된 작품을 마주하며 제작 과정 중 느꼈던 감정의 파동을 회고합니다. 작품에 고유한 이름을 부여하고, 당신의 가치관을 최종적으로 박제하여 아카이빙을 완료합니다.</p>
-            <div class="workbook-input">
-                작품의 고유 명사 : 「 <span class="input-line" style="min-width:350px;"></span> 」
+        <div class="step-item" style="margin-bottom:0;">
+            <span class="step-num">03</span>
+            <div class="step-content">
+                <span class="step-title">3회차: 감정 들여다보기 & 아카이빙</span>
+                <span class="step-desc">완성된 작품을 마주하며 제작 과정의 감정 파동을 회고합니다. 작품에 고유한 이름을 부여하고, 당신의 가치관을 최종적으로 박제하여 당신만의 아카이브를 완성합니다.</span>
+                <div class="workbook-input">
+                    작품의 고유 명사 : 「 <span class="input-line" style="min-width:350px;"></span> 」
+                </div>
             </div>
         </div>
     </div>
 
     <img src="https://images.unsplash.com/photo-1490312278390-ab6414f8d2f5?auto=format&fit=crop&q=80&w=1500" class="content-img">
 
-    <div style="text-align: center; margin-bottom: 70px;">
-        <h2 style="font-family: 'Cinzel'; letter-spacing: 7px; font-size: 34px;">Landscape of Soul</h2>
-        <p style="color: var(--accent-gold); font-style: italic; font-size: 18px;">나의 내면 풍경을 들여다보는 여덟 가지 기록</p>
+    <div style="text-align: center; margin-bottom: 60px;">
+        <h2 style="font-family: 'Cinzel'; letter-spacing: 6px;">Landscape of Soul</h2>
+        <p style="color: var(--accent-gold); font-style: italic;">나의 내면 풍경을 들여다보는 여덟 가지 기록</p>
     </div>
 
     <div class="q-grid">
