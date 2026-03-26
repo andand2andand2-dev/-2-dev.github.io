@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mood Archiving | 전문 레진 아카이브</title>
+    <title>Mood Archiving | 당신의 가치관을 채집하다</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playball&family=Cinzel:wght@400;700&family=Nanum+Myeongjo:wght@400;700&display=swap');
 
         :root {
-            --bg-color: #F8F6F1;
-            --point-green: #1D4D3F;
-            --accent-gold: #c2956a;
+            --bg-color: #F8F6F1; /* 가이드 크림톤 */
+            --point-green: #1D4D3F; /* 시그니처 그린 */
+            --accent-gold: #c2956a; /* 포인트 골드 */
             --white: #ffffff;
+            --soft-gray: #f2f2f2;
             --line-color: rgba(29, 77, 63, 0.1);
         }
 
@@ -22,134 +23,181 @@
             background-size: 40px 40px; background-attachment: fixed;
         }
 
-        header { padding: 100px 20px 50px; text-align: center; }
-        .logo { font-family: 'Playball', cursive; font-size: 64px; color: var(--point-green); text-decoration: none; display: block; }
-        .logo-sub { font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 8px; color: var(--accent-gold); display: block; margin-top: -5px; font-weight: 700; }
+        header { padding: 120px 20px 60px; text-align: center; position: relative; }
+        .logo { font-family: 'Playball', cursive; font-size: 72px; color: var(--point-green); text-decoration: none; display: block; }
+        .logo-sub { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 9px; color: var(--accent-gold); display: block; margin-top: -5px; font-weight: 700; }
 
-        .btn-group { margin-top: 40px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        /* [핵심] 상단 버튼 3개 유지 (cite: 2) */
+        .btn-group { margin-top: 50px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
         .btn { 
-            font-family: 'Cinzel', serif; padding: 14px 35px; border-radius: 0; text-decoration: none; 
-            font-size: 11px; font-weight: 700; transition: 0.4s ease; letter-spacing: 2px; 
+            font-family: 'Cinzel', serif; padding: 16px 40px; border-radius: 0; text-decoration: none; 
+            font-size: 11px; font-weight: 700; transition: 0.5s ease; letter-spacing: 3px; 
             border: 1px solid var(--point-green); text-transform: uppercase;
         }
         .btn-insta { background: transparent; color: var(--point-green); }
         .btn-store { background: var(--point-green); color: var(--white); }
         .btn-apply { background: var(--accent-gold); color: var(--white); border-color: var(--accent-gold); }
+        .btn:hover { opacity: 0.8; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
 
-        .section { padding: 60px 20px 120px; max-width: 900px; margin: 0 auto; position: relative; }
+        .section { padding: 100px 20px 150px; max-width: 1000px; margin: 0 auto; position: relative; }
         
-        /* [전문 지식 섹션] */
+        /* [복구] 사색 문구 스타일 (cite: 1, 4) */
+        .mid-quote { text-align: center; font-size: 17px; color: var(--accent-gold); margin: 150px 0; font-style: italic; letter-spacing: 2px; line-height: 3.2; }
+        .mid-quote span { display: block; font-size: 11px; opacity: 0.5; margin-top: 20px; letter-spacing: 6px; text-transform: uppercase; }
+
+        /* [복구] 고화질 감성 실사 사진 연동 (cite: image_b66507.jpg, image_b66525.jpg, image_b66530.jpg) */
+        .img-wrap { width: 100%; margin: 120px 0; overflow: hidden; border-radius: 2px; box-shadow: 0 30px 60px rgba(0,0,0,0.05); position: relative; }
+        .img-wrap img { width: 100%; height: auto; display: block; transition: 1.5s; }
+        .img-wrap:hover img { transform: scale(1.05); }
+        .img-caption { text-align: right; font-size: 11px; color: var(--accent-gold); letter-spacing: 3px; margin-top: 10px; font-family: 'Cinzel', serif; }
+
+        /* [복구] 전문 지식 섹션 */
         .tech-card { 
             background: rgba(255, 255, 255, 0.7); border: 1px solid var(--line-color); 
-            padding: 45px; margin: 60px 0; font-size: 14.5px; line-height: 2;
+            padding: 45px; margin: 100px 0; font-size: 14.5px; line-height: 2;
         }
-        .tech-tag { font-family: 'Cinzel'; font-size: 11px; color: var(--accent-gold); letter-spacing: 3px; display: block; margin-bottom: 15px; text-transform: uppercase; }
-        .tech-title { font-size: 20px; font-weight: 700; margin-bottom: 20px; display: block; }
+        .tech-label { font-family: 'Cinzel'; font-size: 11px; color: var(--accent-gold); letter-spacing: 3px; display: block; margin-bottom: 15px; }
 
-        /* [이미지 대체 그래픽] */
-        .visual-archive { 
-            width: 100%; height: 450px; margin: 80px 0; border-radius: 2px;
-            display: flex; align-items: center; justify-content: center; overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
-            background: linear-gradient(135deg, #ffffff 0%, #e2d1c3 100%);
-            position: relative;
+        /* [복구 및 강화] 3단계 커리큘럼 섹션 (cite: 1) */
+        .workbook-section { background: rgba(255, 255, 255, 0.9); padding: 120px 70px; border: 1px solid var(--line-color); margin-bottom: 180px; position: relative; z-index: 1; backdrop-filter: blur(10px); }
+        .wb-label { font-family: 'Cinzel'; font-size: 17px; color: var(--accent-gold); text-align: center; display: block; margin-bottom: 60px; border-bottom: 1px solid var(--line-color); padding-bottom: 20px; }
+        
+        .class-step { margin-bottom: 90px; border-bottom: 1px solid var(--soft-gray); padding-bottom: 60px; }
+        .step-label { font-family: 'Cinzel'; color: var(--accent-gold); display: block; margin-bottom: 5px; font-size: 12px; letter-spacing: 3px; }
+        .step-title { font-size: 28px; color: var(--point-green); font-weight: 700; margin-bottom: 20px; display: block; }
+        .step-desc { font-size: 15px; opacity: 0.7; margin-bottom: 40px; display: block; }
+        
+        /* [복구] 워크북 입력 박스 및 문항 (cite: 1) */
+        .workbook-box { background: rgba(253, 252, 249, 0.8); padding: 50px; border: 1px solid var(--soft-gray); border-left: 5px solid var(--accent-gold); }
+        .input-line { display: inline-block; min-width: 160px; border-bottom: 1px solid var(--accent-gold); margin: 0 10px; height: 30px; background: transparent; }
+
+        /* 또렷해진 골드 일러스트 (cite: image_a45012.png) */
+        .illus { display: block; margin: 80px auto; width: 60px; fill: none; stroke: var(--accent-gold); stroke-width: 2.5; }
+
+        /* [절대 보존] 8가지 사색 질문 (cite: 4) */
+        .q-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; position: relative; z-index: 1; }
+        .q-card { padding: 60px; background: rgba(255, 255, 255, 0.85); border: 1px solid var(--line-color); backdrop-filter: blur(5px); transition: 0.5s; }
+        .q-card:hover { border-color: var(--accent-gold); transform: translateY(-5px); background: white; }
+        .q-num { font-family: 'Cinzel'; font-size: 11px; color: var(--accent-gold); letter-spacing: 4px; display: block; margin-bottom: 15px; }
+
+        /* 고급 보태니컬 라인 일러스트 (cite: SVG blobs cite: image_a45012.png) */
+        .botanical-bg { position: absolute; top: 10%; right: -5%; width: 300px; fill: var(--point-green); opacity: 0.1; z-index: 0; pointer-events: none; }
+
+        footer { background: #1a1a1a; color: #fff; padding: 150px 20px; text-align: center; }
+        .footer-logo { font-family: 'Playball', cursive; font-size: 40px; color: var(--accent-gold); }
+
+        @media (max-width: 900px) {
+            .k-grid, .q-container { grid-template-columns: 1fr; gap: 30px; }
+            .workbook-section { padding: 60px 25px; }
+            .logo { font-size: 52px; }
+            .btn { width: 90%; text-align: center; }
+            .botanical-bg { display: none; }
         }
-        .visual-archive::after { content: "ENCODED MOOD"; font-family: 'Cinzel'; opacity: 0.2; letter-spacing: 10px; font-size: 12px; }
-
-        /* [워크북/질문지 복구] */
-        .workbook-section { background: white; padding: 80px 50px; border: 1px solid var(--line-color); margin-bottom: 100px; }
-        .step-label { font-family: 'Cinzel'; color: var(--accent-gold); font-size: 12px; display: block; margin-bottom: 5px; }
-        .step-title { font-size: 26px; font-weight: 700; color: var(--point-green); display: block; margin-bottom: 15px; }
-        .workbook-box { background: #FDFCF9; padding: 40px; border-left: 5px solid var(--accent-gold); margin: 30px 0 60px; }
-        .input-line { display: inline-block; min-width: 150px; border-bottom: 1px solid var(--accent-gold); margin: 0 10px; height: 30px; }
-
-        .q-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 60px; }
-        .q-card { padding: 45px; background: rgba(255, 255, 255, 0.85); border: 1px solid var(--line-color); font-size: 15px; }
-        .q-num { font-family: 'Cinzel'; color: var(--accent-gold); display: block; margin-bottom: 10px; font-size: 12px; }
-
-        footer { background: #1a1a1a; color: #fff; padding: 100px 20px; text-align: center; }
-
-        @media (max-width: 768px) { .q-grid { grid-template-columns: 1fr; } .workbook-section { padding: 40px 20px; } }
     </style>
 </head>
 <body>
 
 <header>
     <a href="#" class="logo">Mood Archiving</a>
-    <span class="logo-sub">TECHNICAL & EMOTIONAL LAB</span>
+    <span class="logo-sub">COLLECTING YOUR ESSENCE</span>
     <div class="btn-group">
-        <a href="#" class="btn btn-insta">Instagram</a>
-        <a href="#" class="btn btn-store">Smart Store</a>
-        <a href="#" class="btn btn-apply">Class Apply</a>
+        <a href="https://www.instagram.com/mood_archiving/" target="_blank" class="btn btn-insta">Instagram</a>
+        <a href="https://smartstore.naver.com/mood_archiving" target="_blank" class="btn btn-store">Smart Store</a>
+        <a href="https://naver.me/5bCIPlxw" target="_blank" class="btn btn-apply">Class Apply</a>
     </div>
 </header>
 
 <section class="section">
+    <svg class="botanical-bg" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg"><path d="M50,0 C60,10 70,20 80,30 C90,40 100,50 100,60 C100,70 90,80 80,90 C70,100 60,110 50,120 C40,110 30,100 20,90 C10,80 0,70 0,60 C0,50 10,40 20,30 C30,20 40,10 50,0 Z M50,10 C45,20 40,30 35,40 C30,50 25,60 25,70 C25,80 30,90 35,100 C40,110 45,120 50,130 C55,120 60,110 65,100 C70,90 75,80 75,70 C75,60 70,50 65,40 C60,30 55,20 50,10 Z" /></svg>
+
+    <p class="mid-quote">
+        "말로는 다 전할 수 없는 내면의 풍경을<br>투명한 조각 위에 가만히 내려놓습니다."
+        <span>Fragment of Soul</span>
+    </p>
+
     <div class="tech-card">
-        <span class="tech-tag">Laboratory Note 01</span>
-        <span class="tech-title">레진의 화학적 전이와 투명도 제어</span>
-        무드 아카이빙은 고순도 에폭시 레진의 **주제와 경화제 배합 비율(2:1)**을 정밀하게 준수하여 물리적 강도와 황변 방지 성능을 극대화합니다. 특히 제작 과정에서의 **진공 탈포(Degassing)** 공정은 기포 없는 99.9%의 투명도를 구현하며, 이는 내면의 풍경을 가장 선명하게 박제하기 위한 필수적인 기술적 토대입니다.
+        <span class="tech-label">Technical Data</span>
+        무드 아카이빙 클래스는 99.9%의 고투명 에폭시 레진과 UV 안정화 성분을 채집하여, 시간이 흘러도 변하지 않는 영원한 박제를 보장합니다. 제작 과정 중의 진공 탈포(Degassing) 공정과 수평 레벨링 작업은 당신의 무드를 가장 맑은 심연으로 구현해 냅니다.
     </div>
 
-    <div class="visual-archive"></div>
+    <svg class="illus" viewBox="0 0 100 20"><path d="M0 10 Q 25 0 50 10 T 100 10" /></svg>
+    
+    <div class="img-wrap">
+        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200" alt="Resin Detail">
+    </div>
+
+    <p class="mid-quote">
+        "서둘러 지나가는 일상 속에서,<br>단 한 번쯤은 멈춰 서서 나를 마주하기를."
+    </p>
 
     <div class="workbook-section">
+        <span class="wb-label">[ Inner Archiving Journey ]</span>
         <div class="class-step">
-            <span class="step-label">PHASE 01</span>
+            <span class="step-label">Chapter 01</span>
             <span class="step-title">영혼의 빛깔을 조색하다</span>
-            <p style="opacity:0.7;">알코올 잉크의 점도와 확산성을 활용해 감정의 층위를 조색하는 시간입니다.</p>
+            <p class="step-desc">표면적인 선호도를 넘어, 당신의 본연을 설명하는 키워드를 추출하고 시각적 언어로 번역하는 시작입니다.</p>
             <div class="workbook-box">
-                당신의 심연을 정의하는 세 가지 키워드 : <span class="input-line"></span>, <span class="input-line"></span>, <span class="input-line"></span>
+                <p>영혼을 설명하는 3가지 단어 : <span class="input-line"></span>, <span class="input-line"></span>, <span class="input-line"></span></p>
             </div>
         </div>
 
-        <div class="class-step">
-            <span class="step-label">PHASE 02</span>
-            <span class="step-title">우연이 빚어낸 찰나의 박제</span>
-            <p style="opacity:0.7;">함수율을 최적화한 압화와 몰드 디자인을 통해 계절의 한 조각을 물리적으로 고정합니다.</p>
-            <div class="workbook-box">
-                채집된 계절(Flower) : <span class="input-line"></span> 기록될 무드(Color) : <span class="input-line"></span>
-            </div>
+        <div class="img-wrap" style="margin: 60px 0;">
+            <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1200" alt="Botanical Values">
         </div>
 
         <div class="class-step">
-            <span class="step-label">PHASE 03</span>
+            <span class="step-label">Chapter 02</span>
+            <span class="step-title">찰나의 파동을 박제하다</span>
+            <p class="step-desc">함수율을 고려한 식물 배치를 통해 계절의 한 조각을 물리적으로 박제하며 우연이 만드는 감각을 채집합니다.</p>
+            <div class="workbook-box">
+                채집된 꽃(Flower) : <span class="input-line"></span> 기록될 무드(Color) : <span class="input-line"></span>
+            </div>
+        </div>
+
+        <div class="img-wrap" style="margin: 60px 0;">
+            <img src="https://images.unsplash.com/photo-1515549832467-d3b6942180f4?q=80&w=1200" alt="Ink ripple mood">
+        </div>
+
+        <div class="class-step" style="border-bottom:none; margin-bottom: 0;">
+            <span class="step-label">Chapter 03</span>
             <span class="step-title">비로소 이름이 된 나의 세계</span>
-            <p style="opacity:0.7;">완전 경화 전, 작품의 서사를 완성하는 마지막 네이밍 작업입니다.</p>
+            <p class="step-desc">박제된 순간을 마주하며, 제목을 지어 당신의 고유한 마침표를 찍는 제목의 시간입니다.</p>
             <div class="workbook-box">
-                작품에 부여할 고유한 이름 : 「 <span class="input-line" style="width:220px;"></span> 」
+                작품에 부여할 사적인 제목 : 「 <span class="input-line" style="width:240px;"></span> 」
             </div>
         </div>
     </div>
 
-    <div class="tech-card">
-        <span class="tech-tag">Laboratory Note 02</span>
-        <span class="tech-title">큐어링 시스템과 재질의 조화</span>
-        레진 램프의 **UV 파장대(365~405nm)**와 몰드의 수축률을 고려한 제작 방식은 작품의 뒤틀림을 방지합니다. 우리는 단순한 제작을 넘어, 재료의 물성(Physicality)이 사용자의 심리적 무드와 결합되었을 때 발생하는 시각적 공명을 아카이빙합니다.
+    <div class="img-wrap" style="margin: 120px 0;">
+        <img src="https://images.unsplash.com/photo-1618556450991-2f1af64e8191?q=80&w=1200" alt="Nature values mood">
     </div>
 
-    <h2 style="text-align: center; font-family: 'Cinzel'; letter-spacing: 6px; margin: 100px 0 40px;">Landscape of Soul</h2>
-    <div class="q-grid">
+    <svg class="illus" viewBox="0 0 100 100" style="width:30px;"><rect x="10" y="10" width="80" height="80" /></svg>
+
+    <h2 class="section-title">Landscape of Soul</h2>
+    <p class="section-desc">나의 내면 풍경을 들여다보는 여덟 가지의 사색적 기록</p>
+    
+    <div class="q-container">
         <div class="q-card"><span class="q-num">Q.01</span>타인의 시선이 닿지 않는 곳에서 간직하고 싶은 '첫인상'은?</div>
-        <div class="q-card"><span class="q-num">Q.02</span>오늘 당신의 마음속에 가장 짙게 머무는 감정의 색채는?</div>
-        <div class="q-card"><span class="q-num">Q.03</span>지친 하루 끝, 당신의 영혼이 안락하게 숨 쉴 수 있는 위로의 형태는?</div>
-        <div class="q-card"><span class="q-num">Q.04</span>삶의 파도 속에서도 견고하게 지키고 싶은 내면의 핵심은?</div>
+        <div class="q-card"><span class="q-num">Q.02</span>오늘 당신의 마음속에 가장 짙게 머물고 있는 감정의 색채는?</div>
+        <div class="q-card"><span class="q-num">Q.03</span>지친 하루 끝에 가장 필요한 위로의 형태는?</div>
+        <div class="q-card"><span class="q-num">Q.04</span>삶의 파도 속에서도 당신이 가장 견고하게 지켜내고 싶은 핵심은?</div>
         <div class="q-card"><span class="q-num">Q.05</span>당신을 둘러싼 사물들 중 가장 사적인 서사를 담고 있는 물건은?</div>
         <div class="q-card"><span class="q-num">Q.06</span>잉크가 투명한 액체 속에 번져나갈 때, 당신은 어떤 심연을 투영하고 싶나요?</div>
         <div class="q-card"><span class="q-num">Q.07</span>이 작품을 마주할 때마다 건네고 싶은 가장 따스한 약속은?</div>
-        <div class="q-card"><span class="q-num">Q.08</span>당신이 지향하는 삶의 무드는 단단한 핵인가요, 유연한 조화인가요?</div>
+        <div class="q-card"><span class="q-num">Q.08</span>당신의 가치관은 단단한 핵인가요, 조화로움인가요?</div>
     </div>
 
-    <div class="visual-archive" style="background: radial-gradient(circle at 50% 50%, #ebedee 0%, #fdfbfb 100%);"></div>
-
-    <div style="text-align: center; margin-top: 100px;">
-        <a href="#" class="btn btn-apply" style="padding: 22px 80px;">Begin My Archive</a>
+    <div style="text-align: center; margin-top: 150px;">
+        <svg class="illus" viewBox="0 0 100 20" style="opacity: 0.3; margin-bottom: 30px;"><path d="M10 15 Q 50 5 90 15" /></svg>
+        <p style="font-family:'Cinzel'; color:var(--accent-gold); letter-spacing:4px; margin-bottom:30px;">당신의 가치관을 아카이빙할 준비가 되셨나요?</p>
+        <a href="https://naver.me/5bCIPlxw" target="_blank" class="btn btn-apply" style="padding: 22px 80px;">Class Apply</a>
     </div>
 </section>
 
 <footer>
-    <span style="font-family:'Playball'; font-size:32px; color:var(--accent-gold);">Mood Archiving</span>
-    <p style="opacity:0.3; font-size:10px; margin-top:40px;">© 2026 MOOD ARCHIVING. SCIENTIFIC EMOTIONALISM.</p>
+    <span class="footer-logo">Mood Archiving</span>
+    <p style="opacity:0.3; font-size:10px; margin-top:50px; letter-spacing: 2px;">당신의 찰나를 영원히 기억합니다.<br>© 2026 MOOD ARCHIVING. ENCAPSULATING MOMENTS.</p>
 </footer>
 
 </body>
