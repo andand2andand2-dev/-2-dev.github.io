@@ -20,7 +20,8 @@
             color: var(--point-green); 
             font-family: 'Nanum Myeongjo', serif; 
             margin: 0; line-height: 2.2; word-break: keep-all; 
-            background-image: radial-gradient(var(--accent-gold) 0.5px, transparent 0.5px);
+            /* [수정] 오류의 원인이 되는 SVG 패턴을 안전한 브라우저 표준 방식으로 교체 */
+            background-image: radial-gradient(var(--accent-gold) 0.6px, transparent 0.6px);
             background-size: 40px 40px;
             background-attachment: fixed;
         }
@@ -40,38 +41,30 @@
         .btn-apply { background: var(--accent-gold); color: var(--white); border-color: var(--accent-gold); }
         .btn:hover { opacity: 0.8; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
 
-        .section { padding: 100px 20px; max-width: 1000px; margin: 0 auto; position: relative; }
-        .section-title { text-align: center; font-family: 'Cinzel', serif; font-size: 38px; margin-bottom: 30px; letter-spacing: 7px; }
+        .section { padding: 60px 20px; max-width: 1000px; margin: 0 auto; position: relative; }
+        .mid-quote { text-align: center; font-size: 16px; color: var(--accent-gold); margin: 100px 0; font-style: italic; letter-spacing: 2px; line-height: 3; }
         
-        /* [추가] 중간 감성 문구 스타일 */
-        .mid-quote { text-align: center; font-size: 16px; color: var(--accent-gold); margin: 120px 0; font-style: italic; letter-spacing: 2px; line-height: 3; }
-        .mid-quote span { display: block; font-size: 12px; opacity: 0.6; margin-top: 15px; letter-spacing: 5px; text-transform: uppercase; }
+        .img-wrap { width: 100%; margin: 60px 0; overflow: hidden; border-radius: 2px; box-shadow: 0 30px 60px rgba(0,0,0,0.05); }
+        .img-wrap img { width: 100%; height: auto; display: block; }
 
-        .img-wrap { width: 100%; margin: 80px 0; overflow: hidden; border-radius: 2px; box-shadow: 0 30px 60px rgba(0,0,0,0.05); }
-        .img-wrap img { width: 100%; height: auto; display: block; transition: 1s; }
-        .img-wrap:hover img { transform: scale(1.03); }
-
-        .k-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-bottom: 120px; }
-        .k-card { padding: 60px 30px; background: rgba(255, 255, 255, 0.75); border: 1px solid var(--line-color); text-align: center; backdrop-filter: blur(10px); }
+        .k-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 80px; }
+        .k-card { padding: 50px 25px; background: rgba(255, 255, 255, 0.75); border: 1px solid var(--line-color); text-align: center; backdrop-filter: blur(10px); }
         
-        .workbook-section { background: rgba(255, 255, 255, 0.9); padding: 100px 60px; border: 1px solid var(--line-color); margin-bottom: 150px; }
-        .class-step { margin-bottom: 90px; border-bottom: 1px solid var(--soft-gray); padding-bottom: 60px; }
-        .step-title { font-size: 26px; color: var(--point-green); font-weight: 700; margin-bottom: 20px; display: block; }
-        .workbook-box { background: rgba(253, 252, 249, 0.8); padding: 50px; border: 1px solid var(--soft-gray); border-left: 4px solid var(--accent-gold); }
-        .input-line { display: inline-block; min-width: 160px; border-bottom: 1px solid var(--accent-gold); margin: 0 10px; height: 28px; }
+        .workbook-section { background: rgba(255, 255, 255, 0.9); padding: 80px 40px; border: 1px solid var(--line-color); margin-bottom: 120px; }
+        .step-title { font-size: 24px; color: var(--point-green); font-weight: 700; margin-bottom: 20px; display: block; border-left: 3px solid var(--accent-gold); padding-left: 15px; }
+        .workbook-box { background: rgba(253, 252, 249, 0.8); padding: 40px; border: 1px solid var(--line-color); margin-bottom: 40px; }
+        .input-line { display: inline-block; min-width: 150px; border-bottom: 1px solid var(--accent-gold); margin: 0 10px; height: 26px; }
 
-        /* [추가] 일러스트 SVG 스타일 */
-        .illus { display: block; margin: 60px auto; width: 60px; fill: none; stroke: var(--accent-gold); stroke-width: 1; opacity: 0.6; }
+        .illus { display: block; margin: 40px auto; width: 50px; fill: none; stroke: var(--accent-gold); stroke-width: 1; opacity: 0.5; }
 
-        .q-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 50px; }
-        .q-card { padding: 60px; background: rgba(255, 255, 255, 0.8); border: 1px solid var(--line-color); backdrop-filter: blur(5px); }
+        .q-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+        .q-card { padding: 50px; background: rgba(255, 255, 255, 0.8); border: 1px solid var(--line-color); }
 
-        footer { background: #1a1a1a; color: #fff; padding: 140px 20px; text-align: center; }
+        footer { background: #1a1a1a; color: #fff; padding: 120px 20px; text-align: center; }
 
-        @media (max-width: 900px) {
+        @media (max-width: 800px) {
             .k-grid, .q-container { grid-template-columns: 1fr; }
-            .logo { font-size: 56px; }
-            .workbook-section { padding: 60px 25px; }
+            .logo { font-size: 50px; }
         }
     </style>
 </head>
@@ -80,91 +73,3 @@
 <header>
     <a href="#" class="logo">Mood Archiving</a>
     <span class="logo-sub">ENCAPSULATING MOMENTS</span>
-    <div class="btn-group">
-        <a href="https://www.instagram.com/mood_archiving/" target="_blank" class="btn btn-insta">Instagram</a>
-        <a href="https://smartstore.naver.com/mood_archiving" target="_blank" class="btn btn-store">Smart Store</a>
-        <a href="https://naver.me/5bCIPlxw" target="_blank" class="btn btn-apply">Class Apply</a>
-    </div>
-</header>
-
-<section class="section">
-    <p class="mid-quote">
-        "말로는 다 전할 수 없는 내면의 풍경을<br>투명한 조각 위에 가만히 내려놓습니다."
-        <span>The Art of Archiving</span>
-    </p>
-
-    <div class="k-grid">
-        <div class="k-card"><h4>Transparency</h4><p>맑은 진실만을 투영하는 깊이.</p></div>
-        <div class="k-card"><h4>Value Parts</h4><p>고유한 가치관을 조각으로 배열합니다.</p></div>
-        <div class="k-card"><h4>Echo of Inks</h4><p>잉크의 파동으로 감정을 시각화합니다.</p></div>
-    </div>
-
-    <svg class="illus" viewBox="0 0 100 20"><path d="M0 10 Q 25 0 50 10 T 100 10" /></svg>
-    
-    <div class="img-wrap">
-        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200" alt="Resin Detail">
-    </div>
-
-    <p class="mid-quote">
-        "서둘러 지나가는 일상 속에서,<br>단 한 번쯤은 멈춰 서서 나를 마주하기를."
-    </p>
-
-    <div class="workbook-section">
-        <svg class="illus" viewBox="0 0 100 100" style="width:40px; margin-bottom:40px;"><path d="M50 95 V 50 M 50 70 Q 80 60 50 40 Q 20 60 50 70" /></svg>
-        
-        <div class="class-step">
-            <span class="step-title">Chapter 01. 본연의 색을 찾는 시간</span>
-            <div class="workbook-box">
-                <p>나의 영혼을 설명하는 3가지 단어 : <span class="input-line"></span>, <span class="input-line"></span>, <span class="input-line"></span></p>
-            </div>
-        </div>
-
-        <div class="img-wrap">
-            <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1200" alt="Nature Mood">
-        </div>
-
-        <div class="class-step">
-            <span class="step-title">Chapter 02. 찰나의 파동을 박제하다</span>
-            <div class="workbook-box">
-                <p>Main Flower : <span class="input-line"></span> Sub Color : <span class="input-line"></span></p>
-            </div>
-        </div>
-
-        <p style="text-align: center; font-size: 14px; opacity: 0.5; margin: 60px 0;">잉크가 번져나가는 모양은 우리의 감정처럼 결코 통제할 수 없습니다.</p>
-
-        <div class="class-step" style="border-bottom:none;">
-            <span class="step-title">Chapter 03. 제목이 된 나의 무드</span>
-            <div class="workbook-box">
-                <p>작품의 이름(Title) : 「 <span class="input-line" style="width:240px;"></span> 」</p>
-            </div>
-        </div>
-    </div>
-
-    <svg class="illus" viewBox="0 0 100 100" style="width:30px;"><rect x="10" y="10" width="80" height="80" /></svg>
-
-    <h2 class="section-title">Landscape of Soul</h2>
-    <div class="q-container">
-        <div class="q-card"><span class="q-num">Q.01</span><p>당신이 간직하고 싶은 본연의 '첫인상'은?</p></div>
-        <div class="q-card"><span class="q-num">Q.02</span><p>현재 당신의 에너지를 색깔로 표현한다면?</p></div>
-        <div class="q-card"><span class="q-num">Q.03</span><p>지친 하루 끝에 가장 필요한 위로의 형태는?</p></div>
-        <div class="q-card"><span class="q-num">Q.04</span><p>삶에서 가장 견고하게 지키는 키워드는?</p></div>
-        <div class="q-card"><span class="q-num">Q.05</span><p>오늘 마음속에 머무는 물건의 사적인 서사는?</p></div>
-        <div class="q-card"><span class="q-num">Q.06</span><p>잉크의 색채는 어떤 심연을 투영하고 있나요?</p></div>
-        <div class="q-card"><span class="q-num">Q.07</span><p>사용할 때마다 기억하고 싶은 약속이 있나요?</p></div>
-        <div class="q-card"><span class="q-num">Q.08</span><p>당신의 가치관은 단단한 핵인가요, 조화로움인가요?</p></div>
-    </div>
-
-    <div style="text-align: center; margin-top: 150px;">
-        <svg class="illus" viewBox="0 0 100 20" style="opacity: 0.3; margin-bottom: 30px;"><path d="M10 15 Q 50 5 90 15" /></svg>
-        <p style="font-family:'Cinzel'; color:var(--accent-gold); letter-spacing:4px; margin-bottom:30px;">아카이빙된 당신의 순간은 영원히 투명하게 빛날 것입니다.</p>
-        <a href="https://naver.me/5bCIPlxw" target="_blank" class="btn btn-apply" style="padding: 22px 70px;">Class Apply</a>
-    </div>
-</section>
-
-<footer>
-    <span class="footer-logo">Mood Archiving</span>
-    <p style="opacity:0.3; font-size:10px; margin-top:50px;">© 2026 MOOD ARCHIVING. ALL RIGHTS RESERVED.</p>
-</footer>
-
-</body>
-</html>
