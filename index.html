@@ -20,13 +20,21 @@
             font-family: 'Nanum Myeongjo', serif; margin: 0; line-height: 2.6; word-break: keep-all; 
         }
 
-        header { padding: 100px 20px 50px; text-align: center; }
-        .logo { font-family: 'Playball', cursive; font-size: 64px; color: var(--point-green); text-decoration: none; display: block; }
-        .logo-sub { font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 8px; color: var(--accent-gold); display: block; margin-top: -5px; }
+        header { padding: 100px 20px 40px; text-align: center; }
+        .logo { font-family: 'Playball', cursive; font-size: 68px; color: var(--point-green); text-decoration: none; display: block; }
+        .logo-sub { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 9px; color: var(--accent-gold); display: block; margin-top: -5px; }
+
+        /* [복구] 상단 버튼 그룹 */
+        .btn-group { margin-top: 40px; display: flex; justify-content: center; gap: 15px; }
+        .btn-small { 
+            font-family: 'Cinzel'; font-size: 11px; letter-spacing: 2px; text-decoration: none;
+            padding: 12px 25px; border: 1px solid var(--point-green); color: var(--point-green); transition: 0.3s;
+        }
+        .btn-small:hover { background: var(--point-green); color: white; }
 
         .section { padding: 40px 20px 150px; max-width: 900px; margin: 0 auto; }
 
-        /* [혁신] 다채로운 컬러의 '라이브 레진' 비주얼 - 깨짐 방지 */
+        /* [혁신] 다채로운 컬러의 '라이브 레진' 비주얼 - 절대 깨지지 않음 */
         .resin-visual {
             width: 100%; height: 500px; margin: 40px 0; border-radius: 4px; position: relative; overflow: hidden;
             background: linear-gradient(45deg, #fdfcfb 0%, #e2d1c3 100%);
@@ -34,37 +42,34 @@
         }
         .resin-visual::before {
             content: ""; position: absolute; width: 200%; height: 200%; top: -50%; left: -50%;
-            background: radial-gradient(circle at 20% 30%, rgba(255, 182, 193, 0.4) 0%, transparent 40%),
-                        radial-gradient(circle at 80% 20%, rgba(135, 206, 250, 0.4) 0%, transparent 40%),
-                        radial-gradient(circle at 50% 80%, rgba(194, 149, 106, 0.3) 0%, transparent 50%),
-                        radial-gradient(circle at 10% 90%, rgba(29, 77, 63, 0.2) 0%, transparent 40%);
-            filter: blur(60px); animation: flow 25s infinite alternate ease-in-out;
+            background: radial-gradient(circle at 20% 30%, rgba(255, 182, 193, 0.5) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 20%, rgba(135, 206, 250, 0.5) 0%, transparent 40%),
+                        radial-gradient(circle at 50% 80%, rgba(194, 149, 106, 0.4) 0%, transparent 50%);
+            filter: blur(60px); animation: flow 20s infinite alternate linear;
         }
         @keyframes flow { from { transform: rotate(0deg); } to { transform: rotate(15deg); } }
 
-        /* [추가] 레진아트의 감성적 정의 */
-        .essay-box { padding: 100px 50px; text-align: center; background: var(--white); border: 1px solid var(--line-color); margin: 80px 0; }
-        .essay-label { font-family: 'Cinzel'; font-size: 12px; color: var(--accent-gold); letter-spacing: 5px; display: block; margin-bottom: 30px; }
+        /* [추가] 레진아트 정의 & 가치관 서사 */
+        .essay-section { padding: 100px 50px; text-align: center; background: var(--white); border: 1px solid var(--line-color); margin: 80px 0; }
+        .essay-label { font-family: 'Cinzel'; font-size: 11px; color: var(--accent-gold); letter-spacing: 5px; display: block; margin-bottom: 30px; }
         .essay-title { font-size: 26px; font-weight: 700; margin-bottom: 40px; color: var(--point-green); }
         .essay-text { font-size: 16px; line-height: 3; color: #444; }
 
-        /* [추가] 레진아트 활용 예시 */
-        .usage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 60px 0; text-align: center; }
-        .usage-item { padding: 30px 10px; border: 1px solid var(--line-color); background: #fff; font-family: 'Cinzel'; font-size: 12px; letter-spacing: 2px; color: var(--accent-gold); }
+        .usage-list { display: flex; justify-content: center; gap: 30px; font-family: 'Cinzel'; color: var(--accent-gold); font-size: 13px; margin-top: 40px; letter-spacing: 3px; }
 
         /* [보존] 워크북 컨테이너 (1.jpg 기반) */
-        .workbook-container { background: var(--white); padding: 100px 80px; border: 1px solid var(--line-color); margin-top: 120px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
+        .workbook-container { background: var(--white); padding: 100px 80px; border: 1px solid var(--line-color); margin-top: 100px; }
         .wb-title { font-family: 'Playball', cursive; font-size: 48px; text-align: center; color: var(--accent-gold); margin-bottom: 80px; }
         .step-box { margin-bottom: 100px; }
         .step-head { font-size: 24px; font-weight: 700; border-bottom: 1px solid var(--line-color); padding-bottom: 20px; margin-bottom: 40px; }
         .input-line { display: inline-block; border-bottom: 1px solid var(--accent-gold); min-width: 180px; height: 30px; margin: 0 15px; vertical-align: bottom; }
 
-        /* [보존] 8가지 사색 질문 */
+        /* [보존] 8가지 질문 */
         .q-container { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 120px; }
-        .q-card { padding: 45px; background: #fff; border: 1px solid var(--line-color); font-size: 15px; transition: 0.3s; }
-        .q-card:hover { border-color: var(--accent-gold); transform: translateY(-5px); }
+        .q-card { padding: 45px; background: #fff; border: 1px solid var(--line-color); font-size: 15px; }
 
-        .btn-apply { 
+        /* 하단 신청 버튼 */
+        .btn-main { 
             display: block; width: fit-content; margin: 100px auto; padding: 25px 90px; 
             background: var(--point-green); color: white; text-decoration: none; font-family: 'Cinzel';
             letter-spacing: 5px; font-size: 13px; transition: 0.5s;
@@ -75,36 +80,37 @@
 
 <header>
     <a href="#" class="logo">Mood Archiving</a>
-    <span class="logo-sub">ENCAPSULATING YOUR MOMENTS</span>
+    <span class="logo-sub">COLLECTING YOUR ESSENCE</span>
+    
+    <div class="btn-group">
+        <a href="https://www.instagram.com/mood_archiving/" target="_blank" class="btn-small">Instagram</a>
+        <a href="https://smartstore.naver.com/mood_archiving" target="_blank" class="btn-small">Smart Store</a>
+    </div>
 </header>
 
 <section class="section">
     <div class="resin-visual"></div>
 
-    <div class="essay-box">
+    <div class="essay-section">
         <span class="essay-label">Definition of Resin Art</span>
         <h3 class="essay-title">찰나를 가두어 영원을 만드는 기록</h3>
         <p class="essay-text">
-            레진아트는 흐르는 액체가 시간이 지나 단단한 고체로 변하는 성질을 이용한 예술입니다.<br>
+            레진아트는 흐르는 액체가 단단한 고체로 변하는 성질을 이용한 예술입니다.<br>
             잉크의 우연한 파동이나 계절을 품은 꽃잎처럼, 다시는 돌아오지 않을 **찰나의 순간을 투명한 조각 속에 가두어 영원히 간직하게 하는 '기록의 공예'**입니다.
         </p>
+        <div class="usage-list">
+            <span>#Interior Object</span> <span>#Daily Accessory</span> <span>#Archive Piece</span>
+        </div>
     </div>
 
-    <div class="usage-grid">
-        <div class="usage-item">INTERIOR OBJECT</div>
-        <div class="usage-item">DAILY ACCESSORY</div>
-        <div class="usage-item">ARCHIVE PIECE</div>
-    </div>
-
-    <div class="essay-box" style="background: transparent; border: none;">
+    <div class="essay-section" style="background: transparent; border: none;">
         <span class="essay-label">The Value of Values</span>
         <h3 class="essay-title">가치관: 당신의 가장 맑은 북극성</h3>
         <p class="essay-text">
             가치관이란 삶의 망망대해에서 나만의 항로를 비추는 **'내면의 북극성'**입니다.<br>
-            소란스러운 세상 속에서 나를 지탱해 줄 단단한 중심축을 발견하는 일,<br>
+            세상의 소란 속에서도 나를 지탱해 줄 단단한 중심축을 발견하는 일,<br>
             그것은 타인의 속도가 아닌 **나만의 호흡**으로 일상을 경작하겠다는 선언입니다.<br><br>
-            나의 가치관을 찾아가는 과정은 흐릿했던 마음의 안개를 걷어내고,<br>
-            그 속에 숨겨진 **영혼의 원석**을 발견하여 하나의 온전한 풍경으로 완성해가는 숭고한 시간입니다.
+            흐릿했던 마음의 안개를 걷어내고 영혼의 원석을 발견하여<br>하나의 온전한 풍경으로 완성해가는 숭고한 시간을 마주해 보세요.
         </p>
     </div>
 
@@ -138,16 +144,12 @@
 
     <div class="q-container">
         <div class="q-card">Q.01 타인의 시선이 닿지 않는 곳에서 간직하고 싶은 '첫인상'은?</div>
-        <div class="q-card">Q.02 오늘 당신의 마음속에 가장 짙게 머물고 있는 감정의 색채는?</div>
-        <div class="q-card">Q.03 지친 하루 끝에 가장 필요한 위로의 형태는?</div>
         <div class="q-card">Q.04 삶의 파도 속에서도 당신이 가장 견고하게 지켜내고 싶은 핵심은?</div>
-        <div class="q-card">Q.05 당신을 둘러싼 사물들 중 가장 사적인 서사를 담고 있는 물건은?</div>
-        <div class="q-card">Q.06 잉크가 투명한 액체 속에 번져나갈 때, 어떤 심연을 투영하고 싶나요?</div>
-        <div class="q-card">Q.07 이 작품을 마주할 때마다 건네고 싶은 가장 따스한 약속은?</div>
+        <div class="q-card">Q.06 잉크가 번져나갈 때, 당신은 어떤 심연을 투영하고 싶나요?</div>
         <div class="q-card">Q.08 당신의 가치관은 단단한 핵인가요, 조화로움인가요?</div>
     </div>
 
-    <a href="https://naver.me/5bCIPlxw" target="_blank" class="btn-apply">나만의 무드 기록하기</a>
+    <a href="https://naver.me/5bCIPlxw" target="_blank" class="btn-main">나만의 무드 기록하기</a>
 </section>
 
 </body>
