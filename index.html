@@ -37,12 +37,42 @@
         .section { padding: 40px 20px 150px; max-width: 1000px; margin: 0 auto; }
         .img-content { width: 100%; height: 550px; object-fit: cover; margin: 60px 0; border: 15px solid #fff; box-shadow: 0 30px 60px rgba(0,0,0,0.1); display: block; }
 
-        /* [감성 에세이 존] 정의, 중요성, 성향, 과정을 문학적으로 표현 */
-        .essay-box { padding: 120px 80px; text-align: center; background: rgba(255, 255, 255, 0.95); border: 1px solid var(--line-color); margin: 80px 0; backdrop-filter: blur(10px); }
-        .essay-label { font-family: 'Cinzel'; font-size: 12px; color: var(--accent-gold); letter-spacing: 6px; display: block; margin-bottom: 30px; }
-        .essay-title { font-size: 32px; font-weight: 700; margin-bottom: 50px; color: var(--point-green); }
-        .essay-content { font-size: 18px; line-height: 3.2; color: #333; text-align: justify; text-align-last: center; }
-        .highlight { color: var(--accent-gold); font-weight: 700; }
+        /* --- [수정된 에세이 섹션 디자인] --- */
+        .essay-box { 
+            padding: 140px 100px; 
+            text-align: center; 
+            background: rgba(255, 255, 255, 0.98); 
+            border: 1px solid var(--line-color); 
+            margin: 100px 0; 
+            backdrop-filter: blur(10px);
+            box-shadow: 0 40px 100px rgba(0,0,0,0.03);
+            position: relative;
+        }
+        
+        /* 장식 요소 추가 */
+        .essay-box::before {
+            content: "“"; font-family: 'Cinzel'; font-size: 120px; color: var(--accent-gold); 
+            position: absolute; top: 40px; left: 50%; transform: translateX(-50%); opacity: 0.2;
+        }
+
+        .essay-label { font-family: 'Cinzel'; font-size: 12px; color: var(--accent-gold); letter-spacing: 8px; display: block; margin-bottom: 25px; }
+        .essay-title { font-size: 36px; font-weight: 700; margin-bottom: 70px; color: var(--point-green); }
+        
+        /* 문단 분리 및 강조 */
+        .essay-para { 
+            font-size: 19px; line-height: 3.2; color: #333; 
+            margin-bottom: 60px; 
+            position: relative;
+            padding: 0 20px;
+        }
+        
+        /* 문단 사이 구분선 */
+        .essay-para:not(:last-child)::after {
+            content: ""; display: block; width: 40px; height: 1px; 
+            background: var(--accent-gold); margin: 60px auto; opacity: 0.5;
+        }
+
+        .highlight { color: var(--accent-gold); font-weight: 700; border-bottom: 1px solid rgba(194, 149, 106, 0.3); padding-bottom: 2px; }
 
         /* [회차별 강조 카드] */
         .session-card {
@@ -81,26 +111,28 @@
         <h3 class="essay-title">가치관: 당신의 가장 맑은 북극성</h3>
         
         <div class="essay-content">
-            <p>
+            <div class="essay-para">
                 우리가 타고난 <span class="highlight">성향</span>이 영혼의 결이자 지울 수 없는 바탕색이라면, <br>
                 <span class="highlight">가치관</span>은 그 위에 당신이 어떤 방향으로 나아갈지 결정하는 단단한 의지이자 <span class="highlight">북극성</span>입니다. <br>
                 성향이 '나는 누구인가'를 말해준다면, 가치관은 '나는 어떻게 살 것인가'를 정의하는 삶의 가장 사적인 언어입니다.
-            </p>
-            <p>
+            </div>
+
+            <div class="essay-para">
                 나만의 가치관을 찾는 일은 세상의 소란 속에서도 나를 온전히 지탱해 줄 중심축을 발견하는 일입니다. <br>
                 그것은 타인의 속도가 아닌 **나만의 호흡**으로 일상을 경작하겠다는 선언이며, <br>
                 삶의 파도가 몰아쳐도 나라는 항해를 멈추지 않게 하는 유일한 <span class="highlight">이정표</span>가 됩니다.
-            </p>
-            <p>
+            </div>
+
+            <div class="essay-para" style="margin-bottom: 0;">
                 무엇보다 가치관을 찾아가는 <span class="highlight">그 과정의 숭고함</span>을 믿습니다. <br>
                 흐릿했던 마음의 안개를 걷어내고, 그 속에 숨겨진 영혼의 원석을 발견하여 <br>
                 하나의 온전한 풍경으로 완성해가는 그 시간은, 단순히 답을 구하는 일을 넘어 <br>
                 비로소 **나의 본질과 화해하는 치유의 여정**이 되기 때문입니다.
-            </p>
+            </div>
         </div>
     </div>
 
-    <div style="text-align: center; margin: 120px 0 80px;">
+    <div style="text-align: center; margin: 150px 0 80px;">
         <span class="essay-label">3-Session Curriculum</span>
         <h2 style="font-size: 32px; font-weight: 700;">나의 무드를 기록하는 3단계 여정</h2>
     </div>
@@ -141,7 +173,7 @@
         </div>
     </div>
 
-    </section>
+</section>
 
 <footer>
     <span class="footer-logo">Mood Archiving</span>
