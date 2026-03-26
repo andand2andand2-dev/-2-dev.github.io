@@ -28,32 +28,31 @@
         .header-btn:hover { background: var(--point-green); color: white; }
         .btn-gold { border-color: var(--accent-gold); color: var(--accent-gold); }
 
-        .section { padding: 0 15px 80px; max-width: 800px; margin: 0 auto; box-sizing: border-box; }
+        .section { padding: 0 15px 80px; max-width: 900px; margin: 0 auto; box-sizing: border-box; }
         
-        .img-box { width: 100%; margin: 40px 0; border: 8px solid #fff; box-shadow: 0 15px 30px rgba(0,0,0,0.06); box-sizing: border-box; overflow: hidden; background: #eee; }
-        .img-box img { width: 100%; height: auto; display: block; object-fit: cover; aspect-ratio: 16 / 10; }
-
-        .img-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 40px 0; }
-        .img-grid .img-box { margin: 0; border-width: 5px; }
-        .img-grid .img-box img { aspect-ratio: 1 / 1; }
-
-        .essay-card { background: #fff; padding: 50px 25px; border-radius: 25px; border: 1px solid var(--line-color); margin-bottom: 50px; text-align: center; }
-        .essay-title { font-size: 22px; font-weight: 700; margin-bottom: 30px; color: var(--point-green); }
-        .essay-text { font-size: 16px; line-height: 2.2; color: #333; text-align: justify; text-align-last: center; }
+        /* [수정] 에세이 & 이미지 나란히 배치 레이아웃 */
+        .essay-flex-container { display: flex; flex-direction: column; gap: 30px; margin: 40px 0; align-items: center; }
+        
+        .essay-card { background: #fff; padding: 40px 25px; border-radius: 25px; border: 1px solid var(--line-color); text-align: center; flex: 1.2; width: 100%; box-sizing: border-box; }
+        .essay-title { font-size: 22px; font-weight: 700; margin-bottom: 25px; color: var(--point-green); }
+        .essay-text { font-size: 15px; line-height: 2; color: #333; text-align: justify; text-align-last: center; }
         .highlight { color: var(--accent-gold); font-weight: 700; border-bottom: 1px solid rgba(194, 149, 106, 0.4); }
 
-        /* [추가 섹션] 클래스 가이드 및 순서 */
-        .guide-section { margin: 60px 0; }
-        .guide-header { text-align: center; margin-bottom: 40px; }
-        .guide-header h2 { font-family: 'Cinzel'; font-size: 26px; letter-spacing: 5px; margin-bottom: 10px; }
-        .guide-header p { font-size: 14px; color: var(--accent-gold); margin: 0; }
+        .side-img-box { flex: 1; width: 100%; border: 8px solid #fff; box-shadow: 0 15px 30px rgba(0,0,0,0.06); border-radius: 5px; overflow: hidden; box-sizing: border-box; }
+        .side-img-box img { width: 100%; height: auto; display: block; object-fit: cover; aspect-ratio: 1 / 1; }
 
-        .curriculum-box { background: #fff; padding: 40px 25px; border-radius: 25px; border: 1px solid var(--line-color); box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
-        .step-item { display: flex; align-items: flex-start; margin-bottom: 30px; }
+        /* 클래스 가이드 및 순서 */
+        .guide-section { margin: 60px 0; }
+        .guide-header { text-align: center; margin-bottom: 30px; }
+        .guide-header h2 { font-family: 'Cinzel'; font-size: 24px; letter-spacing: 4px; margin-bottom: 8px; }
+        .guide-header p { font-size: 13px; color: var(--accent-gold); margin: 0; }
+
+        .curriculum-box { background: #fff; padding: 35px 20px; border-radius: 25px; border: 1px solid var(--line-color); }
+        .step-item { display: flex; align-items: flex-start; margin-bottom: 25px; }
         .step-item:last-child { margin-bottom: 0; }
-        .step-num { font-family: 'Cinzel'; font-size: 16px; color: var(--accent-gold); font-weight: 700; min-width: 70px; padding-top: 5px; }
-        .step-content b { font-size: 18px; display: block; margin-bottom: 8px; color: var(--point-green); }
-        .step-content p { font-size: 14px; margin: 0; color: #666; line-height: 1.6; }
+        .step-num { font-family: 'Cinzel'; font-size: 15px; color: var(--accent-gold); font-weight: 700; min-width: 65px; padding-top: 4px; }
+        .step-content b { font-size: 17px; display: block; margin-bottom: 6px; color: var(--point-green); }
+        .step-content p { font-size: 13px; margin: 0; color: #666; line-height: 1.6; }
 
         .content-card { background: #fff; padding: 40px 25px; border-radius: 25px; border: 1px solid var(--line-color); margin-bottom: 50px; }
         .card-num { font-family: 'Cinzel'; font-size: 28px; color: var(--accent-gold); opacity: 0.3; display: block; margin-bottom: 5px; }
@@ -68,8 +67,6 @@
         .symbol-list li { margin-bottom: 15px; padding-left: 25px; position: relative; }
         .symbol-list li::before { content: "✦"; position: absolute; left: 0; color: var(--accent-gold); }
 
-        .quote { text-align: center; font-style: italic; color: var(--accent-gold); font-size: 16px; font-weight: 700; margin-top: 30px; line-height: 1.6; }
-
         .q-grid { display: grid; grid-template-columns: 1fr; gap: 15px; margin-top: 40px; }
         .q-card { padding: 30px 20px; background: #fff; border-radius: 15px; border-left: 5px solid var(--accent-gold); }
         .q-card b { font-size: 16px; display: block; }
@@ -79,16 +76,13 @@
         
         footer { background: #1a1a1a; color: #fff; padding: 70px 20px; text-align: center; font-size: 11px; }
 
+        /* PC 버전 (768px 이상) */
         @media (min-width: 768px) {
-            header { padding: 90px 20px 50px; }
-            .logo { font-size: 75px; }
-            .logo-sub { font-size: 15px; letter-spacing: 10px; }
-            .essay-card { padding: 80px 60px; }
-            .essay-title { font-size: 32px; }
-            .essay-text { font-size: 18px; }
-            .curriculum-box { padding: 60px; }
-            .content-card { padding: 70px 60px; }
-            .card-title { font-size: 28px; }
+            .essay-flex-container { flex-direction: row; gap: 40px; align-items: stretch; }
+            .essay-card { text-align: left; padding: 50px; }
+            .essay-text { text-align: justify; text-align-last: left; }
+            .guide-header h2 { font-size: 30px; }
+            .curriculum-box { padding: 50px; }
             .q-grid { grid-template-columns: 1fr 1fr; }
         }
     </style>
@@ -106,60 +100,56 @@
 </header>
 
 <section class="section">
-    <div class="img-box">
-        <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1200&q=80" alt="Main Mood Flower">
-    </div>
-
-    <div class="essay-card">
-        <span style="font-family:'Cinzel'; font-size:12px; color:var(--accent-gold); letter-spacing:4px; display:block; margin-bottom:20px;">PHILOSOPHY</span>
-        <h3 class="essay-title">가치관: 당신의 가장 맑은 북극성</h3>
-        <div class="essay-text">
-            우리가 타고난 <span class="highlight">성향</span>이 영혼의 결이자 바탕색이라면, <span class="highlight">가치관</span>은 그 위에 당신이 어떤 방향으로 나아갈지 결정하는 단단한 의지이자 <span class="highlight">북극성</span>입니다.<br><br>
-            성향이 '나는 누구인가'를 말해준다면, 가치관은 '나는 어떻게 살 것인가'를 정의하는 삶의 가장 사적인 언어입니다. 나만의 가치관을 찾는 일은 세상의 소란 속에서도 나를 온전히 지탱해 줄 중심축을 발견하는 일입니다.
+    <div class="essay-flex-container">
+        <div class="essay-card">
+            <span style="font-family:'Cinzel'; font-size:12px; color:var(--accent-gold); letter-spacing:4px; display:block; margin-bottom:15px;">PHILOSOPHY</span>
+            <h3 class="essay-title">가치관 이야기</h3>
+            <div class="essay-text">
+                우리가 타고난 <span class="highlight">성향</span>이 영혼의 결이자 지울 수 없는 바탕색이라면, <span class="highlight">가치관</span>은 그 위에 당신이 어떤 방향으로 나아갈지 결정하는 단단한 의지이자 <span class="highlight">북극성</span>입니다.<br><br>
+                성향이 '나는 누구인가'를 말해준다면, 가치관은 '나는 어떻게 살 것인가'를 정의하는 삶의 가장 사적인 언어입니다. 나만의 가치관을 찾는 일은 세상의 소란 속에서도 나를 온전히 지탱해 줄 중심축을 발견하는 일입니다.<br><br>
+                그것은 타인의 속도가 아닌 <span class="highlight">나만의 호흡</span>으로 일상을 경작하겠다는 선언이며, 삶의 파도가 몰아쳐도 나라는 항해를 멈추지 않게 하는 유일한 이정표가 됩니다.
+            </div>
+        </div>
+        <div class="side-img-box">
+            <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=800&q=80" alt="Mood Archiving Art">
         </div>
     </div>
 
     <div class="guide-section">
         <div class="guide-header">
-            <h2>CLASS GUIDE</h2>
-            <p>당신의 본질을 담아내는 4단계의 아카이빙 과정</p>
+            <h2>CLASS PROCESS</h2>
+            <p>내면을 기록하는 4단계 과정</p>
         </div>
-        
         <div class="curriculum-box">
             <div class="step-item">
                 <span class="step-num">STEP 01</span>
                 <div class="step-content">
-                    <b>가치관 추출 및 키워드 선정</b>
-                    <p>워크북을 통해 현재의 나를 가장 잘 설명하는 핵심 단어 3가지를 찾고, 이를 시각적으로 표현할 메인 꽃과 컬러를 결정합니다.</p>
+                    <b>가치관 워크북 작성</b>
+                    <p>나를 정의하는 3가지 키워드를 추출하고 시각적 언어로 변환합니다.</p>
                 </div>
             </div>
             <div class="step-item">
                 <span class="step-num">STEP 02</span>
                 <div class="step-content">
                     <b>디자인 레이아웃 구상</b>
-                    <p>추출된 가치관 키워드에 맞춰 레진 작품 안에 배치할 오브제와 소재들의 구도를 잡고 조색 과정을 준비합니다.</p>
+                    <p>가치관을 닮은 컬러와 메인 플라워의 구도를 설계합니다.</p>
                 </div>
             </div>
             <div class="step-item">
                 <span class="step-num">STEP 03</span>
                 <div class="step-content">
-                    <b>레진 크래프트 제작</b>
-                    <p>투명 레진에 잉크 드롭 기법과 알코올 잉크를 활용하여, 통제되지 않는 감정의 파동을 예술적으로 박제하는 메인 작업입니다.</p>
+                    <b>레진 아카이빙 제작</b>
+                    <p>잉크 드롭 기법을 활용하여 찰나의 가치관을 박제합니다.</p>
                 </div>
             </div>
             <div class="step-item">
                 <span class="step-num">STEP 04</span>
                 <div class="step-content">
                     <b>아카이빙 및 에필로그</b>
-                    <p>완성된 작품에 자신만의 서사를 담은 이름을 붙이고, 미래의 나에게 전하는 약속과 소회를 기록하며 클래스를 마무리합니다.</p>
+                    <p>작품의 이름을 붙이고 나에게 전하는 약속을 기록합니다.</p>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="img-grid">
-        <div class="img-box"><img src="https://images.unsplash.com/photo-1596716768285-d62f4e3c92da?auto=format&fit=crop&w=600&q=80"></div>
-        <div class="img-box"><img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=600&q=80"></div>
     </div>
 
     <div class="content-card">
@@ -172,17 +162,6 @@
                 ( <span class="wb-line"></span> ), ( <span class="wb-line"></span> ), ( <span class="wb-line"></span> )
             </p>
         </div>
-        <div class="process-item">
-            <span class="process-head">시각적 언어 정의</span>
-            <p class="process-desc">
-                - <b>Main Flower</b>: 가치관 상징 꽃 (리시안셔스 등)<br>
-                - <b>Sub Color</b>: 내면의 감정을 담은 색채
-            </p>
-        </div>
-    </div>
-
-    <div class="img-box">
-        <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1200&q=80">
     </div>
 
     <div class="content-card">
@@ -193,22 +172,6 @@
             <li><b>Point 1</b>: 가치관 키워드에 부합하는 오브제 배치</li>
             <li><b>Point 2</b>: 알코올 잉크 드롭 <small>(감정의 파동 표현)</small></li>
         </ul>
-        <p class="quote">
-            "잉크가 퍼지는 모양을 그대로 두어 <br>통제할 수 없는 감정의 아름다움을 연출합니다."
-        </p>
-    </div>
-
-    <div class="content-card">
-        <span class="card-num">03</span>
-        <h3 class="card-title">기록과 아카이빙</h3>
-        <div class="process-item">
-            <span class="process-head">나에게 전하는 약속</span>
-            <p class="process-desc">" <span class="wb-line" style="min-width:80%;"></span> "</p>
-        </div>
-        <div class="process-item">
-            <span class="process-head">최종 작품명 (Title)</span>
-            <p class="process-desc">작품명: 「 <span class="wb-line"></span> 」</p>
-        </div>
     </div>
 
     <div style="text-align:center; margin-top: 60px;">
@@ -231,8 +194,8 @@
 </section>
 
 <footer>
-    <span style="font-family:'Playball'; font-size:26px;">Mood Archiving</span>
-    <p style="opacity:0.4; margin-top:25px; letter-spacing: 1px;">© 2026 MOOD ARCHIVING. ENCAPSULATING MOMENTS.</p>
+    <span style="font-family:'Playball'; font-size:24px;">Mood Archiving</span>
+    <p style="opacity:0.4; margin-top:25px;">© 2026 MOOD ARCHIVING. ENCAPSULATING MOMENTS.</p>
 </footer>
 
 </body>
