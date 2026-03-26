@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mood Archiving | 클래스 상세 안내</title>
+    <title>Mood Archiving | 가치관을 박제하다</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playball&family=Cinzel:wght@400;700&family=Nanum+Myeongjo:wght@400;700&display=swap');
 
@@ -11,6 +11,7 @@
             --bg-color: #F8F6F1;
             --point-green: #1D4D3F;
             --accent-gold: #c2956a;
+            --white: #ffffff;
             --line-color: rgba(29, 77, 63, 0.1);
         }
 
@@ -19,36 +20,40 @@
             background-color: var(--bg-color); 
         }
 
+        /* 헤더 & 상단 버튼 3개 */
         header { padding: 80px 20px 40px; text-align: center; }
-        .logo { font-family: 'Playball', cursive; font-size: 65px; color: var(--point-green); text-decoration: none; display: block; }
-        .logo-sub { font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 8px; color: var(--accent-gold); display: block; margin-top: -5px; font-weight: 700; }
+        .logo { font-family: 'Playball', cursive; font-size: 70px; color: var(--point-green); text-decoration: none; display: block; }
+        .logo-sub { font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 9px; color: var(--accent-gold); display: block; margin-top: -5px; font-weight: 700; }
         
         .header-btn-group { display: flex; justify-content: center; gap: 15px; margin-top: 40px; }
         .header-btn { font-family: 'Cinzel'; font-size: 13px; letter-spacing: 2px; text-decoration: none; padding: 12px 25px; border: 1.5px solid var(--point-green); color: var(--point-green); font-weight: 700; transition: 0.3s; }
+        .header-btn:hover { background: var(--point-green); color: white; }
         .btn-gold { border-color: var(--accent-gold); color: var(--accent-gold); }
 
         .section { padding: 40px 20px 120px; max-width: 900px; margin: 0 auto; }
         
         /* 감성 이미지 스타일 */
-        .img-fluid { width: 100%; height: 450px; object-fit: cover; margin: 40px 0; border: 12px solid #fff; box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
+        .img-main { width: 100%; height: 550px; object-fit: cover; margin-bottom: 60px; border: 15px solid #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .img-sub { width: 100%; height: 400px; object-fit: cover; margin: 40px 0; border: 10px solid #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
 
-        /* 클래스 카드 스타일 */
-        .content-card { background: #fff; padding: 60px 50px; border-radius: 30px; border: 1px solid var(--line-color); margin-bottom: 80px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
-        .card-label { font-family: 'Cinzel'; font-size: 13px; color: var(--accent-gold); letter-spacing: 5px; display: block; margin-bottom: 20px; text-align: center; font-weight: 700; }
-        .card-title { font-size: 28px; font-weight: 700; margin-bottom: 45px; text-align: center; color: var(--point-green); }
+        /* 클래스 회차별 카드 */
+        .content-card { background: #fff; padding: 70px 60px; border-radius: 40px; border: 1px solid var(--line-color); margin-bottom: 80px; box-shadow: 0 15px 35px rgba(0,0,0,0.02); }
+        .card-label { font-family: 'Cinzel'; font-size: 14px; color: var(--accent-gold); letter-spacing: 6px; display: block; margin-bottom: 20px; text-align: center; font-weight: 700; }
+        .card-title { font-size: 30px; font-weight: 700; margin-bottom: 50px; text-align: center; color: var(--point-green); }
         
-        /* 회차별 상세 설명 리스트 */
-        .process-item { margin-bottom: 40px; padding-left: 25px; border-left: 3.5px solid var(--accent-gold); }
+        /* [복구] 상세 프로세스 텍스트 */
+        .process-item { margin-bottom: 45px; padding-left: 25px; border-left: 4px solid var(--accent-gold); }
         .process-head { font-size: 22px; font-weight: 700; display: block; margin-bottom: 12px; color: var(--point-green); }
-        .process-desc { font-size: 17px; color: #444; line-height: 2.1; }
-        .wb-line { display: inline-block; border-bottom: 1.5px solid var(--point-green); min-width: 150px; height: 28px; margin: 0 8px; vertical-align: bottom; }
+        .process-desc { font-size: 18px; color: #444; line-height: 2.2; }
+        .wb-line { display: inline-block; border-bottom: 1.5px solid var(--point-green); min-width: 150px; height: 30px; margin: 0 10px; vertical-align: bottom; }
 
-        /* 8문항 그리드 */
-        .q-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 50px; }
-        .q-card { padding: 40px; background: #FBF9F6; border-radius: 15px; border-left: 5px solid var(--accent-gold); }
-        .q-card b { font-size: 19px; display: block; margin-bottom: 10px; color: var(--point-green); }
+        /* 8개 질문 그리드 */
+        .q-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 60px; }
+        .q-card { padding: 45px; background: rgba(255, 255, 255, 0.8); border-radius: 15px; border-left: 6px solid var(--accent-gold); box-shadow: 0 5px 15px rgba(0,0,0,0.02); }
+        .q-card b { font-size: 20px; display: block; margin-bottom: 12px; color: var(--point-green); }
 
-        .btn-apply-large { display: block; width: fit-content; margin: 80px auto; padding: 25px 90px; border: 1.5px solid var(--accent-gold); color: var(--accent-gold); text-decoration: none; font-family: 'Cinzel'; font-weight: 700; font-size: 18px; letter-spacing: 4px; transition: 0.4s; }
+        /* 하단 신청 버튼 */
+        .btn-apply-large { display: block; width: fit-content; margin: 80px auto; padding: 25px 100px; border: 1.5px solid var(--accent-gold); color: var(--accent-gold); text-decoration: none; font-family: 'Cinzel'; font-weight: 700; font-size: 20px; letter-spacing: 4px; transition: 0.4s; }
         .btn-apply-large:hover { background: var(--accent-gold); color: white; }
         
         footer { background: #1a1a1a; color: #fff; padding: 100px 20px; text-align: center; }
@@ -67,67 +72,66 @@
 </header>
 
 <section class="section">
-    <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1000" class="img-fluid" alt="Main Mood">
+    <img src="https://images.unsplash.com/photo-1596716768285-d62f4e3c92da?q=80&w=1200" class="img-main" alt="Class Mood Background">
 
     <div class="content-card">
-        <span class="card-label">SESSION 01</span>
-        <h3 class="card-title">가치관 찾기 & 디자인 (Workbook)</h3>
+        <span class="card-label">STEP 01. WORKBOOK</span>
+        <h3 class="card-title">내면의 키워드 추출 & 시각적 번역</h3>
         <div class="process-item">
-            <span class="process-head">나를 설명하는 키워드 추출</span>
+            <span class="process-head">나를 설명하는 단어 추출</span>
             <p class="process-desc">
-                지금 나를 가장 잘 설명하는 단어 3가지를 추출합니다.<br>
+                지금 나를 가장 잘 설명하는 단어 3가지를 마인드 워크북을 통해 추출합니다.<br>
                 ( <span class="wb-line"></span> ), ( <span class="wb-line"></span> ), ( <span class="wb-line"></span> )
             </p>
         </div>
         <div class="process-item">
-            <span class="process-head">시각적 언어 정의</span>
+            <span class="process-head">꽃과 색채의 정의</span>
             <p class="process-desc">
-                <b>Main Flower</b>: 가치관을 상징하는 꽃을 선택합니다. (예: 리시안셔스)<br>
-                <b>Sub Color</b>: 내면의 감정을 시각화할 보조 색상을 결정합니다.
+                가치관을 상징하는 **Main Flower**(예: 변치 않는 신뢰-리시안셔스)와 내면의 감정을 시각화할 **Sub Color**를 선택하여 디자인합니다.
             </p>
         </div>
     </div>
 
-    <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=1000" class="img-fluid" alt="Resin Art">
+    <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=1200" class="img-sub" alt="Resin Work Flow">
 
     <div class="content-card">
-        <span class="card-label">SESSION 02</span>
-        <h3 class="card-title">레진 크래프트: 무드 아카이빙</h3>
+        <span class="card-label">STEP 02. CRAFT</span>
+        <h3 class="card-title">레진으로 만드는 무드 아카이빙</h3>
         <div class="process-item">
             <span class="process-head">재료의 상징성 (Description)</span>
             <p class="process-desc">
-                - <b>Base</b>: 투명도가 높은 레진 (무구한 진실성을 상징)<br>
-                - <b>Point 1</b>: 가치관 키워드에 부합하는 파츠 배치<br>
-                - <b>Point 2</b>: 알코올 잉크 드롭 (감정의 파동과 확산을 표현)
+                - <b>Base</b>: 투명도가 높은 레진 <small>(무구한 진실성을 상징)</small><br>
+                - <b>Point 1</b>: 선택한 가치관 키워드에 부합하는 오브제 및 파츠 배치<br>
+                - <b>Point 2</b>: 알코올 잉크 드롭 <small>(내면 감정의 파동과 확산을 표현)</small>
             </p>
         </div>
-        <p style="text-align: center; font-style: italic; color: var(--accent-gold); font-size: 18px; font-weight: 700; margin-top: 30px;">
+        <p style="text-align: center; font-style: italic; color: var(--accent-gold); font-size: 19px; font-weight: 700; margin-top: 30px;">
             "잉크가 퍼지는 모양을 그대로 두어 <br>통제할 수 없는 감정의 아름다움을 연출합니다."
         </p>
     </div>
 
     <div class="content-card">
-        <span class="card-label">SESSION 03</span>
-        <h3 class="card-title">감정 들여다보기 & 아카이빙</h3>
+        <span class="card-label">STEP 03. ARCHIVING</span>
+        <h3 class="card-title">작품의 이름(Title)과 메시지</h3>
         <div class="process-item">
-            <span class="process-head">기록의 완성</span>
+            <span class="process-head">나에게 전하는 한 마디</span>
             <p class="process-desc">
-                작품을 바라보며 나에게 해주고 싶은 한 마디를 기록합니다.<br>
-                " <span class="wb-line" style="min-width:350px;"></span> "
+                완성된 작품을 바라보며 나 자신에게 건네는 따뜻한 메시지를 기록합니다.<br>
+                " <span class="wb-line" style="min-width:400px;"></span> "
             </p>
         </div>
         <div class="process-item">
-            <span class="process-head">작품명 (Title)</span>
+            <span class="process-head">최종 작품명 결정</span>
             <p class="process-desc">
-                본인의 서사가 담긴 최종 작품명을 결정합니다.<br>
-                작품명: 「 <span class="wb-line" style="min-width:200px;"></span> 」
+                당신의 고유한 서사가 담긴 최종 작품의 이름을 결정합니다.<br>
+                작품명: 「 <span class="wb-line" style="min-width:250px;"></span> 」
             </p>
         </div>
     </div>
 
     <div style="text-align:center; margin-top: 100px;">
-        <h2 style="font-family:'Cinzel'; font-size:32px; letter-spacing:8px;">Landscape of Soul</h2>
-        <p style="color:var(--accent-gold); font-size:16px;">내면을 들여다보는 8가지 기록</p>
+        <h2 style="font-family:'Cinzel'; font-size:36px; letter-spacing:8px; margin:0;">Landscape of Soul</h2>
+        <p style="color:var(--accent-gold); font-size:18px; margin-top:10px;">내면 풍경을 들여다보는 8가지 기록</p>
     </div>
 
     <div class="q-grid">
@@ -141,12 +145,12 @@
         <div class="q-card"><b>Q.08 당신의 본질은 무엇인가요?</b></div>
     </div>
 
-    <a href="https://naver.me/5bCIPlxw" target="_blank" class="btn-apply-large">Apply Now</a>
+    <a href="https://naver.me/5bCIPlxw" target="_blank" class="btn-apply-large">Class Apply Now</a>
 </section>
 
 <footer>
-    <span style="font-family:'Playball'; font-size:30px;">Mood Archiving</span>
-    <p style="opacity:0.3; font-size:11px; margin-top:30px;">© 2026 MOOD ARCHIVING. ALL RIGHTS RESERVED.</p>
+    <span style="font-family:'Playball'; font-size:35px;">Mood Archiving</span>
+    <p style="opacity:0.3; font-size:12px; margin-top:40px;">© 2026 MOOD ARCHIVING. ENCAPSULATING MOMENTS.</p>
 </footer>
 
 </body>
