@@ -45,8 +45,9 @@
         .mid-quote { text-align: center; font-size: 17px; color: var(--accent-gold); margin: 150px 0; font-style: italic; letter-spacing: 2px; line-height: 3.2; }
         .mid-quote span { display: block; font-size: 11px; opacity: 0.5; margin-top: 20px; letter-spacing: 6px; text-transform: uppercase; }
 
-        .img-wrap { width: 100%; margin: 120px 0; overflow: hidden; border-radius: 2px; box-shadow: 0 30px 60px rgba(0,0,0,0.05); }
-        .img-wrap img { width: 100%; height: auto; display: block; transition: 1.5s; }
+        /* 이미지 컨테이너 최적화 */
+        .img-wrap { width: 100%; margin: 120px 0; overflow: hidden; border-radius: 2px; box-shadow: 0 30px 60px rgba(0,0,0,0.05); background-color: #eee; }
+        .img-wrap img { width: 100%; height: auto; display: block; transition: 1.5s; min-height: 400px; object-fit: cover; }
         .img-wrap:hover img { transform: scale(1.05); }
 
         .k-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-bottom: 150px; }
@@ -71,6 +72,7 @@
             .k-grid, .q-container { grid-template-columns: 1fr; }
             .workbook-section { padding: 60px 30px; }
             .logo { font-size: 52px; }
+            .img-wrap img { min-height: 250px; }
         }
     </style>
 </head>
@@ -101,7 +103,7 @@
     <svg class="illus" viewBox="0 0 100 20"><path d="M0 10 Q 25 0 50 10 T 100 10" /></svg>
     
     <div class="img-wrap">
-        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200" alt="Resin Detail">
+        <img src="https://images.unsplash.com/photo-1515549832467-d3b6942180f4?auto=format&fit=crop&q=80&w=1200" alt="Resin Texture">
     </div>
 
     <p class="mid-quote">
@@ -118,7 +120,7 @@
         </div>
 
         <div class="img-wrap">
-            <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1200" alt="Nature Mood">
+            <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&q=80&w=1200" alt="Botanical">
         </div>
 
         <div class="class-step">
@@ -131,6 +133,10 @@
 
         <p style="text-align: center; font-size: 14px; opacity: 0.5; margin: 80px 0;">완벽함보다는, 그 순간 가장 나다웠던 흔적을 남기는 것에 집중합니다.</p>
 
+        <div class="img-wrap">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1200" alt="Ink vibration">
+        </div>
+
         <div class="class-step" style="border-bottom:none; margin-bottom: 0;">
             <span class="step-title">Step 03. 비로소 이름이 된 나의 세계</span>
             <span class="step-desc">투명하게 굳어진 무드를 마주하며, 고유한 마침표를 찍는 제목의 시간입니다.</span>
@@ -138,10 +144,6 @@
                 <p>작품에 부여할 사적인 고유명사 : 「 <span class="input-line" style="width:240px;"></span> 」</p>
             </div>
         </div>
-    </div>
-
-    <div class="img-wrap">
-        <img src="https://images.unsplash.com/photo-1515549832467-d3b6942180f4?q=80&w=1200" alt="Ink vibration Mood">
     </div>
 
     <h2 style="text-align: center; font-family: 'Cinzel'; letter-spacing: 7px; margin-bottom: 60px; font-size: 32px;">Landscape of Soul</h2>
@@ -157,7 +159,7 @@
     </div>
 
     <div class="img-wrap">
-        <img src="https://images.unsplash.com/photo-1618556450991-2f1af64e8191?q=80&w=1200" alt="Nature Mood">
+        <img src="https://images.unsplash.com/photo-1618556450991-2f1af64e8191?auto=format&fit=crop&q=80&w=1200" alt="Nature Mood">
     </div>
 
     <div style="text-align: center; margin-top: 150px;">
