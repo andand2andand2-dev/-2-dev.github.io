@@ -13,7 +13,6 @@
             --accent-gold: #c2956a;
             --white: #ffffff;
             --line-color: rgba(29, 77, 63, 0.1);
-            --img-bg: #EAE7E0; /* 이미지가 안 뜰 때 보여줄 감성 배경색 */
         }
 
         body { 
@@ -30,7 +29,7 @@
         .logo { font-family: 'Playball', cursive; font-size: 72px; color: var(--point-green); text-decoration: none; display: block; }
         .logo-sub { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 9px; color: var(--accent-gold); display: block; margin-top: -5px; font-weight: 700; }
 
-        .btn-group { margin-top: 50 Korea; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .btn-group { margin-top: 50px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
         .btn { 
             font-family: 'Cinzel', serif; padding: 16px 40px; border-radius: 0; text-decoration: none; 
             font-size: 11px; font-weight: 700; transition: 0.5s ease; letter-spacing: 3px; 
@@ -45,25 +44,42 @@
         .mid-quote { text-align: center; font-size: 17px; color: var(--accent-gold); margin: 150px 0; font-style: italic; letter-spacing: 2px; line-height: 3.2; }
         .mid-quote span { display: block; font-size: 11px; opacity: 0.5; margin-top: 20px; letter-spacing: 6px; text-transform: uppercase; }
 
-        /* [이미지 로딩 해결 핵심] */
+        /* [핵심] 외부 이미지 대신 CSS 그라데이션 그래픽 적용 */
         .img-wrap { 
             width: 100%; 
             margin: 120px 0; 
             overflow: hidden; 
             border-radius: 2px; 
             box-shadow: 0 30px 60px rgba(0,0,0,0.05); 
-            background-color: var(--img-bg); /* 로딩 지연 시 베이지 배경 노출 */
-            min-height: 500px; /* 영역 강제 확보 */
+            min-height: 500px; /* 프레임 크기 유지 */
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
         }
-        .img-wrap img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover;
-            display: block; 
-            transition: 1.5s; 
+
+        /* 1번 그래픽: 레진의 투명함과 잉크 파동 */
+        .graphic-01 {
+            background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(29,77,63,0.1) 100%),
+                        radial-gradient(circle at 30% 30%, rgba(194,149,106,0.2) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 70%, rgba(29,77,63,0.15) 0%, transparent 50%);
+        }
+
+        /* 2번 그래픽: 보태니컬 무드 */
+        .graphic-02 {
+            background: linear-gradient(180deg, var(--white) 0%, #E0DED7 100%),
+                        radial-gradient(circle at center, rgba(194,149,106,0.1) 0%, transparent 70%);
+        }
+
+        /* 3번 그래픽: 잉크의 번짐 */
+        .graphic-03 {
+            background: linear-gradient(to bottom, #fdfbfb 0%, #ebedee 100%),
+                        radial-gradient(circle at 50% 50%, rgba(29,77,63,0.2) 0%, transparent 60%);
+        }
+
+        /* 4번 그래픽: 최종 무드 마무리 */
+        .graphic-04 {
+            background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
         }
 
         .workbook-section { background: rgba(255, 255, 255, 0.9); padding: 120px 70px; border: 1px solid var(--line-color); margin-bottom: 180px; }
@@ -105,8 +121,8 @@
 
     <svg class="illus" viewBox="0 0 100 20"><path d="M0 10 Q 25 0 50 10 T 100 10" /></svg>
     
-    <div class="img-wrap">
-        <img src="https://source.unsplash.com/featured/?resin,abstract" onerror="this.src='https://images.unsplash.com/photo-1515549832467-d3b6942180f4?w=1200'" alt="Mood 01">
+    <div class="img-wrap graphic-01">
+        <span style="font-family:'Cinzel'; color:var(--point-green); opacity:0.3;">Transparent Flow</span>
     </div>
 
     <div class="workbook-section">
@@ -118,8 +134,8 @@
             </div>
         </div>
 
-        <div class="img-wrap">
-            <img src="https://source.unsplash.com/featured/?flower,neutral" onerror="this.src='https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1200'" alt="Mood 02">
+        <div class="img-wrap graphic-02">
+            <span style="font-family:'Cinzel'; color:var(--point-green); opacity:0.3;">Botanical Mood</span>
         </div>
 
         <div class="class-step">
@@ -130,8 +146,8 @@
             </div>
         </div>
 
-        <div class="img-wrap">
-            <img src="https://source.unsplash.com/featured/?ink,water" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200'" alt="Mood 03">
+        <div class="img-wrap graphic-03">
+            <span style="font-family:'Cinzel'; color:var(--point-green); opacity:0.3;">Emotional Ripple</span>
         </div>
 
         <div class="class-step">
@@ -150,8 +166,8 @@
         <div class="q-card"><b>Q.04</b><br>삶의 파도 속에서도 견고하게 지키고 싶은 내면의 핵심은?</div>
     </div>
 
-    <div class="img-wrap">
-        <img src="https://source.unsplash.com/featured/?nature,soft" onerror="this.src='https://images.unsplash.com/photo-1618556450991-2f1af64e8191?w=1200'" alt="Mood 04">
+    <div class="img-wrap graphic-04">
+        <span style="font-family:'Cinzel'; color:var(--point-green); opacity:0.3;">Encoded Mood</span>
     </div>
 
     <div style="text-align: center; margin-top: 150px;">
