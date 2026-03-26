@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mood Archiving | 당신의 가치관을 박제하다</title>
     <style>
+        /* 브랜드 고급 폰트 (cite: Cinzel, Playball, Nanum Myeongjo) */
         @import url('https://fonts.googleapis.com/css2?family=Playball&family=Cinzel:wght@400;700&family=Nanum+Myeongjo:wght@400;700&display=swap');
 
         :root {
@@ -19,6 +20,7 @@
         body { 
             background-color: var(--bg-color); color: var(--point-green); 
             font-family: 'Nanum Myeongjo', serif; margin: 0; line-height: 2.2; word-break: keep-all; 
+            /* 배경에 은은한 점 패턴 (고급화) */
             background-image: radial-gradient(var(--accent-gold) 0.6px, transparent 0.6px);
             background-size: 40px 40px; background-attachment: fixed;
         }
@@ -27,7 +29,7 @@
         .logo { font-family: 'Playball', cursive; font-size: 72px; color: var(--point-green); text-decoration: none; display: block; }
         .logo-sub { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 9px; color: var(--accent-gold); display: block; margin-top: -5px; font-weight: 700; }
 
-        /* 버튼 3개 연동 유지 */
+        /* 상단 버튼 3개 연동 */
         .btn-group { margin-top: 50px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
         .btn { 
             font-family: 'Cinzel', serif; padding: 16px 40px; border-radius: 0; text-decoration: none; 
@@ -45,7 +47,7 @@
         .mid-quote { text-align: center; font-size: 17px; color: var(--accent-gold); margin: 150px 0; font-style: italic; letter-spacing: 2px; line-height: 3.2; }
         .mid-quote span { display: block; font-size: 11px; opacity: 0.5; margin-top: 20px; letter-spacing: 6px; text-transform: uppercase; }
 
-        /* [혁신] 정적인 그래픽을 깨고 레진 무드를 시각화한 코드 베이스 라이브 비주얼 */
+        /* [혁신] 외부 이미지를 차단하고 레진 무드를 시각화한 코드 베이스 그래픽 프레임 */
         .visual-mood { 
             width: 100%; height: 500px; margin: 120px 0; border-radius: 2px;
             overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.05); position: relative;
@@ -91,13 +93,10 @@
         .workbook-box { background: rgba(253, 252, 249, 0.8); padding: 50px; border: 1px solid var(--soft-gray); border-left: 5px solid var(--accent-gold); }
         .input-line { display: inline-block; min-width: 160px; border-bottom: 1px solid var(--accent-gold); margin: 0 10px; height: 30px; background: transparent; }
 
-        /* 또렷해진 골드 일러스트 */
+        /* 또렷해진 골드 일러스트 (image_a45012.png) */
         .illus { display: block; margin: 80px auto; width: 60px; fill: none; stroke: var(--accent-gold); stroke-width: 2.5; }
 
         /* 나의 내면 풍경 8문항 (절대 보존) */
-        .section-title { text-align: center; font-family: 'Cinzel', serif; font-size: 34px; margin-bottom: 25px; letter-spacing: 6px; }
-        .section-desc { text-align: center; font-size: 18px; opacity: 0.8; margin-bottom: 100px; color: var(--accent-gold); font-style: italic; }
-
         .q-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; position: relative; z-index: 1; }
         .q-card { padding: 60px; background: rgba(255, 255, 255, 0.85); border: 1px solid var(--line-color); backdrop-filter: blur(5px); transition: 0.5s; }
         .q-card:hover { border-color: var(--accent-gold); transform: translateY(-5px); background: white; }
@@ -188,8 +187,8 @@
 
     <svg class="illus" viewBox="0 0 100 100" style="width:30px;"><rect x="10" y="10" width="80" height="80" /></svg>
 
-    <h2 class="section-title">Landscape of Soul</h2>
-    <p class="section-desc">나의 내면 풍경을 들여다보는 여덟 가지의 사색적 기록</p>
+    <h2 class="q-group-title" style="text-align: center; font-family: 'Cinzel', serif; font-size: 34px; margin-bottom: 25px; letter-spacing: 6px;">Landscape of Soul</h2>
+    <p class="section-desc" style="text-align: center; font-size: 18px; opacity: 0.8; margin-bottom: 100px; color: var(--accent-gold); font-style: italic;">나의 내면 풍경을 들여다보는 여덟 가지의 사색적 기록</p>
     
     <div class="q-container">
         <div class="q-card"><span class="q-num">Q.01</span>타인의 시선이 닿지 않는 곳에서 간직하고 싶은 '첫인상'은?</div>
