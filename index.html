@@ -23,7 +23,6 @@
         .logo { font-family: 'Playball', cursive; font-size: 45px; color: var(--point-green); text-decoration: none; display: block; }
         .logo-sub { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 5px; color: var(--accent-gold); display: block; margin-top: 5px; font-weight: 700; }
         
-        /* 버튼 그룹 연동 및 최적화 */
         .header-btn-group { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 25px; }
         .header-btn { font-family: 'Cinzel'; font-size: 10px; letter-spacing: 1px; text-decoration: none; padding: 10px 18px; border: 1px solid var(--point-green); color: var(--point-green); font-weight: 700; transition: 0.3s; }
         .header-btn:hover { background: var(--point-green); color: white; }
@@ -31,7 +30,6 @@
 
         .section { padding: 0 15px 80px; max-width: 800px; margin: 0 auto; box-sizing: border-box; }
         
-        /* 이미지 깨짐 방지 및 고화질 설정 */
         .img-box { width: 100%; margin: 40px 0; border: 8px solid #fff; box-shadow: 0 15px 30px rgba(0,0,0,0.06); box-sizing: border-box; overflow: hidden; background: #eee; }
         .img-box img { width: 100%; height: auto; display: block; object-fit: cover; aspect-ratio: 16 / 10; }
 
@@ -43,6 +41,14 @@
         .essay-title { font-size: 22px; font-weight: 700; margin-bottom: 30px; color: var(--point-green); }
         .essay-text { font-size: 16px; line-height: 2.2; color: #333; text-align: justify; text-align-last: center; }
         .highlight { color: var(--accent-gold); font-weight: 700; border-bottom: 1px solid rgba(194, 149, 106, 0.4); }
+
+        /* [추가] 클래스 진행 순서 스타일 */
+        .curriculum-box { background: rgba(29, 77, 63, 0.03); padding: 40px 20px; border-radius: 25px; margin-bottom: 50px; }
+        .curriculum-title { font-family: 'Cinzel'; font-size: 20px; text-align: center; letter-spacing: 3px; margin-bottom: 30px; color: var(--accent-gold); }
+        .step-item { display: flex; align-items: flex-start; margin-bottom: 25px; }
+        .step-num { font-family: 'Cinzel'; font-size: 18px; color: var(--accent-gold); margin-right: 15px; font-weight: 700; min-width: 60px; }
+        .step-content b { font-size: 17px; display: block; margin-bottom: 5px; }
+        .step-content p { font-size: 14px; margin: 0; color: #666; }
 
         .content-card { background: #fff; padding: 40px 25px; border-radius: 25px; border: 1px solid var(--line-color); margin-bottom: 50px; }
         .card-num { font-family: 'Cinzel'; font-size: 28px; color: var(--accent-gold); opacity: 0.3; display: block; margin-bottom: 5px; }
@@ -75,6 +81,7 @@
             .essay-card { padding: 80px 60px; }
             .essay-title { font-size: 32px; }
             .essay-text { font-size: 18px; }
+            .curriculum-box { padding: 60px; }
             .content-card { padding: 70px 60px; }
             .card-title { font-size: 28px; }
             .q-grid { grid-template-columns: 1fr 1fr; }
@@ -95,7 +102,7 @@
 
 <section class="section">
     <div class="img-box">
-        <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1200&q=80" alt="Main Flower Mood">
+        <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1200&q=80" alt="Main Mood Flower">
     </div>
 
     <div class="essay-card">
@@ -103,8 +110,39 @@
         <h3 class="essay-title">가치관: 당신의 가장 맑은 북극성</h3>
         <div class="essay-text">
             우리가 타고난 <span class="highlight">성향</span>이 영혼의 결이자 바탕색이라면, <span class="highlight">가치관</span>은 그 위에 당신이 어떤 방향으로 나아갈지 결정하는 단단한 의지이자 <span class="highlight">북극성</span>입니다.<br><br>
-            성향이 '나는 누구인가'를 말해준다면, 가치관은 '나는 어떻게 살 것인가'를 정의하는 삶의 가장 사적인 언어입니다. 나만의 가치관을 찾는 일은 세상의 소란 속에서도 나를 온전히 지탱해 줄 중심축을 발견하는 일입니다.<br><br>
-            그것은 타인의 속도가 아닌 <span class="highlight">나만의 호흡</span>으로 일상을 경작하겠다는 선언이며, 삶의 파도가 몰아쳐도 나라는 항해를 멈추지 않게 하는 유일한 이정표가 됩니다.
+            성향이 '나는 누구인가'를 말해준다면, 가치관은 '나는 어떻게 살 것인가'를 정의하는 삶의 가장 사적인 언어입니다. 나만의 가치관을 찾는 일은 세상의 소란 속에서도 나를 온전히 지탱해 줄 중심축을 발견하는 일입니다.
+        </div>
+    </div>
+
+    <div class="curriculum-box">
+        <h3 class="curriculum-title">CLASS PROCESS</h3>
+        <div class="step-item">
+            <span class="step-num">STEP 01</span>
+            <div class="step-content">
+                <b>가치관 워크북 작성</b>
+                <p>현재의 나를 정의하는 3가지 키워드를 추출하고 시각적 언어로 변환합니다.</p>
+            </div>
+        </div>
+        <div class="step-item">
+            <span class="step-num">STEP 02</span>
+            <div class="step-content">
+                <b>조색 및 레이아웃 디자인</b>
+                <p>선택한 가치관을 닮은 컬러와 메인 플라워를 배치하여 구도를 잡습니다.</p>
+            </div>
+        </div>
+        <div class="step-item">
+            <span class="step-num">STEP 03</span>
+            <div class="step-content">
+                <b>레진 아카이빙 (제작)</b>
+                <p>투명 레진과 잉크 드롭 기법을 활용하여 찰나의 가치관을 박제합니다.</p>
+            </div>
+        </div>
+        <div class="step-item">
+            <span class="step-num">STEP 04</span>
+            <div class="step-content">
+                <b>에필로그 & 아카이빙</b>
+                <p>작품에 이름을 붙이고, 스스로에게 전하는 다짐을 기록하며 마무리합니다.</p>
+            </div>
         </div>
     </div>
 
