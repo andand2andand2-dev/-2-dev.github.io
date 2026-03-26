@@ -37,13 +37,14 @@
         .section { padding: 40px 20px 150px; max-width: 1000px; margin: 0 auto; }
         .img-content { width: 100%; height: 550px; object-fit: cover; margin: 60px 0; border: 15px solid #fff; box-shadow: 0 30px 60px rgba(0,0,0,0.1); display: block; }
 
-        /* [복구] 에세이 박스: 기존 내용 100% 유지 */
+        /* [가치관 섹션] 기존 내용 + 신규 내용 추가 */
         .essay-box { padding: 100px 60px; text-align: center; background: rgba(255, 255, 255, 0.95); border: 1px solid var(--line-color); margin: 80px 0; backdrop-filter: blur(10px); }
         .essay-label { font-family: 'Cinzel'; font-size: 12px; color: var(--accent-gold); letter-spacing: 6px; display: block; margin-bottom: 30px; }
         .essay-title { font-size: 30px; font-weight: 700; margin-bottom: 40px; color: var(--point-green); }
         .essay-text { font-size: 17px; line-height: 3.2; color: #333; }
+        .essay-addition { font-style: italic; color: var(--accent-gold); margin-top: 40px; border-top: 1px dashed var(--line-color); padding-top: 40px; }
 
-        /* [강조] 회차별 카드 스타일 */
+        /* [회차 강조 카드] */
         .session-card {
             background: #fff; border: 1px solid var(--line-color); border-radius: 40px;
             padding: 80px 60px; margin-bottom: 120px; box-shadow: 0 20px 40px rgba(0,0,0,0.03);
@@ -53,14 +54,13 @@
         .session-head { font-size: 24px; font-weight: 700; color: var(--point-green); margin-bottom: 15px; display: block; }
         .session-body { font-size: 16px; color: #555; line-height: 2.0; margin-bottom: 40px; }
 
-        /* [이미지 1.jpg 기반] 워크북 인풋 디자인 */
+        /* [워크북 디자인 요소 추가] */
         .wb-mini-box { background: var(--bg-color); padding: 45px; border-radius: 30px; border-left: 6px solid var(--accent-gold); }
         .wb-line { display: inline-block; border-bottom: 1px solid var(--point-green); min-width: 120px; height: 30px; margin: 0 10px; vertical-align: bottom; }
         .wb-label { font-family: 'Cinzel'; font-size: 14px; color: var(--accent-gold); margin-bottom: 15px; display: block; letter-spacing: 2px; }
 
         .q-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
         .q-card { padding: 60px; background: rgba(255, 255, 255, 0.8); border: 1px solid var(--line-color); font-size: 16px; }
-        .q-extra { font-size: 14px; color: var(--accent-gold); display: block; margin-top: 15px; font-style: italic; font-weight: 400; line-height: 1.8; }
 
         footer { background: #1a1a1a; color: #fff; padding: 120px 20px; text-align: center; margin-top: 150px; }
     </style>
@@ -71,14 +71,14 @@
     <a href="#" class="logo">Mood Archiving</a>
     <span class="logo-sub">ENCAPSULATING YOUR VALUES</span>
     <div class="btn-group">
-        <a href="https://www.instagram.com/mood_archiving/" target="_blank" class="btn-small">Instagram</a>
-        <a href="https://smartstore.naver.com/mood_archiving" target="_blank" class="btn-small">Smart Store</a>
-        <a href="https://naver.me/5bCIPlxw" target="_blank" class="btn-small btn-gold">Class Apply</a>
+        <a href="#" class="btn-small">Instagram</a>
+        <a href="#" class="btn-small">Smart Store</a>
+        <a href="#" class="btn-small btn-gold">Class Apply</a>
     </div>
 </header>
 
 <section class="section">
-    <img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?q=80&w=2000" alt="North Star" class="img-content">
+    <img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?q=80&w=2000" class="img-content">
 
     <div class="essay-box">
         <span class="essay-label">The Philosophy of Soul's Anchor</span>
@@ -90,6 +90,16 @@
             나만의 고유한 가치관을 찾아가는 여정은 흐릿했던 마음의 안개를 걷어내고,<br>
             그 속에 숨겨진 **영혼의 원석**을 발견하여 하나의 온전한 풍경으로 완성해가는 숭고한 시간입니다.
         </p>
+        
+        <div class="essay-addition">
+            <p class="essay-text" style="color: var(--point-green); font-weight: 700;">"Archive of Moments : 찰나의 순간을 영원으로"</p>
+            <p class="essay-text">
+                박제된다는 것은 단순히 멈춰있는 것이 아닙니다. <br>
+                그것은 당신이 가장 빛나던 결심, 잊고 싶지 않은 내면의 파동을 투명한 유리 속에 가두어 <br>
+                언제든 꺼내어 볼 수 있는 **'감각의 이정표'**를 만드는 과정입니다. <br>
+                우리는 레진이라는 매질을 통해, 형체 없는 당신의 가치관을 손에 잡히는 온기로 치환합니다.
+            </p>
+        </div>
     </div>
 
     <div style="text-align: center; margin: 120px 0 80px;">
@@ -137,16 +147,14 @@
 
     <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=2000" class="img-content">
 
-    <div class="essay-box" style="padding: 60px; text-align: left; background: #fff;">
-        <h2 style="font-size: 32px; font-weight: 400; margin-bottom: 40px; text-align: center;">레진으로 만드는 무드 아카이빙</h2>
-        <p style="font-family:'Cinzel'; color:var(--accent-gold); text-align: center;">Base: 투명도가 높은 레진 &nbsp; | &nbsp; Point 1: 가치관 파츠 &nbsp; | &nbsp; Point 2: 감정의 파동</p>
-        <p style="font-size:17px; margin-top:30px; text-align: center;">잉크가 퍼지는 모양을 그대로 두어 '통제할 수 없는 감정의 아름다움'을 연출합니다.</p>
-        
-        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; margin-top:60px; font-size:15px; border-top:1px solid #eee; padding-top:40px;">
-            <div>• <b>인테리어 오브제:</b> 나를 닮은 공간의 중심을 잡는 오브제</div>
-            <div>• <b>페이퍼웨이트:</b> 흔들리는 생각들을 단단히 눌러주는 도구</div>
-            <div>• <b>메모리 박제:</b> 소중한 날의 기억이나 가치를 보관하는 형태</div>
-            <div>• <b>가치관 선물:</b> 누군가의 본질을 응원하는 가장 사적인 선물</div>
+    <div class="resin-point-box" style="background: rgba(255,255,255,0.9); padding: 80px 60px; text-align: center; border: 1px solid var(--line-color);">
+        <h2 style="font-size: 32px; font-weight: 400; margin-bottom: 40px;">레진으로 만드는 무드 아카이빙</h2>
+        <p style="font-family:'Cinzel'; color:var(--accent-gold);">Base: 투명도가 높은 레진 &nbsp; | &nbsp; Point 1: 가치관 파츠 &nbsp; | &nbsp; Point 2: 감정의 파동</p>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; margin-top:60px; text-align:left; font-size:15px; border-top:1px solid #eee; padding-top:40px;">
+            <div>• <b>인테리어 오브제:</b> 나를 닮은 공간의 중심</div>
+            <div>• <b>페이퍼웨이트:</b> 흔들리는 생각들을 누르는 도구</div>
+            <div>• <b>메모리 박제:</b> 소중한 가치를 보관하는 형태</div>
+            <div>• <b>가치관 선물:</b> 본질을 응원하는 가장 사적인 선물</div>
         </div>
     </div>
 
@@ -156,14 +164,14 @@
     </div>
 
     <div class="q-grid">
-        <div class="q-card"><b>Q.01 타인의 시선이 닿지 않는 곳에서 간직하고 싶은 '첫인상'은?</b><span class="q-extra">가면을 벗고 마주한 가장 순수한 당신의 첫 페이지를 떠올려 보세요.</span></div>
-        <div class="q-card"><b>Q.02 오늘 당신의 마음속에 머물고 있는 감정의 색채는?</b><span class="q-extra">이름 붙일 수 없는 감정들이 하나의 색으로 번진다면 어떤 빛깔일까요.</span></div>
-        <div class="q-card"><b>Q.03 지친 하루 끝에 가장 필요한 위로의 형태는?</b><span class="q-extra">당신을 안아주는 것은 부드러운 여백인가요, 단단한 지지인가요.</span></div>
-        <div class="q-card"><b>Q.04 삶의 파도 속에서도 당신이 지켜내고 싶은 핵심은?</b><span class="q-extra">폭풍우 속에서도 결코 꺼지지 않는 당신만의 작은 촛불은 무엇입니까.</span></div>
-        <div class="q-card"><b>Q.05 당신을 둘러싼 사물 중 가장 사적인 서사를 담은 물건은?</b><span class="q-extra">무생물의 사물 속에 당신의 어떤 기억이 숨을 쉬고 있나요.</span></div>
-        <div class="q-card"><b>Q.06 잉크가 번져나갈 때, 당신은 어떤 심연을 투영하고 싶나요?</b><span class="q-extra">통제할 수 없는 번짐 속에서 비로소 자유로워지는 진심을 마주합니다.</span></div>
-        <div class="q-card"><b>Q.07 이 작품을 마주할 때마다 건네고 싶은 따스한 약속은?</b><span class="q-extra">먼 훗날의 당신에게 오늘 새긴 가치관이 어떤 위로가 되길 바라나요.</span></div>
-        <div class="q-card"><b>Q.08 당신의 가치관은 단단한 핵인가요, 조화로움인가요?</b><span class="q-extra">당신을 정의하는 본질은 뚫고 나가는 힘인가요, 품어주는 온기인가요.</span></div>
+        <div class="q-card"><b>Q.01 간직하고 싶은 나의 첫인상은?</b><br><small style="opacity:0.6;">가면을 벗고 마주한 당신의 첫 페이지</small></div>
+        <div class="q-card"><b>Q.02 마음속에 머물고 있는 색채는?</b><br><small style="opacity:0.6;">이름 붙일 수 없는 감정의 번짐</small></div>
+        <div class="q-card"><b>Q.03 지친 끝에 필요한 위로의 형태는?</b><br><small style="opacity:0.6;">당신을 안아주는 부드러운 여백</small></div>
+        <div class="q-card"><b>Q.04 지켜내고 싶은 삶의 핵심은?</b><br><small style="opacity:0.6;">폭풍우 속에서도 꺼지지 않는 촛불</small></div>
+        <div class="q-card"><b>Q.05 가장 사적인 서사의 물건은?</b><br><small style="opacity:0.6;">사물 속에 숨 쉬는 당신의 기억</small></div>
+        <div class="q-card"><b>Q.06 투영하고 싶은 심연의 모습은?</b><br><small style="opacity:0.6;">번짐 속에서 자유로워지는 진심</small></div>
+        <div class="q-card"><b>Q.07 건네고 싶은 따스한 약속은?</b><br><small style="opacity:0.6;">오늘 새긴 가치관이 줄 위로</small></div>
+        <div class="q-card"><b>Q.08 당신의 본질은 단단함인가요?</b><br><small style="opacity:0.6;">뚫고 나가는 힘 혹은 품어주는 온기</small></div>
     </div>
 
     <div style="text-align: center; margin-top: 150px;">
