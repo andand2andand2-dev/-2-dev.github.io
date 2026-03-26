@@ -17,7 +17,6 @@
 
         body { 
             color: var(--point-green); font-family: 'Nanum Myeongjo', serif; margin: 0; 
-            /* 전체 행간 조정 */
             line-height: 2.4; word-break: keep-all; 
             background-color: var(--bg-color); 
             background-image: radial-gradient(var(--point-green) 0.8px, transparent 0.8px), radial-gradient(var(--accent-gold) 0.6px, transparent 0.6px);
@@ -25,12 +24,12 @@
         }
 
         header { padding: 100px 20px 50px; text-align: center; color: #3A7B61; }
-        .logo { font-family: 'Playball', cursive; font-size: 78px; color: inherit; text-decoration: none; display: block; } /* 72 -> 78 */
-        .logo-sub { font-family: 'Cinzel', serif; font-size: 15px; letter-spacing: 10px; color: var(--accent-gold); display: block; margin-top: -5px; font-weight: 700; } /* 13 -> 15 */
+        .logo { font-family: 'Playball', cursive; font-size: 78px; color: inherit; text-decoration: none; display: block; }
+        .logo-sub { font-family: 'Cinzel', serif; font-size: 15px; letter-spacing: 10px; color: var(--accent-gold); display: block; margin-top: -5px; font-weight: 700; }
 
         .btn-group { margin: 60px 0; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
         .btn-small { 
-            font-family: 'Cinzel'; font-size: 13px; letter-spacing: 3px; text-decoration: none; /* 11 -> 13 */
+            font-family: 'Cinzel'; font-size: 13px; letter-spacing: 3px; text-decoration: none;
             padding: 18px 45px; border: 1px solid var(--point-green); color: var(--point-green); transition: 0.4s;
             background: rgba(255,255,255,0.8); font-weight: 700; text-align: center;
         }
@@ -39,35 +38,34 @@
         .section { padding: 40px 20px 150px; max-width: 1000px; margin: 0 auto; }
         .img-content { width: 100%; height: 550px; object-fit: cover; margin: 60px 0; border: 15px solid #fff; box-shadow: 0 30px 60px rgba(0,0,0,0.1); display: block; }
 
-        /* [에세이 섹션] 폰트 크기 증량 */
+        /* 에세이 섹션 */
         .essay-box { padding: 130px 80px; text-align: center; background: rgba(255, 255, 255, 0.95); border: 1px solid var(--line-color); margin: 80px 0; backdrop-filter: blur(10px); }
-        .essay-label { font-family: 'Cinzel'; font-size: 14px; color: var(--accent-gold); letter-spacing: 6px; display: block; margin-bottom: 35px; } /* 12 -> 14 */
-        .essay-title { font-size: 35px; font-weight: 700; margin-bottom: 55px; color: var(--point-green); } /* 32 -> 35 */
-        .essay-content { font-size: 21px; line-height: 3.4; color: #333; text-align: justify; text-align-last: center; } /* 18 -> 21 */
+        .essay-label { font-family: 'Cinzel'; font-size: 14px; color: var(--accent-gold); letter-spacing: 6px; display: block; margin-bottom: 35px; }
+        .essay-title { font-size: 35px; font-weight: 700; margin-bottom: 55px; color: var(--point-green); }
+        .essay-content { font-size: 21px; line-height: 3.4; color: #333; text-align: justify; text-align-last: center; }
         .highlight { color: var(--accent-gold); font-weight: 700; }
 
-        /* [회차 카드] 폰트 크기 증량 */
+        /* 회차 카드 */
         .session-card {
             background: #fff; border: 1px solid var(--line-color); border-radius: 40px;
             padding: 90px 70px; margin-bottom: 120px; box-shadow: 0 20px 40px rgba(0,0,0,0.03);
             position: relative;
         }
-        .session-num { font-family: 'Cinzel'; font-size: 55px; color: var(--accent-gold); opacity: 0.3; line-height: 0.7; display: block; margin-bottom: 15px; } /* 50 -> 55 */
-        .session-head { font-size: 27px; font-weight: 700; color: var(--point-green); margin-bottom: 20px; display: block; } /* 24 -> 27 */
-        .session-desc { font-size: 19px; color: #555; line-height: 2.2; } /* 16 -> 19 */
+        .session-num { font-family: 'Cinzel'; font-size: 55px; color: var(--accent-gold); opacity: 0.3; line-height: 0.7; display: block; margin-bottom: 15px; }
+        .session-head { font-size: 27px; font-weight: 700; color: var(--point-green); margin-bottom: 20px; display: block; }
+        .session-desc { font-size: 19px; color: #555; line-height: 2.2; }
         
-        /* [워크북 디자인] 폰트 크기 증량 */
-        .wb-mini-box { background: var(--bg-color); padding: 50px; border-radius: 30px; border-left: 8px solid var(--accent-gold); margin-top: 45px; font-size: 18px; } /* 15 -> 18 */
+        /* 워크북 디자인 */
+        .wb-mini-box { background: var(--bg-color); padding: 50px; border-radius: 30px; border-left: 8px solid var(--accent-gold); margin-top: 45px; font-size: 18px; }
         .wb-line { display: inline-block; border-bottom: 1.5px solid var(--point-green); min-width: 130px; height: 32px; margin: 0 10px; vertical-align: bottom; }
-        .wb-label { font-family: 'Cinzel'; font-size: 16px; color: var(--accent-gold); margin-bottom: 20px; display: block; letter-spacing: 2px; font-weight: 700; } /* 14 -> 16 */
+        .wb-label { font-family: 'Cinzel'; font-size: 16px; color: var(--accent-gold); margin-bottom: 20px; display: block; letter-spacing: 2px; font-weight: 700; }
 
-        /* [질문 카드] 폰트 크기 증량 */
-        .q-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; }
-        .q-card { padding: 65px; background: rgba(255, 255, 255, 0.8); border: 1px solid var(--line-color); font-size: 19px; } /* 16 -> 19 */
-        .q-extra { font-size: 16px; color: var(--accent-gold); display: block; margin-top: 20px; font-style: italic; } /* 14 -> 16 */
+        /* 질문 그리드 */
+        .q-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; margin-top: 80px; }
+        .q-card { padding: 65px; background: rgba(255, 255, 255, 0.8); border: 1px solid var(--line-color); font-size: 19px; }
+        .q-extra { font-size: 16px; color: var(--accent-gold); display: block; margin-top: 20px; font-style: italic; line-height: 1.8; }
 
         footer { background: #1a1a1a; color: #fff; padding: 130px 20px; text-align: center; margin-top: 150px; }
-        .footer-logo { font-family: 'Playball'; font-size: 35px; }
     </style>
 </head>
 <body>
@@ -75,11 +73,6 @@
 <header>
     <a href="#" class="logo">Mood Archiving</a>
     <span class="logo-sub">ENCAPSULATING YOUR VALUES</span>
-    <div class="btn-group">
-        <a href="#" class="btn-small">Instagram</a>
-        <a href="#" class="btn-small">Smart Store</a>
-        <a href="#" class="btn-small btn-gold">Class Apply</a>
-    </div>
 </header>
 
 <section class="section">
@@ -88,7 +81,6 @@
     <div class="essay-box">
         <span class="essay-label">The Philosophy of Soul's Anchor</span>
         <h3 class="essay-title">가치관: 당신의 가장 맑은 북극성</h3>
-        
         <div class="essay-content">
             <p>
                 우리가 타고난 <span class="highlight">성향</span>이 영혼의 결이자 지울 수 없는 바탕색이라면, <br>
@@ -118,7 +110,6 @@
         <span class="session-num">01</span>
         <span class="session-head">1회차: 가치관 찾기 & 레진 디자인</span>
         <p class="session-desc">자체 제작 마인드 워크북을 통해 내면을 탐색합니다. 나를 상징하는 핵심 가치관을 도출하고, 이를 시각화하기 위한 조색 팔레트와 압화 소재를 정교하게 디자인합니다.</p>
-        
         <div class="wb-mini-box">
             <span class="wb-label">[ Archive of Moments : STEP 1 ]</span>
             나를 설명하는 키워드 : ( <span class="wb-line"></span> ), ( <span class="wb-line"></span> ), ( <span class="wb-line"></span> )<br>
@@ -126,13 +117,10 @@
         </div>
     </div>
 
-    <img src="https://images.unsplash.com/photo-1515890435782-59a5bb6ec191?q=80&w=2000" class="img-content" style="height: 400px; border: none; box-shadow: none;">
-
     <div class="session-card">
         <span class="session-num">02</span>
         <span class="session-head">2회차: 레진 클래스 (Main Craft)</span>
         <p class="session-desc">설계된 디자인을 바탕으로 전문적인 레진 크래프트를 진행합니다. 주제와 경화제의 정밀한 배합과 고도의 진공 탈포 기술을 통해 기포 없이 맑고 투명한 '영원의 조각'을 직접 제작하는 메인 세션입니다.</p>
-        
         <div class="wb-mini-box">
             <span class="wb-label">[ Archive of Moments : STEP 2 ]</span>
             채집된 꽃(Flower) : [ <span class="wb-line"></span> ] &nbsp; / &nbsp; 기록될 무드(Color) : [ <span class="wb-line"></span> ]<br>
@@ -144,7 +132,6 @@
         <span class="session-num">03</span>
         <span class="session-head">3회차: 감정 들여다보기 & 아카이빙</span>
         <p class="session-desc">완성된 작품을 마주하며 제작 과정 중 느꼈던 감정의 파동을 회고합니다. 작품에 고유한 이름을 부여하고, 당신의 가치관을 최종적으로 박제하여 당신만의 아카이빙을 완료합니다.</p>
-        
         <div class="wb-mini-box">
             <span class="wb-label">[ Archive of Moments : STEP 3 ]</span>
             이 작품을 바라볼 때 나에게 해주고 싶은 말 : " <span class="wb-line" style="min-width:400px;"></span> "<br>
@@ -152,20 +139,23 @@
         </div>
     </div>
 
-    <div style="text-align:center; margin: 150px 0 80px;">
+    <div style="text-align:center; margin: 150px 0 30px;">
         <h2 style="font-family:'Cinzel'; letter-spacing:8px; font-size:36px;">Landscape of Soul</h2>
         <p style="color:var(--accent-gold); font-style:italic; font-size:18px;">나의 내면 풍경을 들여다보는 여덟 가지 기록</p>
     </div>
 
     <div class="q-grid">
-        <div class="q-card"><b>Q.01 간직하고 싶은 나의 첫인상은?</b><span class="q-extra">가면을 벗고 마주한 가장 순수한 당신의 첫 페이지</span></div>
-        <div class="q-card"><b>Q.02 마음속에 머물고 있는 감정의 색채는?</b><span class="q-extra">이름 붙일 수 없는 감정들이 하나의 색으로 번진다면</span></div>
-        <div class="q-card"><b>Q.03 지친 끝에 가장 필요한 위로의 형태는?</b><span class="q-extra">당신을 안아주는 부드러운 여백 혹은 단단한 지지</span></div>
-        <div class="q-card"><b>Q.04 삶 속에서도 지켜내고 싶은 핵심은?</b><span class="q-extra">폭풍우 속에서도 결코 꺼지지 않는 당신만의 작은 촛불</span></div>
+        <div class="q-card"><b>Q.01 간직하고 싶은 나의 첫인상은?</b><span class="q-extra">가면을 벗고 마주한 가장 순수한 당신의 첫 페이지를 떠올려 보세요.</span></div>
+        <div class="q-card"><b>Q.02 마음속에 머물고 있는 감정의 색채는?</b><span class="q-extra">이름 붙일 수 없는 감정들이 하나의 색으로 번진다면 어떤 빛깔일까요.</span></div>
+        <div class="q-card"><b>Q.03 가장 필요한 위로의 형태는?</b><span class="q-extra">당신을 안아주는 것은 부드러운 여백인가요, 단단한 지지인가요.</span></div>
+        <div class="q-card"><b>Q.04 삶 속에서도 지켜내고 싶은 핵심은?</b><span class="q-extra">폭풍우 속에서도 결코 꺼지지 않는 당신만의 작은 촛불은 무엇입니까.</span></div>
+        <div class="q-card"><b>Q.05 가장 사적인 서사를 담은 물건은?</b><span class="q-extra">무생물의 사물 속에 당신의 어떤 기억이 숨을 쉬고 있나요.</span></div>
+        <div class="q-card"><b>Q.06 투영하고 싶은 심연의 모습은?</b><span class="q-extra">통제할 수 없는 번짐 속에서 비로소 자유로워지는 진심을 마주합니다.</span></div>
+        <div class="q-card"><b>Q.07 건네고 싶은 따스한 약속은?</b><span class="q-extra">먼 훗날의 당신에게 오늘 새긴 가치관이 어떤 위로가 되길 바라나요.</span></div>
+        <div class="q-card"><b>Q.08 당신의 본질은 단단함인가요?</b><span class="q-extra">당신을 정의하는 본질은 뚫고 나가는 힘인가요, 품어주는 온기인가요.</span></div>
     </div>
 
     <div style="text-align: center; margin-top: 180px;">
-        <p style="font-family:'Cinzel'; color:var(--accent-gold); letter-spacing:4px; margin-bottom:15px; font-size:18px;">Envisioning your own atmosphere.</p>
         <p style="font-size:24px; margin-bottom:50px; font-weight:700;">당신의 무드를 영원히 박제할 준비가 되셨나요?</p>
         <div class="btn-group">
             <a href="https://naver.me/5bCIPlxw" target="_blank" class="btn-small btn-gold" style="padding: 25px 120px; font-size:18px;">Class Apply</a>
