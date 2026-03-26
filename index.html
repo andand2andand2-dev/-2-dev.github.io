@@ -11,6 +11,7 @@
             --bg-color: #F8F6F1;
             --point-green: #1D4D3F;
             --accent-gold: #c2956a;
+            --white: #ffffff;
             --line-color: rgba(29, 77, 63, 0.1);
         }
 
@@ -30,6 +31,7 @@
 
         .section { padding: 0 15px 80px; max-width: 800px; margin: 0 auto; box-sizing: border-box; }
         
+        /* 이미지 최적화 스타일링 (무수정) */
         .img-box { width: 100%; margin: 40px 0; border: 8px solid #fff; box-shadow: 0 15px 30px rgba(0,0,0,0.06); box-sizing: border-box; overflow: hidden; background: #eee; }
         .img-box img { width: 100%; height: auto; display: block; object-fit: cover; aspect-ratio: 16 / 10; }
 
@@ -42,6 +44,7 @@
         .essay-text { font-size: 16px; line-height: 2.2; color: #333; text-align: justify; text-align-last: center; }
         .highlight { color: var(--accent-gold); font-weight: 700; border-bottom: 1px solid rgba(194, 149, 106, 0.4); }
 
+        /* 클래스 가이드 및 순서 (무수정) */
         .guide-section { margin: 60px 0; }
         .guide-header { text-align: center; margin-bottom: 30px; }
         .guide-header h2 { font-family: 'Cinzel'; font-size: 24px; letter-spacing: 4px; margin-bottom: 8px; }
@@ -66,6 +69,8 @@
         .symbol-list { list-style: none; padding: 0; margin-top: 25px; font-size: 15px; }
         .symbol-list li { margin-bottom: 15px; padding-left: 25px; position: relative; }
         .symbol-list li::before { content: "✦"; position: absolute; left: 0; color: var(--accent-gold); }
+
+        .quote { text-align: center; font-style: italic; color: var(--accent-gold); font-size: 16px; font-weight: 700; margin-top: 30px; line-height: 1.6; }
 
         .q-grid { display: grid; grid-template-columns: 1fr; gap: 15px; margin-top: 40px; }
         .q-card { padding: 30px 20px; background: #fff; border-radius: 15px; border-left: 5px solid var(--accent-gold); }
@@ -103,7 +108,7 @@
 
 <section class="section">
     <div class="img-box">
-        <img src="https://images.unsplash.com/photo-1596716768285-d62f4e3c92da?auto=format&fit=crop&w=1200&q=80" alt="Main Mood">
+        <img src="https://images.unsplash.com/photo-1596716768285-d62f4e3c92da?auto=format&fit=crop&w=1200&q=80" alt="Dried Flower in Resin">
     </div>
 
     <div class="essay-card">
@@ -154,8 +159,8 @@
     </div>
 
     <div class="img-grid">
-        <div class="img-box"><img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=800&q=80"></div>
-        <div class="img-box"><img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=800&q=80"></div>
+        <div class="img-box"><img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=800&q=80" alt="Mind Workbook"></div>
+        <div class="img-box"><img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=800&q=80" alt="Color Mix"></div>
     </div>
 
     <div class="content-card">
@@ -168,11 +173,17 @@
                 ( <span class="wb-line"></span> ), ( <span class="wb-line"></span> ), ( <span class="wb-line"></span> )
             </p>
         </div>
+        <div class="process-item">
+            <span class="process-head">시각적 언어 정의</span>
+            <p class="process-desc">
+                - <b>Main Flower</b>: 가치관 상징 꽃 (리시안셔스 등)<br>
+                - <b>Sub Color</b>: 내면의 감정을 담은 색채
+            </p>
+        </div>
     </div>
 
-    <div class="img-grid">
-        <div class="img-box"><img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80"></div>
-        <div class="img-box"><img src="https://images.unsplash.com/photo-1515405295579-ba7b45403062?auto=format&fit=crop&w=800&q=80"></div>
+    <div class="img-box">
+        <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1200&q=80" alt="Ink Drop Technique">
     </div>
 
     <div class="content-card">
@@ -183,11 +194,11 @@
             <li><b>Point 1</b>: 가치관 키워드에 부합하는 오브제 배치</li>
             <li><b>Point 2</b>: 알코올 잉크 드롭 <small>(감정의 파동 표현)</small></li>
         </ul>
+        <p class="quote">"잉크가 퍼지는 모양을 그대로 두어 <br>통제할 수 없는 감정의 아름다움을 연출합니다."</p>
     </div>
 
-    <div class="img-grid">
-        <div class="img-box"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80"></div>
-        <div class="img-box"><img src="https://images.unsplash.com/photo-1582201942988-13e60e4556ee?auto=format&fit=crop&w=800&q=80"></div>
+    <div class="img-box">
+        <img src="https://images.unsplash.com/photo-1515405295579-ba7b45403062?auto=format&fit=crop&w=1200&q=80" alt="Final Archived Artwork">
     </div>
 
     <div class="content-card">
@@ -197,6 +208,11 @@
             <span class="process-head">나에게 전하는 약속</span>
             <p class="process-desc">" <span class="wb-line" style="min-width:80%;"></span> "</p>
         </div>
+    </div>
+
+    <div style="text-align:center; margin-top: 60px;">
+        <h2 style="font-family:'Cinzel'; font-size:26px; letter-spacing:4px; margin:0;">Landscape of Soul</h2>
+        <p style="color:var(--accent-gold); font-size:12px; margin-top:10px;">내면을 들여다보는 여덟 가지 기록</p>
     </div>
 
     <div class="q-grid">
@@ -214,7 +230,7 @@
 </section>
 
 <footer>
-    <span style="font-family:'Playball'; font-size:24px;">Mood Archiving</span>
+    <span style="font-family:'Playball'; font-size:26px;">Mood Archiving</span>
     <p style="opacity:0.4; margin-top:25px;">© 2026 MOOD ARCHIVING. ENCAPSULATING MOMENTS.</p>
 </footer>
 
