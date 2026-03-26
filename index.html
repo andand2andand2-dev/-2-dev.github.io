@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mood Archiving | 당신의 가치관을 박제하다</title>
     <style>
-        /* 브랜드 고급 폰트 (cite: Cinzel, Playball, Nanum Myeongjo) */
         @import url('https://fonts.googleapis.com/css2?family=Playball&family=Cinzel:wght@400;700&family=Nanum+Myeongjo:wght@400;700&display=swap');
 
         :root {
@@ -20,7 +19,6 @@
         body { 
             background-color: var(--bg-color); color: var(--point-green); 
             font-family: 'Nanum Myeongjo', serif; margin: 0; line-height: 2.2; word-break: keep-all; 
-            /* 배경에 은은한 점 패턴 (고급화) */
             background-image: radial-gradient(var(--accent-gold) 0.6px, transparent 0.6px);
             background-size: 40px 40px; background-attachment: fixed;
         }
@@ -29,7 +27,7 @@
         .logo { font-family: 'Playball', cursive; font-size: 72px; color: var(--point-green); text-decoration: none; display: block; }
         .logo-sub { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 9px; color: var(--accent-gold); display: block; margin-top: -5px; font-weight: 700; }
 
-        /* 상단 버튼 3개 연동 */
+        /* 버튼 3개 연동 유지 */
         .btn-group { margin-top: 50px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
         .btn { 
             font-family: 'Cinzel', serif; padding: 16px 40px; border-radius: 0; text-decoration: none; 
@@ -47,7 +45,7 @@
         .mid-quote { text-align: center; font-size: 17px; color: var(--accent-gold); margin: 150px 0; font-style: italic; letter-spacing: 2px; line-height: 3.2; }
         .mid-quote span { display: block; font-size: 11px; opacity: 0.5; margin-top: 20px; letter-spacing: 6px; text-transform: uppercase; }
 
-        /* [혁신] 외부 이미지를 차단하고 레진 무드를 시각화한 코드 베이스 그래픽 프레임 */
+        /* [혁신] 외부 이미지 차단 문제를 코드로 직접 그리는 '라이브 레진 무드' 그래픽 프레임 */
         .visual-mood { 
             width: 100%; height: 500px; margin: 120px 0; border-radius: 2px;
             overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.05); position: relative;
@@ -73,12 +71,12 @@
         }
         .v-ink::after { content: "EMOTIONAL WAVE"; font-family: 'Cinzel'; font-size: 10px; color: var(--point-green); opacity: 0.3; letter-spacing: 5px; position: absolute; bottom: 30px; right: 30px; }
 
-        /* 전문 지식 섹션 (감성 보강) */
-        .tech-card { 
+        /* [삭제 및 수정] '과학적 데이터' 삭제 -> 가치관 중심의 감문화 */
+        .tech-essay-essay { 
             background: rgba(255, 255, 255, 0.7); border: 1px solid var(--line-color); 
-            padding: 45px; margin: 100px 0; font-size: 14.5px; line-height: 2; position: relative;
+            padding: 60px; margin: 100px 0; font-size: 15px; position: relative;
         }
-        .tech-note { font-family: 'Cinzel'; font-size: 11px; color: var(--accent-gold); letter-spacing: 3px; display: block; margin-bottom: 15px; }
+        .tech-label-note { font-family: 'Cinzel'; font-size: 11px; color: var(--accent-gold); letter-spacing: 3px; display: block; margin-bottom: 20px; }
 
         /* 3단계 커리큘럼 섹션 (문항 보존) */
         .workbook-section { background: rgba(255, 255, 255, 0.9); padding: 120px 70px; border: 1px solid var(--line-color); margin-bottom: 180px; position: relative; z-index: 1; backdrop-filter: blur(10px); }
@@ -90,13 +88,16 @@
         .step-desc { font-size: 15px; opacity: 0.7; margin-bottom: 40px; display: block; }
         
         /* 워크북 입력 박스 및 문항 (보존) */
-        .workbook-box { background: rgba(253, 252, 249, 0.8); padding: 50px; border: 1px solid var(--soft-gray); border-left: 5px solid var(--accent-gold); }
+        .workbook-box { background: rgba(253, 252, 249, 0.8); padding: 50px; border: 1px solid var(--soft-gray); border-left: 5px solid var(--accent-gold); margin-bottom: 80px; }
         .input-line { display: inline-block; min-width: 160px; border-bottom: 1px solid var(--accent-gold); margin: 0 10px; height: 30px; background: transparent; }
 
         /* 또렷해진 골드 일러스트 (image_a45012.png) */
         .illus { display: block; margin: 80px auto; width: 60px; fill: none; stroke: var(--accent-gold); stroke-width: 2.5; }
 
         /* 나의 내면 풍경 8문항 (절대 보존) */
+        .section-title { text-align: center; font-family: 'Cinzel', serif; font-size: 34px; margin-bottom: 25px; letter-spacing: 6px; }
+        .section-desc { text-align: center; font-size: 18px; opacity: 0.8; margin-bottom: 100px; color: var(--accent-gold); font-style: italic; }
+
         .q-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; position: relative; z-index: 1; }
         .q-card { padding: 60px; background: rgba(255, 255, 255, 0.85); border: 1px solid var(--line-color); backdrop-filter: blur(5px); transition: 0.5s; }
         .q-card:hover { border-color: var(--accent-gold); transform: translateY(-5px); background: white; }
@@ -140,9 +141,9 @@
 
     <div class="visual-mood v-clarity"></div>
 
-    <div class="tech-card">
-        <span class="tech-note">Technical Essay</span>
-        무드 아카이빙은 단순히 형태를 만드는 공예를 넘어선 **과학적 감성**을 지향합니다. 주제와 경화제를 정밀하게 배합(2:1)하고, 진공 탈포(Degassing)를 거쳐 기포 없는 99.9%의 고투명 레진을 구현해 내는 화학적 결합 과정은 당신의 가치관이 흐릿해지지 않도록 단단히 고정하는 박제의 기술입니다. 투명함 속에, 당신만의 고유한 서사가 가장 맑은 상태로 영원히 머물게 됩니다.
+    <div class="tech-essay-essay">
+        <span class="tech-label-note">Inner Archiving Journey</span>
+        무드 아카이빙은 단순히 형태를 만드는 공예를 넘어, 당신의 가장 사적인 가치관을 채집하는 여정입니다. 흐릿해지지 않도록 단단히 고정하는 **'박제의 미학'** 속에, 투명하게 번지는 찰나의 파동을 가두어 보세요. 이 투명한 오브제는 당신의 심연을 가장 맑은 상태로 증명하는 영원한 기록이 될 것입니다.
     </div>
 
     <svg class="illus" viewBox="0 0 100 20"><path d="M0 10 Q 25 0 50 10 T 100 10" /></svg>
@@ -187,8 +188,8 @@
 
     <svg class="illus" viewBox="0 0 100 100" style="width:30px;"><rect x="10" y="10" width="80" height="80" /></svg>
 
-    <h2 class="q-group-title" style="text-align: center; font-family: 'Cinzel', serif; font-size: 34px; margin-bottom: 25px; letter-spacing: 6px;">Landscape of Soul</h2>
-    <p class="section-desc" style="text-align: center; font-size: 18px; opacity: 0.8; margin-bottom: 100px; color: var(--accent-gold); font-style: italic;">나의 내면 풍경을 들여다보는 여덟 가지의 사색적 기록</p>
+    <h2 class="section-title">Landscape of Soul</h2>
+    <p class="section-desc">나의 내면 풍경을 들여다보는 여덟 가지의 사색적 기록</p>
     
     <div class="q-container">
         <div class="q-card"><span class="q-num">Q.01</span>타인의 시선이 닿지 않는 곳에서 간직하고 싶은 '첫인상'은?</div>
