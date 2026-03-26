@@ -13,7 +13,6 @@
             --accent-gold: #c2956a;
             --white: #ffffff;
             --line-color: rgba(29, 77, 63, 0.15);
-            --text-dark: #2c2c2c;
         }
 
         body { 
@@ -21,50 +20,50 @@
             font-family: 'Nanum Myeongjo', serif; margin: 0; line-height: 2.8; word-break: keep-all; 
         }
 
-        header { padding: 120px 20px 60px; text-align: center; }
-        .logo { font-family: 'Playball', cursive; font-size: 72px; color: var(--point-green); text-decoration: none; display: block; }
-        .logo-sub { font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 10px; color: var(--accent-gold); display: block; margin-top: -5px; }
+        header { padding: 100px 20px 40px; text-align: center; }
+        .logo { font-family: 'Playball', cursive; font-size: 68px; color: var(--point-green); text-decoration: none; display: block; }
+        .logo-sub { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 9px; color: var(--accent-gold); display: block; margin-top: -5px; }
 
-        .btn-group { margin: 50px 0; display: flex; justify-content: center; gap: 20px; }
+        .btn-group { margin: 40px 0; display: flex; justify-content: center; gap: 15px; }
         .btn-small { 
-            font-family: 'Cinzel'; font-size: 12px; letter-spacing: 3px; text-decoration: none;
-            padding: 14px 30px; border: 1px solid var(--point-green); color: var(--point-green); transition: 0.4s;
-            background: rgba(255,255,255,0.5);
+            font-family: 'Cinzel'; font-size: 11px; letter-spacing: 2px; text-decoration: none;
+            padding: 12px 25px; border: 1px solid var(--point-green); color: var(--point-green); transition: 0.3s;
         }
-        .btn-small:hover { background: var(--point-green); color: white; transform: translateY(-3px); }
 
-        .section { padding: 40px 20px 150px; max-width: 1000px; margin: 0 auto; }
+        .section { padding: 40px 20px 150px; max-width: 950px; margin: 0 auto; }
 
-        /* [개선] 이미지가 배경과 분리되도록 두꺼운 테두리와 그림자 추가 */
+        /* [개선] 이미지가 배경과 분리되도록 프레임과 그림자 추가 */
         .content-img { 
-            width: 100%; height: 600px; object-fit: cover; border-radius: 4px; 
-            margin: 80px 0; border: 12px solid var(--white); /* 흰색 프레임으로 배경과 분리 */
-            box-shadow: 0 30px 60px rgba(0,0,0,0.15); box-sizing: border-box;
+            width: 100%; height: 500px; object-fit: cover; border-radius: 4px; 
+            margin: 60px 0; border: 10px solid var(--white);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1); box-sizing: border-box;
         }
         
-        .essay-box { padding: 100px 60px; text-align: center; background: var(--white); border: 1px solid var(--line-color); margin: 80px 0; position: relative; }
-        .essay-label { font-family: 'Cinzel'; font-size: 12px; color: var(--accent-gold); letter-spacing: 6px; display: block; margin-bottom: 30px; }
-        .essay-title { font-size: 30px; font-weight: 700; margin-bottom: 40px; color: var(--point-green); }
-        .essay-text { font-size: 17px; line-height: 3.2; color: var(--text-dark); }
+        .essay-box { padding: 80px 50px; text-align: center; background: var(--white); border: 1px solid var(--line-color); margin: 60px 0; }
+        .essay-label { font-family: 'Cinzel'; font-size: 11px; color: var(--accent-gold); letter-spacing: 5px; display: block; margin-bottom: 25px; }
+        .essay-title { font-size: 28px; font-weight: 700; margin-bottom: 35px; color: var(--point-green); }
+        .essay-text { font-size: 16px; line-height: 3; color: #444; }
 
-        /* 커리큘럼 스타일 */
-        .step-container { margin: 150px 0; }
-        .step-item { display: flex; gap: 50px; margin-bottom: 120px; align-items: flex-start; }
-        .step-num { font-family: 'Cinzel'; font-size: 60px; color: var(--accent-gold); opacity: 0.25; line-height: 0.7; }
-        .step-title { font-size: 26px; font-weight: 700; margin-bottom: 20px; color: var(--point-green); display: block; }
-        .step-desc { font-size: 17px; color: #555; margin-bottom: 35px; display: block; }
-        .workbook-input { background: #fff; padding: 45px; border: 1px solid var(--line-color); border-left: 6px solid var(--accent-gold); box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
-        .input-line { display: inline-block; border-bottom: 1px solid var(--accent-gold); min-width: 180px; height: 28px; margin: 0 12px; }
+        /* [추가] 3회차 커리큘럼 상세 섹션 */
+        .curriculum-wrap { margin: 120px 0; background: rgba(255,255,255,0.4); padding: 60px 40px; border-radius: 8px; }
+        .curriculum-item { display: flex; gap: 30px; margin-bottom: 60px; align-items: flex-start; }
+        .cur-num { font-family: 'Cinzel'; font-size: 32px; color: var(--accent-gold); font-weight: 700; line-height: 1; min-width: 60px; }
+        .cur-content { flex: 1; }
+        .cur-title { font-size: 20px; font-weight: 700; color: var(--point-green); margin-bottom: 10px; display: block; }
+        .cur-desc { font-size: 15px; color: #666; line-height: 1.8; }
 
-        /* 8가지 질문 그리드 */
-        .q-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; margin-top: 100px; }
-        .q-card { padding: 55px; background: #fff; border: 1px solid var(--line-color); font-size: 16px; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.02); }
-        .q-card:hover { border-color: var(--accent-gold); transform: translateY(-5px); }
+        /* 기존 워크북 문항 스타일 유지 */
+        .workbook-input { background: #fff; padding: 40px; border: 1px solid var(--line-color); border-left: 5px solid var(--accent-gold); margin-top: 20px; }
+        .input-line { display: inline-block; border-bottom: 1px solid var(--accent-gold); min-width: 160px; height: 25px; margin: 0 10px; }
+
+        /* 8가지 질문 */
+        .q-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 80px; }
+        .q-card { padding: 45px; background: #fff; border: 1px solid var(--line-color); font-size: 15px; }
 
         .btn-main { 
-            display: block; width: fit-content; margin: 120px auto; padding: 28px 100px; 
+            display: block; width: fit-content; margin: 100px auto; padding: 25px 90px; 
             background: var(--point-green); color: white; text-decoration: none; font-family: 'Cinzel';
-            letter-spacing: 6px; font-size: 15px; transition: 0.5s; box-shadow: 0 20px 40px rgba(29, 77, 99, 0.2);
+            letter-spacing: 5px; font-size: 14px; transition: 0.5s;
         }
     </style>
 </head>
@@ -72,7 +71,7 @@
 
 <header>
     <a href="#" class="logo">Mood Archiving</a>
-    <span class="logo-sub">ENCAPSULATING YOUR SOUL</span>
+    <span class="logo-sub">COLLECTING YOUR ESSENCE</span>
     <div class="btn-group">
         <a href="https://www.instagram.com/mood_archiving/" target="_blank" class="btn-small">Instagram</a>
         <a href="https://smartstore.naver.com/mood_archiving" target="_blank" class="btn-small">Smart Store</a>
@@ -80,66 +79,64 @@
 </header>
 
 <section class="section">
-    <img src="https://images.unsplash.com/photo-1635443457112-9c986198642a?auto=format&fit=crop&q=80&w=1500" class="content-img" alt="Deep Resin Art">
+    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1500" class="content-img">
     
     <div class="essay-box">
-        <span class="essay-label">The Philosophy of Resin</span>
+        <span class="essay-label">Definition of Record</span>
         <h3 class="essay-title">찰나를 가두어 영원을 만드는 기록</h3>
         <p class="essay-text">
-            레진아트는 단순히 액체를 굳히는 행위가 아닌, **물리적인 시간을 정지시키는 '박제의 미학'**입니다. 
-            고분자 화합물이 단단한 결합을 이루듯, 흐릿했던 당신의 기억과 가치관을 투명한 조각 속에 견고하게 정착시킵니다.<br>
-            잉크의 파동이나 계절을 품은 꽃잎처럼 다시는 돌아오지 않을 찰나를 
-            **99.9% 고투명 레진** 속에 가두어 당신의 일상 곁에 영원히 머물게 합니다.
+            레진아트는 흐르는 액체가 단단하게 변하는 성질을 이용한 '기록의 예술'입니다.<br>
+            고분자 화합물이 단단한 결합을 이루듯, 흔들리던 당신의 가치관을 투명한 조각 속에 견고하게 정착시킵니다. 
+            다시는 돌아오지 않을 찰나를 99.9% 고투명 레진 속에 박제하여 당신의 일상 곁에 영원히 머물게 합니다.
         </p>
     </div>
 
-    <img src="https://images.unsplash.com/photo-1508615070457-7baeba4003ab?auto=format&fit=crop&q=80&w=1500" class="content-img" alt="Soul Reflection">
+    <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=1500" class="content-img">
 
     <div class="essay-box" style="background: transparent; border: none; padding-top: 0;">
         <span class="essay-label">Personality & Core Values</span>
         <h3 class="essay-title">성향: 당신의 기질이 그리는 인생의 밑그림</h3>
         <p class="essay-text">
-            우리가 타고난 **내면의 성향(Personality)**은 삶이라는 광활한 도화지에 미리 그려진 섬세한 밑그림과 같습니다. 
-            자신의 고유한 기질을 깊이 들여다보고 이를 온전히 수용하는 과정은, 
-            세상의 거센 소란 속에서도 흔들리지 않는 **'자기중심적 가치관'**을 세우는 가장 맑은 토대가 됩니다.<br><br>
-            누군가의 기준이 아닌, 오직 나만의 호흡으로 인생을 경작하겠다는 선언. 
-            그 영혼의 북극성을 찾아가는 여정에서 당신은 비로소 가장 나다운 빛을 발하게 될 것입니다.
+            우리가 타고난 **내면의 성향(기질)**은 삶이라는 도화지에 그려진 밑그림과 같습니다.<br>
+            자신의 성격적 특성을 깊이 들여다보고 이를 긍정하는 과정은,<br>
+            세상의 소란 속에서도 나를 지탱해 줄 단단한 **'가치관'**을 세우는 가장 맑은 토대가 됩니다.<br>
+            나만의 고유한 호흡으로 인생을 아카이빙하는 여정을 시작해 보세요.
         </p>
     </div>
 
-    <div class="step-container">
-        <div style="text-align: center; margin-bottom: 100px;">
-            <span class="essay-label">Curriculum</span>
-            <h2 style="font-size: 34px;">나의 무드를 아카이빙하는 3단계 여정</h2>
+    <div class="curriculum-wrap">
+        <div style="text-align: center; margin-bottom: 80px;">
+            <span class="essay-label">The 3-Step Journey</span>
+            <h2 style="font-size: 28px;">무드 아카이빙 클래스 상세 안내</h2>
         </div>
 
-        <div class="step-item">
-            <span class="step-num">01</span>
-            <div class="step-content">
-                <span class="step-title">1회차: 가치관 찾기 & 레진 디자인</span>
-                <span class="step-desc">자체 제작된 마인드 워크북을 통해 내면의 성향을 탐색합니다. 나를 상징하는 핵심 키워드를 도출하고, 이를 시각화하기 위한 압화와 조색 데이터(Color Palette)를 정교하게 설계하는 단계입니다.</span>
+        <div class="curriculum-item">
+            <span class="cur-num">STEP 1</span>
+            <div class="cur-content">
+                <span class="cur-title">1회차: 가치관 찾기 & 레진 디자인</span>
+                <p class="cur-desc">자체 제작 워크북을 통해 내면의 성향을 탐색하고 나를 정의하는 핵심 키워드를 도출합니다. 이를 시각화하기 위한 압화와 조색 팔레트를 정교하게 설계합니다.</p>
                 <div class="workbook-input">
                     도출된 핵심 가치 : ( <span class="input-line"></span> ) / 설계된 무드 : ( <span class="input-line"></span> )
                 </div>
             </div>
         </div>
 
-        <div class="step-item">
-            <span class="step-num">02</span>
-            <div class="step-content">
-                <span class="step-title">2회차: 레진 클래스 (Main Craft)</span>
-                <span class="step-desc">설계된 디자인을 바탕으로 전문적인 레진 크래프트를 경험합니다. 주제와 경화제의 배합, 진공 탈포 기술을 통해 기포 없이 맑은 '영원의 조각'을 제작하며 무드에 몰입하는 시간입니다.</span>
+        <div class="curriculum-item">
+            <span class="cur-num">STEP 2</span>
+            <div class="cur-content">
+                <span class="cur-title">2회차: 레진 클래스 (Main Craft)</span>
+                <p class="cur-desc">설계된 디자인을 바탕으로 실제 레진 크래프트를 진행합니다. 주제와 경화제의 황금 비율 배합과 탈포 기술을 통해 기포 없이 맑은 '영원의 조각'을 제작합니다.</p>
                 <div class="workbook-input">
                     배합된 소재 : <span class="input-line"></span> / 주요 기법 : <span class="input-line"></span>
                 </div>
             </div>
         </div>
 
-        <div class="step-item" style="margin-bottom:0;">
-            <span class="step-num">03</span>
-            <div class="step-content">
-                <span class="step-title">3회차: 감정 들여다보기 & 아카이빙</span>
-                <span class="step-desc">완성된 오브제를 마주하며 제작 과정 중 느꼈던 감정의 파동을 기록합니다. 작품에 고유한 이름을 부여하고, 이 아카이브가 당신의 일상에 어떤 북극성이 될지 최종적으로 정의합니다.</span>
+        <div class="curriculum-item" style="margin-bottom:0;">
+            <span class="cur-num">STEP 3</span>
+            <div class="cur-content">
+                <span class="cur-title">3회차: 감정 들여다보기 & 아카이빙</span>
+                <p class="cur-desc">완성된 오브제를 마주하며 제작 과정 중의 감정 파동을 회고합니다. 작품에 고유한 이름을 부여하고 당신의 가치관을 최종적으로 박제합니다.</p>
                 <div class="workbook-input">
                     작품의 고유 명사 : 「 <span class="input-line" style="min-width:350px;"></span> 」
                 </div>
@@ -147,11 +144,11 @@
         </div>
     </div>
 
-    <img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&q=80&w=1500" class="content-img" alt="Meditation Space">
+    <img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&q=80&w=1500" class="content-img">
 
-    <div style="text-align: center; margin-bottom: 70px;">
-        <h2 style="font-family: 'Cinzel'; letter-spacing: 7px; font-size: 32px;">Landscape of Soul</h2>
-        <p style="color: var(--accent-gold); font-style: italic; font-size: 18px;">나의 내면 풍경을 들여다보는 여덟 가지 기록</p>
+    <div style="text-align: center; margin-bottom: 60px;">
+        <h2 style="font-family: 'Cinzel'; letter-spacing: 6px;">Landscape of Soul</h2>
+        <p style="color: var(--accent-gold); font-style: italic;">나의 내면 풍경을 들여다보는 여덟 가지 기록</p>
     </div>
 
     <div class="q-grid">
