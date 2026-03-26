@@ -11,104 +11,95 @@
             --bg-color: #F8F6F1;
             --point-green: #1D4D3F;
             --accent-gold: #c2956a;
-            --white: #ffffff;
             --line-color: rgba(29, 77, 63, 0.1);
         }
 
-        /* 기본 설정: 모바일 우선 */
         body { 
             color: var(--point-green); font-family: 'Nanum Myeongjo', serif; margin: 0; padding: 0;
             line-height: 1.8; word-break: keep-all; background-color: var(--bg-color); 
-            -webkit-text-size-adjust: none;
         }
 
-        header { padding: 40px 20px 20px; text-align: center; }
-        .logo { font-family: 'Playball', cursive; font-size: 42px; color: var(--point-green); text-decoration: none; display: block; }
-        .logo-sub { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 4px; color: var(--accent-gold); display: block; margin-top: 5px; font-weight: 700; }
+        header { padding: 50px 20px 30px; text-align: center; }
+        .logo { font-family: 'Playball', cursive; font-size: 45px; color: var(--point-green); text-decoration: none; display: block; }
+        .logo-sub { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 5px; color: var(--accent-gold); display: block; margin-top: 5px; font-weight: 700; }
         
+        /* 버튼 그룹 연동 및 최적화 */
         .header-btn-group { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 25px; }
-        .header-btn { font-family: 'Cinzel'; font-size: 10px; letter-spacing: 1px; text-decoration: none; padding: 8px 15px; border: 1px solid var(--point-green); color: var(--point-green); font-weight: 700; }
+        .header-btn { font-family: 'Cinzel'; font-size: 10px; letter-spacing: 1px; text-decoration: none; padding: 10px 18px; border: 1px solid var(--point-green); color: var(--point-green); font-weight: 700; transition: 0.3s; }
+        .header-btn:hover { background: var(--point-green); color: white; }
         .btn-gold { border-color: var(--accent-gold); color: var(--accent-gold); }
 
-        .section { padding: 0 15px 60px; max-width: 800px; margin: 0 auto; box-sizing: border-box; }
+        .section { padding: 0 15px 80px; max-width: 800px; margin: 0 auto; box-sizing: border-box; }
         
-        /* 이미지 최적화: 절대 깨지지 않는 구조 */
-        .img-box { width: 100%; margin: 30px 0; border: 6px solid #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.05); box-sizing: border-box; overflow: hidden; }
+        /* 이미지 깨짐 방지 및 고화질 설정 */
+        .img-box { width: 100%; margin: 40px 0; border: 8px solid #fff; box-shadow: 0 15px 30px rgba(0,0,0,0.06); box-sizing: border-box; overflow: hidden; background: #eee; }
         .img-box img { width: 100%; height: auto; display: block; object-fit: cover; aspect-ratio: 16 / 10; }
 
-        .img-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 30px 0; }
-        .img-grid .img-box { margin: 0; border-width: 4px; }
+        .img-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 40px 0; }
+        .img-grid .img-box { margin: 0; border-width: 5px; }
         .img-grid .img-box img { aspect-ratio: 1 / 1; }
 
-        /* 가치관 에세이 모바일 최적화 */
-        .essay-card { background: #fff; padding: 40px 20px; border-radius: 20px; border: 1px solid var(--line-color); margin-bottom: 40px; text-align: center; }
-        .essay-title { font-size: 20px; font-weight: 700; margin-bottom: 25px; color: var(--point-green); }
-        .essay-text { font-size: 15px; line-height: 2; color: #333; text-align: justify; text-align-last: center; }
+        .essay-card { background: #fff; padding: 50px 25px; border-radius: 25px; border: 1px solid var(--line-color); margin-bottom: 50px; text-align: center; }
+        .essay-title { font-size: 22px; font-weight: 700; margin-bottom: 30px; color: var(--point-green); }
+        .essay-text { font-size: 16px; line-height: 2.2; color: #333; text-align: justify; text-align-last: center; }
         .highlight { color: var(--accent-gold); font-weight: 700; border-bottom: 1px solid rgba(194, 149, 106, 0.4); }
 
-        /* 클래스 카드 모바일 최적화 */
-        .content-card { background: #fff; padding: 35px 20px; border-radius: 20px; border: 1px solid var(--line-color); margin-bottom: 40px; }
-        .card-num { font-family: 'Cinzel'; font-size: 24px; color: var(--accent-gold); opacity: 0.3; display: block; margin-bottom: 5px; }
-        .card-title { font-size: 19px; font-weight: 700; margin-bottom: 25px; text-align: center; color: var(--point-green); }
+        .content-card { background: #fff; padding: 40px 25px; border-radius: 25px; border: 1px solid var(--line-color); margin-bottom: 50px; }
+        .card-num { font-family: 'Cinzel'; font-size: 28px; color: var(--accent-gold); opacity: 0.3; display: block; margin-bottom: 5px; }
+        .card-title { font-size: 20px; font-weight: 700; margin-bottom: 30px; text-align: center; }
         
-        .process-item { margin-bottom: 25px; padding-left: 15px; border-left: 3px solid var(--accent-gold); }
-        .process-head { font-size: 16px; font-weight: 700; display: block; margin-bottom: 8px; }
-        .process-desc { font-size: 14px; color: #444; }
-        .wb-line { display: inline-block; border-bottom: 1px solid var(--point-green); min-width: 100px; height: 20px; margin: 0 5px; vertical-align: bottom; }
+        .process-item { margin-bottom: 30px; padding-left: 15px; border-left: 4px solid var(--accent-gold); }
+        .process-head { font-size: 17px; font-weight: 700; display: block; margin-bottom: 10px; }
+        .process-desc { font-size: 15px; color: #444; }
+        .wb-line { display: inline-block; border-bottom: 1px solid var(--point-green); min-width: 110px; height: 22px; margin: 0 5px; vertical-align: bottom; }
 
-        .symbol-list { list-style: none; padding: 0; margin-top: 20px; font-size: 14px; text-align: left; }
-        .symbol-list li { margin-bottom: 12px; padding-left: 20px; position: relative; }
+        .symbol-list { list-style: none; padding: 0; margin-top: 25px; font-size: 15px; }
+        .symbol-list li { margin-bottom: 15px; padding-left: 25px; position: relative; }
         .symbol-list li::before { content: "✦"; position: absolute; left: 0; color: var(--accent-gold); }
 
-        .quote { text-align: center; font-style: italic; color: var(--accent-gold); font-size: 15px; font-weight: 700; margin-top: 30px; line-height: 1.5; }
+        .quote { text-align: center; font-style: italic; color: var(--accent-gold); font-size: 16px; font-weight: 700; margin-top: 30px; line-height: 1.6; }
 
-        /* 8개 질문 리스트 */
-        .q-grid { display: grid; grid-template-columns: 1fr; gap: 15px; margin-top: 30px; }
-        .q-card { padding: 25px 20px; background: #fff; border-radius: 12px; border-left: 4px solid var(--accent-gold); box-shadow: 0 4px 10px rgba(0,0,0,0.02); }
-        .q-card b { font-size: 15px; display: block; color: var(--point-green); }
+        .q-grid { display: grid; grid-template-columns: 1fr; gap: 15px; margin-top: 40px; }
+        .q-card { padding: 30px 20px; background: #fff; border-radius: 15px; border-left: 5px solid var(--accent-gold); }
+        .q-card b { font-size: 16px; display: block; }
 
-        .btn-apply-large { display: block; width: 100%; max-width: 280px; margin: 50px auto; padding: 18px 0; border: 1px solid var(--accent-gold); color: var(--accent-gold); text-decoration: none; font-family: 'Cinzel'; font-weight: 700; font-size: 15px; letter-spacing: 2px; text-align: center; }
+        .btn-apply-large { display: block; width: 100%; max-width: 280px; margin: 60px auto; padding: 20px 0; border: 1px solid var(--accent-gold); color: var(--accent-gold); text-decoration: none; font-family: 'Cinzel'; font-weight: 700; font-size: 16px; letter-spacing: 3px; text-align: center; transition: 0.4s; }
+        .btn-apply-large:hover { background: var(--accent-gold); color: white; }
         
-        footer { background: #1a1a1a; color: #fff; padding: 60px 20px; text-align: center; font-size: 10px; }
+        footer { background: #1a1a1a; color: #fff; padding: 70px 20px; text-align: center; font-size: 11px; }
 
-        /* PC 버전 (768px 이상) */
         @media (min-width: 768px) {
-            header { padding: 80px 20px 40px; }
-            .logo { font-size: 70px; }
-            .logo-sub { font-size: 14px; letter-spacing: 8px; }
-            .section { padding: 0 20px 100px; }
+            header { padding: 90px 20px 50px; }
+            .logo { font-size: 75px; }
+            .logo-sub { font-size: 15px; letter-spacing: 10px; }
             .essay-card { padding: 80px 60px; }
             .essay-title { font-size: 32px; }
-            .essay-text { font-size: 18px; line-height: 2.6; }
-            .content-card { padding: 60px 50px; }
+            .essay-text { font-size: 18px; }
+            .content-card { padding: 70px 60px; }
             .card-title { font-size: 28px; }
-            .process-head { font-size: 22px; }
-            .process-desc { font-size: 17px; }
             .q-grid { grid-template-columns: 1fr 1fr; }
-            .btn-apply-large { max-width: 350px; font-size: 20px; }
-            .img-box img { aspect-ratio: 16 / 9; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <a href="https://naver.me/5bCIPlxw" target="_blank" class="logo">Mood Archiving</a>
+    <a href="https://smartstore.naver.com/mood_archiving" target="_blank" class="logo">Mood Archiving</a>
     <span class="logo-sub">ENCAPSULATING YOUR VALUES</span>
     <div class="header-btn-group">
-        <a href="https://naver.me/5bCIPlxw" target="_blank" class="header-btn">Instagram</a>
-        <a href="https://naver.me/5bCIPlxw" target="_blank" class="header-btn">Smart Store</a>
+        <a href="https://www.instagram.com/mood_archiving?igsh=MXhudzd0YzBhY3JnMw%3D%3D&utm_source=qr" target="_blank" class="header-btn">Instagram</a>
+        <a href="https://smartstore.naver.com/mood_archiving" target="_blank" class="header-btn">Smart Store</a>
         <a href="https://naver.me/5bCIPlxw" target="_blank" class="header-btn btn-gold">Class Apply</a>
     </div>
 </header>
 
 <section class="section">
     <div class="img-box">
-        <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1200&q=80" alt="Main Mood">
+        <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1200&q=80" alt="Main Flower Mood">
     </div>
 
     <div class="essay-card">
-        <span style="font-family:'Cinzel'; font-size:12px; color:var(--accent-gold); letter-spacing:4px; display:block; margin-bottom:15px;">PHILOSOPHY</span>
+        <span style="font-family:'Cinzel'; font-size:12px; color:var(--accent-gold); letter-spacing:4px; display:block; margin-bottom:20px;">PHILOSOPHY</span>
         <h3 class="essay-title">가치관: 당신의 가장 맑은 북극성</h3>
         <div class="essay-text">
             우리가 타고난 <span class="highlight">성향</span>이 영혼의 결이자 바탕색이라면, <span class="highlight">가치관</span>은 그 위에 당신이 어떤 방향으로 나아갈지 결정하는 단단한 의지이자 <span class="highlight">북극성</span>입니다.<br><br>
@@ -172,8 +163,8 @@
     </div>
 
     <div style="text-align:center; margin-top: 60px;">
-        <h2 style="font-family:'Cinzel'; font-size:24px; letter-spacing:4px; margin:0;">Landscape of Soul</h2>
-        <p style="color:var(--accent-gold); font-size:12px; margin-top:5px;">내면을 들여다보는 여덟 가지 기록</p>
+        <h2 style="font-family:'Cinzel'; font-size:26px; letter-spacing:4px; margin:0;">Landscape of Soul</h2>
+        <p style="color:var(--accent-gold); font-size:12px; margin-top:10px;">내면을 들여다보는 여덟 가지 기록</p>
     </div>
 
     <div class="q-grid">
@@ -191,8 +182,8 @@
 </section>
 
 <footer>
-    <span style="font-family:'Playball'; font-size:24px;">Mood Archiving</span>
-    <p style="opacity:0.4; margin-top:20px;">© 2026 MOOD ARCHIVING. ALL RIGHTS RESERVED.</p>
+    <span style="font-family:'Playball'; font-size:26px;">Mood Archiving</span>
+    <p style="opacity:0.4; margin-top:25px; letter-spacing: 1px;">© 2026 MOOD ARCHIVING. ENCAPSULATING MOMENTS.</p>
 </footer>
 
 </body>
