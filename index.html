@@ -36,21 +36,25 @@
         .essay-para { font-size: 21px; line-height: 3.4; color: #333; margin-bottom: 50px; }
         .highlight { color: var(--accent-gold); font-weight: 700; border-bottom: 1px solid rgba(194, 149, 106, 0.3); }
 
-        /* [커리큘럼 카드 - 이미지 내용 반영] */
+        /* [커리큘럼 카드] */
         .session-card { background: #fff; border: 1px solid var(--line-color); border-radius: 40px; padding: 90px 70px; margin-bottom: 120px; box-shadow: 0 20px 40px rgba(0,0,0,0.03); position: relative; }
         .session-num { font-family: 'Cinzel'; font-size: 55px; color: var(--accent-gold); opacity: 0.3; line-height: 0.7; display: block; margin-bottom: 15px; }
         .session-head { font-size: 27px; font-weight: 700; color: var(--point-green); margin-bottom: 20px; display: block; }
         .session-desc { font-size: 19px; color: #555; line-height: 2.2; margin-bottom: 30px; }
         
-        /* [상징적 의미 리스트] */
-        .symbol-list { list-style: none; padding: 0; margin: 20px 0; font-size: 18px; color: var(--point-green); }
-        .symbol-list li { margin-bottom: 10px; padding-left: 25px; position: relative; }
+        /* [상징적 의미 리스트 - 이미지 3번 반영] */
+        .symbol-list { list-style: none; padding: 0; margin: 30px 0; font-size: 19px; color: var(--point-green); }
+        .symbol-list li { margin-bottom: 15px; padding-left: 30px; position: relative; }
         .symbol-list li::before { content: "✦"; position: absolute; left: 0; color: var(--accent-gold); }
 
         /* [워크북 실습 디자인 - 이미지 1번 반영] */
-        .wb-mini-box { background: var(--bg-color); padding: 50px; border-radius: 30px; border-left: 8px solid var(--accent-gold); margin-top: 45px; font-size: 18px; line-height: 2.8; }
-        .wb-line { display: inline-block; border-bottom: 1.5px solid var(--point-green); min-width: 130px; height: 32px; margin: 0 10px; vertical-align: bottom; }
-        .wb-label { font-family: 'Cinzel'; font-size: 16px; color: var(--accent-gold); margin-bottom: 25px; display: block; letter-spacing: 2px; font-weight: 700; }
+        .wb-mini-box { background: var(--bg-color); padding: 50px; border-radius: 30px; border-left: 8px solid var(--accent-gold); margin-top: 45px; font-size: 19px; line-height: 3; }
+        .wb-line { display: inline-block; border-bottom: 1.5px solid var(--point-green); min-width: 140px; height: 32px; margin: 0 10px; vertical-align: bottom; position: relative; }
+        
+        /* 예시 텍스트(Placeholder) 스타일 */
+        .wb-line::after { content: attr(data-placeholder); position: absolute; bottom: 5px; left: 5px; font-size: 15px; color: #bbb; font-style: italic; font-weight: 400; }
+        
+        .wb-label { font-family: 'Cinzel'; font-size: 17px; color: var(--accent-gold); margin-bottom: 25px; display: block; letter-spacing: 2px; font-weight: 700; }
 
         /* [질문 그리드] */
         .q-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; margin-top: 80px; }
@@ -78,47 +82,52 @@
         <h3 class="essay-title">가치관: 당신의 가장 맑은 북극성</h3>
         <div class="essay-content">
             <div class="essay-para">우리가 타고난 <span class="highlight">성향</span>이 영혼의 결이자 지울 수 없는 바탕색이라면, <span class="highlight">가치관</span>은 그 위에 당신이 어떤 방향으로 나아갈지 결정하는 단단한 의지이자 <span class="highlight">북극성</span>입니다.</div>
-            <div class="essay-para">나만의 가치관을 찾는 일은 세상의 소란 속에서도 나를 온전히 지탱해 줄 중심축을 발견하는 일입니다. 그것은 삶의 파도가 몰아쳐도 나라는 항해를 멈추지 않게 하는 유일한 <span class="highlight">이정표</span>가 됩니다.</div>
+            <div class="essay-para">나만의 가치관을 찾는 일은 세상의 소란 속에서도 나를 온전히 지탱해 줄 중심축을 발견하는 일입니다.</div>
         </div>
     </div>
 
     <div class="session-card">
         <span class="session-num">01</span>
         <span class="session-head">STEP 1. 내면의 키워드 추출 & 시각적 번역</span>
-        <p class="session-desc">자체 제작 마인드 워크북을 통해 내면을 탐색합니다. 나를 상징하는 핵심 가치관을 도출하고, 이를 시각화하기 위한 조색 팔레트와 소재를 정교하게 디자인합니다.</p>
+        <p class="session-desc">자체 제작 마인드 워크북을 통해 내면을 탐색하고, 추상적인 가치관을 꽃과 색채라는 시각적 언어로 번역합니다.</p>
         
         <div class="wb-mini-box">
             <span class="wb-label">[ Archive of Moments : STEP 1 & 2 ]</span>
-            지금 나를 가장 잘 설명하는 단어 3가지 : ( <span class="wb-line"></span> ), ( <span class="wb-line"></span> ), ( <span class="wb-line"></span> )<br>
-            내가 공간에 머물 때 느끼고 싶은 감정 : ( <span class="wb-line" style="min-width:300px;"></span> )<br>
-            <strong>Main Flower (가치관)</strong> : [ <span class="wb-line"></span> ] <small>(예: 변치 않는 신뢰 - 리시안셔스)</small><br>
-            <strong>Sub Color (감정)</strong> : [ <span class="wb-line"></span> ] <small>(예: 깊은 안정 - 딥 블루)</small>
+            지금 나를 가장 잘 설명하는 단어 3가지 : <br>
+            ( <span class="wb-line"></span> ), ( <span class="wb-line"></span> ), ( <span class="wb-line"></span> )<br>
+            내가 공간에 머물 때 느끼고 싶은 감정 : <br>
+            ( <span class="wb-line" style="min-width:350px;"></span> )<br>
+            <strong>Main Flower (가치관)</strong> : [ <span class="wb-line" data-placeholder="예: 변치 않는 신뢰 - 리시안셔스"></span> ]<br>
+            <strong>Sub Color (감정)</strong> : [ <span class="wb-line" data-placeholder="예: 깊은 안정 - 딥 블루"></span> ]<br>
+            <strong>Density (밀도)</strong> : □ 여백의 미(고요) / □ 가득 찬 배열(에너지)
         </div>
     </div>
 
     <div class="session-card">
         <span class="session-num">02</span>
         <span class="session-head">STEP 2. 레진으로 만드는 무드 아카이빙</span>
-        <p class="session-desc">투명한 레진 속에 당신의 가치관과 감정의 파동을 담아냅니다. 통제할 수 없는 아름다움을 연출하는 고도의 기법을 사용합니다.</p>
+        <p class="session-desc">설계된 디자인을 바탕으로 전문적인 레진 크래프트를 진행합니다. 단순한 공예를 넘어 각 재료가 가진 상징성을 작품에 담아냅니다.</p>
         
         <ul class="symbol-list">
-            <li><strong>Base</strong>: 투명도가 높은 레진 (무구한 진실성을 상징)</li>
-            <li><strong>Point 1 (파츠)</strong>: 선택한 가치관 키워드에 맞는 소재 배치</li>
-            <li><strong>Point 2 (색채)</strong>: 알코올 잉크 드롭 (감정의 파동과 확산을 표현)</li>
+            <li><strong>Base</strong>: 투명도가 높은 레진 <small>(무구한 진실성을 상징)</small></li>
+            <li><strong>Point 1 (파츠)</strong>: 선택한 가치관 키워드에 맞는 파츠 배치</li>
+            <li><strong>Point 2 (색채)</strong>: 알코올 잉크 드롭 <small>(감정의 파동과 확산을 표현)</small></li>
         </ul>
-        <p style="font-style: italic; color: #888; font-size: 17px; margin-top: 20px;">"잉크가 퍼지는 모양을 그대로 두어 '통제할 수 없는 감정의 아름다움'을 연출합니다."</p>
+        <p style="text-align: center; font-size: 20px; color: var(--accent-gold); font-weight: 700; margin-top: 40px; line-height: 1.6;">
+            "잉크가 퍼지는 모양을 그대로 두어 <br>'통제할 수 없는 감정의 아름다움'을 연출합니다."
+        </p>
     </div>
 
     <div class="session-card">
         <span class="session-num">03</span>
         <span class="session-head">STEP 3. 작품의 이름(Title) 짓기 & 아카이빙</span>
-        <p class="session-desc">완성된 작품을 마주하며 제작 과정 중 느꼈던 감정의 파동을 회고합니다. 당신의 가치관을 최종적으로 박제하여 아카이빙을 완료합니다.</p>
+        <p class="session-desc">완성된 작품을 마주하며 제작 과정 중 느꼈던 감정의 파동을 회고하고, 당신만의 고유한 서사를 완성합니다.</p>
         
         <div class="wb-mini-box">
             <span class="wb-label">[ Archive of Moments : STEP 3 ]</span>
             이 작품을 바라볼 때 나에게 해주고 싶은 한 마디 :<br>
             " <span class="wb-line" style="min-width:450px;"></span> "<br><br>
-            <strong style="font-size:20px;">작품명 : 「 <span class="wb-line" style="min-width:300px;"></span> 」</strong>
+            <strong style="font-size:22px; color: var(--point-green);">작품명 : 「 <span class="wb-line" style="min-width:320px;"></span> 」</strong>
         </div>
     </div>
 
