@@ -38,7 +38,7 @@
         .btn-primary { background: var(--point-color); color: #fff; }
         .btn-secondary { border: 1px solid var(--point-color); color: var(--point-color); }
 
-        /* ✨ 사진 클릭/터치 시 감성 문구 오버레이 스타일 */
+        /* 사진 및 오버레이 설명 */
         .img-wrapper { 
             position: relative; overflow: hidden; border: 6px solid #fff; 
             box-shadow: 0 8px 20px rgba(0,0,0,0.05); margin-bottom: 50px; cursor: pointer;
@@ -48,16 +48,27 @@
         
         .img-overlay { 
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-            background: rgba(141, 163, 153, 0.85); color: #fff; display: flex; align-items: center; justify-content: center;
-            opacity: 0; transition: all 0.4s ease; padding: 25px; text-align: center; box-sizing: border-box;
+            background: rgba(141, 163, 153, 0.9); color: #fff; display: flex; align-items: center; justify-content: center;
+            opacity: 0; transition: all 0.4s ease; padding: 30px; text-align: center; box-sizing: border-box;
         }
-        /* PC 호버 및 모바일 터치 시 활성화 */
         .img-wrapper:hover .img-overlay, .img-wrapper:active .img-overlay { opacity: 1; }
-        .img-overlay p { 
-            font-size: 14px; line-height: 1.8; font-weight: 400; margin: 0;
-            transform: translateY(20px); transition: transform 0.4s ease;
+        .img-overlay .desc-title { font-family: 'Cinzel'; font-size: 12px; letter-spacing: 3px; margin-bottom: 10px; display: block; color: var(--accent-gold); }
+        .img-overlay p { font-size: 14px; line-height: 1.6; margin: 0; }
+
+        /* 가치관 및 클래스 설명 섹션 */
+        .info-section { margin: 80px 0; text-align: center; }
+        .philosophy-text { font-size: 16px; color: var(--text-main); max-width: 700px; margin: 0 auto 60px; line-height: 2; }
+        .philosophy-text b { color: var(--point-color); font-weight: 700; }
+
+        .class-info-card { 
+            background: #fff; padding: 50px 30px; border-radius: 20px; 
+            border: 1px solid rgba(141, 163, 153, 0.2); text-align: left;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
         }
-        .img-wrapper:hover .img-overlay p, .img-wrapper:active .img-overlay p { transform: translateY(0); }
+        .class-info-card h3 { font-family: 'Nanum Myeongjo'; font-size: 22px; color: var(--point-color); margin-bottom: 20px; border-left: 4px solid var(--accent-gold); padding-left: 15px; }
+        .class-info-card ul { list-style: none; padding: 0; }
+        .class-info-card li { margin-bottom: 15px; font-size: 15px; position: relative; padding-left: 20px; }
+        .class-info-card li::before { content: '•'; position: absolute; left: 0; color: var(--accent-gold); }
 
         .section-title { text-align: center; margin: 80px 0 40px; }
         .section-title h2 { font-size: 28px; font-weight: 400; color: var(--text-main); margin: 5px 0; }
@@ -77,24 +88,19 @@
         .music-tap-banner .main-text { font-size: 20px; font-weight: 700; color: #F9F7F2; margin-bottom: 30px; line-height: 1.4; }
         
         .cat-img-container { width: 100%; max-width: 500px; margin: 0 auto 30px; }
-        .cat-img-container img { 
-            width: 90%; height: auto; border-radius: 15px; 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4); 
-        }
+        .cat-img-container img { width: 90%; height: auto; border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
 
         .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 100px; }
-        .gallery-grid .img-wrapper { margin-bottom: 0; border: 4px solid #fff; }
 
         @media (min-width: 768px) {
             .logo { font-size: 85px; }
-            .logo-sub { font-size: 13px; letter-spacing: 12px; }
+            .philosophy-text { font-size: 18px; }
             .question-grid { grid-template-columns: repeat(2, 1fr); gap: 60px; }
             .gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 25px; }
             .music-tap-banner { padding: 120px 40px; }
             .music-tap-banner h3 { font-size: 100px; }
             .music-tap-banner .main-text { font-size: 34px; }
-            .img-overlay p { font-size: 17px; }
-            .cat-img-container img { width: 100%; }
+            .img-overlay p { font-size: 16px; }
         }
     </style>
 </head>
@@ -114,28 +120,52 @@
 </header>
 
 <div class="container">
-    <!-- 메인 로고 사진 -->
+    
+    <!-- 🌿 브랜드 가치관 섹션 -->
+    <section class="info-section">
+        <div class="philosophy-text">
+            우리는 빠르게 흘러가는 일상 속에서 <br>
+            쉽게 휘발되어 버리는 <b>당신만의 소중한 가치관</b>에 집중합니다.<br><br>
+            무드 아카이빙은 단순히 물건을 만드는 것을 넘어,<br>
+            당신의 내면을 투명한 레진 속에 박제하여<br>
+            볼 때마다 <b>삶의 방향성</b>을 상기시키는 시각적 매개체를 제안합니다.
+        </div>
+    </section>
+
+    <!-- 메인 사진 설명 -->
     <div class="img-wrapper">
         <img src="main_logo..jpg">
         <div class="img-overlay">
-            <p>"희미해지는 기억을 선명한 형태의 가치로 박제합니다."</p>
+            <span class="desc-title">BRAND SYMBOL</span>
+            <p>투명함은 진실성을 의미합니다. 무드 아카이빙의 상징적 오브제는 당신의 가장 순수한 내면을 투영합니다.</p>
         </div>
     </div>
+
+    <!-- 🛠️ 레진아트 클래스 설명 섹션 -->
+    <section class="class-info-card">
+        <h3>Resin Art Workshop: Value Archiving</h3>
+        <ul>
+            <li><b>조색 과정:</b> 당신의 에너지를 닮은 잉크를 직접 선택하고 배합하여 단 하나뿐인 컬러를 만듭니다.</li>
+            <li><b>몰입의 시간:</b> 레진이 경화되는 시간을 기다리며 자신의 내면을 돌아보는 정적인 순간을 경험합니다.</li>
+            <li><b>커스텀 디자인:</b> 고유의 질감과 기포, 잉크의 흐름을 조절하여 자신의 성향을 작품에 투영합니다.</li>
+            <li><b>음악 큐레이션:</b> 완성된 작품에는 당신의 가치관과 어울리는 선율을 NFC를 통해 연결해 드립니다.</li>
+        </ul>
+    </section>
 
     <section class="section-title">
         <span>The Inner Landscape</span>
         <h2>나의 내면 풍경</h2>
     </section>
     
-    <!-- 내면 풍경 사진 -->
     <div class="img-wrapper">
         <img src="inner_landscape..jpg">
         <div class="img-overlay">
-            <p>"당신의 마음이 머무는 곳, 그 고유한 색채를 기록합니다."</p>
+            <span class="desc-title">INNER PEACE</span>
+            <p>질감과 색채가 층층이 쌓이는 과정은 우리가 경험을 쌓아 자아를 형성하는 과정과 닮아 있습니다.</p>
         </div>
     </div>
 
-    <!-- 가치관 질문지 리스트 -->
+    <!-- 질문지 (기존 유지) -->
     <div class="question-box">
         <div class="question-grid">
             <div class="q-item"><b>01. FIRST IMPRESSION</b><p>기억되고 싶은 당신의 첫인상은 어떤 느낌인가요?</p></div>
@@ -149,15 +179,15 @@
         </div>
     </div>
 
-    <!-- 프로세스 가이드 사진 -->
     <div class="img-wrapper">
         <img src="process_guide..jpg">
         <div class="img-overlay">
-            <p>"질문과 대화를 통해 완성되는 단 하나뿐인 아카이브."</p>
+            <span class="desc-title">PROCESS GUIDE</span>
+            <p>단순한 제작을 넘어, 인터뷰와 기록을 통해 당신의 이야기가 작품의 일부가 되는 가이드를 제공합니다.</p>
         </div>
     </div>
 
-    <!-- 🎵 고양이 뮤직탭 섹션 (감성 문구 적용) -->
+    <!-- 🎵 뮤직탭 섹션 -->
     <section class="music-tap-banner">
         <h3>Music Tap</h3>
         <p class="main-text">"당신의 공간에<br>가치관의 선율을 채우세요."</p>
@@ -166,7 +196,8 @@
             <div class="img-wrapper" style="border:none; margin-bottom:0; background:none;">
                 <img src="nfc_keyring.jpg" alt="NFC Keyring Music Tap">
                 <div class="img-overlay" style="border-radius:15px;">
-                    <p>"나른한 오후의 고양이처럼,<br>평온한 음악이 당신의 곁을 지키길."</p>
+                    <span class="desc-title">SONIC MEMORY</span>
+                    <p>작품에 폰을 탭하세요. 당신이 지정한 선율이 흐르는 순간, 공간은 당신의 무드로 완성됩니다.</p>
                 </div>
             </div>
         </div>
@@ -179,14 +210,32 @@
         <a href="https://naver.me/xUZtVs0N" class="btn" style="background:var(--accent-gold); color:#1A1F1D; border:none; display:inline-block; width:180px;">Music Select</a>
     </section>
 
-    <!-- 갤러리 섹션 (자연 사진 6장) -->
+    <!-- 갤러리 그리드 (사진별 설명 추가) -->
     <div class="gallery-grid">
-        <div class="img-wrapper"><img src="nature_1..jpg"><div class="img-overlay"><p>깊은 숲의 고요함</p></div></div>
-        <div class="img-wrapper"><img src="nature_2..jpg"><div class="img-overlay"><p>바다가 주는 신뢰</p></div></div>
-        <div class="img-wrapper"><img src="nature_3..jpg"><div class="img-overlay"><p>햇살에 닿은 자유</p></div></div>
-        <div class="img-wrapper"><img src="nature_4..jpg"><div class="img-overlay"><p>변치 않는 마음의 결</p></div></div>
-        <div class="img-wrapper"><img src="nature_5..jpg"><div class="img-overlay"><p>부드러운 위로의 감각</p></div></div>
-        <div class="img-wrapper"><img src="nature_6..jpg"><div class="img-overlay"><p>나다움이 피어나는 순간</p></div></div>
+        <div class="img-wrapper">
+            <img src="nature_1..jpg">
+            <div class="img-overlay"><p>깊은 숲에서 영감을 받은<br><b>정적인 휴식</b></p></div>
+        </div>
+        <div class="img-wrapper">
+            <img src="nature_2..jpg">
+            <div class="img-overlay"><p>광활한 바다를 닮은<br><b>무한한 가능성</b></p></div>
+        </div>
+        <div class="img-wrapper">
+            <img src="nature_3..jpg">
+            <div class="img-overlay"><p>오후의 햇살을 담은<br><b>긍정의 에너지</b></p></div>
+        </div>
+        <div class="img-wrapper">
+            <img src="nature_4..jpg">
+            <div class="img-overlay"><p>단단한 대지를 닮은<br><b>신념의 박제</b></p></div>
+        </div>
+        <div class="img-wrapper">
+            <img src="nature_5..jpg">
+            <div class="img-overlay"><p>새벽 공기의 결을 담은<br><b>새로운 시작</b></p></div>
+        </div>
+        <div class="img-wrapper">
+            <img src="nature_6..jpg">
+            <div class="img-overlay"><p>노을의 색채를 투영한<br><b>따스한 마무리</b></p></div>
+        </div>
     </div>
 
     <div class="cta-group" style="margin-bottom: 100px;">
@@ -195,7 +244,7 @@
 </div>
 
 <footer style="text-align: center; padding: 40px 20px; background: #EEEBE3;">
-    <p style="font-size:10px; opacity:0.5; letter-spacing: 1px;">© 2026 Mood Archiving. All Rights Reserved.</p>
+    <p style="font-size:10px; opacity:0.5;">© 2026 Mood Archiving. All Rights Reserved.</p>
 </footer>
 
 </body>
