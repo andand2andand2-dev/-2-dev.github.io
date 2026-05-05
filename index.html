@@ -20,7 +20,7 @@
             line-height: 2; word-break: keep-all; background-color: var(--bg-color); 
         }
 
-        /* ✨ 헤더 & 내비게이션 */
+        /* ✨ 헤더 및 내비게이션 */
         header { padding: 100px 20px 40px; text-align: center; }
         .logo-wrapper { display: inline-block; position: relative; padding: 0 50px; margin-bottom: 30px; }
         .logo { font-family: 'Playball', cursive; font-size: 80px; color: var(--point-green); text-decoration: none; display: block; line-height: 1; }
@@ -30,20 +30,20 @@
         .nav-btn { font-family: 'Cinzel'; font-size: 11px; text-decoration: none; color: var(--point-green); letter-spacing: 2px; padding: 8px 15px; border-bottom: 1px solid var(--light-line); transition: 0.3s; }
         .nav-btn:hover { color: var(--accent-gold); border-color: var(--accent-gold); }
 
-        /* 🔗 메인 버튼 그룹 */
+        /* 🔗 메인 신청 버튼 그룹 */
         .cta-group { display: flex; justify-content: center; gap: 15px; margin: 40px 0; flex-wrap: wrap; }
         .btn { 
             padding: 18px 30px; font-family: 'Cinzel'; font-weight: 700; font-size: 13px; 
             letter-spacing: 2px; text-decoration: none; transition: 0.4s; border-radius: 2px;
             display: inline-block; min-width: 200px; text-align: center;
         }
-        .btn-primary { background: var(--point-green); color: #fff; }
+        .btn-primary { background: var(--point-green); color: #fff; border: 1px solid var(--point-green); }
         .btn-secondary { border: 1px solid var(--point-green); color: var(--point-green); }
         .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
 
         .section { padding: 0 24px 100px; max-width: 1000px; margin: 0 auto; }
 
-        /* 🖼️ 이미지 & 텍스트 레이아웃 */
+        /* 🖼️ 이미지 레이아웃 (자연스럽게 퍼지는 효과) */
         .fade-img-box { width: 100%; margin: 30px 0; filter: drop-shadow(0 15px 30px var(--soft-shadow)); }
         .fade-img-box img { width: 100%; height: auto; display: block; border-radius: 2px; }
         
@@ -52,21 +52,23 @@
         .text-area { flex: 1; }
         .img-area { flex: 1.2; }
 
-        /* 🖋️ 텍스트 스타일링 */
+        /* 🖋️ 텍스트 디자인 */
         .quote-text { font-style: italic; font-size: 18px; color: var(--accent-gold); margin-bottom: 15px; display: block; }
-        h3 { font-size: 28px; margin-bottom: 25px; line-height: 1.4; }
+        h3 { font-size: 28px; margin-bottom: 25px; line-height: 1.4; font-weight: 700; }
         .expert-note { font-size: 15px; color: #666; border-left: 2px solid var(--accent-gold); padding-left: 20px; margin-top: 30px; }
+        .highlight { color: var(--accent-gold); font-weight: 700; }
 
-        /* 🎵 뮤직탭 특별 섹션 */
+        /* 🎵 뮤직탭 전용 섹션 */
         .music-section { 
             background: linear-gradient(180deg, #f3f6ff 0%, #e8efff 100%); 
             padding: 100px 40px; border-radius: 20px; margin: 150px 0; text-align: center;
         }
         .music-title { font-family: 'Dancing Script', cursive; font-size: 80px; color: #3A5FCD; margin: 0; }
         
-        /* 📸 하단 갤러리 */
+        /* 📸 하단 감성 갤러리 */
         .nature-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 100px 0; }
-        .nature-gallery img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 2px; opacity: 0.9; }
+        .nature-gallery img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 2px; opacity: 0.9; transition: 0.4s; }
+        .nature-gallery img:hover { opacity: 1; transform: scale(1.02); }
 
         footer { background: #151a18; color: rgba(255,255,255,0.4); padding: 100px 20px; text-align: center; }
 
@@ -85,13 +87,13 @@
         <span class="logo-sub">ENCAPSULATING YOUR VALUES</span>
     </div>
 
-    <!-- 소셜 및 스토어 연동 -->
+    <!-- 🔗 소셜 및 스토어 연동 -->
     <div class="nav-links">
         <a href="https://www.instagram.com/mood_archiving" target="_blank" class="nav-btn">INSTAGRAM</a>
         <a href="https://smartstore.naver.com/mood_archiving" target="_blank" class="nav-btn">NAVER STORE</a>
     </div>
 
-    <!-- 상단 신청 버튼 -->
+    <!-- 🔗 상단 이원화 신청 버튼 -->
     <div class="cta-group">
         <a href="https://naver.me/5bCIPlxw" target="_blank" class="btn btn-primary">ARCHIVING APPLY</a>
         <a href="https://naver.me/xUZtVs0N" target="_blank" class="btn btn-secondary">MUSIC TAP APPLY</a>
@@ -100,30 +102,33 @@
 
 <section class="section">
     
+    <!-- 섹션 1: 브랜드 철학 -->
     <div class="content-block">
         <div class="img-area fade-img-box">
-            <img src="main_logo..jpg" alt="Mood Archiving">
+            <img src="main_logo..jpg" alt="Mood Archiving Main">
         </div>
         <div class="text-area">
             <span class="quote-text">"당신은 어떤 색의 온도를 가졌나요?"</span>
             <h3>가치관을 수집하고<br>투명함 속에 박제하다</h3>
-            <p>우리는 일상의 소음 속에 흩어진 당신의 본질을 찾습니다. 무드 아카이빙은 고도의 집중력을 요하는 전문 레진 공예 기법을 통해, 보이지 않는 마음의 형상을 실체화하는 예술적 여정입니다.</p>
+            <p>무드 아카이빙은 일상의 소음 속에 흩어진 당신의 본질을 찾습니다. 고도의 집중력을 요하는 <span class="highlight">전문 레진 공예 기법</span>을 통해, 보이지 않는 마음의 형상을 실체화하는 예술적 여정을 제공합니다.</p>
         </div>
     </div>
 
+    <!-- 섹션 2: 기술적 전문성 (황변 및 진공공법) -->
     <div class="content-block reverse">
         <div class="img-area fade-img-box">
             <img src="process_guide..jpg" alt="Process Guide">
         </div>
         <div class="text-area">
             <h3>심층 큐레이션과<br>기술적 정교함</h3>
-            <p>단순한 제작이 아닌 전문가와의 문답을 통해 키워드를 도출합니다. 이후 황변 현상이 억제된 고순도 크리스탈 레진을 사용하여, 시간이 흘러도 변치 않는 맑은 투명도를 유지합니다.</p>
+            <p>단순한 제작이 아닌 전문가와의 문답을 통해 삶의 키워드를 도출합니다. 황변 현상이 억제된 <span class="highlight">고순도 크리스탈 레진</span>을 사용하여, 세월이 흘러도 변치 않는 맑은 투명도를 약속합니다.</p>
             <div class="expert-note">
-                전문가용 레진은 일반 공예용보다 경화 시간이 길지만, 내구성과 투명도 면에서 압도적인 차이를 보입니다. 우리는 이 '기다림의 미학'을 원칙으로 합니다.
+                전문가용 레진은 일반용보다 경화 시간이 3배 이상 길지만, 내구성과 투명도 면에서 압도적인 차이를 보입니다. 우리는 타협하지 않는 '기다림의 미학'을 원칙으로 합니다.
             </div>
         </div>
     </div>
 
+    <!-- 섹션 3: 예술적 오브제 -->
     <div class="content-block">
         <div class="img-area fade-img-box">
             <img src="resin_work..jpg" alt="Resin Work">
@@ -131,34 +136,36 @@
         <div class="text-area">
             <span class="quote-text">"영원히 간직하고 싶은 찰나"</span>
             <h3>공간을 채우는<br>정서적 오브제</h3>
-            <p>완성된 아카이빙 피스는 단순한 소품이 아닙니다. 빛의 각도에 따라 다르게 투영되는 내면의 풍경은 당신이 서 있는 자리를 더욱 견고하게 만들어 줍니다.</p>
+            <p>완성된 아카이빙 피스는 단순한 인테리어 소품을 넘어섭니다. 빛의 각도에 따라 다르게 투영되는 내면의 풍경은 당신이 서 있는 자리를 더욱 견고하게 지켜주는 상징이 됩니다.</p>
         </div>
     </div>
 
+    <!-- 섹션 4: 워크북 프로세스 -->
     <div class="content-block reverse">
         <div class="img-area fade-img-box">
             <img src="inner_landscape..jpg" alt="Inner Landscape">
         </div>
         <div class="text-area">
             <h3>내면의 풍경을 기록하는<br>워크북 프로세스</h3>
-            <p>60가지의 질문으로 구성된 워크북은 당신의 무의식을 탐험하는 지도입니다. 이 기록들은 레진 속 오브제 배치와 조색의 핵심 데이터가 되어 오직 당신만을 위한 결과물을 만들어냅니다.</p>
+            <p>60가지의 심층 질문으로 구성된 전용 워크북은 당신의 무의식을 탐험하는 나침반입니다. 이 기록들은 레진 속 오브제 배치와 미세한 조색의 핵심 데이터가 되어 <span class="highlight">세상에 단 하나뿐인 결과물</span>을 완성합니다.</p>
         </div>
     </div>
 
-    <!-- 뮤직탭 섹션 -->
+    <!-- 🎵 뮤직탭 신청 섹션 -->
     <div class="music-section">
         <h3 class="music-title">Music Tap</h3>
-        <p style="font-family: 'Nanum Pen Script'; font-size: 32px; color: #5078F2; margin: 20px 0 40px;">시각을 넘어 청각으로 기억되는 가치</p>
+        <p style="font-family: 'Nanum Pen Script'; font-size: 32px; color: #5078F2; margin: 20px 0 40px;">시각을 넘어 청각으로 공명하는 기록</p>
         <div class="fade-img-box" style="max-width: 350px; margin: 0 auto;">
             <img src="NFC키링.jpg" alt="NFC Keyring" style="border-radius: 15px;">
         </div>
-        <p style="margin-top: 40px; line-height: 2; font-size: 17px;">
-            작품에 내장된 NFC 칩에 스마트폰을 태그하세요. <br>
-            당신의 가치관과 가장 닮은 선율이 공간을 채우는 마법 같은 순간을 선사합니다.
+        <p style="margin-top: 40px; line-height: 2; font-size: 17px; color: #4a5a54;">
+            작품에 내장된 <b>NFC 칩</b>에 스마트폰을 가볍게 태그하세요. <br>
+            당신의 가치관과 가장 닮은 선율이 공간을 채우는 감각적인 순간을 선사합니다.
         </p>
-        <a href="https://naver.me/xUZtVs0N" target="_blank" class="btn btn-primary" style="margin-top: 40px;">MUSIC TAP APPLY</a>
+        <a href="https://naver.me/xUZtVs0N" target="_blank" class="btn btn-primary" style="margin-top: 40px; background-color: #3A5FCD; border: none;">MUSIC TAP 신청하기</a>
     </div>
 
+    <!-- 하단 갤러리 (파일명 수정 완료) -->
     <div class="nature-gallery">
         <img src="nature_1..jpg" alt="Mood 1">
         <img src="nature_2..jpg" alt="Mood 2">
@@ -168,7 +175,7 @@
         <img src="nature_6..jpg" alt="Mood 6">
     </div>
 
-    <!-- 하단 최종 신청 버튼 -->
+    <!-- 🔗 하단 최종 이원화 신청 버튼 -->
     <div class="cta-group" style="margin-top: 100px;">
         <a href="https://naver.me/5bCIPlxw" target="_blank" class="btn btn-primary">START ARCHIVING</a>
         <a href="https://naver.me/xUZtVs0N" target="_blank" class="btn btn-secondary">START MUSIC TAP</a>
@@ -179,8 +186,8 @@
     <p style="font-family: 'Playball'; font-size: 30px; color: #fff; margin-bottom: 20px;">Mood Archiving</p>
     <p>© 2026 MOOD ARCHIVING. ALL RIGHTS RESERVED.<br>당신의 가치를 투명하게 기록합니다.</p>
     <div style="margin-top: 30px;">
-        <a href="https://www.instagram.com/mood_archiving" target="_blank" style="color:rgba(255,255,255,0.4); text-decoration:none; margin:0 10px;">Instagram</a>
-        <a href="https://smartstore.naver.com/mood_archiving" target="_blank" style="color:rgba(255,255,255,0.4); text-decoration:none; margin:0 10px;">Store</a>
+        <a href="https://www.instagram.com/mood_archiving" target="_blank" style="color:rgba(255,255,255,0.4); text-decoration:none; margin:0 15px;">Instagram</a>
+        <a href="https://smartstore.naver.com/mood_archiving" target="_blank" style="color:rgba(255,255,255,0.4); text-decoration:none; margin:0 15px;">Naver Store</a>
     </div>
 </footer>
 
