@@ -8,10 +8,10 @@
         @import url('https://fonts.googleapis.com/css2?family=Playball&family=Cinzel:wght@400;700&family=Nanum+Myeongjo:wght@400;700&family=Nanum+Pen+Script&family=Dancing+Script:wght@400;600&display=swap');
 
         :root {
-            --bg-color: #F9F7F2; /* 따뜻하고 부드러운 파스텔 크림 */
-            --point-color: #8DA399; /* 차분한 파스텔 세이지 그린 */
-            --accent-gold: #D4B996; /* 부드러운 파스텔 골드 베이지 */
-            --text-main: #5A635F; /* 눈이 편안한 딥 그레이 그린 */
+            --bg-color: #F9F7F2; 
+            --point-color: #8DA399; 
+            --accent-gold: #D4B996; 
+            --text-main: #5A635F; 
             --border-soft: rgba(141, 163, 153, 0.2);
         }
 
@@ -22,70 +22,87 @@
 
         .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
 
-        /* ✨ Header - 파스텔 감성 강화 */
+        /* ✨ Header */
         header { padding: 140px 20px 80px; text-align: center; position: relative; }
-        header::before { content: 'EST. 2026'; position: absolute; top: 100px; left: 50%; transform: translateX(-50%); font-family: 'Cinzel'; font-size: 10px; letter-spacing: 5px; color: var(--accent-gold); }
-        
         .logo { font-family: 'Playball', cursive; font-size: 85px; color: var(--point-color); text-decoration: none; display: block; line-height: 1; }
         .logo-sub { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 12px; color: var(--accent-gold); display: block; margin-top: 35px; font-weight: 700; text-transform: uppercase; }
         
         .sns-nav { margin: 45px 0; }
         .sns-nav a { font-family: 'Cinzel'; font-size: 11px; text-decoration: none; color: var(--accent-gold); letter-spacing: 4px; margin: 0 22px; font-weight: 700; transition: 0.3s; }
-        .sns-nav a:hover { color: var(--point-color); }
 
-        /* 🔘 버튼 - 부드러운 파스텔 톤 */
+        /* 🔘 버튼 */
         .cta-group { display: flex; justify-content: center; gap: 20px; margin: 60px 0 140px; flex-wrap: wrap; }
         .btn { padding: 22px 55px; font-family: 'Cinzel'; font-size: 12px; letter-spacing: 4px; text-decoration: none; border-radius: 40px; transition: 0.4s; font-weight: 700; text-align: center; min-width: 240px; text-transform: uppercase; }
         .btn-primary { background: var(--point-color); color: #fff; border: 1px solid var(--point-color); }
         .btn-secondary { border: 1px solid var(--point-color); color: var(--point-color); }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(141, 163, 153, 0.2); }
 
-        /* 📸 사진 프레임 - 파스텔 톤에 어울리는 부드러운 그림자 */
+        /* 📸 사진 프레임 */
         .img-wrapper { 
             position: relative; cursor: pointer; overflow: hidden; 
-            border: 8px solid #fff; /* 폴라로이드 느낌의 두꺼운 흰 테두리 */
+            border: 8px solid #fff; 
             box-shadow: 0 12px 30px rgba(0,0,0,0.04); margin-bottom: 120px; transition: 0.5s;
         }
-        .img-wrapper:hover { transform: scale(1.02); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+        .img-wrapper:hover { transform: scale(1.02); }
         .img-wrapper img { width: 100%; display: block; transition: transform 1s; }
         
-        /* 사진 위 감성 문구 오버레이 - 반투명 파스텔 세이지 */
         .img-overlay { 
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
             background: rgba(141, 163, 153, 0.88); color: #fff; display: flex; align-items: center; justify-content: center;
             opacity: 0; transition: opacity 0.5s ease; padding: 40px; text-align: center; z-index: 2;
         }
         .img-wrapper:hover .img-overlay { opacity: 1; }
-        .img-overlay p { font-family: 'Nanum Myeongjo'; font-size: 18px; line-height: 2; font-weight: 400; }
 
-        /* 📝 가치관 질문지 - 차분한 레이아웃 */
+        /* 📝 가치관 질문지 */
         .section-title { text-align: center; margin: 180px 0 100px; }
-        .section-title h2 { font-size: 36px; font-weight: 400; color: var(--text-main); margin: 10px 0; }
+        .section-title h2 { font-size: 36px; font-weight: 400; color: var(--text-main); }
         .section-title span { font-family: 'Dancing Script'; font-size: 30px; color: var(--accent-gold); }
 
         .question-box { background: #fff; padding: 100px 60px; border-radius: 15px; border: 1px solid var(--border-soft); margin-bottom: 250px; }
         .question-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 60px; }
         .q-item { border-bottom: 1px solid #f2f2f2; padding-bottom: 30px; }
         .q-item b { font-family: 'Cinzel'; color: var(--accent-gold); font-size: 11px; letter-spacing: 4px; display: block; margin-bottom: 15px; }
-        .q-item p { font-size: 17px; color: var(--text-main); line-height: 1.8; margin: 0; }
 
-        /* 🎵 뮤직탭 섹션 - 파스텔 다크 무드 */
-        .music-tap-banner { background: #5A635F; color: #fff; padding: 180px 40px; text-align: center; border-radius: 10px; margin: 280px 0; position: relative; }
-        .music-tap-banner h3 { font-family: 'Dancing Script'; font-size: 80px; color: var(--accent-gold); margin-bottom: 40px; }
-        .music-tap-banner .main-text { font-size: 30px; font-weight: 700; color: #F9F7F2; margin-bottom: 60px; letter-spacing: 2px; }
-        .music-tap-banner .sub-text { font-size: 19px; opacity: 0.85; max-width: 800px; margin: 0 auto 60px; line-height: 2.4; }
+        /* 🎵 뮤직탭 섹션 - [변경포인트: 고급스러운 딥벨벳 & 키치 타이포] */
+        .music-tap-banner { 
+            background: linear-gradient(145deg, #2D3633 0%, #1A1F1D 100%); /* 딥그린 블랙 그라데이션 */
+            color: #fff; padding: 220px 40px; text-align: center; border-radius: 20px; 
+            margin: 280px 0; position: relative; overflow: hidden;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.3);
+        }
+        
+        /* 키치한 느낌을 주는 배경 텍스트 흐름 */
+        .music-tap-banner::after {
+            content: 'TAP YOUR MOOD • TAP YOUR MOOD • TAP YOUR MOOD';
+            position: absolute; top: 30px; left: -10%; width: 120%;
+            font-family: 'Cinzel'; font-size: 14px; letter-spacing: 10px;
+            color: rgba(212, 185, 150, 0.15); font-weight: 700; transform: rotate(-2deg);
+        }
+
+        .music-tap-banner h3 { font-family: 'Playball', cursive; font-size: 100px; color: var(--accent-gold); margin-bottom: 40px; text-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .music-tap-banner .main-text { font-size: 34px; font-weight: 700; color: #F9F7F2; margin-bottom: 60px; letter-spacing: 1px; line-height: 1.4; }
+        
+        .nfc-img-container { 
+            position: relative; display: inline-block; margin-bottom: 60px; 
+            padding: 20px; background: rgba(255,255,255,0.03); border-radius: 100%;
+        }
+        .nfc-img-container img { 
+            width: 320px; border-radius: 15px; transition: 0.5s; 
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+        }
+        .nfc-img-container:hover img { transform: rotate(3deg) scale(1.05); }
+
+        .music-tap-banner .sub-text { font-size: 19px; opacity: 0.7; max-width: 800px; margin: 0 auto 60px; line-height: 2.4; }
 
         /* 🖼️ 갤러리 그리드 */
         .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-bottom: 250px; }
         .gallery-grid .img-wrapper { margin-bottom: 0; border: 6px solid #fff; }
 
-        footer { padding: 120px 20px; text-align: center; background: #EEEBE3; color: var(--text-main); }
-        footer .logo { color: var(--point-color); font-size: 40px; margin-bottom: 20px; }
+        footer { padding: 120px 20px; text-align: center; background: #EEEBE3; }
 
         @media (max-width: 950px) {
             .question-grid, .gallery-grid { grid-template-columns: 1fr; }
-            .music-tap-banner h3 { font-size: 55px; }
-            .music-tap-banner .main-text { font-size: 24px; }
+            .music-tap-banner h3 { font-size: 70px; }
+            .music-tap-banner .main-text { font-size: 26px; }
         }
     </style>
 </head>
@@ -138,10 +155,6 @@
     </div>
 
     <!-- 🖼️ 3. 프로세스 가이드 -->
-    <section class="section-title">
-        <span>The Process of Art</span>
-        <h2>기록의 순서</h2>
-    </section>
     <div class="img-wrapper">
         <img src="process_guide..jpg" alt="Process Guide">
         <div class="img-overlay">
@@ -149,27 +162,25 @@
         </div>
     </div>
 
-    <!-- 🎵 4. 뮤직탭 섹션 (파스텔 딥 톤) -->
+    <!-- 🎵 4. 뮤직탭 섹션 (고급스러운 딥 무드 & 키치 디테일) -->
     <section class="music-tap-banner">
-        <h3>Music Tap Selection</h3>
-        <p class="main-text">"NFC 태그 한 번으로,<br>일상에 당신의 무드를 채우세요."</p>
+        <h3>Music Tap</h3>
+        <p class="main-text">"NFC 태그 한 번으로,<br>당신의 공간에 가치관의 선율을 채우세요."</p>
         
-        <img src="NFC키링.jpg" style="width:320px; border-radius:15px; border:6px solid rgba(255,255,255,0.1); margin-bottom: 40px;" alt="NFC Keyring">
+        <div class="nfc-img-container">
+            <img src="NFC키링.jpg" alt="NFC Keyring Archive">
+        </div>
         
         <p class="sub-text">
             무드 아카이빙은 시각을 넘어 청각적 위로로 완성됩니다.<br>
-            작품에 스마트폰을 탭하는 순간, <br>
-            당신만을 위해 큐레이팅된 선율이 공간을 부드럽게 물들입니다.
+            작품에 스마트폰을 가볍게 탭하는 순간, <br>
+            당신만을 위해 전문적으로 큐레이팅된 선율이 일상을 음악적인 온도로 물들입니다.
         </p>
         
-        <a href="https://naver.me/xUZtVs0N" class="btn" style="background:var(--accent-gold); color:#fff; border:none;">Select Music Tap</a>
+        <a href="https://naver.me/xUZtVs0N" class="btn" style="background:var(--accent-gold); color:#1A1F1D; border:none; box-shadow: 0 10px 30px rgba(212, 185, 150, 0.3);">Select Music Tap</a>
     </section>
 
     <!-- 🖼️ 5. 비주얼 갤러리 -->
-    <section class="section-title">
-        <span>Archived Moments</span>
-        <h2>박제된 계절의 기록</h2>
-    </section>
     <div class="gallery-grid">
         <div class="img-wrapper"><img src="nature_1..jpg"><div class="img-overlay"><p>"고요한 숲의 숨결"</p></div></div>
         <div class="img-wrapper"><img src="nature_2..jpg"><div class="img-overlay"><p>"바다의 깊이를 담은 신뢰"</p></div></div>
@@ -185,7 +196,7 @@
 </div>
 
 <footer>
-    <a href="#" class="logo">Mood Archiving</a>
+    <a href="#" class="logo" style="font-size: 40px;">Mood Archiving</a>
     <div class="sns-nav">
         <a href="https://www.instagram.com/mood_archiving">INSTAGRAM</a>
         <a href="https://smartstore.naver.com/mood_archiving">NAVER STORE</a>
