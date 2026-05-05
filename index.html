@@ -21,7 +21,7 @@
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 25px; }
 
-        /* ✨ Header & SNS 연동 */
+        /* ✨ Header & 외부 연동 (SNS/Store) */
         header { padding: 120px 20px 60px; text-align: center; }
         .logo { font-family: 'Playball', cursive; font-size: 85px; color: var(--point-green); text-decoration: none; display: block; line-height: 1; }
         .logo-sub { font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 12px; color: var(--accent-gold); display: block; margin-top: 30px; font-weight: 700; }
@@ -29,7 +29,7 @@
         .sns-nav { margin: 40px 0; }
         .sns-nav a { font-family: 'Cinzel'; font-size: 12px; text-decoration: none; color: var(--accent-gold); letter-spacing: 4px; margin: 0 25px; font-weight: 700; border-bottom: 1px solid rgba(194, 149, 106, 0.3); padding-bottom: 5px; }
 
-        /* 🔘 신청 링크 버튼 2개 (상/하단 공통) */
+        /* 🔘 신청 링크 버튼 2개 (상단/하단 중복 배치) */
         .cta-group { display: flex; justify-content: center; gap: 20px; margin: 50px 0 120px; flex-wrap: wrap; }
         .btn { 
             padding: 22px 55px; font-family: 'Cinzel'; font-size: 13px; letter-spacing: 4px; 
@@ -39,45 +39,46 @@
         .btn-secondary { border: 1px solid var(--point-green); color: var(--point-green); }
         .btn:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(29, 77, 63, 0.15); }
 
-        /* 📖 섹션 공통 스타일 */
-        .section-title { text-align: center; margin-bottom: 80px; }
+        /* 📖 섹션 타이틀 및 이미지 */
+        .section-title { text-align: center; margin: 150px 0 80px; }
         .section-title h2 { font-size: 40px; font-weight: 400; margin-bottom: 20px; }
         .section-title span { font-family: 'Dancing Script'; font-size: 32px; color: var(--accent-gold); }
         .full-img { width: 100%; border-radius: 4px; box-shadow: 0 30px 60px rgba(0,0,0,0.05); margin-bottom: 100px; }
 
-        /* 🏛️ 서사 블록 (이미지와 글 교차) */
+        /* 🏛️ 전문 서사 블록 */
         .narrative-block { display: flex; align-items: center; gap: 100px; margin: 200px 0; }
         .narrative-block.reverse { flex-direction: row-reverse; }
         .narrative-img { flex: 1.4; }
         .narrative-text { flex: 1; }
 
-        /* 📝 가치관 질문 (inner_landscape..jpg 상세 복구) */
+        /* 📝 가치관 질문 (inner_landscape..jpg 상세 텍스트) */
         .question-box { background: #fff; padding: 100px 60px; border: 1px solid #eee; margin-bottom: 200px; }
         .question-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 50px; }
         .q-item { border-bottom: 1px solid #f5f5f5; padding-bottom: 30px; }
         .q-item b { font-family: 'Cinzel'; color: var(--accent-gold); font-size: 12px; letter-spacing: 3px; display: block; margin-bottom: 15px; }
         .q-item p { font-size: 18px; color: var(--text-soft); line-height: 1.8; margin: 0; }
 
-        /* 📋 프로세스 (process_guide..jpg & resin_work..jpg 상세) */
-        .process-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 60px; }
-        .step h4 { font-family: 'Cinzel'; color: var(--accent-gold); border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 20px; }
+        /* 📋 프로세스 단계 설명 */
+        .process-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 60px; margin-bottom: 150px; }
+        .step h4 { font-family: 'Cinzel'; color: var(--accent-gold); border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 20px; font-size: 16px; }
 
-        /* 🎵 뮤직탭 & NFC 강조 */
+        /* 🎵 뮤직탭 & NFC 배너 */
         .music-tap-banner { background: #151a18; color: #fff; padding: 150px 40px; text-align: center; border-radius: 4px; margin: 250px 0; }
         .music-tap-banner h3 { font-family: 'Dancing Script'; font-size: 50px; color: var(--accent-gold); margin-bottom: 35px; }
-        .music-tap-banner p { font-size: 22px; max-width: 800px; margin: 0 auto; line-height: 2.2; }
+        .music-tap-banner p { font-size: 22px; max-width: 800px; margin: 0 auto; line-height: 2.2; margin-bottom: 50px; }
 
-        /* 📸 갤러리 (6장) */
+        /* 📸 비주얼 갤러리 (자연/작품 6장) */
         .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-bottom: 200px; }
-        .gallery-grid img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 2px; transition: 0.6s; }
-        .gallery-grid img:hover { transform: scale(1.03); }
+        .gallery-grid img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 2px; }
+
+        /* 🌿 빈 공간 감성 문구 */
+        .filler { text-align: center; padding: 100px 0; font-size: 24px; color: var(--accent-gold); font-style: italic; opacity: 0.8; line-height: 2; }
 
         footer { padding: 120px 20px; text-align: center; background: #fafafa; border-top: 1px solid #eee; }
 
         @media (max-width: 950px) {
             .narrative-block, .narrative-block.reverse { flex-direction: column; text-align: center; }
             .question-grid, .process-steps, .gallery-grid { grid-template-columns: 1fr; }
-            .logo { font-size: 65px; }
         }
     </style>
 </head>
@@ -99,18 +100,20 @@
 </header>
 
 <div class="container">
-    <!-- 1. 메인 서사 (main_logo..jpg) -->
+    <!-- 🖼️ 1. 메인Philosophy & 사진 (main_logo..jpg) -->
     <section class="narrative-block">
         <div class="narrative-img"><img src="main_logo..jpg" class="full-img" alt="Main Philosophy"></div>
         <div class="narrative-text">
             <span>Stay Transparent</span>
             <h2>가장 나다운 온도를<br>영원히 간직하는 법</h2>
             <p>우리는 당신의 기록이 단순한 사물이 아닌, 삶의 방향을 알려주는 이정표가 되길 바랍니다.</p>
-            <p>고순도 크리스탈 레진으로 당신의 가치를 맑게 보존하는 일. 그것이 무드 아카이빙이 추구하는 전문적인 장인 정신의 시작입니다.</p>
+            <p>고순도 크리스탈 레진으로 당신의 가치를 가장 맑게 보존하는 기술. 그것이 무드 아카이빙이 추구하는 전문적인 장인 정신의 시작입니다.</p>
         </div>
     </section>
 
-    <!-- 2. 가치관 탐구 질문 (inner_landscape..jpg 텍스트 전체 복구) -->
+    <div class="filler">"투명함은 비어있음이 아니라,<br>당신의 본질을 가장 선명하게 비추는 거울입니다."</div>
+
+    <!-- 🖼️ 2. 가치관 탐구 질문지 (inner_landscape..jpg) -->
     <section class="section-title">
         <span>Inner Landscape</span>
         <h2>나의 내면 풍경 들여다보기</h2>
@@ -119,18 +122,18 @@
     
     <div class="question-box">
         <div class="question-grid">
-            <div class="q-item"><b>Q1. FIRST IMPRESSION</b><p>타인에게 기억되고 싶은 당신의 '첫인상'은?</p></div>
-            <div class="q-item"><b>Q2. ENERGY COLOR</b><p>현재 당신의 에너지를 색깔로 표현한다면?</p></div>
-            <div class="q-item"><b>Q3. COMFORT FORM</b><p>지친 하루 끝에 가장 필요한 위로의 형태는?</p></div>
-            <div class="q-item"><b>Q4. CORE KEYWORD</b><p>삶에서 가장 소중한 키워드 (평온, 열정, 자유 등)</p></div>
-            <div class="q-item"><b>Q5. SYMBOLIC ITEM</b><p>오늘 당신의 마음속에 머물러 있는 물건의 의미는?</p></div>
-            <div class="q-item"><b>Q6. EMOTIONAL INK</b><p>레진 속 잉크 색채가 상징하는 당신의 감정은?</p></div>
-            <div class="q-item"><b>Q7. MINDSET</b><p>이것을 사용할 때마다 기억하고 싶은 마음가짐은?</p></div>
-            <div class="q-item"><b>Q8. BALANCE</b><p>당신의 가치관은 '중심'에 있나요, '조화'에 있나요?</p></div>
+            <div class="q-item"><b>Q1. FIRST IMPRESSION</b><p>타인에게 기억되고 싶은 당신의 '첫인상'은 어떤 느낌인가요?</p></div>
+            <div class="q-item"><b>Q2. ENERGY COLOR</b><p>현재 당신의 에너지를 색깔로 표현한다면 어떤 색인가요?</p></div>
+            <div class="q-item"><b>Q3. COMFORT FORM</b><p>지친 하루 끝에 당신에게 가장 필요한 위로의 형태는 무엇인가요?</p></div>
+            <div class="q-item"><b>Q4. CORE KEYWORD</b><p>삶에서 가장 소중한 키워드 (평온, 열정, 자유, 신뢰 등)</p></div>
+            <div class="q-item"><b>Q5. SYMBOLIC ITEM</b><p>오늘 당신의 마음속에 머물러 있는 물건에 어떤 의미를 담고 싶나요?</p></div>
+            <div class="q-item"><b>Q6. EMOTIONAL INK</b><p>레진 속 잉크 색채가 상징하는 당신의 감정은 무엇인가요?</p></div>
+            <div class="q-item"><b>Q7. MINDSET</b><p>이 작품을 사용할 때마다 기억하고 싶은 마음가짐은 무엇인가요?</p></div>
+            <div class="q-item"><b>Q8. BALANCE</b><p>당신의 가치관은 '중심'에 있나요, 아니면 '조화'롭게 퍼져 있나요?</p></div>
         </div>
     </div>
 
-    <!-- 3. 프로세스 가이드 (process_guide..jpg) -->
+    <!-- 🖼️ 3. 아카이빙 프로세스 (process_guide..jpg) -->
     <section class="section-title">
         <span>The Journey</span>
         <h2>아카이빙 프로세스</h2>
@@ -139,7 +142,7 @@
     <div class="process-steps">
         <div class="step">
             <h4>STEP 01. 키워드 추출</h4>
-            <p>지금 나를 가장 잘 설명하는 단어 3가지를 찾고 머물고 싶은 감정을 정의합니다.</p>
+            <p>나를 가장 잘 설명하는 단어 3가지를 찾고 머물고 싶은 감정을 정의합니다.</p>
         </div>
         <div class="step">
             <h4>STEP 02. 시각적 번역</h4>
@@ -147,37 +150,39 @@
         </div>
         <div class="step">
             <h4>STEP 03. 작품명 결정</h4>
-            <p>나에게 해주고 싶은 한 마디를 담아 세상에 단 하나뿐인 이름을 선물합니다.</p>
+            <p>나에게 해주고 싶은 한 마디를 담아 세상에 단 하나뿐인 이름을 결정합니다.</p>
         </div>
     </div>
 
-    <!-- 4. 전문적 제작 철학 (resin_work..jpg) -->
+    <!-- 🖼️ 4. 제작 철학 & 사진 (resin_work..jpg) -->
     <section class="narrative-block reverse">
         <div class="narrative-img"><img src="resin_work..jpg" class="full-img" alt="Resin Craftsmanship"></div>
         <div class="narrative-text">
             <h3 style="font-size:32px; font-weight:400; margin-bottom:30px;">통제할 수 없는 감정의 아름다움</h3>
             <p>우리는 알코올 잉크 드롭을 통해 감정의 파동과 확산을 표현합니다.</p>
-            <p>잉크가 퍼지는 모양을 인위적으로 통제하지 않고 그대로 두어, 삶의 우연이 만드는 가장 자연스러운 아름다움을 박제합니다. 이것이 무드 아카이빙이 정의하는 전문 예술입니다.</p>
+            <p>잉크가 퍼지는 모양을 인위적으로 통제하지 않고 그대로 두어, 삶의 우연이 만드는 가장 자연스러운 아름다움을 박제합니다.</p>
         </div>
     </section>
 
-    <!-- 5. 뮤직탭 & NFC (NFC키링.jpg 활용) -->
+    <!-- 🖼️ 5. 뮤직탭 & NFC 연동 (NFC키링.jpg) -->
     <section class="music-tap-banner">
         <h3>Music Tap Selection</h3>
         <p>"NFC 태그 한 번으로 일상에 당신의 무드를 채우세요."</p>
-        <div style="margin-top:60px;">
-            <img src="NFC키링.jpg" style="width:280px; border-radius:20px; box-shadow: 0 0 40px rgba(194,149,106,0.3);">
-            <p style="font-size:16px; opacity:0.8; margin-top:40px;">시각적 아카이브는 뮤직탭을 통해 청각적 위로로 확장됩니다.<br>작품에 스마트폰을 대는 순간, 당신만을 위해 큐레이팅된 선율이 공간을 채웁니다.</p>
-        </div>
+        <img src="NFC키링.jpg" style="width:300px; border-radius:20px; box-shadow: 0 0 50px rgba(194,149,106,0.3); margin-bottom: 40px;">
+        <p style="font-size:18px; opacity:0.8; max-width: 700px;">시각적 아카이브는 뮤직탭을 통해 청각적 위로로 확장됩니다. 작품에 스마트폰을 대는 순간, 당신만을 위해 큐레이팅된 선율이 공간을 채웁니다.</p>
     </section>
 
-    <!-- 6. 비주얼 갤러리 (6장) -->
+    <!-- 🖼️ 6. 갤러리 아카이브 (nature_1..jpg ~ nature_6..jpg) -->
+    <section class="section-title">
+        <span>Visual Archive</span>
+        <h2>당신의 계절이 머무는 기록들</h2>
+    </section>
     <div class="gallery-grid">
-        <img src="nature_1..jpg"><img src="nature_2..jpg"><img src="nature_3..jpg">
-        <img src="nature_4..jpg"><img src="nature_5..jpg"><img src="nature_6..jpg">
+        <img src="nature_1..jpg" alt="Gallery 1"><img src="nature_2..jpg" alt="Gallery 2"><img src="nature_3..jpg" alt="Gallery 3">
+        <img src="nature_4..jpg" alt="Gallery 4"><img src="nature_5..jpg" alt="Gallery 5"><img src="nature_6..jpg" alt="Gallery 6">
     </div>
 
-    <!-- 하단 신청 링크 버튼 2개 -->
+    <!-- 🔘 하단 버튼 그룹 -->
     <div class="cta-group" style="margin-bottom: 200px;">
         <a href="https://naver.me/5bCIPlxw" class="btn btn-primary">START ARCHIVING</a>
         <a href="https://naver.me/xUZtVs0N" class="btn btn-secondary">SELECT MUSIC TAP</a>
