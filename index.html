@@ -14,6 +14,7 @@
             --text-main: #5A635F; 
         }
 
+        /* 기본 설정 및 모바일 최적화 */
         body { 
             color: var(--text-main); font-family: 'Nanum Myeongjo', serif; margin: 0; padding: 0;
             line-height: 1.8; word-break: keep-all; background-color: var(--bg-color); 
@@ -22,7 +23,7 @@
 
         .container { width: 100%; max-width: 1100px; margin: 0 auto; box-sizing: border-box; padding: 0 20px; }
 
-        /* Header */
+        /* Header 섹션 */
         header { padding: 60px 20px 30px; text-align: center; }
         .logo { font-family: 'Playball', cursive; font-size: 45px; color: var(--point-color); text-decoration: none; display: block; }
         .logo-sub { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 5px; color: var(--accent-gold); display: block; margin-top: 10px; text-transform: uppercase; }
@@ -30,7 +31,7 @@
         .sns-nav { margin: 25px 0; }
         .sns-nav a { font-family: 'Cinzel'; font-size: 10px; text-decoration: none; color: var(--accent-gold); letter-spacing: 2px; margin: 0 10px; font-weight: 700; }
 
-        /* 버튼 */
+        /* 버튼 디자인 */
         .cta-group { display: flex; justify-content: center; gap: 10px; margin: 30px 0; }
         .btn { 
             padding: 15px 10px; font-family: 'Cinzel'; font-size: 10px; letter-spacing: 1px; 
@@ -40,12 +41,12 @@
         .btn-primary { background: var(--point-color); color: #fff; }
         .btn-secondary { border: 1px solid var(--point-color); color: var(--point-color); }
 
-        /* 사진 공통 프레임 */
+        /* 사진 프레임 설정 */
         .img-wrapper { 
             position: relative; overflow: hidden; border: 6px solid #fff; 
             box-shadow: 0 8px 20px rgba(0,0,0,0.05); margin-bottom: 50px; cursor: pointer;
         }
-        .img-wrapper img { width: 100%; display: block; }
+        .img-wrapper img { width: 100%; display: block; transition: transform 0.6s; }
         
         .img-overlay { 
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
@@ -54,7 +55,7 @@
         }
         .img-wrapper:active .img-overlay, .img-wrapper:hover .img-overlay { opacity: 1; }
 
-        /* 가치관 질문지 */
+        /* 가치관 질문 섹션 */
         .section-title { text-align: center; margin: 80px 0 40px; }
         .section-title h2 { font-size: 28px; font-weight: 400; color: var(--text-main); margin: 5px 0; }
         .section-title span { font-family: 'Dancing Script'; font-size: 24px; color: var(--accent-gold); }
@@ -65,7 +66,7 @@
         .q-item b { font-family: 'Cinzel'; color: var(--accent-gold); font-size: 10px; letter-spacing: 2px; display: block; margin-bottom: 8px; }
         .q-item p { font-size: 15px; margin: 0; }
 
-        /* 뮤직탭 배너 */
+        /* 🎵 뮤직탭 배너 (고양이 사진 최적화) */
         .music-tap-banner { 
             background: linear-gradient(145deg, #2D3633 0%, #1A1F1D 100%); 
             color: #fff; padding: 60px 15px; text-align: center; border-radius: 20px; margin: 80px 0;
@@ -81,11 +82,13 @@
 
         .music-tap-banner .sub-text { font-size: 14px; opacity: 0.8; margin-bottom: 30px; line-height: 1.8; }
 
-        /* 갤러리 그리드 */
+        /* 하단 갤러리 */
         .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 100px; }
 
+        /* 태블릿/PC 최적화 */
         @media (min-width: 768px) {
             .logo { font-size: 85px; }
+            .logo-sub { font-size: 13px; letter-spacing: 12px; }
             .question-grid { grid-template-columns: repeat(2, 1fr); gap: 60px; }
             .gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 25px; }
             .music-tap-banner { padding: 120px 40px; }
@@ -111,17 +114,24 @@
 </header>
 
 <div class="container">
-    <!-- 1. 메인 로고 -->
-    <div class="img-wrapper"><img src="main_logo..jpg"></div>
+    <!-- 메인 로고 이미지 -->
+    <div class="img-wrapper">
+        <img src="main_logo..jpg">
+        <div class="img-overlay"><p>"투명함 속에 담긴 당신만의 서사를 발견해 보세요."</p></div>
+    </div>
 
     <section class="section-title">
         <span>The Inner Landscape</span>
         <h2>나의 내면 풍경</h2>
     </section>
     
-    <!-- 2. 내면 풍경 -->
-    <div class="img-wrapper"><img src="inner_landscape..jpg"></div>
+    <!-- 내면 풍경 이미지 -->
+    <div class="img-wrapper">
+        <img src="inner_landscape..jpg">
+        <div class="img-overlay"><p>"우연이 만드는 자연스러운 아름다움을 기록합니다."</p></div>
+    </div>
 
+    <!-- 가치관 질문지 리스트 -->
     <div class="question-box">
         <div class="question-grid">
             <div class="q-item"><b>01. FIRST IMPRESSION</b><p>기억되고 싶은 당신의 첫인상은 어떤 느낌인가요?</p></div>
@@ -135,10 +145,13 @@
         </div>
     </div>
 
-    <!-- 3. 프로세스 가이드 -->
-    <div class="img-wrapper"><img src="process_guide..jpg"></div>
+    <!-- 프로세스 가이드 이미지 -->
+    <div class="img-wrapper">
+        <img src="process_guide..jpg">
+        <div class="img-overlay"><p>"당신의 가치관을 시각적으로 번역하는 여정입니다."</p></div>
+    </div>
 
-    <!-- 🎵 고양이 뮤직탭 섹션 (수정된 nfc_keyring.jpg 적용) -->
+    <!-- 🎵 고양이 뮤직탭 섹션 (파일 목록에 맞춰 nfc_keyring.jpg 적용) -->
     <section class="music-tap-banner">
         <h3>Music Tap</h3>
         <p class="main-text">"당신의 공간에<br>가치관의 선율을 채우세요."</p>
@@ -155,7 +168,7 @@
         <a href="https://naver.me/xUZtVs0N" class="btn" style="background:var(--accent-gold); color:#1A1F1D; border:none; display:inline-block; width:180px;">Music Select</a>
     </section>
 
-    <!-- 갤러리 리스트 -->
+    <!-- 갤러리 섹션 -->
     <div class="gallery-grid">
         <div class="img-wrapper"><img src="nature_1..jpg"></div>
         <div class="img-wrapper"><img src="nature_2..jpg"></div>
@@ -171,7 +184,7 @@
 </div>
 
 <footer style="text-align: center; padding: 40px 20px; background: #EEEBE3;">
-    <p style="font-size:10px; opacity:0.5;">© 2026 Mood Archiving. All Rights Reserved.</p>
+    <p style="font-size:10px; opacity:0.5; letter-spacing: 1px;">© 2026 Mood Archiving. All Rights Reserved.</p>
 </footer>
 
 </body>
