@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Mood Archiving | 가치관을 박제하다</title>
     <style>
-        /* 필기체를 위해 Dancing Script 추가 */
         @import url('https://fonts.googleapis.com/css2?family=Playball&family=Cinzel:wght@400;700&family=Nanum+Myeongjo:wght@400;700&family=Nanum+Pen+Script&family=Dancing+Script:wght@400;600&display=swap');
 
         :root {
@@ -23,42 +22,62 @@
         .main-hero { width: 100%; overflow: hidden; line-height: 0; }
         .main-hero img { width: 100%; height: auto; display: block; }
 
-        header { padding: 50px 20px 30px; text-align: center; }
-        .logo { font-family: 'Playball', cursive; font-size: 45px; color: var(--point-green); text-decoration: none; display: block; }
-        .logo-sub { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 5px; color: var(--accent-gold); display: block; margin-top: 5px; font-weight: 700; }
+        /* 🏛️ 로고 섹션 디자인 강화 */
+        header { padding: 80px 20px 40px; text-align: center; position: relative; }
         
-        .header-btn-group { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 25px; }
+        .logo-wrapper { display: inline-block; position: relative; padding: 0 40px; }
+        
+        /* 양옆의 장식 라인 */
+        .logo-wrapper::before, .logo-wrapper::after {
+            content: "✦"; /* 별 장식 */
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent-gold);
+            font-size: 20px;
+        }
+        .logo-wrapper::before { left: 0; }
+        .logo-wrapper::after { right: 0; }
+
+        .logo { 
+            font-family: 'Playball', cursive; 
+            font-size: 72px; /* 45px -> 72px로 크기 대폭 상향 */
+            color: var(--point-green); 
+            text-decoration: none; 
+            display: block;
+            line-height: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .logo-sub { 
+            font-family: 'Cinzel', serif; 
+            font-size: 13px; 
+            letter-spacing: 7px; 
+            color: var(--accent-gold); 
+            display: block; 
+            margin-top: 15px; 
+            font-weight: 700;
+            border-top: 1px solid var(--line-color);
+            padding-top: 10px;
+            display: inline-block;
+        }
+        
+        .header-btn-group { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 40px; }
         .header-btn { font-family: 'Cinzel'; font-size: 10px; letter-spacing: 1px; text-decoration: none; padding: 10px 18px; border: 1px solid var(--point-green); color: var(--point-green); font-weight: 700; transition: 0.3s; }
         .header-btn:hover { background: var(--point-green); color: white; }
 
         .section { padding: 0 15px 80px; max-width: 900px; margin: 0 auto; box-sizing: border-box; }
-        
         .img-card { width: 100%; margin: 40px 0; background: #fff; padding: 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border-radius: 5px; box-sizing: border-box; }
         .img-card img { width: 100%; height: auto; display: block; border-radius: 2px; }
 
-        /* 뮤직탭 섹션 수정 */
+        /* 뮤직탭 섹션 스타일 유지 */
         .music-tap-card { 
             background: linear-gradient(135deg, #5078F2 0%, #3A5FCD 100%); 
             padding: 80px 25px; border-radius: 40px; margin: 80px 0; color: #fff; text-align: center;
         }
-        /* 영문 타이틀: Dancing Script (얇고 큰 필기체) */
-        .music-title-en { 
-            font-family: 'Dancing Script', cursive; 
-            font-size: 72px; 
-            font-weight: 400; 
-            margin: 0; 
-            line-height: 1; 
-            letter-spacing: 1px;
-        }
-        /* 한글 서브 타이틀: 얇은 펜글씨 */
-        .music-title-ko { 
-            font-family: 'Nanum Pen Script', cursive; 
-            font-size: 32px; 
-            font-weight: 400; 
-            margin: 10px 0 40px; 
-            opacity: 0.9;
-        }
-        .music-img-wrapper { width: 85%; max-width: 320px; margin: 0 auto 40px; border: 8px solid rgba(255,255,255,0.2); border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.2); }
+        .music-title-en { font-family: 'Dancing Script', cursive; font-size: 72px; font-weight: 400; margin: 0; line-height: 1; }
+        .music-title-ko { font-family: 'Nanum Pen Script', cursive; font-size: 32px; margin: 10px 0 40px; opacity: 0.9; }
+        .music-img-wrapper { width: 85%; max-width: 320px; margin: 0 auto 40px; border: 8px solid rgba(255,255,255,0.2); border-radius: 20px; overflow: hidden; }
         .music-img-wrapper img { width: 100%; display: block; }
         .music-desc { font-family: 'Nanum Pen Script', cursive; font-size: 28px; line-height: 1.5; }
 
@@ -67,15 +86,14 @@
         .essay-text { font-size: 16px; line-height: 2.2; color: #333; text-align: center; }
 
         .guide-header { text-align: center; margin: 80px 0 30px; }
-        .guide-header h2 { font-family: 'Cinzel'; font-size: 24px; letter-spacing: 4px; margin-bottom: 8px; }
-        
+        .guide-header h2 { font-family: 'Cinzel'; font-size: 24px; letter-spacing: 4px; }
         .curriculum-box { background: #fff; padding: 35px 20px; border-radius: 25px; border: 1px solid var(--line-color); margin-bottom: 60px; }
         .step-item { display: flex; align-items: flex-start; margin-bottom: 35px; text-align: left; }
         .step-num { font-family: 'Cinzel'; font-size: 15px; color: var(--accent-gold); font-weight: 700; min-width: 85px; }
         .step-content b { font-size: 18px; display: block; margin-bottom: 8px; color: var(--point-green); }
 
         .q-grid { display: grid; grid-template-columns: 1fr; gap: 15px; margin: 60px 0; }
-        .q-card { padding: 30px 20px; background: #fff; border-radius: 15px; border-left: 5px solid var(--accent-gold); text-align: left; box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
+        .q-card { padding: 30px 20px; background: #fff; border-radius: 15px; border-left: 5px solid var(--accent-gold); box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
 
         .script-text { font-family: 'Nanum Pen Script', cursive; font-size: 28px; color: var(--point-green); text-align: center; margin: 20px 0 60px; opacity: 0.8; }
         .btn-apply-large { display: block; width: 100%; max-width: 280px; margin: 80px auto; padding: 20px 0; border: 1px solid var(--accent-gold); color: var(--accent-gold); text-decoration: none; font-family: 'Cinzel'; font-weight: 700; font-size: 16px; letter-spacing: 3px; text-align: center; transition: 0.3s; }
@@ -83,9 +101,9 @@
         
         footer { background: #1a1a1a; color: #fff; padding: 70px 20px; text-align: center; font-size: 11px; }
 
-        @media (min-width: 768px) {
-            .q-grid { grid-template-columns: 1fr 1fr; }
-            .music-title-en { font-size: 90px; }
+        @media (max-width: 768px) {
+            .logo { font-size: 55px; } /* 모바일에서는 살짝 조절 */
+            .music-title-en { font-size: 60px; }
         }
     </style>
 </head>
@@ -96,8 +114,12 @@
 </div>
 
 <header>
-    <a href="#" class="logo">Mood Archiving</a>
-    <span class="logo-sub">ENCAPSULATING YOUR VALUES</span>
+    <!-- 디자인이 강화된 로고 영역 -->
+    <div class="logo-wrapper">
+        <a href="#" class="logo">Mood Archiving</a>
+        <span class="logo-sub">ENCAPSULATING YOUR VALUES</span>
+    </div>
+
     <div class="header-btn-group">
         <a href="https://www.instagram.com/mood_archiving" target="_blank" class="header-btn">Instagram</a>
         <a href="https://smartstore.naver.com/mood_archiving" target="_blank" class="header-btn">Store</a>
@@ -130,12 +152,10 @@
         <div class="q-card"><b>Q.04 세상에 휘둘리지 않고 지켜내고 싶은 가치는?</b></div>
     </div>
 
-    <!-- 뮤직탭 섹션: 폰트 크기 및 스타일 수정 완료 -->
     <div class="music-tap-card">
         <h3 class="music-title-en">Music Tap</h3>
         <p class="music-title-ko">나만의 선율을 아카이빙하다</p>
         <div class="music-img-wrapper">
-            <!-- 키링 사진도 점이 두 개라면 ..jpg로 수정하세요 -->
             <img src="NFC키링.jpg" alt="NFC키링"> 
         </div>
         <p class="music-desc">키링에 폰을 대는 순간,<br>당신만의 무드가 재생됩니다.</p>
