@@ -2,209 +2,184 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Mood Archiving | 당신의 가치를 박제하다</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playball&family=Cinzel:wght@400;700&family=Nanum+Myeongjo:wght@400;700&family=Nanum+Pen+Script&family=Dancing+Script:wght@400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playball&family=Cinzel:wght@400;700&family=Nanum+Myeongjo:wght@400;700&family=Dancing+Script:wght@400;600&display=swap');
 
         :root {
             --bg-color: #F9F7F2; 
             --point-color: #8DA399; 
             --accent-gold: #D4B996; 
             --text-main: #5A635F; 
-            --border-soft: rgba(141, 163, 153, 0.2);
         }
 
+        /* [모바일 최적화] 가로 스크롤 방지 및 기본 폰트 설정 */
         body { 
             color: var(--text-main); font-family: 'Nanum Myeongjo', serif; margin: 0; padding: 0;
-            line-height: 2.6; word-break: keep-all; background-color: var(--bg-color); 
+            line-height: 1.8; word-break: keep-all; background-color: var(--bg-color); 
+            overflow-x: hidden;
         }
 
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
+        .container { width: 100%; max-width: 1100px; margin: 0 auto; box-sizing: border-box; padding: 0 20px; }
 
-        /* ✨ Header */
-        header { padding: 140px 20px 80px; text-align: center; position: relative; }
-        .logo { font-family: 'Playball', cursive; font-size: 85px; color: var(--point-color); text-decoration: none; display: block; line-height: 1; }
-        .logo-sub { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 12px; color: var(--accent-gold); display: block; margin-top: 35px; font-weight: 700; text-transform: uppercase; }
+        /* ✨ Header - 모바일에서 유동적인 크기 */
+        header { padding: 60px 20px 30px; text-align: center; }
+        .logo { font-family: 'Playball', cursive; font-size: 45px; color: var(--point-color); text-decoration: none; display: block; }
+        .logo-sub { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 5px; color: var(--accent-gold); display: block; margin-top: 10px; text-transform: uppercase; }
         
-        .sns-nav { margin: 45px 0; }
-        .sns-nav a { font-family: 'Cinzel'; font-size: 11px; text-decoration: none; color: var(--accent-gold); letter-spacing: 4px; margin: 0 22px; font-weight: 700; transition: 0.3s; }
+        .sns-nav { margin: 25px 0; }
+        .sns-nav a { font-family: 'Cinzel'; font-size: 10px; text-decoration: none; color: var(--accent-gold); letter-spacing: 2px; margin: 0 10px; font-weight: 700; }
 
-        /* 🔘 버튼 */
-        .cta-group { display: flex; justify-content: center; gap: 20px; margin: 60px 0 140px; flex-wrap: wrap; }
-        .btn { padding: 22px 55px; font-family: 'Cinzel'; font-size: 12px; letter-spacing: 4px; text-decoration: none; border-radius: 40px; transition: 0.4s; font-weight: 700; text-align: center; min-width: 240px; text-transform: uppercase; }
-        .btn-primary { background: var(--point-color); color: #fff; border: 1px solid var(--point-color); }
+        /* 🔘 버튼 - 모바일에서 나란히 배치 */
+        .cta-group { display: flex; justify-content: center; gap: 10px; margin: 30px 0; }
+        .btn { 
+            padding: 15px 10px; font-family: 'Cinzel'; font-size: 10px; letter-spacing: 1px; 
+            text-decoration: none; border-radius: 40px; font-weight: 700;
+            flex: 1; max-width: 160px; text-align: center;
+        }
+        .btn-primary { background: var(--point-color); color: #fff; }
         .btn-secondary { border: 1px solid var(--point-color); color: var(--point-color); }
 
-        /* 📸 사진 프레임 */
+        /* 📸 사진 프레임 (폴라로이드 스타일 유지) */
         .img-wrapper { 
-            position: relative; cursor: pointer; overflow: hidden; 
-            border: 8px solid #fff; 
-            box-shadow: 0 12px 30px rgba(0,0,0,0.04); margin-bottom: 120px; transition: 0.5s;
+            position: relative; overflow: hidden; border: 6px solid #fff; 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05); margin-bottom: 50px; cursor: pointer;
         }
-        .img-wrapper:hover { transform: scale(1.02); }
-        .img-wrapper img { width: 100%; display: block; transition: transform 1s; }
+        .img-wrapper img { width: 100%; display: block; transition: transform 0.6s; }
         
+        /* 사진 위 감성 문구 오버레이 (터치 시 나타남) */
         .img-overlay { 
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-            background: rgba(141, 163, 153, 0.88); color: #fff; display: flex; align-items: center; justify-content: center;
-            opacity: 0; transition: opacity 0.5s ease; padding: 40px; text-align: center; z-index: 2;
+            background: rgba(141, 163, 153, 0.9); color: #fff; display: flex; align-items: center; justify-content: center;
+            opacity: 0; transition: opacity 0.4s; padding: 20px; text-align: center; box-sizing: border-box;
         }
-        .img-wrapper:hover .img-overlay { opacity: 1; }
+        .img-wrapper:active .img-overlay, .img-wrapper:hover .img-overlay { opacity: 1; }
+        .img-overlay p { font-size: 15px; line-height: 1.6; }
 
         /* 📝 가치관 질문지 */
-        .section-title { text-align: center; margin: 180px 0 100px; }
-        .section-title h2 { font-size: 36px; font-weight: 400; color: var(--text-main); }
-        .section-title span { font-family: 'Dancing Script'; font-size: 30px; color: var(--accent-gold); }
+        .section-title { text-align: center; margin: 80px 0 40px; }
+        .section-title h2 { font-size: 28px; font-weight: 400; color: var(--text-main); margin: 5px 0; }
+        .section-title span { font-family: 'Dancing Script'; font-size: 24px; color: var(--accent-gold); }
 
-        .question-box { background: #fff; padding: 100px 60px; border-radius: 15px; border: 1px solid var(--border-soft); margin-bottom: 250px; }
-        .question-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 60px; }
-        .q-item { border-bottom: 1px solid #f2f2f2; padding-bottom: 30px; }
-        .q-item b { font-family: 'Cinzel'; color: var(--accent-gold); font-size: 11px; letter-spacing: 4px; display: block; margin-bottom: 15px; }
+        .question-box { background: #fff; padding: 40px 25px; border-radius: 15px; border: 1px solid rgba(0,0,0,0.05); margin-bottom: 100px; }
+        .question-grid { display: grid; grid-template-columns: 1fr; gap: 30px; }
+        .q-item { border-bottom: 1px solid #f2f2f2; padding-bottom: 15px; }
+        .q-item b { font-family: 'Cinzel'; color: var(--accent-gold); font-size: 10px; letter-spacing: 2px; display: block; margin-bottom: 8px; }
+        .q-item p { font-size: 15px; margin: 0; }
 
-        /* 🎵 뮤직탭 섹션 - [변경포인트: 고양이 사진 교체 및 확대] */
+        /* 🎵 뮤직탭 섹션 (NFC키링.png 확대 반영) */
         .music-tap-banner { 
             background: linear-gradient(145deg, #2D3633 0%, #1A1F1D 100%); 
-            color: #fff; padding: 220px 40px; text-align: center; border-radius: 20px; 
-            margin: 280px 0; position: relative; overflow: hidden;
-            box-shadow: 0 40px 100px rgba(0,0,0,0.3);
+            color: #fff; padding: 60px 15px; text-align: center; border-radius: 20px; margin: 80px 0;
         }
+        .music-tap-banner h3 { font-family: 'Playball', cursive; font-size: 55px; color: var(--accent-gold); margin-bottom: 20px; }
+        .music-tap-banner .main-text { font-size: 20px; font-weight: 700; color: #F9F7F2; margin-bottom: 30px; }
         
-        .music-tap-banner::after {
-            content: 'CAT MOOD • MUSIC TAP • CAT MOOD • MUSIC TAP';
-            position: absolute; top: 30px; left: -10%; width: 120%;
-            font-family: 'Cinzel'; font-size: 14px; letter-spacing: 10px;
-            color: rgba(212, 185, 150, 0.15); font-weight: 700; transform: rotate(-2deg);
-        }
-
-        .music-tap-banner h3 { font-family: 'Playball', cursive; font-size: 100px; color: var(--accent-gold); margin-bottom: 40px; }
-        .music-tap-banner .main-text { font-size: 34px; font-weight: 700; color: #F9F7F2; margin-bottom: 60px; letter-spacing: 1px; line-height: 1.4; }
-        
-        /* 사진 확대 디자인 */
-        .cat-img-container { 
-            position: relative; display: inline-block; margin-bottom: 60px; 
-            padding: 15px; background: rgba(255,255,255,0.05); border-radius: 20px;
-            max-width: 90%; /* 화면 너비에 맞춰 유동적으로 확대 */
-        }
+        .cat-img-container { width: 100%; max-width: 500px; margin: 0 auto 30px; }
         .cat-img-container img { 
-            width: 500px; /* 기존보다 약 1.5배 확대 */
-            max-width: 100%;
-            border-radius: 12px; transition: 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-            filter: drop-shadow(0 25px 50px rgba(0,0,0,0.6));
+            width: 90%; /* 모바일에서 꽉 차게 확대 */
+            height: auto; border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); 
         }
-        .cat-img-container:hover img { transform: scale(1.05); }
 
-        .music-tap-banner .sub-text { font-size: 19px; opacity: 0.7; max-width: 800px; margin: 0 auto 60px; line-height: 2.4; }
+        .music-tap-banner .sub-text { font-size: 14px; opacity: 0.8; margin-bottom: 30px; }
 
-        /* 🖼️ 갤러리 그리드 */
-        .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-bottom: 250px; }
-        .gallery-grid .img-wrapper { margin-bottom: 0; border: 6px solid #fff; }
+        /* 🖼️ 갤러리 그리드 - 모바일 2열 */
+        .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 100px; }
+        .gallery-grid .img-wrapper { margin-bottom: 0; border: 4px solid #fff; }
 
-        footer { padding: 120px 20px; text-align: center; background: #EEEBE3; }
-
-        @media (max-width: 950px) {
-            .question-grid, .gallery-grid { grid-template-columns: 1fr; }
-            .cat-img-container img { width: 100%; }
+        /* PC 버전 전용 (데스크탑에서 볼 때) */
+        @media (min-width: 768px) {
+            .logo { font-size: 85px; }
+            .logo-sub { font-size: 13px; letter-spacing: 12px; }
+            .question-grid { grid-template-columns: repeat(2, 1fr); gap: 60px; }
+            .gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 25px; }
+            .music-tap-banner { padding: 150px 40px; }
+            .music-tap-banner h3 { font-size: 100px; }
+            .music-tap-banner .main-text { font-size: 34px; }
+            .img-overlay p { font-size: 18px; }
         }
     </style>
 </head>
 <body>
 
-<header>
+<header class="container">
     <a href="#" class="logo">Mood Archiving</a>
     <span class="logo-sub">Encapsulating Your Values</span>
     <div class="sns-nav">
-        <a href="https://www.instagram.com/mood_archiving" target="_blank">INSTAGRAM</a>
-        <a href="https://smartstore.naver.com/mood_archiving" target="_blank">NAVER STORE</a>
+        <a href="https://www.instagram.com/mood_archiving">INSTAGRAM</a>
+        <a href="https://smartstore.naver.com/mood_archiving">STORE</a>
     </div>
     <div class="cta-group">
-        <a href="https://naver.me/5bCIPlxw" class="btn btn-primary">Archiving Application</a>
-        <a href="https://naver.me/xUZtVs0N" class="btn btn-secondary">Music Tap Selection</a>
+        <a href="https://naver.me/5bCIPlxw" class="btn btn-primary">Application</a>
+        <a href="https://naver.me/xUZtVs0N" class="btn btn-secondary">Music Tap</a>
     </div>
 </header>
 
 <div class="container">
-    <!-- 🖼️ 1. 메인 -->
+    <!-- 메인 이미지 -->
     <div class="img-wrapper">
-        <img src="main_logo..jpg" alt="Philosophy">
-        <div class="img-overlay">
-            <p>"투명함은 비어있음이 아니라, 당신의 본질을 선명하게 비추는 거울입니다.<br>부드러운 레진 속에 박제된 당신만의 온도를 발견해 보세요."</p>
-        </div>
+        <img src="main_logo..jpg">
+        <div class="img-overlay"><p>"투명함 속에 담긴 당신만의 서사를 발견해 보세요."</p></div>
     </div>
 
-    <!-- 📝 2. 가치관 질문지 섹션 -->
+    <!-- 가치관 질문지 -->
     <section class="section-title">
         <span>The Inner Landscape</span>
-        <h2>나의 내면 풍경 들여다보기</h2>
+        <h2>나의 내면 풍경</h2>
     </section>
     
     <div class="img-wrapper">
-        <img src="inner_landscape..jpg" alt="Inner Landscape">
-        <div class="img-overlay">
-            <p>"우리의 삶은 통제할 수 없는 파동으로 가득합니다.<br>잉크가 번지는 찰나의 우연은 당신의 가장 자연스러운 아름다움을 대변합니다."</p>
-        </div>
+        <img src="inner_landscape..jpg">
+        <div class="img-overlay"><p>"우연이 만드는 자연스러운 아름다움을 기록합니다."</p></div>
     </div>
 
     <div class="question-box">
         <div class="question-grid">
-            <div class="q-item"><b>01. FIRST IMPRESSION</b><p>타인에게 기억되고 싶은 당신의 '첫인상'은 어떤 느낌인가요?</p></div>
-            <div class="q-item"><b>02. ENERGY COLOR</b><p>현재 당신의 에너지를 색깔로 표현한다면 어떤 색인가요?</p></div>
-            <div class="q-item"><b>03. CORE KEYWORD</b><p>삶에서 가장 소중한 키워드는 무엇인가요? (평온, 자유 등)</p></div>
-            <div class="q-item"><b>04. EMOTIONAL INK</b><p>레진 속 잉크 색채가 상징하는 당신의 감정은 무엇인가요?</p></div>
-            <div class="q-item"><b>05. MINDSET</b><p>이 작품을 바라볼 때마다 기억하고 싶은 마음가짐은 무엇인가요?</p></div>
-            <div class="q-item"><b>06. BALANCE</b><p>당신의 가치관은 '중심'에 있나요, 아니면 '조화'롭게 퍼져 있나요?</p></div>
+            <div class="q-item"><b>01. FIRST IMPRESSION</b><p>기억되고 싶은 당신의 첫인상은?</p></div>
+            <div class="q-item"><b>02. ENERGY COLOR</b><p>현재 당신의 에너지를 색깔로 표현한다면?</p></div>
+            <div class="q-item"><b>03. CORE KEYWORD</b><p>삶에서 가장 소중한 키워드는?</p></div>
+            <div class="q-item"><b>04. EMOTIONAL INK</b><p>레진 속 잉크가 상징하는 감정은?</p></div>
+            <div class="q-item"><b>05. MINDSET</b><p>기억하고 싶은 마음가짐은?</p></div>
+            <div class="q-item"><b>06. BALANCE</b><p>당신의 가치관은 중심인가요, 조화인가요?</p></div>
+            <div class="q-item"><b>07. COMFORT</b><p>지친 끝에 필요한 위로의 형태는?</p></div>
+            <div class="q-item"><b>08. SYMBOL</b><p>오늘 마음속에 머물러 있는 물건의 의미는?</p></div>
         </div>
     </div>
 
-    <!-- 🖼️ 3. 프로세스 가이드 -->
-    <div class="img-wrapper">
-        <img src="process_guide..jpg" alt="Process Guide">
-        <div class="img-overlay">
-            <p>"키워드 추출부터 시각적 번역까지,<br>작가와 함께 당신의 서사를 가장 맑게 기록하는 여정입니다."</p>
-        </div>
-    </div>
-
-    <!-- 🎵 4. 뮤직탭 섹션 (고양이 사진 확대) -->
+    <!-- 뮤직탭 섹션 (보내주신 NFC키링.png 반영) -->
     <section class="music-tap-banner">
         <h3>Music Tap</h3>
-        <p class="main-text">"당신의 소중한 순간에<br>가치관의 선율을 더하세요."</p>
+        <p class="main-text">"당신의 공간에<br>가치관의 선율을 채우세요."</p>
         
         <div class="cat-img-container">
-            <!-- 요청하신 고양이 사진으로 교체 (파일명은 '고양이사진.jpg'로 설정하였습니다) -->
-            <img src="고양이사진.jpg" alt="Music Tap Concept Cat">
+            <img src="NFC키링.png" alt="NFC Keyring">
         </div>
         
         <p class="sub-text">
-            무드 아카이빙은 시각을 넘어 청각적 위로로 완성됩니다.<br>
-            고양이의 나른한 오후처럼 편안한 위로가 필요할 때,<br>
-            당신만을 위해 큐레이팅된 선율이 일상을 음악적인 온도로 물들입니다.
+            작품에 스마트폰을 가볍게 탭하는 순간,<br>큐레이팅된 선율이 일상을 물들입니다.
         </p>
         
-        <a href="https://naver.me/xUZtVs0N" class="btn" style="background:var(--accent-gold); color:#1A1F1D; border:none; box-shadow: 0 10px 30px rgba(212, 185, 150, 0.3);">Select Music Tap</a>
+        <a href="https://naver.me/xUZtVs0N" class="btn" style="background:var(--accent-gold); color:#1A1F1D; border:none; display:inline-block; width:180px;">Music Select</a>
     </section>
 
-    <!-- 🖼️ 5. 비주얼 갤러리 -->
+    <!-- 갤러리 6장 -->
     <div class="gallery-grid">
-        <div class="img-wrapper"><img src="nature_1..jpg"><div class="img-overlay"><p>"고요한 숲의 숨결"</p></div></div>
-        <div class="img-wrapper"><img src="nature_2..jpg"><div class="img-overlay"><p>"바다의 깊이를 담은 신뢰"</p></div></div>
-        <div class="img-wrapper"><img src="nature_3..jpg"><div class="img-overlay"><p>"햇살이 머무는 자유"</p></div></div>
-        <div class="img-wrapper"><img src="nature_4..jpg"><div class="img-overlay"><p>"변치 않는 마음"</p></div></div>
-        <div class="img-wrapper"><img src="nature_5..jpg"><div class="img-overlay"><p>"따뜻한 위로의 온도"</p></div></div>
-        <div class="img-wrapper"><img src="nature_6..jpg"><div class="img-overlay"><p>"나다움을 간직하는 방식"</p></div></div>
+        <div class="img-wrapper"><img src="nature_1..jpg"><div class="img-overlay"><p>고요한 숲</p></div></div>
+        <div class="img-wrapper"><img src="nature_2..jpg"><div class="img-overlay"><p>바다의 신뢰</p></div></div>
+        <div class="img-wrapper"><img src="nature_3..jpg"><div class="img-overlay"><p>햇살의 자유</p></div></div>
+        <div class="img-wrapper"><img src="nature_4..jpg"><div class="img-overlay"><p>변치 않는 마음</p></div></div>
+        <div class="img-wrapper"><img src="nature_5..jpg"><div class="img-overlay"><p>부드러운 위로</p></div></div>
+        <div class="img-wrapper"><img src="nature_6..jpg"><div class="img-overlay"><p>나다움의 방식</p></div></div>
     </div>
 
-    <div class="cta-group" style="margin-bottom: 250px;">
-        <a href="https://naver.me/5bCIPlxw" class="btn btn-primary">Start Archiving</a>
+    <div class="cta-group" style="margin-bottom: 100px;">
+        <a href="https://naver.me/5bCIPlxw" class="btn btn-primary" style="max-width: 100%;">Start Archiving</a>
     </div>
 </div>
 
-<footer>
-    <a href="#" class="logo" style="font-size: 40px;">Mood Archiving</a>
-    <div class="sns-nav">
-        <a href="https://www.instagram.com/mood_archiving">INSTAGRAM</a>
-        <a href="https://smartstore.naver.com/mood_archiving">NAVER STORE</a>
-    </div>
-    <p style="font-size:11px; letter-spacing:2px; opacity:0.6;">© 2026 Mood Archiving. All Rights Reserved.</p>
+<footer style="text-align: center; padding: 40px 20px; background: #EEEBE3;">
+    <p style="font-size:10px; opacity:0.5;">© 2026 Mood Archiving.</p>
 </footer>
 
 </body>
