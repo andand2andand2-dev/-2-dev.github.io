@@ -19,7 +19,7 @@
             line-height: 1.8; word-break: keep-all; background-color: var(--bg-color); 
         }
 
-        /* 최상단 메인 (2_5.jpg) */
+        /* 메인 비주얼 */
         .main-hero { width: 100%; overflow: hidden; line-height: 0; }
         .main-hero img { width: 100%; height: auto; }
 
@@ -33,35 +33,41 @@
 
         .section { padding: 0 15px 80px; max-width: 900px; margin: 0 auto; box-sizing: border-box; }
         
+        /* 이미지 스타일 */
         .img-card { width: 100%; margin: 40px 0; background: #fff; padding: 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border-radius: 5px; box-sizing: border-box; }
         .img-card img { width: 100%; height: auto; display: block; border-radius: 2px; }
 
-        .essay-card { background: #fff; padding: 60px 25px; border-radius: 25px; border: 1px solid var(--line-color); margin-bottom: 50px; text-align: center; }
+        /* 텍스트 섹션 스타일 */
+        .essay-card { background: #fff; padding: 60px 25px; border-radius: 25px; border: 1px solid var(--line-color); margin: 50px 0; text-align: center; }
         .essay-title { font-size: 22px; font-weight: 700; margin-bottom: 30px; color: var(--point-green); }
         .essay-text { font-size: 16px; line-height: 2.2; color: #333; text-align: justify; text-align-last: center; }
 
         .guide-header { text-align: center; margin: 80px 0 30px; }
         .guide-header h2 { font-family: 'Cinzel'; font-size: 24px; letter-spacing: 4px; margin-bottom: 8px; }
+        
         .curriculum-box { background: #fff; padding: 35px 20px; border-radius: 25px; border: 1px solid var(--line-color); margin-bottom: 60px; }
-        .step-item { display: flex; align-items: flex-start; margin-bottom: 25px; text-align: left; }
-        .step-num { font-family: 'Cinzel'; font-size: 15px; color: var(--accent-gold); font-weight: 700; min-width: 75px; }
-        .step-content b { font-size: 17px; display: block; margin-bottom: 6px; color: var(--point-green); }
+        .step-item { display: flex; align-items: flex-start; margin-bottom: 35px; text-align: left; }
+        .step-num { font-family: 'Cinzel'; font-size: 15px; color: var(--accent-gold); font-weight: 700; min-width: 85px; }
+        .step-content b { font-size: 18px; display: block; margin-bottom: 8px; color: var(--point-green); }
+        .step-content p { margin: 0; font-size: 15px; color: #555; }
 
         .q-grid { display: grid; grid-template-columns: 1fr; gap: 15px; margin: 60px 0; }
         .q-card { padding: 30px 20px; background: #fff; border-radius: 15px; border-left: 5px solid var(--accent-gold); text-align: left; box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
 
+        /* 뮤직탭 섹션 */
         .music-tap-card { 
             background: linear-gradient(135deg, #5078F2 0%, #3A5FCD 100%); 
             padding: 60px 25px; border-radius: 40px; margin: 80px 0; color: #fff; text-align: center;
         }
-        .music-title { font-family: 'Nanum Pen Script', cursive; font-size: 42px; margin: 0 0 25px; }
+        .music-title { font-family: 'Nanum Pen Script', cursive; font-size: 42px; margin: 0 0 25px; line-height: 1.1; }
         .music-img-wrapper { width: 85%; max-width: 320px; margin: 0 auto 35px; border: 8px solid rgba(255,255,255,0.2); border-radius: 20px; overflow: hidden; }
         .music-img-wrapper img { width: 100%; display: block; }
         .music-desc { font-family: 'Nanum Pen Script', cursive; font-size: 24px; }
 
         .script-text { font-family: 'Nanum Pen Script', cursive; font-size: 28px; color: var(--point-green); text-align: center; margin: 20px 0 60px; opacity: 0.8; }
 
-        .btn-apply-large { display: block; width: 100%; max-width: 280px; margin: 80px auto; padding: 20px 0; border: 1px solid var(--accent-gold); color: var(--accent-gold); text-decoration: none; font-family: 'Cinzel'; font-weight: 700; font-size: 16px; letter-spacing: 3px; text-align: center; }
+        .btn-apply-large { display: block; width: 100%; max-width: 280px; margin: 80px auto; padding: 20px 0; border: 1px solid var(--accent-gold); color: var(--accent-gold); text-decoration: none; font-family: 'Cinzel'; font-weight: 700; font-size: 16px; letter-spacing: 3px; text-align: center; transition: 0.4s; }
+        .btn-apply-large:hover { background: var(--accent-gold); color: #fff; }
         
         footer { background: #1a1a1a; color: #fff; padding: 70px 20px; text-align: center; font-size: 11px; }
 
@@ -73,9 +79,9 @@
 </head>
 <body>
 
-<!-- 메인 로고 이미지 (2_5.jpg) -->
+<!-- 메인 사진 (main_logo.jpg) -->
 <div class="main-hero">
-    <img src="2_5.jpg" alt="Mood Archiving Main">
+    <img src="main_logo.jpg" alt="Mood Archiving Main">
 </div>
 
 <header>
@@ -90,75 +96,98 @@
 
 <section class="section">
     
-    <!-- 텍스트: 철학 -->
+    <!-- 상세 텍스트 복구: 가치관 -->
     <div class="essay-card">
         <span style="font-family:'Cinzel'; font-size:12px; color:var(--accent-gold); letter-spacing:4px; display:block; margin-bottom:20px;">PHILOSOPHY</span>
         <h3 class="essay-title">가치관: 당신의 가장 맑은 북극성</h3>
         <div class="essay-text">
-            성향이 '나는 누구인가'를 말해준다면, 가치관은 '나는 어떻게 살 것인가'를 정의하는 삶의 가장 사적인 언어입니다.
+            성향이 '나는 누구인가'를 말해준다면, 가치관은 '나는 어떻게 살 것인가'를 정의하는 삶의 가장 사적인 언어입니다. 나만의 가치관을 찾는 일은 세상의 소란 속에서도 나를 온전히 지탱해 줄 중심축을 발견하는 일입니다. 우리는 당신의 그 소중한 중심을 예술의 형태로 기록합니다.
         </div>
     </div>
 
-    <!-- 클래스 프로세스 이미지 (1_10.jpg) -->
-    <div class="img-card"><img src="1_10.jpg" alt="Process Guide"></div>
-    
+    <!-- 프로세스 안내 사진 (process_guide.jpg) -->
+    <div class="img-card">
+        <img src="process_guide.jpg" alt="Process Guide">
+    </div>
+
+    <!-- 상세 텍스트 복구: 커리큘럼 -->
     <div class="guide-header">
         <h2>CLASS PROCESS</h2>
+        <p>내면을 기록하는 4단계의 여정</p>
     </div>
     <div class="curriculum-box">
         <div class="step-item">
             <span class="step-num">STEP 01</span>
-            <div class="step-content"><b>가치관 워크북 작성</b><p>나를 정의하는 키워드를 추출합니다.</p></div>
+            <div class="step-content">
+                <b>가치관 워크북 작성</b>
+                <p>무드 아카이빙만의 질문지를 통해 나를 정의하는 3가지 핵심 키워드를 추출하고 이를 시각적 언어로 변환합니다.</p>
+            </div>
         </div>
         <div class="step-item">
             <span class="step-num">STEP 02</span>
-            <div class="step-content"><b>디자인 레이아웃 구상</b><p>컬러와 구도를 설계합니다.</p></div>
+            <div class="step-content">
+                <b>디자인 레이아웃 구상</b>
+                <p>선택한 키워드와 어울리는 컬러 조합을 찾고, 가치관을 상징할 메인 플라워와 소재들의 구도를 설계합니다.</p>
+            </div>
         </div>
         <div class="step-item">
             <span class="step-num">STEP 03</span>
-            <div class="step-content"><b>레진 아카이빙 제작</b><p>찰나의 가치관을 박제합니다.</p></div>
+            <div class="step-content">
+                <b>레진 아카이빙 제작</b>
+                <p>고품질 레진과 잉크 드롭 기법을 활용하여, 투명한 공간 안에 당신의 찰나와 가치관을 영원히 박제합니다.</p>
+            </div>
         </div>
     </div>
 
-    <!-- 작품 및 질문지 이미지 (3_10.jpg, 4_8.jpg) -->
-    <div class="img-card"><img src="3_10.jpg" alt="Artworks"></div>
-    <div class="img-card"><img src="4_8.jpg" alt="Questions"></div>
-
-    <!-- 텍스트: Q&A 그리드 -->
-    <div class="q-grid">
-        <div class="q-card"><b>Q.01 간직하고 싶은 나의 첫인상은?</b></div>
-        <div class="q-card"><b>Q.02 마음속 감정의 색채는?</b></div>
-        <div class="q-card"><b>Q.03 가장 필요한 위로의 형태는?</b></div>
-        <div class="q-card"><b>Q.04 지켜내고 싶은 핵심은?</b></div>
+    <!-- 작품 사진 (resin_work.jpg) -->
+    <div class="img-card">
+        <img src="resin_work.jpg" alt="Resin Artworks">
     </div>
 
-    <!-- 뮤직탭 섹션 (NFC키링.jpg) -->
+    <!-- 질문지 사진 (inner_landscape.jpg) -->
+    <div class="img-card">
+        <img src="inner_landscape.jpg" alt="Inner Landscape">
+    </div>
+
+    <!-- 상세 텍스트 복구: Q&A -->
+    <div class="q-grid">
+        <div class="q-card"><b>Q.01 간직하고 싶은 나의 첫인상은 무엇인가요?</b></div>
+        <div class="q-card"><b>Q.02 내 마음속 감정이 가진 고유한 색채는?</b></div>
+        <div class="q-card"><b>Q.03 가장 힘들 때 나를 일으켜 세우는 문장은?</b></div>
+        <div class="q-card"><b>Q.04 세상에 휘둘리지 않고 지켜내고 싶은 가치는?</b></div>
+    </div>
+
+    <!-- 뮤직탭 섹션 (NFC키링.jpg 로 파일명 확인 필요) -->
     <div class="music-tap-card">
-        <h3 class="music-title">Music Tap</h3>
+        <h3 class="music-title">Music Tap<br>나만의 선율을 아카이빙하다</h3>
         <div class="music-img-wrapper">
             <img src="NFC키링.jpg" alt="NFC Music Keyring">
         </div>
-        <p class="music-desc">탭하는 순간, 당신의 플레이리스트가 시작됩니다.</p>
+        <p class="music-desc">
+            NFC 기술을 담은 키링을 스마트폰에 탭하세요.<br>
+            당신이 박제한 그날의 무드와 음악이 즉시 재생됩니다.
+        </p>
     </div>
 
-    <!-- 감성 갤러리 (5.jpg ~ 10.jpg) -->
-    <div class="img-card"><img src="5.jpg" alt="Nature 1"></div>
+    <!-- 감성 사진들 (nature_1 ~ nature_6) -->
+    <div class="img-card"><img src="nature_1.jpg" alt="Nature 1"></div>
     <p class="script-text">"바람에 흔들리는 작은 풀잎에도 당신만의 계절이 머뭅니다."</p>
 
-    <div class="img-card"><img src="6.jpg" alt="Nature 2"></div>
-    <div class="img-card"><img src="7.jpg" alt="Nature 3"></div>
+    <div class="img-card"><img src="nature_2.jpg" alt="Nature 2"></div>
+    <div class="img-card"><img src="nature_3.jpg" alt="Nature 3"></div>
     <p class="script-text">"가장 나다운 모습으로 향하는 문을 여는 시간."</p>
 
-    <div class="img-card"><img src="8.jpg" alt="Nature 4"></div>
-    <div class="img-card"><img src="9.jpg" alt="Nature 5"></div>
-    <div class="img-card"><img src="10.jpg" alt="Nature 6"></div>
+    <div class="img-card"><img src="nature_4.jpg" alt="Nature 4"></div>
+    <div class="img-card"><img src="nature_5.jpg" alt="Nature 5"></div>
+    <div class="img-card"><img src="nature_6.jpg" alt="Nature 6"></div>
     <p class="script-text">"고요하게, 하지만 생생하게 나의 가치관을 박제하다."</p>
 
     <a href="https://naver.me/5bCIPlxw" target="_blank" class="btn-apply-large">START ARCHIVING</a>
 </section>
 
 <footer>
-    <p>© 2026 MOOD ARCHIVING. ENCAPSULATING MOMENTS.</p>
+    <span style="font-family:'Playball'; font-size:24px; display:block; margin-bottom:15px;">Mood Archiving</span>
+    <p style="opacity:0.5;">© 2026 MOOD ARCHIVING. ENCAPSULATING MOMENTS.</p>
 </footer>
 
 </body>
