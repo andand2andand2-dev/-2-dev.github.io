@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Mood Archiving | 가치관을 박제하다</title>
     <style>
-        /* [폰트 추가] 고급스러운 Cinzel, 키치한 느낌의 Montserrat, 감성적인 Nanum Myeongjo */
-        @import url('https://fonts.googleapis.com/css2?family=Playball&family=Cinzel:wght@400;700&family=Nanum+Myeongjo:wght@400;700&family=Montserrat:ital,wght@1,900&family=Song+Myung&display=swap');
+        /* [폰트 업데이트] 필기체 느낌의 Playball과 부드러운 한글 서체 추가 */
+        @import url('https://fonts.googleapis.com/css2?family=Playball&family=Cinzel:wght@400;700&family=Nanum+Myeongjo:wght@400;700&family=Nanum+Pen+Script&family=Dancing+Script:wght@700&display=swap');
 
         :root {
             --bg-color: #F8F6F1;
@@ -14,7 +14,6 @@
             --accent-gold: #c2956a;
             --line-color: rgba(29, 77, 63, 0.1);
             --music-blue: #4169E1;
-            --kitsch-pink: #FF69B4;
         }
 
         body { 
@@ -26,6 +25,7 @@
         .logo { font-family: 'Playball', cursive; font-size: 45px; color: var(--point-green); text-decoration: none; display: block; }
         .logo-sub { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 5px; color: var(--accent-gold); display: block; margin-top: 5px; font-weight: 700; }
         
+        /* ... 기존 버튼 스타일 동일 ... */
         .header-btn-group { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 25px; }
         .header-btn { font-family: 'Cinzel'; font-size: 10px; letter-spacing: 1px; text-decoration: none; padding: 10px 18px; border: 1px solid var(--point-green); color: var(--point-green); font-weight: 700; transition: 0.3s; }
         .header-btn:hover { background: var(--point-green); color: white; }
@@ -36,104 +36,75 @@
         .img-box { width: 100%; margin: 40px 0; border: 8px solid #fff; box-shadow: 0 15px 30px rgba(0,0,0,0.06); box-sizing: border-box; overflow: hidden; background: #eee; }
         .img-box img { width: 100%; height: auto; display: block; object-fit: cover; }
 
-        .essay-card { background: #fff; padding: 50px 25px; border-radius: 25px; border: 1px solid var(--line-color); margin-bottom: 50px; text-align: center; }
-        .essay-title { font-size: 22px; font-weight: 700; margin-bottom: 30px; color: var(--point-green); }
-        .essay-text { font-size: 16px; line-height: 2.2; color: #333; text-align: justify; text-align-last: center; }
-        .highlight { color: var(--accent-gold); font-weight: 700; border-bottom: 1px solid rgba(194, 149, 106, 0.4); }
-
-        /* [업그레이드] 뮤직탭 섹션 서체 및 디자인 */
+        /* [수정] 뮤직탭 섹션 디자인 - 필기체 중심 */
         .music-tap-card { 
-            background: linear-gradient(135deg, #4169E1 0%, #2A4BB5 100%); 
+            background: linear-gradient(135deg, #5078F2 0%, #3A5FCD 100%); 
             padding: 60px 25px; 
             border-radius: 40px; 
             margin: 60px 0; 
             color: #fff; 
             text-align: center;
-            box-shadow: 0 25px 50px rgba(42, 75, 181, 0.3);
-            position: relative;
+            box-shadow: 0 25px 50px rgba(65, 105, 225, 0.2);
         }
         .music-label { 
-            font-family: 'Montserrat', sans-serif; 
-            font-weight: 900; 
-            font-style: italic;
-            font-size: 14px; 
-            letter-spacing: 2px; 
+            font-family: 'Dancing Script', cursive; 
+            font-size: 20px; 
             display: block; 
-            margin-bottom: 20px; 
-            color: var(--kitsch-pink);
-            text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+            margin-bottom: 10px; 
+            color: #FFD700;
         }
         .music-title { 
-            font-family: 'Song Myung', serif; /* 고급스러운 명조체 */
-            font-size: 32px; 
-            font-weight: 700; 
-            margin-bottom: 30px; 
-            line-height: 1.2;
-            letter-spacing: -1px;
+            font-family: 'Nanum Pen Script', cursive; /* 부드러운 손글씨체 */
+            font-size: 42px; 
+            font-weight: 400; 
+            margin-bottom: 25px; 
+            line-height: 1.1;
+            word-break: keep-all;
         }
-        .music-title span { 
+        .music-title .eng-script { 
             font-family: 'Playball', cursive; 
-            font-size: 38px; 
-            color: #fff;
+            font-size: 30px; 
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            opacity: 0.9;
         }
         .music-img-wrapper { 
             width: 100%; 
             max-width: 320px; 
             margin: 0 auto 35px; 
-            border: 10px solid rgba(255,255,255,0.1);
-            border-radius: 30px; 
+            border: 8px solid rgba(255,255,255,0.2);
+            border-radius: 20px; 
             overflow: hidden; 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            transform: rotate(-2deg); /* 키치한 느낌을 위해 살짝 회전 */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
         .music-img-wrapper img { width: 100%; display: block; }
-        .music-info-box { 
-            background: rgba(255,255,255,0.05); 
-            padding: 30px 20px; 
-            border-radius: 25px; 
-            border: 1px solid rgba(255,255,255,0.2);
-            backdrop-filter: blur(10px); 
-        }
         .music-desc { 
-            font-family: 'Nanum Myeongjo', serif;
-            font-size: 16px; 
-            line-height: 1.8; 
+            font-family: 'Nanum Pen Script', cursive;
+            font-size: 24px; 
+            line-height: 1.4; 
             margin-bottom: 20px; 
-            color: #f0f0f0;
+            color: #ffffff;
+            letter-spacing: 0.5px;
         }
         .music-tag { 
-            font-family: 'Montserrat', sans-serif;
-            font-size: 13px; 
-            color: #FFD700; 
-            font-weight: 900; 
+            font-family: 'Dancing Script', cursive;
+            font-size: 18px; 
+            color: rgba(255, 255, 255, 0.7); 
             letter-spacing: 1px;
-            font-style: italic;
         }
 
-        .guide-header { text-align: center; margin: 60px 0 30px; }
-        .guide-header h2 { font-family: 'Cinzel'; font-size: 24px; letter-spacing: 4px; margin-bottom: 8px; }
-        .guide-header p { font-size: 13px; color: var(--accent-gold); margin: 0; }
-
-        .curriculum-box { background: #fff; padding: 35px 20px; border-radius: 25px; border: 1px solid var(--line-color); }
-        .step-item { display: flex; align-items: flex-start; margin-bottom: 25px; }
-        .step-num { font-family: 'Cinzel'; font-size: 15px; color: var(--accent-gold); font-weight: 700; min-width: 65px; }
-        .step-content b { font-size: 17px; display: block; margin-bottom: 6px; color: var(--point-green); }
-
-        .q-grid { display: grid; grid-template-columns: 1fr; gap: 15px; margin-top: 40px; }
-        .q-card { padding: 30px 20px; background: #fff; border-radius: 15px; border-left: 5px solid var(--accent-gold); }
-
+        /* ... 이하 나머지 스타일 동일 ... */
+        .essay-card { background: #fff; padding: 50px 25px; border-radius: 25px; border: 1px solid var(--line-color); margin-bottom: 50px; text-align: center; }
+        .essay-title { font-size: 22px; font-weight: 700; margin-bottom: 30px; color: var(--point-green); }
+        .essay-text { font-size: 16px; line-height: 2.2; color: #333; text-align: justify; text-align-last: center; }
         .btn-apply-large { display: block; width: 100%; max-width: 280px; margin: 60px auto; padding: 20px 0; border: 1px solid var(--accent-gold); color: var(--accent-gold); text-decoration: none; font-family: 'Cinzel'; font-weight: 700; font-size: 16px; letter-spacing: 3px; text-align: center; }
-        
         footer { background: #1a1a1a; color: #fff; padding: 70px 20px; text-align: center; font-size: 11px; }
 
         @media (min-width: 768px) {
             header { padding: 90px 20px 50px; }
             .logo { font-size: 75px; }
             .essay-card { padding: 80px 60px; }
-            .music-title { font-size: 42px; }
-            .q-grid { grid-template-columns: 1fr 1fr; }
+            .music-title { font-size: 56px; }
         }
     </style>
 </head>
@@ -154,80 +125,31 @@
         <img src="https://images.unsplash.com/photo-1596716768285-d62f4e3c92da?auto=format&fit=crop&w=1200&q=80" alt="Main Mood">
     </div>
 
-    <div class="essay-card">
-        <span style="font-family:'Cinzel'; font-size:12px; color:var(--accent-gold); letter-spacing:4px; display:block; margin-bottom:20px;">PHILOSOPHY</span>
-        <h3 class="essay-title">가치관: 당신의 가장 맑은 북극성</h3>
-        <div class="essay-text">
-            성향이 '나는 누구인가'를 말해준다면, 가치관은 '나는 어떻게 살 것인가'를 정의하는 삶의 가장 사적인 언어입니다. 나만의 가치관을 찾는 일은 세상의 소란 속에서도 나를 온전히 지탱해 줄 중심축을 발견하는 일입니다.
-        </div>
-    </div>
-
-    <!-- [업그레이드된 뮤직탭 섹션] -->
+    <!-- [업그레이드된 뮤직탭 섹션 - 필기체 버전] -->
     <div class="music-tap-card">
-        <span class="music-label">STREET KITSCH & MOOD</span>
+        <span class="music-label">Our Newest Goods</span>
         <h3 class="music-title">
-            <span>Music Tap</span>
-            뮤직탭 : 음악을 탭하다
+            <span class="eng-script">Music Tap</span>
+            음악을 탭하는 순간을 박제하다
         </h3>
         
         <div class="music-img-wrapper">
             <img src="NFC키링.jpg" alt="뮤직탭 고양이 플레이리스트">
         </div>
 
-        <div class="music-info-box">
-            <p class="music-desc">
-                내가 지정한 음악을 키링으로 제작합니다.<br>
-                <strong>키링을 핸드폰에 대는 찰나의 순간,</strong><br>
-                당신만의 선율이 아카이빙 됩니다.
-            </p>
-            <div class="music-tag">#NFC_VIBE #PLAYLIST_ARCHIVE #KITSCH</div>
-        </div>
+        <p class="music-desc">
+            소중한 음악을 키링에 담아보세요.<br>
+            폰을 키링에 대면 흘러나오는 당신만의 선율.
+        </p>
+        <div class="music-tag">#Music_Tab #Your_Own_Playlist</div>
     </div>
 
-    <div class="guide-header">
-        <h2>CLASS PROCESS</h2>
-        <p>내면을 기록하는 4단계 과정</p>
-    </div>
-    <div class="curriculum-box">
-        <div class="step-item">
-            <span class="step-num">STEP 01</span>
-            <div class="step-content">
-                <b>가치관 워크북 작성</b>
-                <p>나를 정의하는 3가지 키워드를 추출하고 시각적 언어로 변환합니다.</p>
-            </div>
+    <div class="essay-card">
+        <span style="font-family:'Cinzel'; font-size:12px; color:var(--accent-gold); letter-spacing:4px; display:block; margin-bottom:20px;">PHILOSOPHY</span>
+        <h3 class="essay-title">가치관: 당신의 가장 맑은 북극성</h3>
+        <div class="essay-text">
+            성향이 '나는 누구인가'를 말해준다면, 가치관은 '나는 어떻게 살 것인가'를 정의하는 삶의 가장 사적인 언어입니다.
         </div>
-        <div class="step-item">
-            <span class="step-num">STEP 02</span>
-            <div class="step-content">
-                <b>디자인 레이아웃 구상</b>
-                <p>가치관을 닮은 컬러와 메인 플라워의 구도를 설계합니다.</p>
-            </div>
-        </div>
-        <div class="step-item">
-            <span class="step-num">STEP 03</span>
-            <div class="step-content">
-                <b>레진 아카이빙 제작</b>
-                <p>잉크 드롭 기법을 활용하여 찰나의 가치관을 박제합니다.</p>
-            </div>
-        </div>
-        <div class="step-item">
-            <span class="step-num">STEP 04</span>
-            <div class="step-content">
-                <b>아카이빙 및 에필로그</b>
-                <p>작품의 이름을 붙이고 나에게 전하는 약속을 기록합니다.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="q-grid">
-        <div class="q-card"><b>Q.01 간직하고 싶은 나의 첫인상은?</b></div>
-        <div class="q-card"><b>Q.02 마음속 감정의 색채는?</b></div>
-        <div class="q-card"><b>Q.03 가장 필요한 위로의 형태는?</b></div>
-        <div class="q-card"><b>Q.04 지켜내고 싶은 핵심은?</b></div>
-        <div class="q-card"><b>Q.05 사적인 서사를 담은 물건은?</b></div>
-        <div class="q-card"><b>Q.06 투영하고 싶은 심연의 모습은?</b></div>
-        <div class="q-card"><b>Q.07 건네고 싶은 따스한 약속은?</b></div>
-        <div class="q-card"><b>Q.08 당신의 본질은 무엇인가요?</b></div>
     </div>
 
     <a href="https://naver.me/5bCIPlxw" target="_blank" class="btn-apply-large">Apply Now</a>
