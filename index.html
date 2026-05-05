@@ -14,7 +14,7 @@
             --text-main: #5A635F; 
         }
 
-        /* [모바일 최적화] 가로 스크롤 방지 및 기본 폰트 설정 */
+        /* [핵심] 모바일 가로 밀림 방지 및 기본 설정 */
         body { 
             color: var(--text-main); font-family: 'Nanum Myeongjo', serif; margin: 0; padding: 0;
             line-height: 1.8; word-break: keep-all; background-color: var(--bg-color); 
@@ -23,7 +23,7 @@
 
         .container { width: 100%; max-width: 1100px; margin: 0 auto; box-sizing: border-box; padding: 0 20px; }
 
-        /* ✨ Header - 모바일에서 유동적인 크기 */
+        /* ✨ Header - 반응형 크기 조절 */
         header { padding: 60px 20px 30px; text-align: center; }
         .logo { font-family: 'Playball', cursive; font-size: 45px; color: var(--point-color); text-decoration: none; display: block; }
         .logo-sub { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 5px; color: var(--accent-gold); display: block; margin-top: 10px; text-transform: uppercase; }
@@ -31,7 +31,7 @@
         .sns-nav { margin: 25px 0; }
         .sns-nav a { font-family: 'Cinzel'; font-size: 10px; text-decoration: none; color: var(--accent-gold); letter-spacing: 2px; margin: 0 10px; font-weight: 700; }
 
-        /* 🔘 버튼 - 모바일에서 나란히 배치 */
+        /* 🔘 버튼 - 모바일 자동 정렬 */
         .cta-group { display: flex; justify-content: center; gap: 10px; margin: 30px 0; }
         .btn { 
             padding: 15px 10px; font-family: 'Cinzel'; font-size: 10px; letter-spacing: 1px; 
@@ -41,23 +41,21 @@
         .btn-primary { background: var(--point-color); color: #fff; }
         .btn-secondary { border: 1px solid var(--point-color); color: var(--point-color); }
 
-        /* 📸 사진 프레임 (폴라로이드 스타일 유지) */
+        /* 📸 사진 프레임 (마우스 오버/터치 효과 유지) */
         .img-wrapper { 
             position: relative; overflow: hidden; border: 6px solid #fff; 
             box-shadow: 0 8px 20px rgba(0,0,0,0.05); margin-bottom: 50px; cursor: pointer;
         }
         .img-wrapper img { width: 100%; display: block; transition: transform 0.6s; }
         
-        /* 사진 위 감성 문구 오버레이 (터치 시 나타남) */
         .img-overlay { 
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
             background: rgba(141, 163, 153, 0.9); color: #fff; display: flex; align-items: center; justify-content: center;
             opacity: 0; transition: opacity 0.4s; padding: 20px; text-align: center; box-sizing: border-box;
         }
         .img-wrapper:active .img-overlay, .img-wrapper:hover .img-overlay { opacity: 1; }
-        .img-overlay p { font-size: 15px; line-height: 1.6; }
 
-        /* 📝 가치관 질문지 */
+        /* 📝 가치관 질문지 섹션 */
         .section-title { text-align: center; margin: 80px 0 40px; }
         .section-title h2 { font-size: 28px; font-weight: 400; color: var(--text-main); margin: 5px 0; }
         .section-title span { font-family: 'Dancing Script'; font-size: 24px; color: var(--accent-gold); }
@@ -68,36 +66,36 @@
         .q-item b { font-family: 'Cinzel'; color: var(--accent-gold); font-size: 10px; letter-spacing: 2px; display: block; margin-bottom: 8px; }
         .q-item p { font-size: 15px; margin: 0; }
 
-        /* 🎵 뮤직탭 섹션 (NFC키링.png 확대 반영) */
+        /* 🎵 뮤직탭 섹션 (NFC키링.jpg 최적화) */
         .music-tap-banner { 
             background: linear-gradient(145deg, #2D3633 0%, #1A1F1D 100%); 
             color: #fff; padding: 60px 15px; text-align: center; border-radius: 20px; margin: 80px 0;
         }
         .music-tap-banner h3 { font-family: 'Playball', cursive; font-size: 55px; color: var(--accent-gold); margin-bottom: 20px; }
-        .music-tap-banner .main-text { font-size: 20px; font-weight: 700; color: #F9F7F2; margin-bottom: 30px; }
+        .music-tap-banner .main-text { font-size: 20px; font-weight: 700; color: #F9F7F2; margin-bottom: 30px; line-height: 1.4; }
         
         .cat-img-container { width: 100%; max-width: 500px; margin: 0 auto 30px; }
         .cat-img-container img { 
-            width: 90%; /* 모바일에서 꽉 차게 확대 */
+            width: 90%; /* 모바일에서 큼직하게 확대 */
             height: auto; border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); 
         }
 
-        .music-tap-banner .sub-text { font-size: 14px; opacity: 0.8; margin-bottom: 30px; }
+        .music-tap-banner .sub-text { font-size: 14px; opacity: 0.8; margin-bottom: 30px; line-height: 1.8; }
 
-        /* 🖼️ 갤러리 그리드 - 모바일 2열 */
+        /* 🖼️ 갤러리 그리드 - 모바일 2열 / PC 3열 */
         .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 100px; }
         .gallery-grid .img-wrapper { margin-bottom: 0; border: 4px solid #fff; }
 
-        /* PC 버전 전용 (데스크탑에서 볼 때) */
+        /* 💻 데스크탑 전용 스타일 */
         @media (min-width: 768px) {
             .logo { font-size: 85px; }
             .logo-sub { font-size: 13px; letter-spacing: 12px; }
             .question-grid { grid-template-columns: repeat(2, 1fr); gap: 60px; }
             .gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 25px; }
-            .music-tap-banner { padding: 150px 40px; }
+            .music-tap-banner { padding: 120px 40px; }
             .music-tap-banner h3 { font-size: 100px; }
             .music-tap-banner .main-text { font-size: 34px; }
-            .img-overlay p { font-size: 18px; }
+            .cat-img-container img { width: 100%; }
         }
     </style>
 </head>
@@ -117,69 +115,79 @@
 </header>
 
 <div class="container">
-    <!-- 메인 이미지 -->
+    <!-- 1. 메인 로고 사진 -->
     <div class="img-wrapper">
         <img src="main_logo..jpg">
         <div class="img-overlay"><p>"투명함 속에 담긴 당신만의 서사를 발견해 보세요."</p></div>
     </div>
 
-    <!-- 가치관 질문지 -->
+    <!-- 가치관 질문지 섹션 -->
     <section class="section-title">
         <span>The Inner Landscape</span>
         <h2>나의 내면 풍경</h2>
     </section>
     
+    <!-- 2. 내면 풍경 사진 -->
     <div class="img-wrapper">
         <img src="inner_landscape..jpg">
         <div class="img-overlay"><p>"우연이 만드는 자연스러운 아름다움을 기록합니다."</p></div>
     </div>
 
+    <!-- 질문 리스트 -->
     <div class="question-box">
         <div class="question-grid">
-            <div class="q-item"><b>01. FIRST IMPRESSION</b><p>기억되고 싶은 당신의 첫인상은?</p></div>
-            <div class="q-item"><b>02. ENERGY COLOR</b><p>현재 당신의 에너지를 색깔로 표현한다면?</p></div>
-            <div class="q-item"><b>03. CORE KEYWORD</b><p>삶에서 가장 소중한 키워드는?</p></div>
-            <div class="q-item"><b>04. EMOTIONAL INK</b><p>레진 속 잉크가 상징하는 감정은?</p></div>
-            <div class="q-item"><b>05. MINDSET</b><p>기억하고 싶은 마음가짐은?</p></div>
-            <div class="q-item"><b>06. BALANCE</b><p>당신의 가치관은 중심인가요, 조화인가요?</p></div>
-            <div class="q-item"><b>07. COMFORT</b><p>지친 끝에 필요한 위로의 형태는?</p></div>
-            <div class="q-item"><b>08. SYMBOL</b><p>오늘 마음속에 머물러 있는 물건의 의미는?</p></div>
+            <div class="q-item"><b>01. FIRST IMPRESSION</b><p>기억되고 싶은 당신의 첫인상은 어떤 느낌인가요?</p></div>
+            <div class="q-item"><b>02. ENERGY COLOR</b><p>현재 당신의 에너지를 색깔로 표현한다면 어떤 색인가요?</p></div>
+            <div class="q-item"><b>03. CORE KEYWORD</b><p>삶에서 가장 소중한 키워드는 무엇인가요?</p></div>
+            <div class="q-item"><b>04. EMOTIONAL INK</b><p>레진 속 잉크 색채가 상징하는 당신의 감정은 무엇인가요?</p></div>
+            <div class="q-item"><b>05. MINDSET</b><p>이 작품을 바라볼 때마다 기억하고 싶은 마음가짐은?</p></div>
+            <div class="q-item"><b>06. BALANCE</b><p>당신의 가치관은 '중심'에 있나요, 아니면 '조화'롭나요?</p></div>
+            <div class="q-item"><b>07. COMFORT</b><p>지친 하루 끝에 필요한 위로의 형태는 무엇인가요?</p></div>
+            <div class="q-item"><b>08. SYMBOL</b><p>오늘 마음속에 머물러 있는 물건의 의미는 무엇인가요?</p></div>
         </div>
     </div>
 
-    <!-- 뮤직탭 섹션 (보내주신 NFC키링.png 반영) -->
+    <!-- 3. 프로세스 가이드 사진 -->
+    <div class="img-wrapper">
+        <img src="process_guide..jpg">
+        <div class="img-overlay"><p>"당신의 가치관을 시각적으로 번역하는 여정입니다."</p></div>
+    </div>
+
+    <!-- 🎵 뮤직탭 섹션 (고양이 사진 확대 반영) -->
     <section class="music-tap-banner">
         <h3>Music Tap</h3>
         <p class="main-text">"당신의 공간에<br>가치관의 선율을 채우세요."</p>
         
         <div class="cat-img-container">
-            <img src="NFC키링.png" alt="NFC Keyring">
+            <!-- 확장자를 .jpg로 수정했습니다 -->
+            <img src="NFC키링.jpg" alt="NFC Keyring Music Tap">
         </div>
         
         <p class="sub-text">
-            작품에 스마트폰을 가볍게 탭하는 순간,<br>큐레이팅된 선율이 일상을 물들입니다.
+            무드 아카이빙 작품에 스마트폰을 가볍게 탭하는 순간,<br>
+            당신만을 위해 큐레이팅된 선율이 일상을 음악적인 온도로 물들입니다.
         </p>
         
         <a href="https://naver.me/xUZtVs0N" class="btn" style="background:var(--accent-gold); color:#1A1F1D; border:none; display:inline-block; width:180px;">Music Select</a>
     </section>
 
-    <!-- 갤러리 6장 -->
+    <!-- 갤러리 (남은 사진 6장) -->
     <div class="gallery-grid">
         <div class="img-wrapper"><img src="nature_1..jpg"><div class="img-overlay"><p>고요한 숲</p></div></div>
-        <div class="img-wrapper"><img src="nature_2..jpg"><div class="img-overlay"><p>바다의 신뢰</p></div></div>
+        <div class="img-wrapper"><img src="nature_2..jpg"><div class="img-overlay"><p>바다의 깊이</p></div></div>
         <div class="img-wrapper"><img src="nature_3..jpg"><div class="img-overlay"><p>햇살의 자유</p></div></div>
         <div class="img-wrapper"><img src="nature_4..jpg"><div class="img-overlay"><p>변치 않는 마음</p></div></div>
-        <div class="img-wrapper"><img src="nature_5..jpg"><div class="img-overlay"><p>부드러운 위로</p></div></div>
+        <div class="img-wrapper"><img src="nature_5..jpg"><div class="img-overlay"><p>따뜻한 위로</p></div></div>
         <div class="img-wrapper"><img src="nature_6..jpg"><div class="img-overlay"><p>나다움의 방식</p></div></div>
     </div>
 
     <div class="cta-group" style="margin-bottom: 100px;">
-        <a href="https://naver.me/5bCIPlxw" class="btn btn-primary" style="max-width: 100%;">Start Archiving</a>
+        <a href="https://naver.me/5bCIPlxw" class="btn btn-primary" style="max-width: 100%;">Start Your Archiving</a>
     </div>
 </div>
 
 <footer style="text-align: center; padding: 40px 20px; background: #EEEBE3;">
-    <p style="font-size:10px; opacity:0.5;">© 2026 Mood Archiving.</p>
+    <p style="font-size:10px; opacity:0.5; letter-spacing: 1px;">© 2026 Mood Archiving. All Rights Reserved.</p>
 </footer>
 
 </body>
