@@ -38,7 +38,7 @@
         .btn-primary { background: var(--point-color); color: #fff; }
         .btn-secondary { border: 1px solid var(--point-color); color: var(--point-color); }
 
-        /* 사진 및 오버레이 설명 가이드 */
+        /* 사진 및 오버레이 */
         .img-wrapper { 
             position: relative; overflow: hidden; border: 6px solid #fff; 
             box-shadow: 0 8px 20px rgba(0,0,0,0.05); margin-bottom: 50px; cursor: pointer;
@@ -53,13 +53,11 @@
         }
         .img-wrapper:hover .img-overlay, .img-wrapper:active .img-overlay { opacity: 1; }
         .img-overlay .category { font-family: 'Cinzel'; font-size: 11px; letter-spacing: 4px; color: var(--accent-gold); margin-bottom: 12px; font-weight: 700; }
-        .img-overlay p { font-size: 14px; line-height: 1.7; font-weight: 300; margin: 0; word-break: keep-all; }
+        .img-overlay p { font-size: 14px; line-height: 1.7; margin: 0; }
 
-        /* 가치관 & 레진 섹션 스타일 */
+        /* 가치관 & 클래스 정보 */
         .content-section { margin: 100px 0; text-align: center; }
-        .philosophy-box { max-width: 800px; margin: 0 auto; padding: 0 10px; }
-        .philosophy-box h4 { font-family: 'Cinzel'; font-size: 14px; color: var(--accent-gold); letter-spacing: 3px; margin-bottom: 25px; }
-        .philosophy-box p { font-size: 17px; line-height: 2.2; color: var(--text-main); }
+        .philosophy-box p { font-size: 17px; line-height: 2.2; max-width: 800px; margin: 0 auto; color: var(--text-main); }
         .philosophy-box b { color: var(--point-color); font-weight: 700; }
 
         .resin-detail-card { 
@@ -68,8 +66,7 @@
             border: 1px solid rgba(212, 185, 150, 0.3);
         }
         .resin-detail-card .label { font-family: 'Cinzel'; font-size: 12px; color: var(--accent-gold); display: block; margin-bottom: 10px; }
-        .resin-detail-card h3 { font-size: 24px; color: var(--point-color); margin-top: 0; margin-bottom: 25px; }
-        .resin-detail-card p { font-size: 15px; color: #777; margin-bottom: 30px; }
+        .resin-detail-card h3 { font-size: 24px; color: var(--point-color); margin-bottom: 25px; }
         .feature-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .feature-item b { display: block; color: var(--text-main); margin-bottom: 5px; font-size: 14px; }
         .feature-item span { font-size: 13px; color: #888; }
@@ -84,16 +81,24 @@
         .q-item b { font-family: 'Cinzel'; color: var(--accent-gold); font-size: 10px; letter-spacing: 2px; display: block; margin-bottom: 8px; }
         .q-item p { font-size: 15px; margin: 0; }
 
-        /* 뮤직탭 배너 */
+        /* 🎵 뮤직탭 심화 설명 섹션 */
         .music-tap-banner { 
             background: linear-gradient(145deg, #2D3633 0%, #1A1F1D 100%); 
-            color: #fff; padding: 60px 15px; text-align: center; border-radius: 20px; margin: 80px 0;
+            color: #fff; padding: 60px 15px; text-align: center; border-radius: 30px; margin: 80px 0;
         }
-        .music-tap-banner h3 { font-family: 'Playball', cursive; font-size: 55px; color: var(--accent-gold); margin-bottom: 20px; }
-        .music-tap-banner .main-text { font-size: 20px; font-weight: 700; color: #F9F7F2; margin-bottom: 30px; line-height: 1.4; }
+        .music-tap-banner h3 { font-family: 'Playball', cursive; font-size: 55px; color: var(--accent-gold); margin-bottom: 15px; }
+        .music-tap-banner .main-text { font-size: 20px; font-weight: 700; color: #F9F7F2; margin-bottom: 30px; }
         
-        .cat-img-container { width: 100%; max-width: 500px; margin: 0 auto 30px; }
-        .cat-img-container img { width: 90%; height: auto; border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+        .cat-img-container { width: 100%; max-width: 500px; margin: 0 auto 40px; }
+        .cat-img-container img { width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+
+        .music-detail-grid { 
+            display: grid; grid-template-columns: 1fr; gap: 25px; text-align: left; 
+            max-width: 800px; margin: 0 auto 50px; padding: 0 15px;
+        }
+        .music-info-item { border-left: 2px solid var(--accent-gold); padding-left: 20px; }
+        .music-info-item h4 { font-size: 16px; margin: 0 0 8px 0; color: var(--accent-gold); font-family: 'Cinzel'; }
+        .music-info-item p { font-size: 14px; margin: 0; opacity: 0.8; line-height: 1.6; }
 
         .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 100px; }
 
@@ -105,7 +110,7 @@
             .music-tap-banner { padding: 120px 40px; }
             .music-tap-banner h3 { font-size: 100px; }
             .music-tap-banner .main-text { font-size: 34px; }
-            .img-overlay p { font-size: 16px; }
+            .music-detail-grid { grid-template-columns: 1fr 1fr; }
         }
     </style>
 </head>
@@ -126,33 +131,29 @@
 
 <div class="container">
 
-    <!-- 🏷️ 브랜드 가치관 (PHILOSOPHY) -->
+    <!-- 브랜드 가치관 -->
     <section class="content-section">
         <div class="philosophy-box">
-            <h4>OUR PHILOSOPHY</h4>
             <p>
                 무드 아카이빙은 <b>'변하지 않는 가치'</b>의 힘을 믿습니다. <br>
-                빠르게 변하는 세상 속에서 우리는 당신의 가장 고유한 순간과 신념을 포착합니다. <br>
-                우리의 작업은 단순한 수공예를 넘어, <br>
-                당신의 <b>내면 풍경을 영원히 지속되는 오브제</b>로 치환하는 예술적 기록입니다.
+                당신의 가장 고유한 순간과 신념을 포착하여, <br>
+                <b>내면 풍경을 영원히 지속되는 오브제</b>로 치환하는 예술적 기록을 지향합니다.
             </p>
         </div>
     </section>
 
-    <!-- 메인 이미지 설명 -->
     <div class="img-wrapper">
         <img src="main_logo..jpg">
         <div class="img-overlay">
             <span class="category">ARCHIVE 01. ESSENCE</span>
-            <p>투명한 고체 속에 갇힌 잉크의 흐름은 멈춰진 시간을 상징합니다. 당신의 본질을 담아내는 무드 아카이빙의 첫 번째 시작입니다.</p>
+            <p>투명함 속에 갇힌 잉크의 흐름은 멈춰진 시간을 상징합니다. 당신의 본질을 담아내는 무드 아카이빙의 시작입니다.</p>
         </div>
     </div>
 
-    <!-- 🧪 레진아트 전문 설명 (RESIN ART DETAIL) -->
+    <!-- 레진아트 전문 설명 -->
     <section class="resin-detail-card">
         <span class="label">CRAFTMANSHIP</span>
         <h3>The Art of Resin Archiving</h3>
-        <p>고도의 집중력과 정교한 조색 기술을 요하는 레진 아트는 액체가 고체로 변하는 찰나의 미학을 담습니다. 무드 아카이빙은 최고급 레진을 사용하여 맑고 깊은 투명도를 구현합니다.</p>
         <div class="feature-list">
             <div class="feature-item">
                 <b>Fluid Expression</b>
@@ -162,14 +163,6 @@
                 <b>Timeless Preservation</b>
                 <span>시간이 흘러도 변치 않는 내구성은 박제된 가치의 영속성을 보장합니다.</span>
             </div>
-            <div class="feature-item">
-                <b>Depth of Layering</b>
-                <span>여러 층으로 겹쳐진 레이어는 깊이감 있는 입체적인 무드를 형성합니다.</span>
-            </div>
-            <div class="feature-item">
-                <b>Light Interaction</b>
-                <span>빛의 각도에 따라 다르게 산란되는 색채는 작품에 생명력을 불어넣습니다.</span>
-            </div>
         </div>
     </section>
 
@@ -178,12 +171,11 @@
         <h2>나의 내면 풍경</h2>
     </section>
     
-    <!-- 내면 풍경 이미지 설명 -->
     <div class="img-wrapper">
         <img src="inner_landscape..jpg">
         <div class="img-overlay">
             <span class="category">ARCHIVE 02. LANDSCAPE</span>
-            <p>질감과 색채가 층층이 쌓이는 과정은 자아가 형성되는 여정과 같습니다. 당신의 마음이 머무는 고유한 풍경을 시각화합니다.</p>
+            <p>질감과 색채가 층층이 쌓이는 과정은 자아가 형성되는 여정과 같습니다. 당신의 마음이 머무는 고유한 풍경을 시가화합니다.</p>
         </div>
     </div>
 
@@ -205,59 +197,56 @@
         <img src="process_guide..jpg">
         <div class="img-overlay">
             <span class="category">ARCHIVE 03. DIALOGUE</span>
-            <p>단순한 제작을 넘어 질문과 답변을 통해 스스로를 마주하는 시간을 갖습니다. 모든 작품은 심도 깊은 상담을 거쳐 완성됩니다.</p>
+            <p>단순한 제작을 넘어 질문과 답변을 통해 스스로를 마주하는 시간을 갖습니다.</p>
         </div>
     </div>
 
-    <!-- 🎵 뮤직탭 섹션 (고양이 사진 적용) -->
+    <!-- 🎵 뮤직탭 심화 설명 섹션 (NFC 상세 내용 추가) -->
     <section class="music-tap-banner">
         <h3>Music Tap</h3>
-        <p class="main-text">"당신의 공간에<br>가치관의 선율을 채우세요."</p>
+        <p class="main-text">"시각적 감상을 넘어,<br>공간을 선율로 채우는 경험"</p>
         
         <div class="cat-img-container">
             <div class="img-wrapper" style="border:none; margin-bottom:0; background:none;">
                 <img src="nfc_keyring.jpg" alt="NFC Keyring Music Tap">
-                <div class="img-overlay" style="border-radius:15px;">
+                <div class="img-overlay" style="border-radius:20px;">
                     <span class="category">SONIC MEMORY</span>
                     <p>나른한 오후의 고양이처럼 평온한 음악이 곁을 지키길. 작품에 탭하는 순간, 공간은 당신만의 선율로 완성됩니다.</p>
                 </div>
             </div>
         </div>
+
+        <!-- 뮤직탭 상세 설명 그리드 -->
+        <div class="music-detail-grid">
+            <div class="music-info-item">
+                <h4>NFC TECHNOLOGY</h4>
+                <p>별도의 앱 설치 없이, 스마트폰을 작품 뒷면에 가볍게 탭하는 것만으로 당신만의 플레이리스트가 즉시 실행됩니다.</p>
+            </div>
+            <div class="music-info-item">
+                <h4>PERSONAL CURATION</h4>
+                <p>제작 과정에서 나눈 당신의 가치관 질문지를 바탕으로, 작품의 무드와 가장 어울리는 선율을 세밀하게 매칭해 드립니다.</p>
+            </div>
+            <div class="music-info-item">
+                <h4>PERMANENT CONNECTION</h4>
+                <p>레진 속에 박제된 NFC 칩은 반영구적인 수명을 가지며, 언제 어디서든 당신의 가치를 소리로 불러오는 통로가 됩니다.</p>
+            </div>
+            <div class="music-info-item">
+                <h4>EMOTIONAL SYNC</h4>
+                <p>시각적 오브제와 청각적 음악이 결합하여, 작품을 마주하는 매 순간 당신의 지향점을 더욱 선명하게 상기시킵니다.</p>
+            </div>
+        </div>
         
-        <p class="sub-text">
-            무드 아카이빙 작품에 스마트폰을 가볍게 탭하는 순간,<br>
-            당신만을 위해 큐레이팅된 선율이 일상을 음악적인 온도로 물들입니다.
-        </p>
-        
-        <a href="https://naver.me/xUZtVs0N" class="btn" style="background:var(--accent-gold); color:#1A1F1D; border:none; display:inline-block; width:180px;">Music Select</a>
+        <a href="https://naver.me/xUZtVs0N" class="btn" style="background:var(--accent-gold); color:#1A1F1D; border:none; display:inline-block; width:200px;">Music Selection</a>
     </section>
 
-    <!-- 갤러리 섹션 (자연 테마 전문 설명 추가) -->
+    <!-- 갤러리 섹션 -->
     <div class="gallery-grid">
-        <div class="img-wrapper">
-            <img src="nature_1..jpg">
-            <div class="img-overlay"><p>깊은 숲의 정적을 담은<br><b>SILENCE ARCHIVE</b></p></div>
-        </div>
-        <div class="img-wrapper">
-            <img src="nature_2..jpg">
-            <div class="img-overlay"><p>해안선의 신뢰를 투영한<br><b>HORIZON ARCHIVE</b></p></div>
-        </div>
-        <div class="img-wrapper">
-            <img src="nature_3..jpg">
-            <div class="img-overlay"><p>햇살의 조각을 박제한<br><b>LUX ARCHIVE</b></p></div>
-        </div>
-        <div class="img-wrapper">
-            <img src="nature_4..jpg">
-            <div class="img-overlay"><p>단단한 신념의 결을 살린<br><b>CORE ARCHIVE</b></p></div>
-        </div>
-        <div class="img-wrapper">
-            <img src="nature_5..jpg">
-            <div class="img-overlay"><p>새벽의 차분한 온도를 담은<br><b>DAWN ARCHIVE</b></p></div>
-        </div>
-        <div class="img-wrapper">
-            <img src="nature_6..jpg">
-            <div class="img-overlay"><p>노을의 유연한 마무리를 담은<br><b>GLOW ARCHIVE</b></p></div>
-        </div>
+        <div class="img-wrapper"><img src="nature_1..jpg"><div class="img-overlay"><p>SILENCE ARCHIVE</p></div></div>
+        <div class="img-wrapper"><img src="nature_2..jpg"><div class="img-overlay"><p>HORIZON ARCHIVE</p></div></div>
+        <div class="img-wrapper"><img src="nature_3..jpg"><div class="img-overlay"><p>LUX ARCHIVE</p></div></div>
+        <div class="img-wrapper"><img src="nature_4..jpg"><div class="img-overlay"><p>CORE ARCHIVE</p></div></div>
+        <div class="img-wrapper"><img src="nature_5..jpg"><div class="img-overlay"><p>DAWN ARCHIVE</p></div></div>
+        <div class="img-wrapper"><img src="nature_6..jpg"><div class="img-overlay"><p>GLOW ARCHIVE</p></div></div>
     </div>
 
     <div class="cta-group" style="margin-bottom: 100px;">
