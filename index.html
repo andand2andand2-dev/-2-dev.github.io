@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Mood Archiving | 가치관을 박제하다</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playball&family=Cinzel:wght@400;700&family=Nanum+Myeongjo:wght@400;700&family=Nanum+Pen+Script&display=swap');
+        /* 필기체를 위해 Dancing Script 추가 */
+        @import url('https://fonts.googleapis.com/css2?family=Playball&family=Cinzel:wght@400;700&family=Nanum+Myeongjo:wght@400;700&family=Nanum+Pen+Script&family=Dancing+Script:wght@400;600&display=swap');
 
         :root {
             --bg-color: #F8F6F1;
@@ -35,6 +36,32 @@
         .img-card { width: 100%; margin: 40px 0; background: #fff; padding: 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border-radius: 5px; box-sizing: border-box; }
         .img-card img { width: 100%; height: auto; display: block; border-radius: 2px; }
 
+        /* 뮤직탭 섹션 수정 */
+        .music-tap-card { 
+            background: linear-gradient(135deg, #5078F2 0%, #3A5FCD 100%); 
+            padding: 80px 25px; border-radius: 40px; margin: 80px 0; color: #fff; text-align: center;
+        }
+        /* 영문 타이틀: Dancing Script (얇고 큰 필기체) */
+        .music-title-en { 
+            font-family: 'Dancing Script', cursive; 
+            font-size: 72px; 
+            font-weight: 400; 
+            margin: 0; 
+            line-height: 1; 
+            letter-spacing: 1px;
+        }
+        /* 한글 서브 타이틀: 얇은 펜글씨 */
+        .music-title-ko { 
+            font-family: 'Nanum Pen Script', cursive; 
+            font-size: 32px; 
+            font-weight: 400; 
+            margin: 10px 0 40px; 
+            opacity: 0.9;
+        }
+        .music-img-wrapper { width: 85%; max-width: 320px; margin: 0 auto 40px; border: 8px solid rgba(255,255,255,0.2); border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.2); }
+        .music-img-wrapper img { width: 100%; display: block; }
+        .music-desc { font-family: 'Nanum Pen Script', cursive; font-size: 28px; line-height: 1.5; }
+
         .essay-card { background: #fff; padding: 60px 25px; border-radius: 25px; border: 1px solid var(--line-color); margin: 50px 0; text-align: center; }
         .essay-title { font-size: 22px; font-weight: 700; margin-bottom: 30px; color: var(--point-green); }
         .essay-text { font-size: 16px; line-height: 2.2; color: #333; text-align: center; }
@@ -50,30 +77,20 @@
         .q-grid { display: grid; grid-template-columns: 1fr; gap: 15px; margin: 60px 0; }
         .q-card { padding: 30px 20px; background: #fff; border-radius: 15px; border-left: 5px solid var(--accent-gold); text-align: left; box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
 
-        .music-tap-card { 
-            background: linear-gradient(135deg, #5078F2 0%, #3A5FCD 100%); 
-            padding: 60px 25px; border-radius: 40px; margin: 80px 0; color: #fff; text-align: center;
-        }
-        .music-title { font-family: 'Nanum Pen Script', cursive; font-size: 42px; margin: 0 0 25px; line-height: 1.1; }
-        .music-img-wrapper { width: 85%; max-width: 320px; margin: 0 auto 35px; border: 8px solid rgba(255,255,255,0.2); border-radius: 20px; overflow: hidden; }
-        .music-img-wrapper img { width: 100%; display: block; }
-        .music-desc { font-family: 'Nanum Pen Script', cursive; font-size: 24px; }
-
         .script-text { font-family: 'Nanum Pen Script', cursive; font-size: 28px; color: var(--point-green); text-align: center; margin: 20px 0 60px; opacity: 0.8; }
-
-        .btn-apply-large { display: block; width: 100%; max-width: 280px; margin: 80px auto; padding: 20px 0; border: 1px solid var(--accent-gold); color: var(--accent-gold); text-decoration: none; font-family: 'Cinzel'; font-weight: 700; font-size: 16px; letter-spacing: 3px; text-align: center; }
+        .btn-apply-large { display: block; width: 100%; max-width: 280px; margin: 80px auto; padding: 20px 0; border: 1px solid var(--accent-gold); color: var(--accent-gold); text-decoration: none; font-family: 'Cinzel'; font-weight: 700; font-size: 16px; letter-spacing: 3px; text-align: center; transition: 0.3s; }
+        .btn-apply-large:hover { background: var(--accent-gold); color: #fff; }
         
         footer { background: #1a1a1a; color: #fff; padding: 70px 20px; text-align: center; font-size: 11px; }
 
         @media (min-width: 768px) {
             .q-grid { grid-template-columns: 1fr 1fr; }
-            .music-title { font-size: 56px; }
+            .music-title-en { font-size: 90px; }
         }
     </style>
 </head>
 <body>
 
-<!-- 메인 사진 (스크린샷 기반 수정) -->
 <div class="main-hero">
     <img src="main_logo..jpg" alt="메인">
 </div>
@@ -94,7 +111,6 @@
         <div class="essay-text">나만의 가치관을 찾는 일은 세상의 소란 속에서도 나를 온전히 지탱해 줄 중심축을 발견하는 일입니다. 우리는 당신의 그 소중한 중심을 예술의 형태로 기록합니다.</div>
     </div>
 
-    <!-- 프로세스 가이드 (스크린샷 기반 수정) -->
     <div class="img-card"><img src="process_guide..jpg" alt="가이드"></div>
 
     <div class="guide-header"><h2>CLASS PROCESS</h2></div>
@@ -104,10 +120,7 @@
         <div class="step-item"><span class="step-num">STEP 03</span><div class="step-content"><b>레진 아카이빙 제작</b><p>당신의 찰나와 가치관을 투명하게 박제합니다.</p></div></div>
     </div>
 
-    <!-- 작품 사진 (스크린샷 기반 수정) -->
     <div class="img-card"><img src="resin_work..jpg" alt="작품"></div>
-
-    <!-- 질문지 사진 (스크린샷 기반 수정) -->
     <div class="img-card"><img src="inner_landscape..jpg" alt="질문지"></div>
 
     <div class="q-grid">
@@ -117,16 +130,17 @@
         <div class="q-card"><b>Q.04 세상에 휘둘리지 않고 지켜내고 싶은 가치는?</b></div>
     </div>
 
-    <!-- 뮤직탭 (NFC키링..jpg 형식이면 아래도 수정 필요) -->
+    <!-- 뮤직탭 섹션: 폰트 크기 및 스타일 수정 완료 -->
     <div class="music-tap-card">
-        <h3 class="music-title">Music Tap<br>나만의 선율을 아카이빙하다</h3>
+        <h3 class="music-title-en">Music Tap</h3>
+        <p class="music-title-ko">나만의 선율을 아카이빙하다</p>
         <div class="music-img-wrapper">
+            <!-- 키링 사진도 점이 두 개라면 ..jpg로 수정하세요 -->
             <img src="NFC키링.jpg" alt="NFC키링"> 
         </div>
-        <p class="music-desc">키링에 폰을 대는 순간, 당신만의 무드가 재생됩니다.</p>
+        <p class="music-desc">키링에 폰을 대는 순간,<br>당신만의 무드가 재생됩니다.</p>
     </div>
 
-    <!-- 감성 갤러리 (파일명에 점이 하나라면 .jpg, 두개라면 ..jpg로 직접 수정해 보세요!) -->
     <div class="img-card"><img src="nature_1..jpg" alt="사진1"></div>
     <p class="script-text">"바람에 흔들리는 작은 풀잎에도 당신만의 계절이 머뭅니다."</p>
     <div class="img-card"><img src="nature_2..jpg" alt="사진2"></div>
